@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
-public class ·Î±×ÇÁ·¹ÀÓ {
+public class ë¡œê·¸í”„ë ˆì„ {
 
 	JFrame frame;
 
@@ -16,40 +16,40 @@ public class ·Î±×ÇÁ·¹ÀÓ {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					·Î±×ÇÁ·¹ÀÓ window = new ·Î±×ÇÁ·¹ÀÓ();
+					ë¡œê·¸í”„ë ˆì„ window = new ë¡œê·¸í”„ë ˆì„();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
-					e.printStackTrace();
+					e.printStackTrace(); 
 				}
 			}
 		});
 	}
 
-	public ·Î±×ÇÁ·¹ÀÓ() {
+	public ë¡œê·¸í”„ë ˆì„() {
 		initialize();
 	}
 
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(255, 255, 255));
-		frame.setTitle("·Î±×");
+		frame.setTitle("ë¡œê·¸");
 		frame.setBounds(100, 100, 450, 550);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel ·Î±×ÅØ½ºÆ®¶óº§ = new JLabel("·Î±×");
-		·Î±×ÅØ½ºÆ®¶óº§.setVerticalAlignment(SwingConstants.TOP);
-		·Î±×ÅØ½ºÆ®¶óº§.setHorizontalAlignment(SwingConstants.LEFT);
-		·Î±×ÅØ½ºÆ®¶óº§.setBounds(12, 10, 403, 410);
-		frame.getContentPane().add(·Î±×ÅØ½ºÆ®¶óº§);
+		JLabel ë¡œê·¸í…ìŠ¤íŠ¸ë¼ë²¨ = new JLabel("ë¡œê·¸");
+		ë¡œê·¸í…ìŠ¤íŠ¸ë¼ë²¨.setVerticalAlignment(SwingConstants.TOP);
+		ë¡œê·¸í…ìŠ¤íŠ¸ë¼ë²¨.setHorizontalAlignment(SwingConstants.LEFT);
+		ë¡œê·¸í…ìŠ¤íŠ¸ë¼ë²¨.setBounds(12, 10, 403, 410);
+		frame.getContentPane().add(ë¡œê·¸í…ìŠ¤íŠ¸ë¼ë²¨);
 		
-		JButton ´İ±â¹öÆ° = new JButton("´İ±â");
-		´İ±â¹öÆ°.addActionListener(new ActionListener() {
+		JButton ë‹«ê¸°ë²„íŠ¼ = new JButton("ë‹«ê¸°");
+		ë‹«ê¸°ë²„íŠ¼.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
 			}
 		});
-		´İ±â¹öÆ°.setBounds(291, 430, 124, 71);
-		frame.getContentPane().add(´İ±â¹öÆ°);
+		ë‹«ê¸°ë²„íŠ¼.setBounds(291, 430, 124, 71);
+		frame.getContentPane().add(ë‹«ê¸°ë²„íŠ¼);
 	}
 }
