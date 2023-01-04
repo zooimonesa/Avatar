@@ -1,125 +1,150 @@
 import java.awt.Color;
 import java.awt.EventQueue;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import javax.swing.border.LineBorder;
 
-public class StartFrame {
-	public JFrame frmAlpha;
-	private JTextField id;
-	private JPasswordField passWord;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-	public StartFrame() {
-		initialize();
-	}
+public class StoreFrame {
 
-	private void initialize() {
-		
-		
-		frmAlpha = new JFrame();
-		frmAlpha.getContentPane().setBackground(new Color(255, 255, 255));
-		frmAlpha.setTitle("프로젝트 다마고치 alpha_0.00");
-		frmAlpha.setBounds(100, 100, 545, 507);
-		frmAlpha.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frmAlpha.getContentPane().setLayout(null);
-
-		ImageIcon 메인 = new ImageIcon("메인예시원본.gif");
-		JLabel mainImage = new JLabel(메인);
-		mainImage.setBounds(12, 10, 505, 259);
-		frmAlpha.getContentPane().add(mainImage);
-
-		id = new JTextField();
-		id.setBounds(164, 307, 205, 21);
-		frmAlpha.getContentPane().add(id);
-		id.setColumns(10);
-
-		passWord = new JPasswordField();
-		passWord.addKeyListener(new KeyAdapter() {
-			@Override
-			public void keyPressed(KeyEvent e) {
-				if(e.getKeyChar() == KeyEvent.VK_ENTER) {
-				MainFrame mainFrame = new MainFrame();
-				mainFrame.frame.setVisible(true); // 다음 프레임 띄우기
-				mainFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
-				mainFrame.frame.setResizable(false);
-				frmAlpha.setVisible(false);
-				}
-			}
-		});
-		
-		passWord.setBounds(164, 350, 205, 21);
-		frmAlpha.getContentPane().add(passWord);
-		passWord.setColumns(10);
-
-		SignUpFrame signUpFrame = new SignUpFrame();
-		JButton signUp = new JButton("회원가입");
-		signUp.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				signUpFrame.frame.setVisible(true); // 다음 프레임 띄우기
-				signUpFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
-				signUpFrame.frame.setResizable(false);
-			}
-		});
-		signUp.setBounds(12, 412, 130, 23);
-		frmAlpha.getContentPane().add(signUp);
-
-		JButton logInButton = new JButton("로그인");
-		logInButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				MainFrame mainFrame = new MainFrame();
-				mainFrame.frame.setVisible(true); // 다음 프레임 띄우기
-				mainFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
-				mainFrame.frame.setResizable(false);
-				frmAlpha.setVisible(false);
-
-			}
-		});
-		
-		logInButton.setBounds(204, 412, 130, 23);
-		frmAlpha.getContentPane().add(logInButton);
-
-		JButton exit = new JButton("종료");
-		exit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
-			}
-		});
-		
-		exit.setBounds(387, 412, 130, 23);
-		frmAlpha.getContentPane().add(exit);
-
-		JLabel idLabel = new JLabel("아이디");
-		idLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		idLabel.setBounds(85, 310, 57, 15);
-		frmAlpha.getContentPane().add(idLabel);
-
-		JLabel passWordLabel = new JLabel("비밀번호");
-		passWordLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		passWordLabel.setBounds(85, 353, 57, 15);
-		frmAlpha.getContentPane().add(passWordLabel);
-	}
-
+	JFrame frame;
+	private LineBorder bb = new LineBorder(Color.black, 1, true);
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					StartFrame window = new StartFrame();
-					window.frmAlpha.setVisible(true);
-					window.frmAlpha.setLocationRelativeTo(null);
-					window.frmAlpha.setResizable(false);
+					StoreFrame window = new StoreFrame();
+					window.frame.setVisible(true);
+					window.frame.setLocationRelativeTo(null);
+					window.frame.setResizable(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
 	}
+
+	public StoreFrame() {
+		initialize();
+	}
+
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(255, 255, 255));
+		frame.setTitle("상점");
+		frame.setBounds(100, 100, 815, 526);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+
+		ImageIcon 상점캐릭터 = new ImageIcon("농담곰_상점_기본.png");
+
+		JButton btnNewButton_1 = new JButton("New button");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				PurchaseFrame purchaseFrame = new PurchaseFrame();
+				purchaseFrame.frame.setVisible(true); // 다음 프레임 띄우기
+				purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
+				purchaseFrame.frame.setResizable(false);
+				
+			}
+		});
+		
+		
+		btnNewButton_1.setBounds(324, 21, 90, 100);
+		frame.getContentPane().add(btnNewButton_1);
+
+		JButton btnNewButton_1_1 = new JButton("New button");
+		btnNewButton_1_1.setBounds(324, 131, 90, 100);
+		frame.getContentPane().add(btnNewButton_1_1);
+
+		JButton btnNewButton_1_2 = new JButton("New button");
+		btnNewButton_1_2.setBounds(324, 241, 90, 100);
+		frame.getContentPane().add(btnNewButton_1_2);
+
+		JButton btnNewButton_1_3 = new JButton("New button");
+		btnNewButton_1_3.setBounds(324, 351, 90, 100);
+		frame.getContentPane().add(btnNewButton_1_3);
+
+		JButton btnNewButton_1_4 = new JButton("New button");
+		btnNewButton_1_4.setBounds(426, 21, 90, 100);
+		frame.getContentPane().add(btnNewButton_1_4);
+
+		JButton btnNewButton_1_1_1 = new JButton("New button");
+		btnNewButton_1_1_1.setBounds(426, 131, 90, 100);
+		frame.getContentPane().add(btnNewButton_1_1_1);
+
+		JButton btnNewButton_1_2_1 = new JButton("New button");
+		btnNewButton_1_2_1.setBounds(426, 241, 90, 100);
+		frame.getContentPane().add(btnNewButton_1_2_1);
+
+		JButton btnNewButton_1_3_1 = new JButton("New button");
+		btnNewButton_1_3_1.setBounds(426, 351, 90, 100);
+		frame.getContentPane().add(btnNewButton_1_3_1);
+
+		JButton btnNewButton_1_5 = new JButton("New button");
+		btnNewButton_1_5.setBounds(528, 21, 90, 100);
+		frame.getContentPane().add(btnNewButton_1_5);
+
+		JButton btnNewButton_1_1_2 = new JButton("New button");
+		btnNewButton_1_1_2.setBounds(528, 131, 90, 100);
+		frame.getContentPane().add(btnNewButton_1_1_2);
+
+		JButton btnNewButton_1_2_2 = new JButton("New button");
+		btnNewButton_1_2_2.setBounds(528, 241, 90, 100);
+		frame.getContentPane().add(btnNewButton_1_2_2);
+
+		JButton btnNewButton_1_3_2 = new JButton("New button");
+		btnNewButton_1_3_2.setBounds(528, 351, 90, 100);
+		frame.getContentPane().add(btnNewButton_1_3_2);
+
+		JButton btnNewButton_1_6 = new JButton("New button");
+		btnNewButton_1_6.setBounds(630, 21, 90, 100);
+		frame.getContentPane().add(btnNewButton_1_6);
+
+		JButton btnNewButton_1_1_3 = new JButton("New button");
+		btnNewButton_1_1_3.setBounds(630, 131, 90, 100);
+		frame.getContentPane().add(btnNewButton_1_1_3);
+
+		JButton btnNewButton_1_2_3 = new JButton("New button");
+		btnNewButton_1_2_3.setBounds(630, 241, 90, 100);
+		frame.getContentPane().add(btnNewButton_1_2_3);
+
+		JButton btnNewButton_1_3_3 = new JButton("New button");
+		btnNewButton_1_3_3.setBounds(630, 351, 90, 100);
+		frame.getContentPane().add(btnNewButton_1_3_3);
+
+		JButton 이전창버튼 = new JButton("이전으로");
+		이전창버튼.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				frame.dispose();
+			}
+		});
+		이전창버튼.setHorizontalAlignment(SwingConstants.TRAILING);
+		이전창버튼.setBounds(732, 351, 55, 100);
+		frame.getContentPane().add(이전창버튼);
+
+		JLabel lblNewLabel = new JLabel(상점캐릭터);
+		lblNewLabel.setBorder(bb);
+		lblNewLabel.setBounds(12, 21, 300, 430);
+		frame.getContentPane().add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("보유포인트:");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setBounds(528, 462, 90, 15);
+		frame.getContentPane().add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("0포인트");
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNewLabel_2.setBounds(630, 461, 157, 16);
+		frame.getContentPane().add(lblNewLabel_2);
+	}
+
 }
