@@ -11,151 +11,150 @@ import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 import javax.swing.Icon;
 
-public class 메인화면프레임 {
+public class MainFrame {
 
-	JFrame frame;
+   JFrame frame;
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					메인화면프레임 window = new 메인화면프레임();
-					window.frame.setVisible(true);
-					window.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
-					window.frame.setResizable(false);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+   public static void main(String[] args) {
+      EventQueue.invokeLater(new Runnable() {
+         public void run() {
+            try {
+               MainFrame window = new MainFrame();
+               window.frame.setVisible(true);
+               window.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
+               window.frame.setResizable(false);
+            } catch (Exception e) {
+               e.printStackTrace();
+            }
+         }
+      });
+   }
 
-	public 메인화면프레임() {
-		initialize();
-	}
+   public MainFrame() {
+      initialize();
+   }
 
-	private void initialize() {
-		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(255, 255, 255));
-		frame.setTitle("메인화면");
-		frame.setBounds(100, 100, 815, 526);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+   private void initialize() {
+      frame = new JFrame();
+      frame.getContentPane().setBackground(new Color(255, 255, 255));
+      frame.setTitle("메인화면");
+      frame.setBounds(100, 100, 815, 526);
+      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      frame.getContentPane().setLayout(null);
 
-		ImageIcon 캐릭터 = new ImageIcon("농담곰_메인_기본.png"); //데이터베이스에서 꺼내는 메소드  //끌때 지우는 메소드//기본을 널로 설정
-		ImageIcon 배경 = new ImageIcon("배경.png");
-		ImageIcon 상의 = new ImageIcon("목도리.png");
-		ImageIcon 체력 = new ImageIcon("능력치_체력.png");  // 능력치 기준으로 라벨로딸것 if 몇이상이면 몇개보임 이런식
-		ImageIcon 지능 = new ImageIcon("능력치_지능.png");
-		ImageIcon 재능 = new ImageIcon("능력치_재능.png");
-		
-		
-		JLabel 닉네임라벨 = new JLabel("닉네임");   //데베받
-		닉네임라벨.setBackground(new Color(255, 255, 255));
-		닉네임라벨.setHorizontalAlignment(SwingConstants.CENTER);
-		닉네임라벨.setBounds(315, 40, 424, 35);
-		frame.getContentPane().add(닉네임라벨);
-		
-		JLabel lblNewLabel = new JLabel("스토리"); //데베받
-		lblNewLabel.setBackground(new Color(192, 192, 192));
-		lblNewLabel.setVerticalAlignment(SwingConstants.TOP);
-		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel.setBounds(40, 291, 150, 160);
-		frame.getContentPane().add(lblNewLabel);
+      ImageIcon 캐릭터 = new ImageIcon("농담곰_메인_기본.png");
+      ImageIcon 배경 = new ImageIcon("배경.png");
+      ImageIcon 상의 = new ImageIcon("목도리.png");
+      ImageIcon 체력 = new ImageIcon("능력치_체력.png");
+      ImageIcon 지능 = new ImageIcon("능력치_지능.png");
+      ImageIcon 재능 = new ImageIcon("능력치_재능.png");
+      
+      
+      JLabel nickNameLabel = new JLabel("닉네임");
+      nickNameLabel.setBackground(new Color(255, 255, 255));
+      nickNameLabel.setHorizontalAlignment(SwingConstants.CENTER);
+      nickNameLabel.setBounds(315, 40, 424, 35);
+      frame.getContentPane().add(nickNameLabel);
+      
+      JLabel storyLabel = new JLabel("스토리");
+      storyLabel.setBackground(new Color(192, 192, 192));
+      storyLabel.setVerticalAlignment(SwingConstants.TOP);
+      storyLabel.setHorizontalAlignment(SwingConstants.LEFT);
+      storyLabel.setBounds(40, 291, 150, 160);
+      frame.getContentPane().add(storyLabel);
 
-		JLabel 체력수치 = new JLabel(체력);  //데베받
-		체력수치.setHorizontalAlignment(SwingConstants.CENTER);
-		체력수치.setBounds(315, 85, 424, 35);
-		frame.getContentPane().add(체력수치);
+      JLabel healthPoint = new JLabel(체력);
+      healthPoint.setHorizontalAlignment(SwingConstants.CENTER);
+      healthPoint.setBounds(315, 85, 424, 35);
+      frame.getContentPane().add(healthPoint);
 
-		JLabel 지능수치 = new JLabel(지능);
-		지능수치.setHorizontalAlignment(SwingConstants.CENTER);
-		지능수치.setBounds(315, 130, 424, 35);
-		frame.getContentPane().add(지능수치);
+      JLabel intPoint = new JLabel(지능);
+      intPoint.setHorizontalAlignment(SwingConstants.CENTER);
+      intPoint.setBounds(315, 130, 424, 35);
+      frame.getContentPane().add(intPoint);
 
-		JLabel 재능수치 = new JLabel(재능);
-		재능수치.setHorizontalAlignment(SwingConstants.CENTER);
-		재능수치.setBounds(315, 175, 424, 35);
-		frame.getContentPane().add(재능수치);
+      JLabel giftPoint = new JLabel(재능);
+      giftPoint.setHorizontalAlignment(SwingConstants.CENTER);
+      giftPoint.setBounds(315, 175, 424, 35);
+      frame.getContentPane().add(giftPoint);
 
 
-		JButton 미션버튼 = new JButton("미션");
-		미션버튼.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				미션선택프레임 미션선택프레임새창 = new 미션선택프레임();
-				미션선택프레임새창.frame.setVisible(true); // 다음 프레임 띄우기
-				미션선택프레임새창.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
-				미션선택프레임새창.frame.setResizable(false);
+      JButton missionPoint = new JButton("미션");
+      missionPoint.addActionListener(new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+            MissionChoiceFrame missionChoiceFrame = new MissionChoiceFrame();
+            missionChoiceFrame.frame.setVisible(true); // 다음 프레임 띄우기
+            missionChoiceFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
+            missionChoiceFrame.frame.setResizable(false);
 
-			}
-		});
-		미션버튼.setBounds(315, 291, 97, 50);
-		frame.getContentPane().add(미션버튼);
+         }
+      });
+      missionPoint.setBounds(315, 291, 97, 50);
+      frame.getContentPane().add(missionPoint);
 
-		상점프레임 상점프레임새창 = new 상점프레임();
 
-		JButton 상점버튼 = new JButton("상점");
-		상점버튼.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				상점프레임새창.frame.setVisible(true); // 다음 프레임 띄우기
-				상점프레임새창.frame.setBounds(100, 100, 815, 526);
-				상점프레임새창.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
-				상점프레임새창.frame.setResizable(false);
+      JButton storePoint = new JButton("상점");
+      storePoint.addActionListener(new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+            StoreFrame storeFrame = new StoreFrame();
+            storeFrame.frame.setVisible(true); // 다음 프레임 띄우기
+            storeFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
+            storeFrame.frame.setResizable(false);
 
-			}
-		});
-		상점버튼.setBounds(424, 291, 97, 50);
-		frame.getContentPane().add(상점버튼);
+         }
+      });
+      storePoint.setBounds(424, 291, 97, 50);
+      frame.getContentPane().add(storePoint);
 
-		JButton 로그버튼 = new JButton("로그");
-		로그버튼.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				로그프레임 로그프레임새창 = new 로그프레임();
-				로그프레임새창.frame.setVisible(true); // 다음 프레임 띄우기
-				로그프레임새창.frame.setBounds(100, 100, 450, 550);
-				로그프레임새창.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
-				로그프레임새창.frame.setResizable(false);
-			}
-		});
-		로그버튼.setBounds(533, 291, 97, 50);
-		frame.getContentPane().add(로그버튼);
+      JButton logButton = new JButton("로그");
+      logButton.addActionListener(new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+            LogFrame logFrame = new LogFrame();
+            logFrame.frame.setVisible(true); // 다음 프레임 띄우기
+            logFrame.frame.setBounds(100, 100, 450, 550);
+            logFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
+            logFrame.frame.setResizable(false);
+         }
+      });
+      logButton.setBounds(533, 291, 97, 50);
+      frame.getContentPane().add(logButton);
 
-		JButton 로그아웃버튼 = new JButton("로그아웃");
-		로그아웃버튼.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				시작프레임 시작프레임새창 = new 시작프레임();
-				시작프레임새창.frmAlpha.setVisible(true); // 다음 프레임 띄우기
-				시작프레임새창.frmAlpha.setLocationRelativeTo(null); // 창 중간에 나오게함
-				시작프레임새창.frmAlpha.setResizable(false);
-				frame.dispose();
-			}
-		});
-		로그아웃버튼.setBounds(642, 291, 97, 50);
-		frame.getContentPane().add(로그아웃버튼);
+      JButton logOutButton = new JButton("로그아웃");
+      logOutButton.addActionListener(new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+            StartFrame startFrame = new StartFrame();
+            startFrame.frmAlpha.setVisible(true); // 다음 프레임 띄우기
+            startFrame.frmAlpha.setLocationRelativeTo(null); // 창 중간에 나오게함
+            startFrame.frmAlpha.setResizable(false);
+            frame.dispose();
+         }
+      });
+      logOutButton.setBounds(642, 291, 97, 50);
+      frame.getContentPane().add(logOutButton);
 
-		JLabel 보유포인트 = new JLabel("포인트"); //데베받
-		보유포인트.setHorizontalAlignment(SwingConstants.CENTER);
-		보유포인트.setBounds(533, 351, 206, 100);
-		frame.getContentPane().add(보유포인트);
+      JLabel userPointLabel = new JLabel("포인트");
+      userPointLabel.setHorizontalAlignment(SwingConstants.CENTER);
+      userPointLabel.setBounds(533, 351, 206, 100);
+      frame.getContentPane().add(userPointLabel);
 
-		JLabel 캐릭터머리라벨 = new JLabel();
-		캐릭터머리라벨.setBounds(40, 40, 150, 200);
-		frame.getContentPane().add(캐릭터머리라벨);
+      JLabel charHeadLabel = new JLabel();
+      charHeadLabel.setBounds(40, 40, 150, 200);
+      frame.getContentPane().add(charHeadLabel);
 
-		JLabel 캐릭터악세라벨 = new JLabel();
-		캐릭터악세라벨.setBounds(40, 40, 150, 200);
-		frame.getContentPane().add(캐릭터악세라벨);
+      JLabel charAccLabel = new JLabel();
+      charAccLabel.setBounds(40, 40, 150, 200);
+      frame.getContentPane().add(charAccLabel);
 
-		JLabel 캐릭터상의라벨 = new JLabel(상의);
-		캐릭터상의라벨.setBounds(40, 40, 150, 200);
-		frame.getContentPane().add(캐릭터상의라벨);
+      JLabel charTopLabel = new JLabel(상의);
+      charTopLabel.setBounds(40, 40, 150, 200);
+      frame.getContentPane().add(charTopLabel);
 
-		JLabel 캐릭터라벨 = new JLabel(캐릭터);
-		캐릭터라벨.setBounds(40, 40, 150, 200);
-		frame.getContentPane().add(캐릭터라벨);
-		
-		JLabel 캐릭터배경라벨 = new JLabel(배경);
-		캐릭터배경라벨.setBounds(40, 40, 150, 200);
-		frame.getContentPane().add(캐릭터배경라벨);
-	}
+      JLabel userCharLabel = new JLabel(캐릭터);
+      userCharLabel.setBounds(40, 40, 150, 200);
+      frame.getContentPane().add(userCharLabel);
+      
+      JLabel charBackgroundLabel = new JLabel(배경);
+      charBackgroundLabel.setBounds(40, 40, 150, 200);
+      frame.getContentPane().add(charBackgroundLabel);
+   }
 }

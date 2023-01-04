@@ -1,99 +1,85 @@
-import java.awt.Color;
 import java.awt.EventQueue;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import java.awt.Color;
 
-public class 미션선택프레임 {
+public class MissionListFrame {
 
-	JFrame frame;
+   JFrame frame;
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					미션선택프레임 window = new 미션선택프레임();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+   public static void main(String[] args) {
+      EventQueue.invokeLater(new Runnable() {
+         public void run() {
+            try {
+               MissionListFrame window = new MissionListFrame();
+               window.frame.setVisible(true);
+            } catch (Exception e) {
+               e.printStackTrace();
+            }
+         }
+      });
+   }
 
-	public 미션선택프레임() {
-		initialize();
-	}
+   public MissionListFrame() {
+      initialize();
+   }
 
-	private void initialize() {
-		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(255, 255, 255));
-		frame.setBackground(Color.WHITE);
-		frame.setTitle("미션");
-		frame.setBounds(100, 100, 450, 450);
-		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-
-		JButton 운동버튼 = new JButton("운동");
-		운동버튼.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				미션프레임 미션프레임새창 = new 미션프레임();
-				미션프레임새창.frame.setVisible(true);
-				미션프레임새창.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
-				미션프레임새창.frame.setResizable(false);
-			}
-		});
-		운동버튼.setBounds(30, 30, 370, 80);
-		frame.getContentPane().add(운동버튼);
-
-		JButton 공부버튼 = new JButton("공부");
-		공부버튼.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				미션프레임 미션프레임새창 = new 미션프레임();
-				미션프레임새창.frame.setVisible(true);
-				미션프레임새창.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
-				미션프레임새창.frame.setResizable(false);
-			}
-		});
-		공부버튼.setBounds(30, 120, 370, 80);
-		frame.getContentPane().add(공부버튼);
-
-		JButton 취미버튼 = new JButton("취미");
-		취미버튼.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				미션프레임 미션프레임새창 = new 미션프레임();
-				미션프레임새창.frame.setVisible(true);
-				미션프레임새창.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
-				미션프레임새창.frame.setResizable(false);
-			}
-		});
-		취미버튼.setBounds(30, 210, 370, 80);
-		frame.getContentPane().add(취미버튼);
-		
-		JButton btnNewButton = new JButton("보유미션보기");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				유저보유미션목록 유저보유미션목록새창 = new 유저보유미션목록();
-				유저보유미션목록새창.frame.setVisible(true); // 다음 프레임 띄우기
-				유저보유미션목록새창.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
-				유저보유미션목록새창.frame.setResizable(false);
-				
-			}
-		});
-		btnNewButton.setBounds(30, 317, 122, 53);
-		frame.getContentPane().add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("이전으로");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
-				
-			}
-		});
-		btnNewButton_1.setBounds(278, 317, 122, 53);
-		frame.getContentPane().add(btnNewButton_1);
-	}
-
+   private void initialize() {
+      frame = new JFrame();
+      frame.getContentPane().setBackground(new Color(255, 255, 255));
+      frame.setTitle("미션");
+      frame.setBounds(100, 100, 450, 450);
+      frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+      frame.getContentPane().setLayout(null);
+      
+      JLabel oneDayMissionLabel1 = new JLabel("하루미션~~");
+      oneDayMissionLabel1.setBounds(55, 30, 250, 50);
+      frame.getContentPane().add(oneDayMissionLabel1);
+      
+      JLabel oneDayMissionLabel2 = new JLabel("하루미션~~");
+      oneDayMissionLabel2.setBounds(55, 124, 250, 50);
+      frame.getContentPane().add(oneDayMissionLabel2);
+      
+      JLabel oneWeekMissionLabel = new JLabel("일주일 미션~~");
+      oneWeekMissionLabel.setBounds(55, 218, 250, 50);
+      frame.getContentPane().add(oneWeekMissionLabel);
+      
+      
+      JButton previousButton = new JButton("이전으로");
+      previousButton.addActionListener(new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+            frame.dispose();
+         }
+      });
+      previousButton.setBounds(161, 332, 140, 50);
+      frame.getContentPane().add(previousButton);
+      
+      JButton oneDayMissionChoiceButton1 = new JButton("선택하기");
+      oneDayMissionChoiceButton1.setBounds(325, 30, 97, 23);
+      frame.getContentPane().add(oneDayMissionChoiceButton1);
+      
+      JButton oneDayMissionRefreshButton1 = new JButton("새로고침");
+      oneDayMissionRefreshButton1.setBounds(325, 61, 97, 23);
+      frame.getContentPane().add(oneDayMissionRefreshButton1);
+      
+      JButton oneDayMissionChoiceButton2 = new JButton("선택하기");
+      oneDayMissionChoiceButton2.setBounds(325, 124, 97, 23);
+      frame.getContentPane().add(oneDayMissionChoiceButton2);
+      
+      JButton oneDayMissionRefreshButton2 = new JButton("새로고침");
+      oneDayMissionRefreshButton2.setBounds(325, 155, 97, 23);
+      frame.getContentPane().add(oneDayMissionRefreshButton2);
+      
+      JButton oneWeekMissionChoiceButton = new JButton("선택하기");
+      oneWeekMissionChoiceButton.setBounds(325, 218, 97, 23);
+      frame.getContentPane().add(oneWeekMissionChoiceButton);
+      
+      JButton oneWeekMissionRefreshButton = new JButton("새로고침");
+      oneWeekMissionRefreshButton.setBounds(325, 249, 97, 23);
+      frame.getContentPane().add(oneWeekMissionRefreshButton);
+   }
 }
