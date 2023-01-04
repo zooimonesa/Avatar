@@ -7,6 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
@@ -14,7 +15,7 @@ public class MainFrame {
 
 	JFrame frame;
 	private LineBorder bb = new LineBorder(Color.black, 1, true);
-	
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -23,7 +24,7 @@ public class MainFrame {
 					window.frame.setVisible(true);
 					window.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 					window.frame.setResizable(false);
-					
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -49,14 +50,13 @@ public class MainFrame {
 		ImageIcon 체력 = new ImageIcon("능력치_체력.png");
 		ImageIcon 지능 = new ImageIcon("능력치_지능.png");
 		ImageIcon 재능 = new ImageIcon("능력치_재능.png");
-		
-		
+
 		JLabel nickNameLabel = new JLabel("닉네임");
 		nickNameLabel.setBackground(new Color(255, 255, 255));
 		nickNameLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		nickNameLabel.setBounds(315, 40, 424, 35);
 		frame.getContentPane().add(nickNameLabel);
-		
+
 		JLabel storyLabel = new JLabel("스토리");
 		storyLabel.setBackground(new Color(192, 192, 192));
 		storyLabel.setVerticalAlignment(SwingConstants.TOP);
@@ -80,7 +80,6 @@ public class MainFrame {
 		giftPoint.setBounds(315, 175, 424, 35);
 		frame.getContentPane().add(giftPoint);
 
-
 		JButton missionPoint = new JButton("미션");
 		missionPoint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -93,7 +92,6 @@ public class MainFrame {
 		});
 		missionPoint.setBounds(315, 291, 97, 50);
 		frame.getContentPane().add(missionPoint);
-
 
 		JButton storePoint = new JButton("상점");
 		storePoint.addActionListener(new ActionListener() {
@@ -123,17 +121,65 @@ public class MainFrame {
 		JButton logOutButton = new JButton("로그아웃");
 		logOutButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				StartFrame startFrame = new StartFrame();
-				startFrame.frmAlpha.setVisible(true); // 다음 프레임 띄우기
-				startFrame.frmAlpha.setLocationRelativeTo(null); // 창 중간에 나오게함
-				startFrame.frmAlpha.setResizable(false);
-				frame.dispose();
+				int answer = JOptionPane.showConfirmDialog(null, "로그아웃하시겠습니까?", "로그아웃창", JOptionPane.YES_NO_OPTION); // 로그아웃
+																														// 다이얼로그
+				if (answer == JOptionPane.YES_OPTION) { // 사용자가 yes를 눌렀을 경우
+					StartFrame startFrame = new StartFrame();
+					startFrame.frmAlpha.setVisible(true);
+					startFrame.frmAlpha.setLocationRelativeTo(null); // 창 중간에 나오게함
+					startFrame.frmAlpha.setResizable(false);
+					frame.dispose();
+				} else { // 사용자가 Yes 이외의 값을 눌렀을 경우
+
+				}
 			}
 		});
 		logOutButton.setBounds(642, 291, 97, 50);
 		frame.getContentPane().add(logOutButton);
-		
+
 		JButton deleteUserInfo = new JButton("회원탈퇴");
+		deleteUserInfo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				while (true) {
+					if (e.getActionCommand().equals("회원탈퇴")) { // 회원탈퇴 버튼 ====================================
+						String deleteInfo = JOptionPane.showInputDialog(null, "회원탈퇴를 원하시면 '지금탈퇴'를 입력하세요. ", "회원탈퇴", JOptionPane.OK_CANCEL_OPTION);
+
+						if (deleteInfo.equals("지금탈퇴")) {
+							
+							// 회원탈퇴메소드넣기
+
+							JOptionPane.showMessageDialog(null, "회원탈퇴되었습니다. 로그인창으로 이동합니다.", "회원탈퇴",
+									JOptionPane.WARNING_MESSAGE);
+
+							StartFrame startFrame = new StartFrame();
+							startFrame.frmAlpha.setVisible(true);
+							startFrame.frmAlpha.setLocationRelativeTo(null); // 창 중간에 나오게함
+							startFrame.frmAlpha.setResizable(false);
+							frame.dispose();
+							
+
+							break;
+
+						} else if (!deleteInfo.equals("지금탈퇴")) {
+							JOptionPane.showMessageDialog(null, "잘못입력하셨습니다.", "회원탈퇴", JOptionPane.PLAIN_MESSAGE);
+						} 
+
+					}
+				}
+//					else if (e.getActionCommand().equals("확인")) {
+//					int result = JOptionPane.showConfirmDialog(null, "프로그램을 종료하시 것습니까?", "제목",
+//							JOptionPane.OK_CANCEL_OPTION);
+//
+//					System.out.printf("%d\n", result);
+//					if (result == 0) { // OK=0 , Cancel=2 리턴
+//						System.exit(0);
+//					}
+//				} else {
+//					JOptionPane.showMessageDialog(null, "회원탈퇴되었습니다. 로그인창으로 이동합니다.", "회원탈퇴", JOptionPane.WARNING_MESSAGE);
+//				}
+			}
+
+		});
 		deleteUserInfo.setBounds(642, 401, 97, 50);
 		frame.getContentPane().add(deleteUserInfo);
 
@@ -157,12 +203,12 @@ public class MainFrame {
 		JLabel userCharLabel = new JLabel(캐릭터);
 		userCharLabel.setBounds(40, 40, 150, 200);
 		frame.getContentPane().add(userCharLabel);
-		
+
 		JLabel charBackgroundLabel = new JLabel(배경);
 		charBackgroundLabel.setBounds(40, 40, 150, 200);
 		userCharLabel.setBorder(bb);
 		frame.getContentPane().add(charBackgroundLabel);
-		
+
 		JLabel userPointLabel_1 = new JLabel("~~포인트");
 		userPointLabel_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		userPointLabel_1.setBounds(642, 351, 97, 50);

@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -81,10 +82,27 @@ public class SignUpFrame {
 		frame.getContentPane().add(nickNameTextField);
 
 		JButton idDoubleCheckButton = new JButton("아이디 중복 확인");
+		idDoubleCheckButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				JOptionPane.showMessageDialog(null, "사용가능한 아이디입니다", "Message", JOptionPane.INFORMATION_MESSAGE); // 사용가능하면 출력
+
+				JOptionPane.showMessageDialog(null, "이미존재하는 아이디입니다", "Message", JOptionPane.ERROR_MESSAGE); // 이미존재하면 출력
+
+			}
+		});
 		idDoubleCheckButton.setBounds(294, 40, 128, 23);
 		frame.getContentPane().add(idDoubleCheckButton);
 
 		JButton nickNameDoubleCheckButton = new JButton("닉네임 중복 확인");
+		nickNameDoubleCheckButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "사용가능한 닉네임입니다", "Message", JOptionPane.INFORMATION_MESSAGE); // 사용가능하면 출력
+
+				JOptionPane.showMessageDialog(null, "이미존재하는 닉네임입니다", "Message", JOptionPane.ERROR_MESSAGE); // 이미존재하면 출력
+
+			}
+		});
 		nickNameDoubleCheckButton.setBounds(294, 115, 128, 23);
 		frame.getContentPane().add(nickNameDoubleCheckButton);
 

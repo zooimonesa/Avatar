@@ -7,6 +7,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -23,8 +24,7 @@ public class StartFrame {
 	}
 
 	private void initialize() {
-		
-		
+
 		frmAlpha = new JFrame();
 		frmAlpha.getContentPane().setBackground(new Color(255, 255, 255));
 		frmAlpha.setTitle("프로젝트 다마고치 alpha_0.00");
@@ -46,16 +46,16 @@ public class StartFrame {
 		passWord.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
-				if(e.getKeyChar() == KeyEvent.VK_ENTER) {
-				MainFrame mainFrame = new MainFrame();
-				mainFrame.frame.setVisible(true); // 다음 프레임 띄우기
-				mainFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
-				mainFrame.frame.setResizable(false);
-				frmAlpha.setVisible(false);
+				if (e.getKeyChar() == KeyEvent.VK_ENTER) {
+					MainFrame mainFrame = new MainFrame();
+					mainFrame.frame.setVisible(true); // 다음 프레임 띄우기
+					mainFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
+					mainFrame.frame.setResizable(false);
+					frmAlpha.setVisible(false);
 				}
 			}
 		});
-		
+
 		passWord.setBounds(164, 350, 205, 21);
 		frmAlpha.getContentPane().add(passWord);
 		passWord.setColumns(10);
@@ -83,17 +83,22 @@ public class StartFrame {
 
 			}
 		});
-		
+
 		logInButton.setBounds(204, 412, 130, 23);
 		frmAlpha.getContentPane().add(logInButton);
 
 		JButton exit = new JButton("종료");
 		exit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
+				int answer = JOptionPane.showConfirmDialog(null, "종료하시겠습니까?", "종료창", JOptionPane.YES_NO_OPTION);  // 프로그램 종료 다이얼로그
+				if (answer == JOptionPane.YES_OPTION) { // 사용자가 yes를 눌렀을 경우
+					System.exit(0);
+				} else { // 사용자가 Yes 이외의 값을 눌렀을 경우
+					
+				}
 			}
 		});
-		
+
 		exit.setBounds(387, 412, 130, 23);
 		frmAlpha.getContentPane().add(exit);
 
