@@ -25,7 +25,7 @@ public class StartFrame {
 	public StartFrame() {
 		initialize();
 	}
-
+ 
 	private void initialize() {
 
 		frmAlpha = new JFrame();
@@ -50,6 +50,7 @@ public class StartFrame {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.getKeyChar() == KeyEvent.VK_ENTER) {
+
 					UserLogIn uli = new UserLogIn();
 					userid = id.getText(); // 태현추가
 					userpw = passWord.getText(); // 태현추가
@@ -63,6 +64,13 @@ public class StartFrame {
 //					mainFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 //					mainFrame.frame.setResizable(false);
 //					frmAlpha.setVisible(false);
+
+					MainFrame mainFrame = new MainFrame();
+					mainFrame.frame.setVisible(true); // 다음 프레임 띄우기
+					mainFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
+					mainFrame.frame.setResizable(false);
+					frmAlpha.setVisible(false);
+
 				}
 			}
 		});

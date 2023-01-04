@@ -84,7 +84,7 @@ public class SignUpFrame {
 		nickNameTextField = new JTextField();
 		nickNameTextField.setColumns(10);
 		nickNameTextField.setBounds(126, 116, 133, 21);
-		frame.getContentPane().add(nickNameTextField);
+		frame.getContentPane().add(nickNameTextField); 
 
 		JButton idDoubleCheckButton = new JButton("아이디 중복 확인");
 		idDoubleCheckButton.addActionListener(new ActionListener() {
