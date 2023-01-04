@@ -10,7 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 import javax.swing.Icon;
-
+ 
 public class MainFrame {
 
    JFrame frame;
