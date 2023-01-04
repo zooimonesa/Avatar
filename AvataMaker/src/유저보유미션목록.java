@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class À¯Àúº¸À¯¹Ì¼Ç¸ñ·Ï {
+public class ìœ ì €ë³´ìœ ë¯¸ì…˜ëª©ë¡ {
 
 	JFrame frame;
 
@@ -19,7 +19,7 @@ public class À¯Àúº¸À¯¹Ì¼Ç¸ñ·Ï {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					À¯Àúº¸À¯¹Ì¼Ç¸ñ·Ï window = new À¯Àúº¸À¯¹Ì¼Ç¸ñ·Ï();
+					ìœ ì €ë³´ìœ ë¯¸ì…˜ëª©ë¡ window = new ìœ ì €ë³´ìœ ë¯¸ì…˜ëª©ë¡();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -31,7 +31,7 @@ public class À¯Àúº¸À¯¹Ì¼Ç¸ñ·Ï {
 	/**
 	 * Create the application.
 	 */
-	public À¯Àúº¸À¯¹Ì¼Ç¸ñ·Ï() {
+	public ìœ ì €ë³´ìœ ë¯¸ì…˜ëª©ë¡() {
 		initialize();
 	}
 
@@ -40,124 +40,124 @@ public class À¯Àúº¸À¯¹Ì¼Ç¸ñ·Ï {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setTitle("º¸À¯¹Ì¼Ç");
+		frame.setTitle("ë³´ìœ ë¯¸ì…˜");
 		frame.getContentPane().setBackground(new Color(255, 255, 255));
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("º¸À¯¹Ì¼Ç");
+		JLabel lblNewLabel = new JLabel("ë³´ìœ ë¯¸ì…˜");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(12, 10, 73, 30);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("1¹ø ¹Ì¼Ç");
+		JLabel lblNewLabel_1 = new JLabel("1ë²ˆ ë¯¸ì…˜");
 		lblNewLabel_1.setBounds(12, 50, 280, 30);
 		frame.getContentPane().add(lblNewLabel_1);
 		
-		JButton btnNewButton = new JButton("´Ş¼º");  //ÇÑ¹ø ´Ù¸¥Ã¢ÀÌ ³ª¿È //µÎ¹øÂ°¿¡ Æ÷ÀÎÆ®¸¦½×À½  //¹öÆ°À» ¹İº¹¹®À¸·Î ÁÙ¿©ÁÙ°Í//¶óº§µµ ¹İº¹¹®À¸·Î
+		JButton btnNewButton = new JButton("ë‹¬ì„±");  //í•œë²ˆ ë‹¤ë¥¸ì°½ì´ ë‚˜ì˜´ //ë‘ë²ˆì§¸ì— í¬ì¸íŠ¸ë¥¼ìŒ“ìŒ  //ë²„íŠ¼ì„ ë°˜ë³µë¬¸ìœ¼ë¡œ ì¤„ì—¬ì¤„ê²ƒ//ë¼ë²¨ë„ ë°˜ë³µë¬¸ìœ¼ë¡œ
 		btnNewButton.setBounds(317, 50, 57, 30);
 		frame.getContentPane().add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Æ÷±â");
+		JButton btnNewButton_1 = new JButton("í¬ê¸°");
 		btnNewButton_1.setBounds(386, 50, 57, 30);
 		frame.getContentPane().add(btnNewButton_1);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("2¹ø ¹Ì¼Ç");
+		JLabel lblNewLabel_1_1 = new JLabel("2ë²ˆ ë¯¸ì…˜");
 		lblNewLabel_1_1.setBounds(12, 90, 280, 30);
 		frame.getContentPane().add(lblNewLabel_1_1);
 		
-		JButton btnNewButton_2 = new JButton("´Ş¼º");
+		JButton btnNewButton_2 = new JButton("ë‹¬ì„±");
 		btnNewButton_2.setBounds(317, 90, 57, 30);
 		frame.getContentPane().add(btnNewButton_2);
 		
-		JButton btnNewButton_1_1 = new JButton("Æ÷±â");
+		JButton btnNewButton_1_1 = new JButton("í¬ê¸°");
 		btnNewButton_1_1.setBounds(386, 90, 57, 30);
 		frame.getContentPane().add(btnNewButton_1_1);
 		
-		JLabel lblNewLabel_1_2 = new JLabel("3¹ø ¹Ì¼Ç");
+		JLabel lblNewLabel_1_2 = new JLabel("3ë²ˆ ë¯¸ì…˜");
 		lblNewLabel_1_2.setBounds(12, 130, 280, 30);
 		frame.getContentPane().add(lblNewLabel_1_2);
 		
-		JButton btnNewButton_3 = new JButton("´Ş¼º");
+		JButton btnNewButton_3 = new JButton("ë‹¬ì„±");
 		btnNewButton_3.setBounds(317, 130, 57, 30);
 		frame.getContentPane().add(btnNewButton_3);
 		
-		JButton btnNewButton_1_2 = new JButton("Æ÷±â");
+		JButton btnNewButton_1_2 = new JButton("í¬ê¸°");
 		btnNewButton_1_2.setBounds(386, 130, 57, 30);
 		frame.getContentPane().add(btnNewButton_1_2);
 		
-		JLabel lblNewLabel_1_3 = new JLabel("4¹ø ¹Ì¼Ç");
+		JLabel lblNewLabel_1_3 = new JLabel("4ë²ˆ ë¯¸ì…˜");
 		lblNewLabel_1_3.setBounds(12, 170, 280, 30);
 		frame.getContentPane().add(lblNewLabel_1_3);
 		
-		JButton btnNewButton_4 = new JButton("´Ş¼º");
+		JButton btnNewButton_4 = new JButton("ë‹¬ì„±");
 		btnNewButton_4.setBounds(317, 170, 57, 30);
 		frame.getContentPane().add(btnNewButton_4);
 		
-		JButton btnNewButton_1_3 = new JButton("Æ÷±â");
+		JButton btnNewButton_1_3 = new JButton("í¬ê¸°");
 		btnNewButton_1_3.setBounds(386, 170, 57, 30);
 		frame.getContentPane().add(btnNewButton_1_3);
 		
-		JLabel lblNewLabel_1_4 = new JLabel("5¹ø ¹Ì¼Ç");
+		JLabel lblNewLabel_1_4 = new JLabel("5ë²ˆ ë¯¸ì…˜");
 		lblNewLabel_1_4.setBounds(12, 210, 280, 30);
 		frame.getContentPane().add(lblNewLabel_1_4);
 		
-		JButton btnNewButton_5 = new JButton("´Ş¼º");
+		JButton btnNewButton_5 = new JButton("ë‹¬ì„±");
 		btnNewButton_5.setBounds(317, 210, 57, 30);
 		frame.getContentPane().add(btnNewButton_5);
 		
-		JButton btnNewButton_1_4 = new JButton("Æ÷±â");
+		JButton btnNewButton_1_4 = new JButton("í¬ê¸°");
 		btnNewButton_1_4.setBounds(386, 210, 57, 30);
 		frame.getContentPane().add(btnNewButton_1_4);
 		
-		JLabel lblNewLabel_1_5 = new JLabel("6¹ø ¹Ì¼Ç");
+		JLabel lblNewLabel_1_5 = new JLabel("6ë²ˆ ë¯¸ì…˜");
 		lblNewLabel_1_5.setBounds(12, 250, 280, 30);
 		frame.getContentPane().add(lblNewLabel_1_5);
 		
-		JButton btnNewButton_6 = new JButton("´Ş¼º");
+		JButton btnNewButton_6 = new JButton("ë‹¬ì„±");
 		btnNewButton_6.setBounds(317, 250, 57, 30);
 		frame.getContentPane().add(btnNewButton_6);
 		
-		JButton btnNewButton_1_5 = new JButton("Æ÷±â");
+		JButton btnNewButton_1_5 = new JButton("í¬ê¸°");
 		btnNewButton_1_5.setBounds(386, 250, 57, 30);
 		frame.getContentPane().add(btnNewButton_1_5);
 		
-		JLabel lblNewLabel_1_6 = new JLabel("7¹ø ¹Ì¼Ç");
+		JLabel lblNewLabel_1_6 = new JLabel("7ë²ˆ ë¯¸ì…˜");
 		lblNewLabel_1_6.setBounds(12, 290, 280, 30);
 		frame.getContentPane().add(lblNewLabel_1_6);
 		
-		JButton btnNewButton_7 = new JButton("´Ş¼º");
+		JButton btnNewButton_7 = new JButton("ë‹¬ì„±");
 		btnNewButton_7.setBounds(317, 290, 57, 30);
 		frame.getContentPane().add(btnNewButton_7);
 		
-		JButton btnNewButton_1_6 = new JButton("Æ÷±â");
+		JButton btnNewButton_1_6 = new JButton("í¬ê¸°");
 		btnNewButton_1_6.setBounds(386, 290, 57, 30);
 		frame.getContentPane().add(btnNewButton_1_6);
 		
-		JLabel lblNewLabel_1_7 = new JLabel("8¹ø ¹Ì¼Ç");
+		JLabel lblNewLabel_1_7 = new JLabel("8ë²ˆ ë¯¸ì…˜");
 		lblNewLabel_1_7.setBounds(12, 330, 280, 30);
 		frame.getContentPane().add(lblNewLabel_1_7);
 		
-		JButton btnNewButton_8 = new JButton("´Ş¼º");
+		JButton btnNewButton_8 = new JButton("ë‹¬ì„±");
 		btnNewButton_8.setBounds(317, 330, 57, 30);
 		frame.getContentPane().add(btnNewButton_8);
 		
-		JButton btnNewButton_1_7 = new JButton("Æ÷±â");
+		JButton btnNewButton_1_7 = new JButton("í¬ê¸°");
 		btnNewButton_1_7.setBounds(386, 330, 57, 30);
 		frame.getContentPane().add(btnNewButton_1_7);
 		
-		JLabel lblNewLabel_1_8 = new JLabel("9¹ø ¹Ì¼Ç");
+		JLabel lblNewLabel_1_8 = new JLabel("9ë²ˆ ë¯¸ì…˜");
 		lblNewLabel_1_8.setBounds(12, 370, 280, 30);
 		frame.getContentPane().add(lblNewLabel_1_8);
 		
-		JButton btnNewButton_9 = new JButton("´Ş¼º");
+		JButton btnNewButton_9 = new JButton("ë‹¬ì„±");
 		btnNewButton_9.setBounds(317, 370, 57, 30);
 		frame.getContentPane().add(btnNewButton_9);
 		
-		JButton btnNewButton_1_8 = new JButton("Æ÷±â");
+		JButton btnNewButton_1_8 = new JButton("í¬ê¸°");
 		btnNewButton_1_8.setBounds(386, 370, 57, 30);
 		frame.getContentPane().add(btnNewButton_1_8);
 		
-		JButton btnNewButton_10 = new JButton("´İ±â");
+		JButton btnNewButton_10 = new JButton("ë‹«ê¸°");
 		btnNewButton_10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();

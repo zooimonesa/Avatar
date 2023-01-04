@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class ¹Ì¼Ç¼±ÅÃÇÁ·¹ÀÓ {
+public class ë¯¸ì…˜ì„ íƒí”„ë ˆì„ {
 
 	JFrame frame;
 
@@ -14,7 +14,7 @@ public class ¹Ì¼Ç¼±ÅÃÇÁ·¹ÀÓ {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					¹Ì¼Ç¼±ÅÃÇÁ·¹ÀÓ window = new ¹Ì¼Ç¼±ÅÃÇÁ·¹ÀÓ();
+					ë¯¸ì…˜ì„ íƒí”„ë ˆì„ window = new ë¯¸ì…˜ì„ íƒí”„ë ˆì„();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -23,7 +23,7 @@ public class ¹Ì¼Ç¼±ÅÃÇÁ·¹ÀÓ {
 		});
 	}
 
-	public ¹Ì¼Ç¼±ÅÃÇÁ·¹ÀÓ() {
+	public ë¯¸ì…˜ì„ íƒí”„ë ˆì„() {
 		initialize();
 	}
 
@@ -31,61 +31,61 @@ public class ¹Ì¼Ç¼±ÅÃÇÁ·¹ÀÓ {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(255, 255, 255));
 		frame.setBackground(Color.WHITE);
-		frame.setTitle("¹Ì¼Ç");
+		frame.setTitle("ë¯¸ì…˜");
 		frame.setBounds(100, 100, 450, 450);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
-		JButton ¿îµ¿¹öÆ° = new JButton("¿îµ¿");
-		¿îµ¿¹öÆ°.addActionListener(new ActionListener() {
+		JButton ìš´ë™ë²„íŠ¼ = new JButton("ìš´ë™");
+		ìš´ë™ë²„íŠ¼.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				¹Ì¼ÇÇÁ·¹ÀÓ ¹Ì¼ÇÇÁ·¹ÀÓ»õÃ¢ = new ¹Ì¼ÇÇÁ·¹ÀÓ();
-				¹Ì¼ÇÇÁ·¹ÀÓ»õÃ¢.frame.setVisible(true);
-				¹Ì¼ÇÇÁ·¹ÀÓ»õÃ¢.frame.setLocationRelativeTo(null); // Ã¢ Áß°£¿¡ ³ª¿À°ÔÇÔ
-				¹Ì¼ÇÇÁ·¹ÀÓ»õÃ¢.frame.setResizable(false);
+				ë¯¸ì…˜í”„ë ˆì„ ë¯¸ì…˜í”„ë ˆì„ìƒˆì°½ = new ë¯¸ì…˜í”„ë ˆì„();
+				ë¯¸ì…˜í”„ë ˆì„ìƒˆì°½.frame.setVisible(true);
+				ë¯¸ì…˜í”„ë ˆì„ìƒˆì°½.frame.setLocationRelativeTo(null); // ì°½ ì¤‘ê°„ì— ë‚˜ì˜¤ê²Œí•¨
+				ë¯¸ì…˜í”„ë ˆì„ìƒˆì°½.frame.setResizable(false);
 			}
 		});
-		¿îµ¿¹öÆ°.setBounds(30, 30, 370, 80);
-		frame.getContentPane().add(¿îµ¿¹öÆ°);
+		ìš´ë™ë²„íŠ¼.setBounds(30, 30, 370, 80);
+		frame.getContentPane().add(ìš´ë™ë²„íŠ¼);
 
-		JButton °øºÎ¹öÆ° = new JButton("°øºÎ");
-		°øºÎ¹öÆ°.addActionListener(new ActionListener() {
+		JButton ê³µë¶€ë²„íŠ¼ = new JButton("ê³µë¶€");
+		ê³µë¶€ë²„íŠ¼.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				¹Ì¼ÇÇÁ·¹ÀÓ ¹Ì¼ÇÇÁ·¹ÀÓ»õÃ¢ = new ¹Ì¼ÇÇÁ·¹ÀÓ();
-				¹Ì¼ÇÇÁ·¹ÀÓ»õÃ¢.frame.setVisible(true);
-				¹Ì¼ÇÇÁ·¹ÀÓ»õÃ¢.frame.setLocationRelativeTo(null); // Ã¢ Áß°£¿¡ ³ª¿À°ÔÇÔ
-				¹Ì¼ÇÇÁ·¹ÀÓ»õÃ¢.frame.setResizable(false);
+				ë¯¸ì…˜í”„ë ˆì„ ë¯¸ì…˜í”„ë ˆì„ìƒˆì°½ = new ë¯¸ì…˜í”„ë ˆì„();
+				ë¯¸ì…˜í”„ë ˆì„ìƒˆì°½.frame.setVisible(true);
+				ë¯¸ì…˜í”„ë ˆì„ìƒˆì°½.frame.setLocationRelativeTo(null); // ì°½ ì¤‘ê°„ì— ë‚˜ì˜¤ê²Œí•¨
+				ë¯¸ì…˜í”„ë ˆì„ìƒˆì°½.frame.setResizable(false);
 			}
 		});
-		°øºÎ¹öÆ°.setBounds(30, 120, 370, 80);
-		frame.getContentPane().add(°øºÎ¹öÆ°);
+		ê³µë¶€ë²„íŠ¼.setBounds(30, 120, 370, 80);
+		frame.getContentPane().add(ê³µë¶€ë²„íŠ¼);
 
-		JButton Ãë¹Ì¹öÆ° = new JButton("Ãë¹Ì");
-		Ãë¹Ì¹öÆ°.addActionListener(new ActionListener() {
+		JButton ì·¨ë¯¸ë²„íŠ¼ = new JButton("ì·¨ë¯¸");
+		ì·¨ë¯¸ë²„íŠ¼.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				¹Ì¼ÇÇÁ·¹ÀÓ ¹Ì¼ÇÇÁ·¹ÀÓ»õÃ¢ = new ¹Ì¼ÇÇÁ·¹ÀÓ();
-				¹Ì¼ÇÇÁ·¹ÀÓ»õÃ¢.frame.setVisible(true);
-				¹Ì¼ÇÇÁ·¹ÀÓ»õÃ¢.frame.setLocationRelativeTo(null); // Ã¢ Áß°£¿¡ ³ª¿À°ÔÇÔ
-				¹Ì¼ÇÇÁ·¹ÀÓ»õÃ¢.frame.setResizable(false);
+				ë¯¸ì…˜í”„ë ˆì„ ë¯¸ì…˜í”„ë ˆì„ìƒˆì°½ = new ë¯¸ì…˜í”„ë ˆì„();
+				ë¯¸ì…˜í”„ë ˆì„ìƒˆì°½.frame.setVisible(true);
+				ë¯¸ì…˜í”„ë ˆì„ìƒˆì°½.frame.setLocationRelativeTo(null); // ì°½ ì¤‘ê°„ì— ë‚˜ì˜¤ê²Œí•¨
+				ë¯¸ì…˜í”„ë ˆì„ìƒˆì°½.frame.setResizable(false);
 			}
 		});
-		Ãë¹Ì¹öÆ°.setBounds(30, 210, 370, 80);
-		frame.getContentPane().add(Ãë¹Ì¹öÆ°);
+		ì·¨ë¯¸ë²„íŠ¼.setBounds(30, 210, 370, 80);
+		frame.getContentPane().add(ì·¨ë¯¸ë²„íŠ¼);
 		
-		JButton btnNewButton = new JButton("º¸À¯¹Ì¼Çº¸±â");
+		JButton btnNewButton = new JButton("ë³´ìœ ë¯¸ì…˜ë³´ê¸°");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				À¯Àúº¸À¯¹Ì¼Ç¸ñ·Ï À¯Àúº¸À¯¹Ì¼Ç¸ñ·Ï»õÃ¢ = new À¯Àúº¸À¯¹Ì¼Ç¸ñ·Ï();
-				À¯Àúº¸À¯¹Ì¼Ç¸ñ·Ï»õÃ¢.frame.setVisible(true); // ´ÙÀ½ ÇÁ·¹ÀÓ ¶ç¿ì±â
-				À¯Àúº¸À¯¹Ì¼Ç¸ñ·Ï»õÃ¢.frame.setLocationRelativeTo(null); // Ã¢ Áß°£¿¡ ³ª¿À°ÔÇÔ
-				À¯Àúº¸À¯¹Ì¼Ç¸ñ·Ï»õÃ¢.frame.setResizable(false);
+				ìœ ì €ë³´ìœ ë¯¸ì…˜ëª©ë¡ ìœ ì €ë³´ìœ ë¯¸ì…˜ëª©ë¡ìƒˆì°½ = new ìœ ì €ë³´ìœ ë¯¸ì…˜ëª©ë¡();
+				ìœ ì €ë³´ìœ ë¯¸ì…˜ëª©ë¡ìƒˆì°½.frame.setVisible(true); // ë‹¤ìŒ í”„ë ˆì„ ë„ìš°ê¸°
+				ìœ ì €ë³´ìœ ë¯¸ì…˜ëª©ë¡ìƒˆì°½.frame.setLocationRelativeTo(null); // ì°½ ì¤‘ê°„ì— ë‚˜ì˜¤ê²Œí•¨
+				ìœ ì €ë³´ìœ ë¯¸ì…˜ëª©ë¡ìƒˆì°½.frame.setResizable(false);
 				
 			}
 		});
 		btnNewButton.setBounds(30, 317, 122, 53);
 		frame.getContentPane().add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("ÀÌÀüÀ¸·Î");
+		JButton btnNewButton_1 = new JButton("ì´ì „ìœ¼ë¡œ");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();

@@ -14,12 +14,12 @@ import javax.swing.UIManager;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-public class ½ÃÀÛÇÁ·¹ÀÓ {
+public class ì‹œì‘í”„ë ˆì„ {
 	public JFrame frmAlpha;
-	private JTextField ¾ÆÀÌµğ;
-	private JPasswordField ÆĞ½º¿öµå;
+	private JTextField ì•„ì´ë””;
+	private JPasswordField íŒ¨ìŠ¤ì›Œë“œ;
 
-	public ½ÃÀÛÇÁ·¹ÀÓ() {
+	public ì‹œì‘í”„ë ˆì„() {
 		initialize();
 	}
 
@@ -28,106 +28,106 @@ public class ½ÃÀÛÇÁ·¹ÀÓ {
 		
 		frmAlpha = new JFrame();
 		frmAlpha.getContentPane().setBackground(new Color(255, 255, 255));
-		frmAlpha.setTitle("ÇÁ·ÎÁ§Æ® ´Ù¸¶°íÄ¡ alpha_0.00");
+		frmAlpha.setTitle("í”„ë¡œì íŠ¸ ë‹¤ë§ˆê³ ì¹˜ alpha_0.00");
 		frmAlpha.setBounds(100, 100, 545, 507);
 		frmAlpha.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmAlpha.getContentPane().setLayout(null);
 
-		ImageIcon ¸ŞÀÎ = new ImageIcon("¸ŞÀÎ¿¹½Ã¿øº».gif");
-		JLabel ¸ŞÀÎÀÌ¹ÌÁö = new JLabel(¸ŞÀÎ);
-		¸ŞÀÎÀÌ¹ÌÁö.setForeground(UIManager.getColor("Button.focus"));
-		¸ŞÀÎÀÌ¹ÌÁö.setBackground(new Color(0, 0, 0));
-		¸ŞÀÎÀÌ¹ÌÁö.setBounds(12, 10, 505, 259);
-		frmAlpha.getContentPane().add(¸ŞÀÎÀÌ¹ÌÁö);
+		ImageIcon ë©”ì¸ = new ImageIcon("ë©”ì¸ì˜ˆì‹œì›ë³¸.gif");
+		JLabel ë©”ì¸ì´ë¯¸ì§€ = new JLabel(ë©”ì¸);
+		ë©”ì¸ì´ë¯¸ì§€.setForeground(UIManager.getColor("Button.focus"));
+		ë©”ì¸ì´ë¯¸ì§€.setBackground(new Color(0, 0, 0));
+		ë©”ì¸ì´ë¯¸ì§€.setBounds(12, 10, 505, 259);
+		frmAlpha.getContentPane().add(ë©”ì¸ì´ë¯¸ì§€);
 
-		¾ÆÀÌµğ = new JTextField();
-		¾ÆÀÌµğ.setBounds(164, 307, 205, 21);
-		frmAlpha.getContentPane().add(¾ÆÀÌµğ);
-		¾ÆÀÌµğ.setColumns(10);
+		ì•„ì´ë”” = new JTextField();
+		ì•„ì´ë””.setBounds(164, 307, 205, 21);
+		frmAlpha.getContentPane().add(ì•„ì´ë””);
+		ì•„ì´ë””.setColumns(10);
 		
 
-		ÆĞ½º¿öµå = new JPasswordField();
-		ÆĞ½º¿öµå.addKeyListener(new KeyAdapter() {
+		íŒ¨ìŠ¤ì›Œë“œ = new JPasswordField();
+		íŒ¨ìŠ¤ì›Œë“œ.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if(e.getKeyChar() == KeyEvent.VK_ENTER   ) {
 					
-				/*¾ÆÀÌµğ¿Í ÆĞ½º¿öµå¸¦ ½ºÆ®¸µÀ¸·Î º¯È¯ ÈÄ µ¥ÀÌÅÍ¿Í ºñ±³
-				 if(¾ÆÀÌµğ ºñ¹Ğ¹øÈ£°¡ µ¥º£¿¡ ÀÖÀ¸¸é  ¾Æ·¡±¸¹® ½ÇÇà) */
+				/*ì•„ì´ë””ì™€ íŒ¨ìŠ¤ì›Œë“œë¥¼ ìŠ¤íŠ¸ë§ìœ¼ë¡œ ë³€í™˜ í›„ ë°ì´í„°ì™€ ë¹„êµ
+				 if(ì•„ì´ë”” ë¹„ë°€ë²ˆí˜¸ê°€ ë°ë² ì— ìˆìœ¼ë©´  ì•„ë˜êµ¬ë¬¸ ì‹¤í–‰) */
 					
-				¸ŞÀÎÈ­¸éÇÁ·¹ÀÓ ¸ŞÀÎÈ­¸éÇÁ·¹ÀÓ»õÃ¢ = new ¸ŞÀÎÈ­¸éÇÁ·¹ÀÓ();
-				¸ŞÀÎÈ­¸éÇÁ·¹ÀÓ»õÃ¢.frame.setVisible(true); // ´ÙÀ½ ÇÁ·¹ÀÓ ¶ç¿ì±â
-				¸ŞÀÎÈ­¸éÇÁ·¹ÀÓ»õÃ¢.frame.setBounds(100, 100, 815, 526);
-				¸ŞÀÎÈ­¸éÇÁ·¹ÀÓ»õÃ¢.frame.setLocationRelativeTo(null); // Ã¢ Áß°£¿¡ ³ª¿À°ÔÇÔ
-				¸ŞÀÎÈ­¸éÇÁ·¹ÀÓ»õÃ¢.frame.setResizable(false);
+				ë©”ì¸í™”ë©´í”„ë ˆì„ ë©”ì¸í™”ë©´í”„ë ˆì„ìƒˆì°½ = new ë©”ì¸í™”ë©´í”„ë ˆì„();
+				ë©”ì¸í™”ë©´í”„ë ˆì„ìƒˆì°½.frame.setVisible(true); // ë‹¤ìŒ í”„ë ˆì„ ë„ìš°ê¸°
+				ë©”ì¸í™”ë©´í”„ë ˆì„ìƒˆì°½.frame.setBounds(100, 100, 815, 526);
+				ë©”ì¸í™”ë©´í”„ë ˆì„ìƒˆì°½.frame.setLocationRelativeTo(null); // ì°½ ì¤‘ê°„ì— ë‚˜ì˜¤ê²Œí•¨
+				ë©”ì¸í™”ë©´í”„ë ˆì„ìƒˆì°½.frame.setResizable(false);
 				frmAlpha.setVisible(false);
-				/*¿¤½º¸é  °æ°í¹®*/
+				/*ì—˜ìŠ¤ë©´  ê²½ê³ ë¬¸*/
 				}
 			}
 		});
 		
-		ÆĞ½º¿öµå.setBounds(164, 350, 205, 21);
-		frmAlpha.getContentPane().add(ÆĞ½º¿öµå);
-		ÆĞ½º¿öµå.setColumns(10);
+		íŒ¨ìŠ¤ì›Œë“œ.setBounds(164, 350, 205, 21);
+		frmAlpha.getContentPane().add(íŒ¨ìŠ¤ì›Œë“œ);
+		íŒ¨ìŠ¤ì›Œë“œ.setColumns(10);
 
-		È¸¿ø°¡ÀÔÇÁ·¹ÀÓ È¸¿ø°¡ÀÔ»õÃ¢ = new È¸¿ø°¡ÀÔÇÁ·¹ÀÓ();
-		JButton È¸¿ø°¡ÀÔ = new JButton("È¸¿ø°¡ÀÔ");
-		È¸¿ø°¡ÀÔ.addActionListener(new ActionListener() {
+		íšŒì›ê°€ì…í”„ë ˆì„ íšŒì›ê°€ì…ìƒˆì°½ = new íšŒì›ê°€ì…í”„ë ˆì„();
+		JButton íšŒì›ê°€ì… = new JButton("íšŒì›ê°€ì…");
+		íšŒì›ê°€ì….addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				È¸¿ø°¡ÀÔ»õÃ¢.frame.setVisible(true); // ´ÙÀ½ ÇÁ·¹ÀÓ ¶ç¿ì±â
-				È¸¿ø°¡ÀÔ»õÃ¢.frame.setBounds(100, 100, 450, 445);
-				È¸¿ø°¡ÀÔ»õÃ¢.frame.setLocationRelativeTo(null); // Ã¢ Áß°£¿¡ ³ª¿À°ÔÇÔ
+				íšŒì›ê°€ì…ìƒˆì°½.frame.setVisible(true); // ë‹¤ìŒ í”„ë ˆì„ ë„ìš°ê¸°
+				íšŒì›ê°€ì…ìƒˆì°½.frame.setBounds(100, 100, 450, 445);
+				íšŒì›ê°€ì…ìƒˆì°½.frame.setLocationRelativeTo(null); // ì°½ ì¤‘ê°„ì— ë‚˜ì˜¤ê²Œí•¨
 			}
 		});
-		È¸¿ø°¡ÀÔ.setBounds(12, 412, 130, 23);
-		frmAlpha.getContentPane().add(È¸¿ø°¡ÀÔ);
+		íšŒì›ê°€ì….setBounds(12, 412, 130, 23);
+		frmAlpha.getContentPane().add(íšŒì›ê°€ì…);
 
-		JButton ·Î±×ÀÎ = new JButton("·Î±×ÀÎ");
-		·Î±×ÀÎ.addActionListener(new ActionListener() {
+		JButton ë¡œê·¸ì¸ = new JButton("ë¡œê·¸ì¸");
+		ë¡œê·¸ì¸.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				/*¾ÆÀÌµğ¿Í ÆĞ½º¿öµå¸¦ ½ºÆ®¸µÀ¸·Î º¯È¯ ÈÄ µ¥ÀÌÅÍ¿Í ºñ±³
-				 if(¾ÆÀÌµğ ºñ¹Ğ¹øÈ£°¡ µ¥º£¿¡ ÀÖÀ¸¸é  ¾Æ·¡±¸¹® ½ÇÇà) */
+				/*ì•„ì´ë””ì™€ íŒ¨ìŠ¤ì›Œë“œë¥¼ ìŠ¤íŠ¸ë§ìœ¼ë¡œ ë³€í™˜ í›„ ë°ì´í„°ì™€ ë¹„êµ
+				 if(ì•„ì´ë”” ë¹„ë°€ë²ˆí˜¸ê°€ ë°ë² ì— ìˆìœ¼ë©´  ì•„ë˜êµ¬ë¬¸ ì‹¤í–‰) */
 					
-				¸ŞÀÎÈ­¸éÇÁ·¹ÀÓ ¸ŞÀÎÈ­¸éÇÁ·¹ÀÓ»õÃ¢ = new ¸ŞÀÎÈ­¸éÇÁ·¹ÀÓ();
-				¸ŞÀÎÈ­¸éÇÁ·¹ÀÓ»õÃ¢.frame.setVisible(true); // ´ÙÀ½ ÇÁ·¹ÀÓ ¶ç¿ì±â
-				¸ŞÀÎÈ­¸éÇÁ·¹ÀÓ»õÃ¢.frame.setBounds(100, 100, 815, 526);
-				¸ŞÀÎÈ­¸éÇÁ·¹ÀÓ»õÃ¢.frame.setLocationRelativeTo(null); // Ã¢ Áß°£¿¡ ³ª¿À°ÔÇÔ
-				¸ŞÀÎÈ­¸éÇÁ·¹ÀÓ»õÃ¢.frame.setResizable(false);
+				ë©”ì¸í™”ë©´í”„ë ˆì„ ë©”ì¸í™”ë©´í”„ë ˆì„ìƒˆì°½ = new ë©”ì¸í™”ë©´í”„ë ˆì„();
+				ë©”ì¸í™”ë©´í”„ë ˆì„ìƒˆì°½.frame.setVisible(true); // ë‹¤ìŒ í”„ë ˆì„ ë„ìš°ê¸°
+				ë©”ì¸í™”ë©´í”„ë ˆì„ìƒˆì°½.frame.setBounds(100, 100, 815, 526);
+				ë©”ì¸í™”ë©´í”„ë ˆì„ìƒˆì°½.frame.setLocationRelativeTo(null); // ì°½ ì¤‘ê°„ì— ë‚˜ì˜¤ê²Œí•¨
+				ë©”ì¸í™”ë©´í”„ë ˆì„ìƒˆì°½.frame.setResizable(false);
 				frmAlpha.setVisible(false);
 				
-				/*¿¤½º¸é °æ°í¹®*/
+				/*ì—˜ìŠ¤ë©´ ê²½ê³ ë¬¸*/
 
 			}
 		});
-		·Î±×ÀÎ.setBounds(204, 412, 130, 23);
-		frmAlpha.getContentPane().add(·Î±×ÀÎ);
+		ë¡œê·¸ì¸.setBounds(204, 412, 130, 23);
+		frmAlpha.getContentPane().add(ë¡œê·¸ì¸);
 
-		JButton Á¾·á = new JButton("Á¾·á");
-		Á¾·á.addActionListener(new ActionListener() {
+		JButton ì¢…ë£Œ = new JButton("ì¢…ë£Œ");
+		ì¢…ë£Œ.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
 		});
-		Á¾·á.setBounds(387, 412, 130, 23);
-		frmAlpha.getContentPane().add(Á¾·á);
+		ì¢…ë£Œ.setBounds(387, 412, 130, 23);
+		frmAlpha.getContentPane().add(ì¢…ë£Œ);
 
-		JLabel ¾ÆÀÌµğ¶óº§ = new JLabel("¾ÆÀÌµğ");
-		¾ÆÀÌµğ¶óº§.setHorizontalAlignment(SwingConstants.CENTER);
-		¾ÆÀÌµğ¶óº§.setBounds(85, 310, 57, 15);
-		frmAlpha.getContentPane().add(¾ÆÀÌµğ¶óº§);
+		JLabel ì•„ì´ë””ë¼ë²¨ = new JLabel("ì•„ì´ë””");
+		ì•„ì´ë””ë¼ë²¨.setHorizontalAlignment(SwingConstants.CENTER);
+		ì•„ì´ë””ë¼ë²¨.setBounds(85, 310, 57, 15);
+		frmAlpha.getContentPane().add(ì•„ì´ë””ë¼ë²¨);
 
-		JLabel ºñ¹Ğ¹øÈ£¶óº§ = new JLabel("ºñ¹Ğ¹øÈ£");
-		ºñ¹Ğ¹øÈ£¶óº§.setHorizontalAlignment(SwingConstants.CENTER);
-		ºñ¹Ğ¹øÈ£¶óº§.setBounds(85, 353, 57, 15);
-		frmAlpha.getContentPane().add(ºñ¹Ğ¹øÈ£¶óº§);
+		JLabel ë¹„ë°€ë²ˆí˜¸ë¼ë²¨ = new JLabel("ë¹„ë°€ë²ˆí˜¸");
+		ë¹„ë°€ë²ˆí˜¸ë¼ë²¨.setHorizontalAlignment(SwingConstants.CENTER);
+		ë¹„ë°€ë²ˆí˜¸ë¼ë²¨.setBounds(85, 353, 57, 15);
+		frmAlpha.getContentPane().add(ë¹„ë°€ë²ˆí˜¸ë¼ë²¨);
 	}
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					½ÃÀÛÇÁ·¹ÀÓ window = new ½ÃÀÛÇÁ·¹ÀÓ();
+					ì‹œì‘í”„ë ˆì„ window = new ì‹œì‘í”„ë ˆì„();
 					window.frmAlpha.setVisible(true);
 					window.frmAlpha.setLocationRelativeTo(null);
 				} catch (Exception e) {

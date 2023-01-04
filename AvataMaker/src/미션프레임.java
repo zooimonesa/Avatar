@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Color;
 
-public class ¹Ì¼ÇÇÁ·¹ÀÓ {
+public class ë¯¸ì…˜í”„ë ˆì„ {
 
 	JFrame frame;
 
@@ -15,7 +15,7 @@ public class ¹Ì¼ÇÇÁ·¹ÀÓ {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					¹Ì¼ÇÇÁ·¹ÀÓ window = new ¹Ì¼ÇÇÁ·¹ÀÓ();
+					ë¯¸ì…˜í”„ë ˆì„ window = new ë¯¸ì…˜í”„ë ˆì„();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -24,32 +24,32 @@ public class ¹Ì¼ÇÇÁ·¹ÀÓ {
 		});
 	}
 
-	public ¹Ì¼ÇÇÁ·¹ÀÓ() {
+	public ë¯¸ì…˜í”„ë ˆì„() {
 		initialize();
 	}
 
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(255, 255, 255));
-		frame.setTitle("¹Ì¼Ç");
+		frame.setTitle("ë¯¸ì…˜");
 		frame.setBounds(100, 100, 450, 450);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel btnNewButton = new JLabel("ÇÏ·ç¹Ì¼Ç~~");// µ¥ÀÌÅÍº£ÀÌ½º°ªÀ» ·£´ıÀ¸·Î º¸¿©ÁÖ±â //¿îµ¿À» ´­·¶À»¶§ ¿îµ¿¸¸ ³ª¿À°ÔÇÏ´Â°Ô °¡´ÉÇÑ°¡¿ä?
+		JLabel btnNewButton = new JLabel("í•˜ë£¨ë¯¸ì…˜~~");// ë°ì´í„°ë² ì´ìŠ¤ê°’ì„ ëœë¤ìœ¼ë¡œ ë³´ì—¬ì£¼ê¸° //ìš´ë™ì„ ëˆŒë €ì„ë•Œ ìš´ë™ë§Œ ë‚˜ì˜¤ê²Œí•˜ëŠ”ê²Œ ê°€ëŠ¥í•œê°€ìš”?
 		btnNewButton.setBounds(55, 30, 250, 50);
 		frame.getContentPane().add(btnNewButton);
 		
-		JLabel btnNewButton_1 = new JLabel("ÇÏ·ç¹Ì¼Ç~~");
+		JLabel btnNewButton_1 = new JLabel("í•˜ë£¨ë¯¸ì…˜~~");
 		btnNewButton_1.setBounds(55, 124, 250, 50);
 		frame.getContentPane().add(btnNewButton_1);
 		
-		JLabel btnNewButton_2 = new JLabel("ÀÏÁÖÀÏ ¹Ì¼Ç~~");
+		JLabel btnNewButton_2 = new JLabel("ì¼ì£¼ì¼ ë¯¸ì…˜~~");
 		btnNewButton_2.setBounds(55, 218, 250, 50);
 		frame.getContentPane().add(btnNewButton_2);
 		
 		
-		JButton btnNewButton_3_1 = new JButton("ÀÌÀüÀ¸·Î");
+		JButton btnNewButton_3_1 = new JButton("ì´ì „ìœ¼ë¡œ");
 		btnNewButton_3_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
@@ -58,27 +58,27 @@ public class ¹Ì¼ÇÇÁ·¹ÀÓ {
 		btnNewButton_3_1.setBounds(161, 332, 140, 50);
 		frame.getContentPane().add(btnNewButton_3_1);
 		
-		JButton btnNewButton_4 = new JButton("¼±ÅÃÇÏ±â"); //ÁøÇàÁßÀÎ ¹Ì¼ÇÀÌ °¡µæÂ÷ ÀÖÀ¸¸é °¡µæÂş´Ù°í ¾Ë·ÁÁÜ ±×¸®°í µî·Ï¾ÈµÊ
+		JButton btnNewButton_4 = new JButton("ì„ íƒí•˜ê¸°"); //ì§„í–‰ì¤‘ì¸ ë¯¸ì…˜ì´ ê°€ë“ì°¨ ìˆìœ¼ë©´ ê°€ë“ì°»ë‹¤ê³  ì•Œë ¤ì¤Œ ê·¸ë¦¬ê³  ë“±ë¡ì•ˆë¨
 		btnNewButton_4.setBounds(325, 30, 97, 23);
 		frame.getContentPane().add(btnNewButton_4);
 		
-		JButton btnNewButton_4_1 = new JButton("»õ·Î°íÄ§");//ÇÑ¹ø ´©¸£´Â°Ç°¡´É µÎ¹øÂ°´©¸£´Â°Ç µ·ÀÌµé°Ô Ä«¿îµåÀÎÆ®¸¦ ½×¾Æµµ µÇ°í Á¤Èûµé¸é Ã³À½ºÎÅÍ¹ŞÀÚ
+		JButton btnNewButton_4_1 = new JButton("ìƒˆë¡œê³ ì¹¨");//í•œë²ˆ ëˆ„ë¥´ëŠ”ê±´ê°€ëŠ¥ ë‘ë²ˆì§¸ëˆ„ë¥´ëŠ”ê±´ ëˆì´ë“¤ê²Œ ì¹´ìš´ë“œì¸íŠ¸ë¥¼ ìŒ“ì•„ë„ ë˜ê³  ì •í˜ë“¤ë©´ ì²˜ìŒë¶€í„°ë°›ì
 		btnNewButton_4_1.setBounds(325, 61, 97, 23);
 		frame.getContentPane().add(btnNewButton_4_1);
 		
-		JButton btnNewButton_4_2 = new JButton("¼±ÅÃÇÏ±â");
+		JButton btnNewButton_4_2 = new JButton("ì„ íƒí•˜ê¸°");
 		btnNewButton_4_2.setBounds(325, 124, 97, 23);
 		frame.getContentPane().add(btnNewButton_4_2);
 		
-		JButton btnNewButton_4_1_1 = new JButton("»õ·Î°íÄ§");
+		JButton btnNewButton_4_1_1 = new JButton("ìƒˆë¡œê³ ì¹¨");
 		btnNewButton_4_1_1.setBounds(325, 155, 97, 23);
 		frame.getContentPane().add(btnNewButton_4_1_1);
 		
-		JButton btnNewButton_4_3 = new JButton("¼±ÅÃÇÏ±â");  //ÀÏÁÖÀÏÂ¥¸®¹Ì¼ÇÀº ÀÏÁÖÀÏÄ­¿¡ µé¾î°¡°Ô
+		JButton btnNewButton_4_3 = new JButton("ì„ íƒí•˜ê¸°");  //ì¼ì£¼ì¼ì§œë¦¬ë¯¸ì…˜ì€ ì¼ì£¼ì¼ì¹¸ì— ë“¤ì–´ê°€ê²Œ
 		btnNewButton_4_3.setBounds(325, 218, 97, 23);
 		frame.getContentPane().add(btnNewButton_4_3);
 		
-		JButton btnNewButton_4_1_2 = new JButton("»õ·Î°íÄ§");
+		JButton btnNewButton_4_1_2 = new JButton("ìƒˆë¡œê³ ì¹¨");
 		btnNewButton_4_1_2.setBounds(325, 249, 97, 23);
 		frame.getContentPane().add(btnNewButton_4_1_2);
 	}
