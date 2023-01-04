@@ -37,19 +37,19 @@ public class LogFrame {
       frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
       frame.getContentPane().setLayout(null);
       
-      JLabel 로그텍스트라벨 = new JLabel("로그");
-      로그텍스트라벨.setVerticalAlignment(SwingConstants.TOP);
-      로그텍스트라벨.setHorizontalAlignment(SwingConstants.LEFT);
-      로그텍스트라벨.setBounds(12, 10, 403, 410);
-      frame.getContentPane().add(로그텍스트라벨);
+      JLabel logYourText = new JLabel("로그");
+      logYourText.setVerticalAlignment(SwingConstants.TOP);
+      logYourText.setHorizontalAlignment(SwingConstants.LEFT);
+      logYourText.setBounds(12, 10, 403, 410);
+      frame.getContentPane().add(logYourText);
       
-      JButton 닫기버튼 = new JButton("닫기");
-      닫기버튼.addActionListener(new ActionListener() {
+      JButton exit = new JButton("닫기");
+      exit.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
             frame.dispose();
          }
       });
-      닫기버튼.setBounds(291, 430, 124, 71);
-      frame.getContentPane().add(닫기버튼);
+      exit.setBounds(291, 430, 124, 71);
+      frame.getContentPane().add(exit);
    }
 }
