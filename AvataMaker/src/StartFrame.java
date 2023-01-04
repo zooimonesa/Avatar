@@ -13,7 +13,7 @@ import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-
+ 
 public class StartFrame {
    public JFrame frmAlpha;
    private JTextField id;

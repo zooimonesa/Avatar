@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class UserOwnMissionList {
+public class UserOwnMissionListFrame {
 
    JFrame frame;
 
@@ -19,7 +19,7 @@ public class UserOwnMissionList {
       EventQueue.invokeLater(new Runnable() {
          public void run() {
             try {
-               UserOwnMissionList window = new UserOwnMissionList();
+               UserOwnMissionListFrame window = new UserOwnMissionListFrame();
                window.frame.setVisible(true);
             } catch (Exception e) {
                e.printStackTrace();
@@ -31,7 +31,7 @@ public class UserOwnMissionList {
    /**
     * Create the application.
     */
-   public UserOwnMissionList() {
+   public UserOwnMissionListFrame() {
       initialize();
    }
 

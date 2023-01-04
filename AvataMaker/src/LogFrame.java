@@ -20,7 +20,7 @@ public class LogFrame {
                window.frame.setVisible(true);
             } catch (Exception e) {
                e.printStackTrace();
-            }
+            } 
          }
       });
    }

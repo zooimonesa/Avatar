@@ -11,7 +11,7 @@ import javax.swing.SwingConstants;
 import java.awt.Color;
 
 public class SignUpFrame {
-
+ 
    JFrame frame;
    private JTextField idTextField;
    private JPasswordField passwordTextField;

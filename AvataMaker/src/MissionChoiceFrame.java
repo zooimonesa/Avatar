@@ -21,7 +21,7 @@ public class MissionChoiceFrame {
             }
          }
       });
-   }
+   } 
 
    public MissionChoiceFrame() {
       initialize();
@@ -75,7 +75,7 @@ public class MissionChoiceFrame {
       JButton userOwnMissionButton = new JButton("보유미션보기");
       userOwnMissionButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
-            UserOwnMissionList userOwnMissionList = new UserOwnMissionList();
+            UserOwnMissionListFrame userOwnMissionList = new UserOwnMissionListFrame();
             userOwnMissionList.frame.setVisible(true); // 다음 프레임 띄우기
             userOwnMissionList.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
             userOwnMissionList.frame.setResizable(false);
