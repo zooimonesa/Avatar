@@ -8,11 +8,13 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.border.LineBorder;
 
 public class MainFrame {
 
 	JFrame frame;
-
+	private LineBorder bb = new LineBorder(Color.black, 1, true);
+	
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -59,6 +61,7 @@ public class MainFrame {
 		storyLabel.setBackground(new Color(192, 192, 192));
 		storyLabel.setVerticalAlignment(SwingConstants.TOP);
 		storyLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		storyLabel.setBorder(bb);
 		storyLabel.setBounds(40, 291, 150, 160);
 		frame.getContentPane().add(storyLabel);
 
@@ -129,10 +132,14 @@ public class MainFrame {
 		});
 		logOutButton.setBounds(642, 291, 97, 50);
 		frame.getContentPane().add(logOutButton);
+		
+		JButton deleteUserInfo = new JButton("회원탈퇴");
+		deleteUserInfo.setBounds(642, 401, 97, 50);
+		frame.getContentPane().add(deleteUserInfo);
 
-		JLabel userPointLabel = new JLabel("포인트");
-		userPointLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		userPointLabel.setBounds(533, 351, 206, 100);
+		JLabel userPointLabel = new JLabel("포인트:");
+		userPointLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		userPointLabel.setBounds(533, 351, 97, 50);
 		frame.getContentPane().add(userPointLabel);
 
 		JLabel charHeadLabel = new JLabel();
@@ -153,6 +160,12 @@ public class MainFrame {
 		
 		JLabel charBackgroundLabel = new JLabel(배경);
 		charBackgroundLabel.setBounds(40, 40, 150, 200);
+		userCharLabel.setBorder(bb);
 		frame.getContentPane().add(charBackgroundLabel);
+		
+		JLabel userPointLabel_1 = new JLabel("~~포인트");
+		userPointLabel_1.setHorizontalAlignment(SwingConstants.RIGHT);
+		userPointLabel_1.setBounds(642, 351, 97, 50);
+		frame.getContentPane().add(userPointLabel_1);
 	}
 }
