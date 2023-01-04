@@ -1,3 +1,5 @@
+package User;
+
 public interface UserinfoService {
 	int INPUT_NOT_VALID = -1; 
 	int EMAIL_DUPLICATED = -2;

@@ -1,3 +1,5 @@
+package User;
+
 
 public class DataIOException extends RuntimeException{ 
 

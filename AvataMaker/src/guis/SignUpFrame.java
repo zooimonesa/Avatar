@@ -1,3 +1,6 @@
+package guis;
+
+
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,6 +12,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+
+import User.SignUserIn;
+
 import java.awt.Color;
 
 public class SignUpFrame {

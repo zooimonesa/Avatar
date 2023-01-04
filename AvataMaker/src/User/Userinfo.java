@@ -1,3 +1,5 @@
+package User;
+
 
 public class Userinfo { 
 	private int user_pk;

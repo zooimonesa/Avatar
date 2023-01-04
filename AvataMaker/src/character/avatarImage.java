@@ -1,3 +1,4 @@
+package character;
 import java.nio.file.Path;
 
 public interface avatarImage {

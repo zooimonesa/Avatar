@@ -1,3 +1,6 @@
+package guis;
+
+
 import java.awt.Color;
 import java.awt.EventQueue;
 

@@ -1,3 +1,5 @@
+package User;
+
 import java.sql.Connection;
  
 public interface UserinfoRepository {
