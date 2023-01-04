@@ -185,7 +185,7 @@ public class UserOwnMissionListFrame {
 		btnNewButton_10.setBounds(175, 473, 117, 23);
 		frame.getContentPane().add(btnNewButton_10);
 		frame.setBounds(100, 100, 471, 545);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 
 }
