@@ -1,5 +1,5 @@
 
-public class Userinfo {
+public class Userinfo { 
 	private int user_pk;
 	private String ID;
 	private String password;

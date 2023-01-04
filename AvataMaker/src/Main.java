@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-// 간단한 입력(콘솔 입력)
+// 간단한 입력(콘솔 입력) 
 
 // 1. 회원가입
 

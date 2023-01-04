@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import dbutil.ConnectionProvider;
-
+ 
 public class UserinfoRepositoryImpl implements UserinfoRepository {
 	@Override
 	public int countByID(String ID) {

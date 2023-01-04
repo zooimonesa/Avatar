@@ -1,5 +1,5 @@
 import java.sql.Connection;
-
+ 
 public interface UserinfoRepository {
 	 int countByID(String ID);
 	 Userinfo selectByID(String ID);
