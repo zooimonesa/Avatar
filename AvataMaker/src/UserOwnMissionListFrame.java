@@ -14,9 +14,6 @@ public class UserOwnMissionListFrame {
 
 	JFrame frame;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -32,16 +29,10 @@ public class UserOwnMissionListFrame {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public UserOwnMissionListFrame() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		frame = new JFrame();
 		frame.setTitle("보유미션");
