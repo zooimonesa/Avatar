@@ -53,7 +53,7 @@ public class UserOwnMissionListFrame {
 		lblNewLabel.setBounds(187, 10, 73, 30);
 		frame.getContentPane().add(lblNewLabel);
 		
-		JPanel oneDayMissionPanel = new JPanel();
+		JPanel oneDayMissionPanel = new JPanel();  // 일일미션패널 ====================================================
 		oneDayMissionPanel.setBackground(new Color(255, 255, 255));
 		oneDayMissionPanel.setToolTipText("");
 		oneDayMissionPanel.setBorder(new TitledBorder(null, "일일미션", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -133,7 +133,7 @@ public class UserOwnMissionListFrame {
 		btnNewButton_1_5.setBounds(380, 217, 57, 30);
 		oneDayMissionPanel.add(btnNewButton_1_5);
 		
-		JPanel oneWeekMissionPanel = new JPanel();
+		JPanel oneWeekMissionPanel = new JPanel(); // 주간미션패널 ===================================================
 		oneWeekMissionPanel.setBackground(new Color(255, 255, 255));
 		oneWeekMissionPanel.setBorder(new TitledBorder(null, "주간미션", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		oneWeekMissionPanel.setBounds(6, 301, 443, 142);
