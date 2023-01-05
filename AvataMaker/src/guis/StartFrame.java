@@ -103,12 +103,9 @@ public class StartFrame {
 //					mainFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 //					mainFrame.frame.setResizable(false);
 //					frmAlpha.setVisible(false);
-
-					MainFrame mainFrame = new MainFrame();
-					mainFrame.frame.setVisible(true); // 다음 프레임 띄우기
-					mainFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
-					mainFrame.frame.setResizable(false);
-					frmAlpha.setVisible(false);
+					
+			 
+					frmAlpha.dispose();
 					clip.stop();
 				}
 			}
@@ -145,7 +142,7 @@ public class StartFrame {
 //				mainFrame.frame.setVisible(true); // 다음 프레임 띄우기
 //				mainFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 //				mainFrame.frame.setResizable(false);
-//				frmAlpha.setVisible(false);
+				frmAlpha.dispose();
 			}
 		});
 
