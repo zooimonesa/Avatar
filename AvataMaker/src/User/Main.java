@@ -48,9 +48,9 @@ public class Main {
 			System.out.println("아이디 번호 입력");
 			int id = scan.nextInt();
 			
-			int result = service.userout(id);
+			//int result = service.userout(id);
 			
-			System.out.println(result == 1 ? "삭제됨" : "삭제안됨");
+			//System.out.println(result == 1 ? "삭제됨" : "삭제안됨");
 		}
 	}
 }

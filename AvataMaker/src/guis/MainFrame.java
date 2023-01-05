@@ -18,6 +18,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
 import User.GetInfo;
+import User.SignUserIn;
 
 public class MainFrame {
 
@@ -175,6 +176,9 @@ public class MainFrame {
 						if (deleteInfo.equals("지금탈퇴")) {
 
 							// 회원탈퇴메소드넣기
+							SignUserIn sui = new SignUserIn();
+							 
+							 sui.DeleteUser();
 
 							JOptionPane.showMessageDialog(null, "회원탈퇴되었습니다. 로그인창으로 이동합니다.", "회원탈퇴",
 									JOptionPane.WARNING_MESSAGE);

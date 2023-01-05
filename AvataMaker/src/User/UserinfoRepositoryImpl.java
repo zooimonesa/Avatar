@@ -74,11 +74,33 @@ public class UserinfoRepositoryImpl implements UserinfoRepository {
 		return 0;
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	@Override
-	public int countBypk(int pkid, Connection conn) {
-		String sql = "SELECT count(*) FROM userinfo WHERE user_pk = ?";
+	public int countBypk(String ID, Connection conn) {
+		String sql = "SELECT count(*) FROM userinfo WHERE ID = ?";
 		try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-			stmt.setInt(1, pkid);
+			stmt.setString(1, ID);
 			
 			try (ResultSet rs = stmt.executeQuery()) {
 				if (rs.next()) {
@@ -92,11 +114,11 @@ public class UserinfoRepositoryImpl implements UserinfoRepository {
 	}
 
 	@Override
-	public int move(int pkid, Connection conn) {
+	public int move(String ID, Connection conn) {
 		String sql = "INSERT INTO userinfo_inactive (user_pk, ID, password, nickname,point, health, intelligence, talent )"
-				+ " SELECT * FROM userinfo WHERE user_pk = ?";
+				+ " SELECT * FROM userinfo WHERE ID = ?";
 		try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-			stmt.setInt(1, pkid);
+			stmt.setString(1, ID);
 			
 			return stmt.executeUpdate();
 		} catch (SQLException e) {
@@ -105,10 +127,10 @@ public class UserinfoRepositoryImpl implements UserinfoRepository {
 	}
 
 	@Override
-	public int delete(int pkid, Connection conn) {
-		String sql = "DELETE FROM userinfo WHERE user_pk = ?";
+	public int delete(String ID, Connection conn) {
+		String sql = "DELETE FROM userinfo WHERE ID = ?";
 		try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-			stmt.setInt(1, pkid);
+			stmt.setString(1, ID);
 			
 			return stmt.executeUpdate();
 		} catch (SQLException e) {

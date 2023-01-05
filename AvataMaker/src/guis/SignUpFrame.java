@@ -106,31 +106,8 @@ public class SignUpFrame {
 		nickNameTextField.setBounds(126, 116, 133, 21);
 		frame.getContentPane().add(nickNameTextField); 
 
-		JButton idDoubleCheckButton = new JButton("아이디 중복 확인");
-		idDoubleCheckButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				JOptionPane.showMessageDialog(null, "사용가능한 아이디입니다", "Message", JOptionPane.INFORMATION_MESSAGE); // 사용가능하면 출력
-
-				JOptionPane.showMessageDialog(null, "이미존재하는 아이디입니다", "Message", JOptionPane.ERROR_MESSAGE); // 이미존재하면 출력
-
-			}
-		});
-		idDoubleCheckButton.setBounds(294, 40, 128, 23);
-		frame.getContentPane().add(idDoubleCheckButton);
-
-		JButton nickNameDoubleCheckButton = new JButton("닉네임 중복 확인");
-		nickNameDoubleCheckButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "사용가능한 닉네임입니다", "Message", JOptionPane.INFORMATION_MESSAGE); // 사용가능하면 출력
-
-				JOptionPane.showMessageDialog(null, "이미존재하는 닉네임입니다", "Message", JOptionPane.ERROR_MESSAGE); // 이미존재하면 출력
-
-			}
-		});
-		nickNameDoubleCheckButton.setBounds(294, 115, 128, 23);
-		frame.getContentPane().add(nickNameDoubleCheckButton);
-
+		 
+		 
 		JButton signUpButton = new JButton("가입하기");
 		signUpButton.setBounds(95, 373, 97, 23);
 		frame.getContentPane().add(signUpButton);
