@@ -2,6 +2,9 @@ package guis;
 
 
 import java.awt.EventQueue;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,6 +19,7 @@ import javax.swing.SwingConstants;
 import User.SignUserIn;
 
 import java.awt.Color;
+import java.awt.Cursor;
 
 public class SignUpFrame {
 
@@ -46,7 +50,17 @@ public class SignUpFrame {
 
 	public SignUpFrame() {
 		initialize();
+		customcursor();
 	}
+	
+	public void customcursor() { // 마우스포인터 ====================================
+		
+		Toolkit tk = Toolkit.getDefaultToolkit();
+		Image cursorimage = tk.getImage("농담곰_대형견_커서.png");
+		Point point = new Point(20, 20);
+		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
+		frame.setCursor(cursor);
+	} // =======================================================
 
 	private void initialize() {
 		frame = new JFrame();

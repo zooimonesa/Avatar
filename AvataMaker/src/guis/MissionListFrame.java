@@ -1,6 +1,9 @@
 package guis;
 
 import java.awt.EventQueue;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JButton;
@@ -12,6 +15,7 @@ import mission.missionSelect;
 import mission.missionSelectImpl;
 
 import java.awt.Color;
+import java.awt.Cursor;
 
 public class MissionListFrame {
 	
@@ -40,7 +44,17 @@ public class MissionListFrame {
 
 	public MissionListFrame(String selectB) {
 		initialize(selectB);
+		customcursor();
 	}
+	
+	public void customcursor() { // 마우스포인터 ====================================
+		
+		Toolkit tk = Toolkit.getDefaultToolkit();
+		Image cursorimage = tk.getImage("마우스포인터_1.png");
+		Point point = new Point(20, 20);
+		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
+		frame.setCursor(cursor);
+	} // =======================================================
 
 	private void initialize(String selectB) {
 		// 인터페이스 불러오기

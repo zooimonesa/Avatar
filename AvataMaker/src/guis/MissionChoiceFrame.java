@@ -1,9 +1,11 @@
 package guis;
 
-
-
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.EventQueue;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Toolkit;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -32,7 +34,17 @@ public class MissionChoiceFrame {
 
 	public MissionChoiceFrame() {
 		initialize();
+		customcursor();
 	}
+
+	public void customcursor() { // 마우스포인터 ====================================
+
+		Toolkit tk = Toolkit.getDefaultToolkit();
+		Image cursorimage = tk.getImage("마우스포인터_1.png");
+		Point point = new Point(20, 20);
+		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
+		frame.setCursor(cursor);
+	} // =======================================================
 
 	private void initialize() {
 		frame = new JFrame();
@@ -78,7 +90,7 @@ public class MissionChoiceFrame {
 		});
 		hobbyButton.setBounds(30, 210, 370, 80);
 		frame.getContentPane().add(hobbyButton);
-		
+
 		JButton userOwnMissionButton = new JButton("보유미션보기");
 		userOwnMissionButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -86,17 +98,17 @@ public class MissionChoiceFrame {
 				userOwnMissionListFrame.frame.setVisible(true); // 다음 프레임 띄우기
 				userOwnMissionListFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				userOwnMissionListFrame.frame.setResizable(false);
-				
+
 			}
 		});
 		userOwnMissionButton.setBounds(30, 317, 122, 53);
 		frame.getContentPane().add(userOwnMissionButton);
-		
+
 		JButton previousButton = new JButton("이전으로");
 		previousButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
-				
+
 			}
 		});
 		previousButton.setBounds(278, 317, 122, 53);

@@ -1,7 +1,11 @@
 package guis;
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.EventQueue;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,16 +20,15 @@ import javax.swing.border.LineBorder;
 import User.GetInfo;
 
 public class MainFrame {
-	
+
 	GetInfo mf = new GetInfo();
-	String mainid = mf.fmainid;  //태현
+	String mainid = mf.fmainid; // 태현
 	String mainnickname = mf.fmainnickname;
 	int mainpoint = mf.fmainpoint;
 	int mainhealth = mf.fmainhealth;
 	int mainintelligence = mf.fmainintelligence;
 	int maintalent = mf.fmaintalent;
-	
-	
+
 	public JFrame frame;
 	private LineBorder bb = new LineBorder(Color.black, 1, true);
 
@@ -47,7 +50,17 @@ public class MainFrame {
 
 	public MainFrame() {
 		initialize();
+		customcursor();
 	}
+
+	public void customcursor() { // 마우스포인터 ====================================
+
+		Toolkit tk = Toolkit.getDefaultToolkit();
+		Image cursorimage = tk.getImage("마우스포인터_1.png");
+		Point point = new Point(20, 20);
+		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
+		frame.setCursor(cursor);
+	} // =======================================================
 
 	private void initialize() {
 		frame = new JFrame();
@@ -155,10 +168,11 @@ public class MainFrame {
 			public void actionPerformed(ActionEvent e) {
 				while (true) {
 					if (e.getActionCommand().equals("회원탈퇴")) { // 회원탈퇴 버튼 ====================================
-						String deleteInfo = JOptionPane.showInputDialog(null, "회원탈퇴를 원하시면 '지금탈퇴'를 입력하세요. ", "회원탈퇴", JOptionPane.OK_CANCEL_OPTION);
+						String deleteInfo = JOptionPane.showInputDialog(null, "회원탈퇴를 원하시면 '지금탈퇴'를 입력하세요. ", "회원탈퇴",
+								JOptionPane.OK_CANCEL_OPTION);
 
 						if (deleteInfo.equals("지금탈퇴")) {
-							
+
 							// 회원탈퇴메소드넣기
 
 							JOptionPane.showMessageDialog(null, "회원탈퇴되었습니다. 로그인창으로 이동합니다.", "회원탈퇴",
@@ -169,13 +183,12 @@ public class MainFrame {
 							startFrame.frmAlpha.setLocationRelativeTo(null); // 창 중간에 나오게함
 							startFrame.frmAlpha.setResizable(false);
 							frame.dispose();
-							
 
 							break;
 
 						} else if (!deleteInfo.equals("지금탈퇴")) {
 							JOptionPane.showMessageDialog(null, "잘못입력하셨습니다.", "회원탈퇴", JOptionPane.PLAIN_MESSAGE);
-						} 
+						}
 
 					}
 				}

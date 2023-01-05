@@ -1,9 +1,14 @@
 package guis;
 
 import java.awt.EventQueue;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import java.awt.Color;
+import java.awt.Cursor;
+
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
@@ -39,7 +44,17 @@ public class UserOwnMissionListFrame {
 	 */
 	public UserOwnMissionListFrame() {
 		initialize();
+		customcursor();
 	}
+	
+	public void customcursor() { // 마우스포인터 ====================================
+
+		Toolkit tk = Toolkit.getDefaultToolkit();
+		Image cursorimage = tk.getImage("마우스포인터_1.png");
+		Point point = new Point(20, 20);
+		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
+		frame.setCursor(cursor);
+	} // =======================================================
 
 	/**
 	 * Initialize the contents of the frame.

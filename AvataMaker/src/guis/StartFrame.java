@@ -2,7 +2,11 @@ package guis;
 
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.EventQueue;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -28,9 +32,21 @@ public class StartFrame {
 	String userid; // 태현추가
 	String userpw; // 태현추가
 
-	public StartFrame() { 
+	public StartFrame() {
 		initialize();
+		customcursor(); // 마우스 포인터
 	}
+	
+	
+	
+	public void customcursor() { // 마우스포인터 ====================================
+		
+		Toolkit tk = Toolkit.getDefaultToolkit();
+		Image cursorimage = tk.getImage("농담곰_대형견_커서.png");
+		Point point = new Point(20, 20);
+		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
+		frmAlpha.setCursor(cursor);
+	} // =======================================================
  
 	private void initialize() {
 
