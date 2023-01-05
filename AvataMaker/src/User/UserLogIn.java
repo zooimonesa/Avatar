@@ -42,7 +42,8 @@ public class UserLogIn {
 						mainFrame.frame.setVisible(true); // 다음 프레임 띄우기
 						mainFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 						mainFrame.frame.setResizable(false);
-						sf.frmAlpha.setVisible(false);
+						sf.frmAlpha.dispose();
+						
 						rightID = true;
 						count++;
 						break;
@@ -52,6 +53,7 @@ public class UserLogIn {
 				if (count<1) {
 					JOptionPane.showMessageDialog(null, "틀림", "바보",
 							JOptionPane.ERROR_MESSAGE);
+					
 				}
 
 			}
