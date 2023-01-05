@@ -1,6 +1,3 @@
-package guis;
-
-
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -50,135 +47,92 @@ public class UserOwnMissionListFrame {
 		frame.setTitle("보유미션");
 		frame.getContentPane().setBackground(new Color(255, 255, 255));
 		frame.getContentPane().setLayout(null);
-		
+
 		JLabel lblNewLabel = new JLabel("보유미션");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(187, 10, 73, 30);
 		frame.getContentPane().add(lblNewLabel);
-		
-		JPanel oneDayMissionPanel = new JPanel();  // 일일미션패널 ====================================================
+
+		JPanel oneDayMissionPanel = new JPanel(); // 일일미션패널 ====================================================
 		oneDayMissionPanel.setBackground(new Color(255, 255, 255));
 		oneDayMissionPanel.setToolTipText("");
-		oneDayMissionPanel.setBorder(new TitledBorder(null, "일일미션", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		oneDayMissionPanel
+				.setBorder(new TitledBorder(null, "일일미션", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		oneDayMissionPanel.setBounds(6, 33, 443, 258);
 		frame.getContentPane().add(oneDayMissionPanel);
 		oneDayMissionPanel.setLayout(null);
-		
-		JLabel lblNewLabel_1 = new JLabel("1번 미션");
-		lblNewLabel_1.setBounds(6, 17, 280, 30);
-		oneDayMissionPanel.add(lblNewLabel_1);
-		
-		JButton btnNewButton = new JButton("달성");
-		btnNewButton.setBounds(311, 17, 57, 30);
-		oneDayMissionPanel.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("포기");
-		btnNewButton_1.setBounds(380, 17, 57, 30);
-		oneDayMissionPanel.add(btnNewButton_1);
-		
-		JLabel lblNewLabel_1_1 = new JLabel("2번 미션");
-		lblNewLabel_1_1.setBounds(6, 57, 280, 30);
-		oneDayMissionPanel.add(lblNewLabel_1_1);
-		
-		JButton btnNewButton_2 = new JButton("달성");
-		btnNewButton_2.setBounds(311, 57, 57, 30);
-		oneDayMissionPanel.add(btnNewButton_2);
-		
-		JButton btnNewButton_1_1 = new JButton("포기");
-		btnNewButton_1_1.setBounds(380, 57, 57, 30);
-		oneDayMissionPanel.add(btnNewButton_1_1);
-		
-		JLabel lblNewLabel_1_2 = new JLabel("3번 미션");
-		lblNewLabel_1_2.setBounds(6, 97, 280, 30);
-		oneDayMissionPanel.add(lblNewLabel_1_2);
-		
-		JButton btnNewButton_3 = new JButton("달성");
-		btnNewButton_3.setBounds(311, 97, 57, 30);
-		oneDayMissionPanel.add(btnNewButton_3);
-		
-		JButton btnNewButton_1_2 = new JButton("포기");
-		btnNewButton_1_2.setBounds(380, 97, 57, 30);
-		oneDayMissionPanel.add(btnNewButton_1_2);
-		
-		JLabel lblNewLabel_1_3 = new JLabel("4번 미션");
-		lblNewLabel_1_3.setBounds(6, 137, 280, 30);
-		oneDayMissionPanel.add(lblNewLabel_1_3);
-		
-		JButton btnNewButton_4 = new JButton("달성");
-		btnNewButton_4.setBounds(311, 137, 57, 30);
-		oneDayMissionPanel.add(btnNewButton_4);
-		
-		JButton btnNewButton_1_3 = new JButton("포기");
-		btnNewButton_1_3.setBounds(380, 137, 57, 30);
-		oneDayMissionPanel.add(btnNewButton_1_3);
-		
-		JLabel lblNewLabel_1_4 = new JLabel("5번 미션");
-		lblNewLabel_1_4.setBounds(6, 177, 280, 30);
-		oneDayMissionPanel.add(lblNewLabel_1_4);
-		
-		JButton btnNewButton_5 = new JButton("달성");
-		btnNewButton_5.setBounds(311, 177, 57, 30);
-		oneDayMissionPanel.add(btnNewButton_5);
-		
-		JButton btnNewButton_1_4 = new JButton("포기");
-		btnNewButton_1_4.setBounds(380, 177, 57, 30);
-		oneDayMissionPanel.add(btnNewButton_1_4);
-		
-		JLabel lblNewLabel_1_5 = new JLabel("6번 미션");
-		lblNewLabel_1_5.setBounds(6, 217, 280, 30);
-		oneDayMissionPanel.add(lblNewLabel_1_5);
-		
-		JButton btnNewButton_6 = new JButton("달성");
-		btnNewButton_6.setBounds(311, 217, 57, 30);
-		oneDayMissionPanel.add(btnNewButton_6);
-		
-		JButton btnNewButton_1_5 = new JButton("포기");
-		btnNewButton_1_5.setBounds(380, 217, 57, 30);
-		oneDayMissionPanel.add(btnNewButton_1_5);
-		
+
+		JLabel[] dailyMission = new JLabel[6]; // 일일미션라벨배열
+		JButton[] dailyMissionclear = new JButton[6]; // 일일미션달성버튼배열
+		JButton[] dailyMissionGiveUp = new JButton[6]; // 일일미션포기버튼배열
+
+		int dailyY = 17; // 일일미션라벨, 달성, 포기버튼 y좌표고정 + 40씩
+		for (int i = 0; i < 6; i++) {
+
+			dailyMission[i] = new JLabel("일일미션"); // 일일미션라벨
+			dailyMission[i].setBounds(6, dailyY, 280, 30);
+			oneDayMissionPanel.add(dailyMission[i]);
+
+			dailyMissionclear[i] = new JButton("달성"); // 일일미션달성버튼
+			dailyMissionclear[i].addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					System.out.println("일일달성");
+				}
+			});
+			dailyMissionclear[i].setBounds(311, dailyY, 57, 30);
+			oneDayMissionPanel.add(dailyMissionclear[i]);
+
+			dailyMissionGiveUp[i] = new JButton("포기"); // 일일미션포기버튼
+			dailyMissionGiveUp[i].addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					System.out.println("일일포기");
+				}
+			});
+			dailyMissionGiveUp[i].setBounds(380, dailyY, 57, 30);
+			oneDayMissionPanel.add(dailyMissionGiveUp[i]);
+
+			dailyY += 40;
+		}
+
 		JPanel oneWeekMissionPanel = new JPanel(); // 주간미션패널 ===================================================
 		oneWeekMissionPanel.setBackground(new Color(255, 255, 255));
-		oneWeekMissionPanel.setBorder(new TitledBorder(null, "주간미션", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		oneWeekMissionPanel
+				.setBorder(new TitledBorder(null, "주간미션", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		oneWeekMissionPanel.setBounds(6, 301, 443, 142);
 		frame.getContentPane().add(oneWeekMissionPanel);
 		oneWeekMissionPanel.setLayout(null);
-		
-		JLabel lblNewLabel_1_6 = new JLabel("7번 미션");
-		lblNewLabel_1_6.setBounds(6, 17, 280, 30);
-		oneWeekMissionPanel.add(lblNewLabel_1_6);
-		
-		JButton btnNewButton_7 = new JButton("달성");
-		btnNewButton_7.setBounds(311, 17, 57, 30);
-		oneWeekMissionPanel.add(btnNewButton_7);
-		
-		JButton btnNewButton_1_6 = new JButton("포기");
-		btnNewButton_1_6.setBounds(380, 17, 57, 30);
-		oneWeekMissionPanel.add(btnNewButton_1_6);
-		
-		JLabel lblNewLabel_1_7 = new JLabel("8번 미션");
-		lblNewLabel_1_7.setBounds(6, 57, 280, 30);
-		oneWeekMissionPanel.add(lblNewLabel_1_7);
-		
-		JButton btnNewButton_8 = new JButton("달성");
-		btnNewButton_8.setBounds(311, 57, 57, 30);
-		oneWeekMissionPanel.add(btnNewButton_8);
-		
-		JButton btnNewButton_1_7 = new JButton("포기");
-		btnNewButton_1_7.setBounds(380, 57, 57, 30);
-		oneWeekMissionPanel.add(btnNewButton_1_7);
-		
-		JLabel lblNewLabel_1_8 = new JLabel("9번 미션");
-		lblNewLabel_1_8.setBounds(6, 97, 280, 30);
-		oneWeekMissionPanel.add(lblNewLabel_1_8);
-		
-		JButton btnNewButton_9 = new JButton("달성");
-		btnNewButton_9.setBounds(311, 97, 57, 30);
-		oneWeekMissionPanel.add(btnNewButton_9);
-		
-		JButton btnNewButton_1_8 = new JButton("포기");
-		btnNewButton_1_8.setBounds(380, 97, 57, 30);
-		oneWeekMissionPanel.add(btnNewButton_1_8);
-		
+
+		JLabel weeklyMission[] = new JLabel[3]; // 주간미션라벨
+		JButton weeklyMissionClear[] = new JButton[3]; // 주간미션달성버튼
+		JButton weeklyMissionGiveUp[] = new JButton[3]; // 주간미션포기버튼
+
+		int weeklyY = 17; // 주간미션라벨 y좌표고정 + 40씩
+		for (int i = 0; i < 3; i++) {
+			weeklyMission[i] = new JLabel("주간미션"); // 주간미션라벨
+			weeklyMission[i].setBounds(6, weeklyY, 280, 30);
+			oneWeekMissionPanel.add(weeklyMission[i]);
+
+			weeklyMissionClear[i] = new JButton("달성"); // 주간미션달성버튼
+			weeklyMissionClear[i].addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					System.out.println("주간달성");
+				}
+			});
+			weeklyMissionClear[i].setBounds(311, weeklyY, 57, 30);
+			oneWeekMissionPanel.add(weeklyMissionClear[i]);
+
+			weeklyMissionGiveUp[i] = new JButton("포기"); // 주간미션포기버튼
+			weeklyMissionGiveUp[i].addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					System.out.println("주간포기");
+				}
+			});
+			weeklyMissionGiveUp[i].setBounds(380, weeklyY, 57, 30);
+			oneWeekMissionPanel.add(weeklyMissionGiveUp[i]);
+
+			weeklyY += 40;
+		}
+
 		JButton btnNewButton_10 = new JButton("닫기");
 		btnNewButton_10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -188,7 +142,7 @@ public class UserOwnMissionListFrame {
 		btnNewButton_10.setBounds(175, 473, 117, 23);
 		frame.getContentPane().add(btnNewButton_10);
 		frame.setBounds(100, 100, 471, 545);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 
 }
