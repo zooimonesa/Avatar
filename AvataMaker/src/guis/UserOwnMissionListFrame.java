@@ -62,7 +62,7 @@ public class UserOwnMissionListFrame {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize() {		
 		frame = new JFrame();
 		frame.setTitle("보유미션");
 		frame.getContentPane().setBackground(new Color(255, 255, 255));

@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 
+import User.GetInfo;
 import mission.missionSelect;
 import mission.missionSelectImpl;
 
@@ -58,7 +59,9 @@ public class MissionListFrame {
 	private void initialize(String selectB) {
 		// 인터페이스 불러오기
 		missionSelect mis = new missionSelectImpl();
-		int user_pk = 1;
+		GetInfo mf = new GetInfo();
+		
+		int user_pk = 7;
 		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(255, 255, 255));
