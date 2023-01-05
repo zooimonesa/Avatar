@@ -153,7 +153,39 @@ public class missionSelectImpl implements missionSelect{
 			e.printStackTrace();
 		}
 	}
+
+	// 진행중인미션 db에 progress입력하기
+	public void userMissionProgress(String endDay, String mission) {
+		String sql = "UPDATE user_missions SET progress = ? WHERE mission = ? ";
+		try (Connection conn = ConnectionProvider.makeConnection();
+				PreparedStatement stmt = conn.prepareStatement(sql)) {
+			stmt.setString(1, endDay);
+			stmt.setString(2, mission);
+			stmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	
+	}
 	
+	// 미션종료 날짜 가져오기
+	public String userMissionEndDay(String mission) {
+		String sql = "SELECT * FROM user_missions WHERE mission = ?";
+		try (Connection conn = ConnectionProvider.makeConnection();
+				PreparedStatement stmt = conn.prepareStatement(sql)) {
+			stmt.setString(1, mission);
+			
+			try (ResultSet rs = stmt.executeQuery()) {
+				if (rs.next()) {
+					return rs.getString("progress");
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+		
+	}
 
 }
