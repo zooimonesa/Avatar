@@ -38,7 +38,7 @@ public class MainFrame {
 	   
 
 
-   JFrame frame;
+   public JFrame frame;
    private LineBorder bb = new LineBorder(Color.black, 1, true);
 
    public static void main(String[] args) {
