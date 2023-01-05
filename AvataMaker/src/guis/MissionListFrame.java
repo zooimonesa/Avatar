@@ -62,14 +62,12 @@ public class MissionListFrame {
 	private void initialize(String selectB) {
 		// 인터페이스 불러오기
 		missionSelect mis = new missionSelectImpl();
-<<<<<<< HEAD
-		int user_pk = 2;
-=======
+
 		GetInfo mf = new GetInfo();
 		
 //		int user_pk = mf.fuserpk;
 		int user_pk = 1;
->>>>>>> branch 'master' of https://github.com/zooimonesa/Avatar.git
+
 		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(255, 255, 255));
