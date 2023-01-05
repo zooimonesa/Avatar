@@ -61,7 +61,7 @@ public class MissionListFrame {
 	private void initialize(String selectB) {
 		// 인터페이스 불러오기
 		missionSelect mis = new missionSelectImpl();
-		int user_pk = 1;
+		int user_pk = 2;
 		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(255, 255, 255));
@@ -196,6 +196,7 @@ public class MissionListFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				mis.insertMission(user_pk, text3, 7);
+				mis.userMissionProgress(text3);
 			}
 		});
 		oneWeekMissionChoiceButton.setBounds(290, 25, 40, 40);
