@@ -87,7 +87,6 @@ public class UserLogIn {
 					mf.fmaintalent = Integer.parseInt(userget.get(5));
 					mf.fuserpk = Integer.parseInt(userget.get(6));
 					
-					
 					// System.out.println(userget);
 
 					
