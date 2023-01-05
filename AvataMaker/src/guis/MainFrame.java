@@ -13,8 +13,19 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
-public class MainFrame {
+import User.GetInfo;
 
+public class MainFrame {
+	
+	GetInfo mf = new GetInfo();
+	String mainid = mf.fmainid;  //태현
+	String mainnickname = mf.fmainnickname;
+	int mainpoint = mf.fmainpoint;
+	int mainhealth = mf.fmainhealth;
+	int mainintelligence = mf.fmainintelligence;
+	int maintalent = mf.fmaintalent;
+	
+	
 	public JFrame frame;
 	private LineBorder bb = new LineBorder(Color.black, 1, true);
 
@@ -53,7 +64,7 @@ public class MainFrame {
 		ImageIcon 지능 = new ImageIcon("능력치_지능.png");
 		ImageIcon 재능 = new ImageIcon("능력치_재능.png");
 
-		JLabel nickNameLabel = new JLabel("닉네임");
+		JLabel nickNameLabel = new JLabel(mainnickname + "뜸");
 		nickNameLabel.setBackground(new Color(255, 255, 255));
 		nickNameLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		nickNameLabel.setBounds(315, 40, 424, 35);
@@ -211,7 +222,7 @@ public class MainFrame {
 		userCharLabel.setBorder(bb);
 		frame.getContentPane().add(charBackgroundLabel);
 
-		JLabel userPointLabel_1 = new JLabel("~~포인트");
+		JLabel userPointLabel_1 = new JLabel(Integer.toString(mainpoint));
 		userPointLabel_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		userPointLabel_1.setBounds(642, 351, 97, 50);
 		frame.getContentPane().add(userPointLabel_1);

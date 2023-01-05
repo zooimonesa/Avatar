@@ -24,8 +24,8 @@ public class SignUpFrame {
 	private JPasswordField passwordTextField;
 	private JTextField nickNameTextField;
 	String newId;//태현추가
-	String newPw;
-	String newNn;
+	String newPw; 
+	String newNn; 
 	
 	
 
