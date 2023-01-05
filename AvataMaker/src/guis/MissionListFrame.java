@@ -46,7 +46,6 @@ public class MissionListFrame {
 		initialize(selectB);
 		customcursor();
 	}
-	
 	public void customcursor() { // 마우스포인터 ====================================
 		
 		Toolkit tk = Toolkit.getDefaultToolkit();
@@ -69,16 +68,16 @@ public class MissionListFrame {
 		frame.getContentPane().setLayout(null);
 		
 		// 미션이름 레이블 적용
-		JLabel oneDayMissionLabel1 = new JLabel("하루 미션     |");
-		oneDayMissionLabel1.setBounds(30, 30, 250, 50);
+		JLabel oneDayMissionLabel1 = new JLabel("< 일일 미션 > ");
+		oneDayMissionLabel1.setBounds(50, 20, 250, 50);
 		frame.getContentPane().add(oneDayMissionLabel1);
 		
-		JLabel oneDayMissionLabel2 = new JLabel("하루 미션     |");
-		oneDayMissionLabel2.setBounds(30, 124, 250, 50);
+		JLabel oneDayMissionLabel2 = new JLabel("< 일일 미션 > ");
+		oneDayMissionLabel2.setBounds(50, 110, 250, 50);
 		frame.getContentPane().add(oneDayMissionLabel2);
 		
-		JLabel oneWeekMissionLabel = new JLabel("일주일 미션    |");
-		oneWeekMissionLabel.setBounds(20, 218, 250, 50);
+		JLabel oneWeekMissionLabel = new JLabel("< 주간 미션 > ");
+		oneWeekMissionLabel.setBounds(50, 210, 250, 50);
 		frame.getContentPane().add(oneWeekMissionLabel);
 		
 		
@@ -86,19 +85,19 @@ public class MissionListFrame {
 		JLabel oneDayMissionLabel1_T = new JLabel();
 		text1 = mis.RandomMission(selectB, 1).getMission(); 
 		oneDayMissionLabel1_T.setText(text1);
-		oneDayMissionLabel1_T.setBounds(120, 30, 250, 50);
+		oneDayMissionLabel1_T.setBounds(50, 50, 250, 50);
 		frame.getContentPane().add(oneDayMissionLabel1_T);
 		
 		JLabel oneDayMissionLabel2_T = new JLabel();
 		text2 = mis.RandomMission(selectB, 1).getMission();
 		oneDayMissionLabel2_T.setText(text2);
-		oneDayMissionLabel2_T.setBounds(120, 124, 250, 50);
+		oneDayMissionLabel2_T.setBounds(50, 140, 250, 50);
 		frame.getContentPane().add(oneDayMissionLabel2_T);
 		
 		JLabel oneWeekMissionLabel1_T = new JLabel();
 		text3 = mis.RandomMission(selectB, 7).getMission();
 		oneWeekMissionLabel1_T.setText(text3);
-		oneWeekMissionLabel1_T.setBounds(120, 218, 250, 50);
+		oneWeekMissionLabel1_T.setBounds(50, 240, 250, 50);
 		frame.getContentPane().add(oneWeekMissionLabel1_T);
 		
 		
@@ -121,7 +120,7 @@ public class MissionListFrame {
 				mis.insertMission(user_pk, text1, 1);
 			}
 		});
-		oneDayMissionChoiceButton1.setBounds(325, 30, 97, 23);
+		oneDayMissionChoiceButton1.setBounds(300, 30, 97, 23);
 		frame.getContentPane().add(oneDayMissionChoiceButton1);
 		
 		JButton oneDayMissionRefreshButton1 = new JButton("새로고침");
@@ -133,7 +132,7 @@ public class MissionListFrame {
 				mis.usePoint(user_pk, 5);
 			}
 		});
-		oneDayMissionRefreshButton1.setBounds(325, 61, 97, 23);
+		oneDayMissionRefreshButton1.setBounds(300, 61, 97, 23);
 		frame.getContentPane().add(oneDayMissionRefreshButton1);
 		
 		
@@ -145,7 +144,7 @@ public class MissionListFrame {
 				mis.insertMission(user_pk, text2, 1);
 			}
 		});
-		oneDayMissionChoiceButton2.setBounds(325, 124, 97, 23);
+		oneDayMissionChoiceButton2.setBounds(300, 124, 97, 23);
 		frame.getContentPane().add(oneDayMissionChoiceButton2);
 		
 		JButton oneDayMissionRefreshButton2 = new JButton("새로고침");
@@ -157,7 +156,7 @@ public class MissionListFrame {
 				mis.usePoint(user_pk, 5);
 			}
 		});
-		oneDayMissionRefreshButton2.setBounds(325, 155, 97, 23);
+		oneDayMissionRefreshButton2.setBounds(300, 155, 97, 23);
 		frame.getContentPane().add(oneDayMissionRefreshButton2);
 		
 		
@@ -169,7 +168,7 @@ public class MissionListFrame {
 				mis.insertMission(user_pk, text3, 7);
 			}
 		});
-		oneWeekMissionChoiceButton.setBounds(325, 218, 97, 23);
+		oneWeekMissionChoiceButton.setBounds(300, 225, 97, 23);
 		frame.getContentPane().add(oneWeekMissionChoiceButton);
 		
 		JButton oneWeekMissionRefreshButton = new JButton("새로고침");
@@ -181,7 +180,7 @@ public class MissionListFrame {
 				mis.usePoint(user_pk, 5);
 			}
 		});
-		oneWeekMissionRefreshButton.setBounds(325, 249, 97, 23);
+		oneWeekMissionRefreshButton.setBounds(300, 255, 97, 23);
 		frame.getContentPane().add(oneWeekMissionRefreshButton);
 	}	
 }
