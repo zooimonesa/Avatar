@@ -46,7 +46,7 @@ public class MissionChoiceFrame {
 		JButton exerciseButton = new JButton("운동");
 		exerciseButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MissionListFrame 미션프레임새창 = new MissionListFrame();
+				MissionListFrame 미션프레임새창 = new MissionListFrame("운동");
 				미션프레임새창.frame.setVisible(true);
 				미션프레임새창.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				미션프레임새창.frame.setResizable(false);
@@ -58,7 +58,7 @@ public class MissionChoiceFrame {
 		JButton studyButton = new JButton("공부");
 		studyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MissionListFrame missionListFrame = new MissionListFrame();
+				MissionListFrame missionListFrame = new MissionListFrame("공부");
 				missionListFrame.frame.setVisible(true);
 				missionListFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				missionListFrame.frame.setResizable(false);
@@ -70,7 +70,7 @@ public class MissionChoiceFrame {
 		JButton hobbyButton = new JButton("취미");
 		hobbyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MissionListFrame missionListFrame = new MissionListFrame();
+				MissionListFrame missionListFrame = new MissionListFrame("취미");
 				missionListFrame.frame.setVisible(true);
 				missionListFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				missionListFrame.frame.setResizable(false);

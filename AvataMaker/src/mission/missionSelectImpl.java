@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import dbutil.ConnectionProvider;
 
@@ -14,7 +15,14 @@ public class missionSelectImpl implements missionSelect{
 
 	//미션 랜덤 뽑기, 새로고침
 	@Override
-	public List<Missions> RandomMission(String c, int t) {
+	public Missions RandomMission(String c, int t) {
+		Random random = new Random();
+		int num = 0;
+		if(t == 1) {
+			num = random.nextInt(20);
+		} else if(t == 7) {
+			num = random.nextInt(12);
+		}
 		String sql = "SELECT * from missions where classify = ? and term = ?";
 		List<Missions> list = new ArrayList<>();
 		try(Connection conn = ConnectionProvider.makeConnection();
@@ -35,7 +43,7 @@ public class missionSelectImpl implements missionSelect{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return list;
+		return list.get(num);
 	}
 
 	// 수락한 미션 테이블에 넣기

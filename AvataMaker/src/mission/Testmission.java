@@ -6,7 +6,7 @@ public class Testmission {
 		missionSelect mis = new missionSelectImpl();
 		
 //		System.out.println(mis.RandomMission("운동", 1).get(1));
-		Missions m = mis.RandomMission("운동", 1).get(1);
+		Missions m = mis.RandomMission("운동", 1);
 		System.out.println(m);
 		
 //		mis.insertMission(5, m.getMission(), m.getTerm());

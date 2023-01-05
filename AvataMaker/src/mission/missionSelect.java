@@ -3,7 +3,7 @@ import java.util.List;
 
 public interface missionSelect {
 	//미션 랜덤 뽑기, 새로고침
-	List<Missions> RandomMission(String classify, int term);
+	Missions RandomMission(String classify, int term);
 	// 수락한 미션 테이블에 넣기
 	void insertMission(int user_pk, String mission, int term);
 	
