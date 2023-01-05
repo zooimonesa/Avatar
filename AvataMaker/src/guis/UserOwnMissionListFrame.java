@@ -67,7 +67,7 @@ public class UserOwnMissionListFrame {
 		missionSelect mis = new missionSelectImpl();
 		GetInfo mf= new GetInfo();
 //		int user_pk = mf.fuserpk;
-		int user_pk = 1;
+		int user_pk = 2;
 		
 		frame = new JFrame();
 		frame.setTitle("보유미션");
