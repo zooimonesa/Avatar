@@ -10,6 +10,8 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -23,17 +25,20 @@ import User.UserLogIn;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.File;
 
 public class StartFrame {
 	public JFrame frmAlpha;
 	private JTextField id;
 	private JPasswordField passWord;
+	private static Clip clip; // 배경음악
 
 	String userid; // 태현추가
 	String userpw; // 태현추가
 
 	public StartFrame() {
 		initialize();
+		audio(); // 배경음악
 		customcursor(); // 마우스 포인터
 	}
 	
@@ -47,6 +52,18 @@ public class StartFrame {
 		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
 		frmAlpha.setCursor(cursor);
 	} // =======================================================
+	
+	public static void audio() {  // 배경음악 =========================================
+		try {
+			File file = new File("헤네시스.wav");
+			clip = AudioSystem.getClip();
+			clip.open(AudioSystem.getAudioInputStream(file));
+			// clip.loop(Clip.LOOP_CONTINUOUSLY);
+			clip.start();
+		} catch (Exception e) {
+			
+		}
+	} // =========================================================================
  
 	private void initialize() {
 
@@ -86,13 +103,10 @@ public class StartFrame {
 //					mainFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 //					mainFrame.frame.setResizable(false);
 //					frmAlpha.setVisible(false);
-
-					MainFrame mainFrame = new MainFrame();
-					mainFrame.frame.setVisible(true); // 다음 프레임 띄우기
-					mainFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
-					mainFrame.frame.setResizable(false);
-					frmAlpha.setVisible(false);
-
+					
+			 
+					frmAlpha.dispose();
+					clip.stop();
 				}
 			}
 		});
@@ -122,13 +136,13 @@ public class StartFrame {
 				System.out.println(userid + userpw);
 				
 				uli.CompareUser(userid, userpw);
-				
+				clip.stop();
 				
 //				MainFrame mainFrame = new MainFrame();
 //				mainFrame.frame.setVisible(true); // 다음 프레임 띄우기
 //				mainFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 //				mainFrame.frame.setResizable(false);
-//				frmAlpha.setVisible(false);
+				frmAlpha.dispose();
 			}
 		});
 

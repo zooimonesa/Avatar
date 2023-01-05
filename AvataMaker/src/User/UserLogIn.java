@@ -8,13 +8,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import dbutil.ConnectionProvider;
 import guis.MainFrame;
 import guis.StartFrame;
 
 public class UserLogIn {
 	public String ruid;
-	
+	int count = 0;
 	 
 
 	public void CompareUser(String uid, String upw) {
@@ -42,9 +44,14 @@ public class UserLogIn {
 						mainFrame.frame.setResizable(false);
 						sf.frmAlpha.setVisible(false);
 						rightID = true;
+						count++;
 						break;
 					}
 
+				}
+				if (count<1) {
+					JOptionPane.showMessageDialog(null, "틀림", "바보",
+							JOptionPane.ERROR_MESSAGE);
 				}
 
 			}
