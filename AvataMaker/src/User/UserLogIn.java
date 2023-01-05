@@ -15,7 +15,7 @@ import guis.MainFrame;
 import guis.StartFrame;
 
 public class UserLogIn {
-	public String ruid;
+	
 	int count = 0;
 	 
 
@@ -36,7 +36,7 @@ public class UserLogIn {
 					if (id.equals(uid) && pw.equals(upw)) {
 						
 						UserGet(uid);
-						ruid = uid;
+						
 						
 						MainFrame mainFrame = new MainFrame();
 						mainFrame.frame.setVisible(true); // 다음 프레임 띄우기
