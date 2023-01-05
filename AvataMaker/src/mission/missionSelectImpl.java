@@ -165,7 +165,11 @@ public class missionSelectImpl implements missionSelect{
 	}
 
 	// 진행중인미션 db에 progress입력하기
-	public void userMissionProgress(String endDay, String mission) {
+	public void userMissionProgress(String mission) {
+		LocalDateTime today = LocalDateTime.now();
+		LocalDateTime dday = today.plusDays(7);
+		String endDay = dday.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+		
 		String sql = "UPDATE user_missions SET progress = ? WHERE mission = ? ";
 		try (Connection conn = ConnectionProvider.makeConnection();
 				PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -174,8 +178,10 @@ public class missionSelectImpl implements missionSelect{
 			stmt.executeUpdate();
 			
 		} catch (SQLException e) {
+			
 			e.printStackTrace();
 		}
+		
 	}
 	
 	// 미션종료 날짜 Dday로 알려주기
@@ -203,5 +209,8 @@ public class missionSelectImpl implements missionSelect{
 		return m_Dday;
 		
 	}
+
+
+
 
 }

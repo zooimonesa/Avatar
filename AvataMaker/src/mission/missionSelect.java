@@ -18,7 +18,7 @@ public interface missionSelect {
 	public void usePoint(int user_pk, int point);
 	
 	// 진행중인미션 db에 progress입력하기
-	void userMissionProgress(String endDay, String mission);
+	void userMissionProgress(String mission);
 	
 	// 미션종료 날짜 가져오기
 	String userMissionEndDay(String mission);
