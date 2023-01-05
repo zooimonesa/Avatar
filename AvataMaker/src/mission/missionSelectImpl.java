@@ -3,6 +3,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -166,25 +168,31 @@ public class missionSelectImpl implements missionSelect{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	
 	}
 	
-	// 미션종료 날짜 가져오기
+	// 미션종료 날짜 Dday로 알려주기
 	public String userMissionEndDay(String mission) {
 		String sql = "SELECT * FROM user_missions WHERE mission = ?";
+		String userDday = null;
 		try (Connection conn = ConnectionProvider.makeConnection();
 				PreparedStatement stmt = conn.prepareStatement(sql)) {
 			stmt.setString(1, mission);
-			
 			try (ResultSet rs = stmt.executeQuery()) {
 				if (rs.next()) {
-					return rs.getString("progress");
+					userDday = rs.getString("progress");
 				}
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return null;
+		
+		LocalDateTime today = LocalDateTime.now();
+		int nowDay = today.getDayOfMonth();
+		int missionDday = Integer.valueOf(userDday.substring(8));
+		int userEndDay = missionDday - nowDay;
+		String m_Dday = "D - " + userEndDay;
+		
+		return m_Dday;
 		
 	}
 
