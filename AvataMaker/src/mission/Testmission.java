@@ -19,5 +19,9 @@ public class Testmission {
 		
 //		mis.usePoint(3, 50);
 		
+//		System.out.println(mis.userMissionEndDay("유산소운동 1시간씩 매일 하기 "));
+		
+		String nu = "";
+		System.out.println(nu == null);
 	}
 }
