@@ -67,7 +67,8 @@ public class UserOwnMissionListFrame {
 		missionSelect mis = new missionSelectImpl();
 		GetInfo mf= new GetInfo();
 //		int user_pk = mf.fuserpk;
-		int user_pk = 2;
+		int user_pk = 1;
+
 		
 		frame = new JFrame();
 		frame.setTitle("보유미션");
@@ -176,7 +177,7 @@ public class UserOwnMissionListFrame {
 			
 			weeklyMissionDday[i] = new JLabel();
 			// sql에 마감 날짜 없으면 오류남
-			if(weeklyMissionT[i].getText() != null) {
+			if(!weeklyMissionT[i].getText().isEmpty()) {
 				weeklyMissionDday[i].setText(mis.userMissionEndDay(weeklyMissionT[i].getText()));
 			}
 			weeklyMissionDday[i].setBounds(280, weeklyY, 280, 30);
