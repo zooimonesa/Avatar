@@ -63,7 +63,8 @@ public class MissionListFrame {
 		missionSelect mis = new missionSelectImpl();
 		GetInfo mf = new GetInfo();
 		
-		int user_pk = mf.fuserpk;
+//		int user_pk = mf.fuserpk;
+		int user_pk = 1;
 		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(255, 255, 255));
