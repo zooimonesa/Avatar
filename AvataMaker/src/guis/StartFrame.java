@@ -28,7 +28,7 @@ public class StartFrame {
 	String userid; // 태현추가
 	String userpw; // 태현추가
 
-	public StartFrame() {
+	public StartFrame() { 
 		initialize();
 	}
  
