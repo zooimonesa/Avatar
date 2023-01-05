@@ -1,6 +1,7 @@
 package User;
 
 public class GetInfo {
+	public static int fuserpk;
 	public static String fmainid;
 	public static String fmainnickname;
 	public static int fmainpoint;

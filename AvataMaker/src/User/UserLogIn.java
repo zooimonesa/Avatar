@@ -70,12 +70,14 @@ public class UserLogIn {
 					String health = Integer.toString(rs.getInt("health"));
 					String intelli = Integer.toString(rs.getInt("intelligence"));
 					String talent = Integer.toString(rs.getInt("talent"));
+					String upk = Integer.toString(rs.getInt("user_pk"));
 					userget.add(id);
 					userget.add(nickname);
 					userget.add(point);
 					userget.add(health);
 					userget.add(intelli);
 					userget.add(talent);
+					userget.add(upk);
 					
 					mf.fmainid = userget.get(0);
 					mf.fmainnickname = userget.get(1);
@@ -83,6 +85,8 @@ public class UserLogIn {
 					mf.fmainhealth = Integer.parseInt(userget.get(3));
 					mf.fmainintelligence = Integer.parseInt(userget.get(4));
 					mf.fmaintalent = Integer.parseInt(userget.get(5));
+					mf.fuserpk = Integer.parseInt(userget.get(6));
+					
 					
 					// System.out.println(userget);
 

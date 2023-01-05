@@ -22,6 +22,7 @@ import User.GetInfo;
 public class MainFrame {
 
 	GetInfo mf = new GetInfo();
+	int user_pk = mf.fuserpk;
 	String mainid = mf.fmainid; // 태현
 	String mainnickname = mf.fmainnickname;
 	int mainpoint = mf.fmainpoint;

@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
 
 import User.GetInfo;
 import mission.missionSelect;
@@ -66,42 +68,64 @@ public class MissionListFrame {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(255, 255, 255));
 		frame.setTitle("미션");
-		frame.setBounds(100, 100, 450, 450);
+		frame.setBounds(100, 100, 490, 450);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		JPanel oneDayMissionPanel1 = new JPanel();
+		oneDayMissionPanel1.setBackground(new Color(255, 255, 255));
+		oneDayMissionPanel1.setBorder(new LineBorder(new Color(0, 0, 0)));
+		oneDayMissionPanel1.setBounds(37, 22, 404, 88);
+		frame.getContentPane().add(oneDayMissionPanel1);
+		oneDayMissionPanel1.setLayout(null);
+		
+		JPanel oneDayMissionPanel2 = new JPanel();
+		oneDayMissionPanel2.setLayout(null);
+		oneDayMissionPanel2.setBorder(new LineBorder(new Color(0, 0, 0)));
+		oneDayMissionPanel2.setBackground(Color.WHITE);
+		oneDayMissionPanel2.setBounds(37, 120, 404, 88);
+		frame.getContentPane().add(oneDayMissionPanel2);
+		
+		JPanel oneWeekMissionPanel = new JPanel();
+		oneWeekMissionPanel.setLayout(null);
+		oneWeekMissionPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		oneWeekMissionPanel.setBackground(Color.WHITE);
+		oneWeekMissionPanel.setBounds(37, 218, 404, 88);
+		frame.getContentPane().add(oneWeekMissionPanel);
+		
+		
 		// 미션이름 레이블 적용
 		JLabel oneDayMissionLabel1 = new JLabel("< 일일 미션 > ");
-		oneDayMissionLabel1.setBounds(50, 20, 250, 50);
-		frame.getContentPane().add(oneDayMissionLabel1);
+		oneDayMissionLabel1.setBounds(6, 3, 250, 68);
+		oneDayMissionPanel1.add(oneDayMissionLabel1);
 		
 		JLabel oneDayMissionLabel2 = new JLabel("< 일일 미션 > ");
-		oneDayMissionLabel2.setBounds(50, 110, 250, 50);
-		frame.getContentPane().add(oneDayMissionLabel2);
+		oneDayMissionLabel2.setBounds(6, 3, 250, 68);
+		oneDayMissionPanel2.add(oneDayMissionLabel2);
 		
 		JLabel oneWeekMissionLabel = new JLabel("< 주간 미션 > ");
-		oneWeekMissionLabel.setBounds(50, 210, 250, 50);
-		frame.getContentPane().add(oneWeekMissionLabel);
+		oneWeekMissionLabel.setBounds(6, 3, 250, 68);
+		oneWeekMissionPanel.add(oneWeekMissionLabel);
 		
 		
 		// 미션 내용 불러오기
 		JLabel oneDayMissionLabel1_T = new JLabel();
 		text1 = mis.RandomMission(selectB, 1).getMission(); 
 		oneDayMissionLabel1_T.setText(text1);
-		oneDayMissionLabel1_T.setBounds(50, 50, 250, 50);
-		frame.getContentPane().add(oneDayMissionLabel1_T);
+		oneDayMissionLabel1_T.setBounds(6, 6, 250, 68);
+		oneDayMissionPanel1.add(oneDayMissionLabel1_T);
 		
 		JLabel oneDayMissionLabel2_T = new JLabel();
 		text2 = mis.RandomMission(selectB, 1).getMission();
 		oneDayMissionLabel2_T.setText(text2);
-		oneDayMissionLabel2_T.setBounds(50, 140, 250, 50);
-		frame.getContentPane().add(oneDayMissionLabel2_T);
+		oneDayMissionLabel2_T.setBounds(6, 6, 250, 68);
+		oneDayMissionPanel2.add(oneDayMissionLabel2_T);
 		
 		JLabel oneWeekMissionLabel1_T = new JLabel();
 		text3 = mis.RandomMission(selectB, 7).getMission();
 		oneWeekMissionLabel1_T.setText(text3);
-		oneWeekMissionLabel1_T.setBounds(50, 240, 250, 50);
-		frame.getContentPane().add(oneWeekMissionLabel1_T);
+		oneWeekMissionLabel1_T.setBounds(6, 6, 250, 68);
+		oneWeekMissionPanel.add(oneWeekMissionLabel1_T);
 		
 		
 		// 이전버튼 생성
@@ -123,8 +147,8 @@ public class MissionListFrame {
 				mis.insertMission(user_pk, text1, 1);
 			}
 		});
-		oneDayMissionChoiceButton1.setBounds(300, 30, 97, 23);
-		frame.getContentPane().add(oneDayMissionChoiceButton1);
+		oneDayMissionChoiceButton1.setBounds(295, 10, 97, 23);
+		oneDayMissionPanel1.add(oneDayMissionChoiceButton1);
 		
 		JButton oneDayMissionRefreshButton1 = new JButton("새로고침");
 		oneDayMissionRefreshButton1.addActionListener(new ActionListener( ) {
@@ -135,8 +159,8 @@ public class MissionListFrame {
 				mis.usePoint(user_pk, 5);
 			}
 		});
-		oneDayMissionRefreshButton1.setBounds(300, 61, 97, 23);
-		frame.getContentPane().add(oneDayMissionRefreshButton1);
+		oneDayMissionRefreshButton1.setBounds(295, 55, 97, 23);
+		oneDayMissionPanel1.add(oneDayMissionRefreshButton1);
 		
 		
 		// 두번째 선택하기 or 새로고침 눌렀을때 변화
@@ -147,8 +171,8 @@ public class MissionListFrame {
 				mis.insertMission(user_pk, text2, 1);
 			}
 		});
-		oneDayMissionChoiceButton2.setBounds(300, 124, 97, 23);
-		frame.getContentPane().add(oneDayMissionChoiceButton2);
+		oneDayMissionChoiceButton2.setBounds(295, 10, 97, 23);
+		oneDayMissionPanel2.add(oneDayMissionChoiceButton2);
 		
 		JButton oneDayMissionRefreshButton2 = new JButton("새로고침");
 		oneDayMissionRefreshButton2.addActionListener(new ActionListener() {
@@ -159,8 +183,8 @@ public class MissionListFrame {
 				mis.usePoint(user_pk, 5);
 			}
 		});
-		oneDayMissionRefreshButton2.setBounds(300, 155, 97, 23);
-		frame.getContentPane().add(oneDayMissionRefreshButton2);
+		oneDayMissionRefreshButton2.setBounds(295, 55, 97, 23);
+		oneDayMissionPanel2.add(oneDayMissionRefreshButton2);
 		
 		
 		// 세번째 선택하기 or 새로고침 눌렀을 때 변화
@@ -171,8 +195,8 @@ public class MissionListFrame {
 				mis.insertMission(user_pk, text3, 7);
 			}
 		});
-		oneWeekMissionChoiceButton.setBounds(300, 225, 97, 23);
-		frame.getContentPane().add(oneWeekMissionChoiceButton);
+		oneWeekMissionChoiceButton.setBounds(295, 10, 97, 23);
+		oneWeekMissionPanel.add(oneWeekMissionChoiceButton);
 		
 		JButton oneWeekMissionRefreshButton = new JButton("새로고침");
 		oneWeekMissionRefreshButton.addActionListener(new ActionListener() {
@@ -183,7 +207,7 @@ public class MissionListFrame {
 				mis.usePoint(user_pk, 5);
 			}
 		});
-		oneWeekMissionRefreshButton.setBounds(300, 255, 97, 23);
-		frame.getContentPane().add(oneWeekMissionRefreshButton);
+		oneWeekMissionRefreshButton.setBounds(295, 55, 97, 23);
+		oneWeekMissionPanel.add(oneWeekMissionRefreshButton);
 	}	
 }
