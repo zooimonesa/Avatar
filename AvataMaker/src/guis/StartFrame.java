@@ -109,7 +109,7 @@ public class StartFrame {
 					mainFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 					mainFrame.frame.setResizable(false);
 					frmAlpha.setVisible(false);
-
+					clip.stop();
 				}
 			}
 		});
@@ -139,7 +139,7 @@ public class StartFrame {
 				System.out.println(userid + userpw);
 				
 				uli.CompareUser(userid, userpw);
-				
+				clip.stop();
 				
 //				MainFrame mainFrame = new MainFrame();
 //				mainFrame.frame.setVisible(true); // 다음 프레임 띄우기
