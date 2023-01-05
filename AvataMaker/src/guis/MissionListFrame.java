@@ -93,15 +93,15 @@ public class MissionListFrame {
 		
 		// 미션이름 레이블 적용
 		JLabel oneDayMissionLabel1 = new JLabel("< 일일 미션 > ");
-		oneDayMissionLabel1.setBounds(6, 10, 250, 68);
+		oneDayMissionLabel1.setBounds(6, 3, 250, 68);
 		oneDayMissionPanel1.add(oneDayMissionLabel1);
 		
 		JLabel oneDayMissionLabel2 = new JLabel("< 일일 미션 > ");
-		oneDayMissionLabel2.setBounds(6, 10, 250, 68);
+		oneDayMissionLabel2.setBounds(6, 3, 250, 68);
 		oneDayMissionPanel2.add(oneDayMissionLabel2);
 		
 		JLabel oneWeekMissionLabel = new JLabel("< 주간 미션 > ");
-		oneWeekMissionLabel.setBounds(6, 10, 250, 68);
+		oneWeekMissionLabel.setBounds(6, 3, 250, 68);
 		oneWeekMissionPanel.add(oneWeekMissionLabel);
 		
 		
@@ -109,20 +109,20 @@ public class MissionListFrame {
 		JLabel oneDayMissionLabel1_T = new JLabel();
 		text1 = mis.RandomMission(selectB, 1).getMission(); 
 		oneDayMissionLabel1_T.setText(text1);
-		oneDayMissionLabel1_T.setBounds(6, 10, 250, 68);
-		frame.getContentPane().add(oneDayMissionLabel1_T);
+		oneDayMissionLabel1_T.setBounds(6, 6, 250, 68);
+		oneDayMissionPanel1.add(oneDayMissionLabel1_T);
 		
 		JLabel oneDayMissionLabel2_T = new JLabel();
 		text2 = mis.RandomMission(selectB, 1).getMission();
 		oneDayMissionLabel2_T.setText(text2);
-		oneDayMissionLabel2_T.setBounds(6, 10, 250, 68);
-		frame.getContentPane().add(oneDayMissionLabel2_T);
+		oneDayMissionLabel2_T.setBounds(6, 6, 250, 68);
+		oneDayMissionPanel2.add(oneDayMissionLabel2_T);
 		
 		JLabel oneWeekMissionLabel1_T = new JLabel();
 		text3 = mis.RandomMission(selectB, 7).getMission();
 		oneWeekMissionLabel1_T.setText(text3);
-		oneWeekMissionLabel1_T.setBounds(6, 10, 250, 68);
-		frame.getContentPane().add(oneWeekMissionLabel1_T);
+		oneWeekMissionLabel1_T.setBounds(6, 6, 250, 68);
+		oneWeekMissionPanel.add(oneWeekMissionLabel1_T);
 		
 		
 		// 이전버튼 생성
