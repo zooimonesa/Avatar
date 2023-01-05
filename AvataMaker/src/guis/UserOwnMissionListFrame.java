@@ -1,5 +1,4 @@
 package guis;
-
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -8,9 +7,13 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
+
+import mission.missionSelect;
+import mission.missionSelectImpl;
 
 public class UserOwnMissionListFrame {
 
@@ -71,7 +74,7 @@ public class UserOwnMissionListFrame {
 		int dailyY = 17; // 일일미션라벨, 달성, 포기버튼 y좌표고정 + 40씩
 		for (int i = 0; i < 6; i++) {
 
-			dailyMission[i] = new JLabel("일일미션"); // 일일미션라벨
+			dailyMission[i] = new JLabel("미션" + (i + 1) + " : "); // 일일미션라벨
 			dailyMission[i].setBounds(6, dailyY, 280, 30);
 			oneDayMissionPanel.add(dailyMission[i]);
 
@@ -105,14 +108,21 @@ public class UserOwnMissionListFrame {
 		oneWeekMissionPanel.setLayout(null);
 
 		JLabel weeklyMission[] = new JLabel[3]; // 주간미션라벨
+		JLabel weeklyMissionDday[] = new JLabel[3];
 		JButton weeklyMissionClear[] = new JButton[3]; // 주간미션달성버튼
 		JButton weeklyMissionGiveUp[] = new JButton[3]; // 주간미션포기버튼
+		
+		missionSelect mis = new missionSelectImpl();
+		
 
 		int weeklyY = 17; // 주간미션라벨 y좌표고정 + 40씩
 		for (int i = 0; i < 3; i++) {
-			weeklyMission[i] = new JLabel("주간미션"); // 주간미션라벨
+			weeklyMission[i] = new JLabel("미션" + (i + 1) + " : " ); // 주간미션라벨
 			weeklyMission[i].setBounds(6, weeklyY, 280, 30);
+			weeklyMissionDday[i] = new JLabel(mis.userMissionEndDay("1시간동안 걷기"));
+			weeklyMissionDday[i].setBounds(280, weeklyY, 280, 30);
 			oneWeekMissionPanel.add(weeklyMission[i]);
+			oneWeekMissionPanel.add(weeklyMissionDday[i]);
 
 			weeklyMissionClear[i] = new JButton("달성"); // 주간미션달성버튼
 			weeklyMissionClear[i].addActionListener(new ActionListener() {
