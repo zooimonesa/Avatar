@@ -70,7 +70,12 @@ public class StartFrame {
 		frmAlpha.setBounds(100, 100, 545, 507);
 		frmAlpha.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmAlpha.getContentPane().setLayout(null);
-
+		
+		ImageIcon 로그인버튼 = new ImageIcon("로그인.png");
+		ImageIcon 회원가입버튼 = new ImageIcon("회원가입.png");
+		ImageIcon 종료하기버튼 = new ImageIcon("종료하기.png");
+		
+		
 		ImageIcon 메인 = new ImageIcon("메인예시원본.gif");
 		JLabel mainImage = new JLabel(메인);
 		mainImage.setBounds(12, 10, 505, 259);
@@ -114,7 +119,7 @@ public class StartFrame {
 		passWord.setColumns(10);
 
 		SignUpFrame signUpFrame = new SignUpFrame();
-		JButton signUp = new JButton("회원가입");
+		JButton signUp = new JButton(회원가입버튼);
 		signUp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				signUpFrame.frame.setVisible(true); // 다음 프레임 띄우기
@@ -122,10 +127,10 @@ public class StartFrame {
 				signUpFrame.frame.setResizable(false);
 			}
 		});
-		signUp.setBounds(12, 412, 130, 23);
+		signUp.setBounds(12, 412, 130, 30);
 		frmAlpha.getContentPane().add(signUp);
 
-		JButton logInButton = new JButton("로그인");
+		JButton logInButton = new JButton(로그인버튼);
 		logInButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				UserLogIn uli = new UserLogIn();
@@ -147,10 +152,10 @@ public class StartFrame {
 			}
 		});
 
-		logInButton.setBounds(204, 412, 130, 23);
+		logInButton.setBounds(204, 412, 130, 30);
 		frmAlpha.getContentPane().add(logInButton);
 
-		JButton exit = new JButton("종료");
+		JButton exit = new JButton(종료하기버튼);
 		exit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int answer = JOptionPane.showConfirmDialog(null, "종료하시겠습니까?", "종료창", JOptionPane.YES_NO_OPTION); // 프로그램
@@ -164,7 +169,7 @@ public class StartFrame {
 			}
 		});
 
-		exit.setBounds(387, 412, 130, 23);
+		exit.setBounds(387, 412, 130, 30);
 		frmAlpha.getContentPane().add(exit);
 
 		JLabel idLabel = new JLabel("아이디");
