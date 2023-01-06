@@ -17,10 +17,13 @@ public interface missionSelect {
 	//포인트 빼기
 	public void usePoint(int user_pk, int point);
 	
+	// 포인트 확인하기
+	boolean checkPoint(int user_pk, int point);
+		
 	// 진행중인미션 db에 progress입력하기
-	void userMissionProgress(String mission);
-	
+	void userMissionProgress(String mission, int user_pk);
+		
 	// 미션종료 날짜 가져오기
-	String userMissionEndDay(String mission);
+	String userMissionEndDay(String mission, int user_pk);
 	
 }

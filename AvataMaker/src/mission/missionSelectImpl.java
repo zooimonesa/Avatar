@@ -168,17 +168,42 @@ public class missionSelectImpl implements missionSelect{
 		}
 	}
 
+	// 포인트 확인하기
+	@Override
+	public boolean checkPoint(int user_pk, int p) {
+		String sql = "SELECT user_pk, point FROM userinfo WHERE user_pk = ? ";
+		
+		try (Connection conn = ConnectionProvider.makeConnection();
+				PreparedStatement stmt = conn.prepareStatement(sql)){
+				stmt.setInt(1, user_pk);
+			
+			try (ResultSet rs = stmt.executeQuery()) {
+				if (rs.next()) {
+					int point = rs.getInt("point");
+					if (point - p >= 0) {
+						return true;
+					}
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
+
 	// 진행중인미션 db에 progress입력하기
-	public void userMissionProgress(String mission) {
+	public void userMissionProgress(String mission, int user_pk) {
 		LocalDateTime today = LocalDateTime.now();
 		LocalDateTime dday = today.plusDays(7);
 		String endDay = dday.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 		
-		String sql = "UPDATE user_missions SET progress = ? WHERE mission = ? ";
+		String sql = "UPDATE user_missions SET progress = ? WHERE mission = ? and user_pk = ?";
 		try (Connection conn = ConnectionProvider.makeConnection();
 				PreparedStatement stmt = conn.prepareStatement(sql)) {
 			stmt.setString(1, endDay);
 			stmt.setString(2, mission);
+			stmt.setInt(3, user_pk);
 			stmt.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -189,12 +214,13 @@ public class missionSelectImpl implements missionSelect{
 	}
 	
 	// 미션종료 날짜 Dday로 알려주기
-	public String userMissionEndDay(String mission) {
-		String sql = "SELECT * FROM user_missions WHERE mission = ?";
+	public String userMissionEndDay(String mission, int user_pk) {
+		String sql = "SELECT * FROM user_missions WHERE mission = ? and user_pk = ?";
 		String userDday = null;
 		try (Connection conn = ConnectionProvider.makeConnection();
 				PreparedStatement stmt = conn.prepareStatement(sql)) {
 			stmt.setString(1, mission);
+			stmt.setInt(2, user_pk);
 			try (ResultSet rs = stmt.executeQuery()) {
 				if (rs.next()) {
 					userDday = rs.getString("progress");
