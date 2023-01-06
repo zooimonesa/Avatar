@@ -85,7 +85,7 @@ public class UserinfoServiceImpl implements UserinfoService {
 		}
 		
 		else if (repo.countByID(ID) == 1) {
-			JOptionPane.showMessageDialog(null, "사용가능한 닉네임입니다", "Message", JOptionPane.INFORMATION_MESSAGE); 
+			//JOptionPane.showMessageDialog(null, "사용가능한 닉네임입니다", "Message", JOptionPane.INFORMATION_MESSAGE); 
 			return EMAIL_DUPLICATED;
 		}
 		return repo.insert(ID, password, nickname);

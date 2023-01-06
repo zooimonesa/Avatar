@@ -23,7 +23,7 @@ import java.awt.Cursor;
 
 public class SignUpFrame {
 
-	JFrame frame;
+	public JFrame frame;
 	private JTextField idTextField;
 	private JPasswordField passwordTextField;
 	private JTextField nickNameTextField;
@@ -56,8 +56,8 @@ public class SignUpFrame {
 	public void customcursor() { // 마우스포인터 ====================================
 		
 		Toolkit tk = Toolkit.getDefaultToolkit();
-		Image cursorimage = tk.getImage("대형견_커서.png");
-		Point point = new Point(0, 0);
+		Image cursorimage = tk.getImage("농담곰_대형견_커서.png");
+		Point point = new Point(20, 20);
 		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
 		frame.setCursor(cursor);
 	} // =======================================================
@@ -119,7 +119,11 @@ public class SignUpFrame {
 				newPw = passwordTextField.getText();
 				newNn = nickNameTextField.getText();
 				
-				sui.MakeNewUser(newId, newPw, newNn);
+				int dispose = sui.MakeNewUser(newId, newPw, newNn);
+				
+				if(dispose == 1) {
+					frame.dispose();
+				}
 				
 			}
 		});
