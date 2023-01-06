@@ -114,7 +114,7 @@ public class UserOwnMissionListFrame {
 			dailyMissionT[i].setBounds(35, dailyY, 280, 30);
 			oneDayMissionPanel.add(dailyMissionT[i]);
 
-			dailyMissionclear[i] = new JButton("달성"); // 일일미션달성버튼
+			dailyMissionclear[i] = new JButton("완료"); // 일일미션달성버튼
 			dailyMissionclear[i].setActionCommand(String.valueOf(i));
 			dailyMissionclear[i].addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -191,7 +191,7 @@ public class UserOwnMissionListFrame {
 			weeklyMissionDday[i].setBounds(270, weeklyY, 280, 30);
 			oneWeekMissionPanel.add(weeklyMissionDday[i]);
 
-			weeklyMissionClear[i] = new JButton("달성"); // 주간미션달성버튼
+			weeklyMissionClear[i] = new JButton("완료"); // 주간미션달성버튼
 			weeklyMissionClear[i].setActionCommand(String.valueOf(i));
 			weeklyMissionClear[i].addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
