@@ -47,8 +47,8 @@ public class StartFrame {
 	public void customcursor() { // 마우스포인터 ====================================
 		
 		Toolkit tk = Toolkit.getDefaultToolkit();
-		Image cursorimage = tk.getImage("농담곰_대형견_커서.png");
-		Point point = new Point(20, 20);
+		Image cursorimage = tk.getImage("대형견_커서.png");
+		Point point = new Point(0, 0);
 		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
 		frmAlpha.setCursor(cursor);
 	} // =======================================================

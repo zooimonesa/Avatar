@@ -47,8 +47,8 @@ public class PurchaseFrame {
 	public void customcursor() { // 마우스포인터 ====================================
 
 		Toolkit tk = Toolkit.getDefaultToolkit();
-		Image cursorimage = tk.getImage("마우스포인터_1.png");
-		Point point = new Point(20, 20);
+		Image cursorimage = tk.getImage("대형견_커서.png");
+		Point point = new Point(0, 0);
 		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
 		frame.setCursor(cursor);
 	} // =======================================================
