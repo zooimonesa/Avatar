@@ -65,80 +65,29 @@ public class StoreFrame {
 		ImageIcon 상의 = new ImageIcon(); // =======================
 		ImageIcon 상점캐릭터 = new ImageIcon("농담곰_상점_기본.png");
 
-		JButton btnNewButton_1 = new JButton("New button");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				PurchaseFrame purchaseFrame = new PurchaseFrame();
-				purchaseFrame.frame.setVisible(true); // 다음 프레임 띄우기
-				purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
-				purchaseFrame.frame.setResizable(false);
-				
-			}
-		});
-		
-		
-		btnNewButton_1.setBounds(324, 21, 90, 100);
-		frame.getContentPane().add(btnNewButton_1);
-
-		JButton btnNewButton_1_1 = new JButton("New button");
-		btnNewButton_1_1.setBounds(324, 131, 90, 100);
-		frame.getContentPane().add(btnNewButton_1_1);
-
-		JButton btnNewButton_1_2 = new JButton("New button");
-		btnNewButton_1_2.setBounds(324, 241, 90, 100);
-		frame.getContentPane().add(btnNewButton_1_2);
-
-		JButton btnNewButton_1_3 = new JButton("New button");
-		btnNewButton_1_3.setBounds(324, 351, 90, 100);
-		frame.getContentPane().add(btnNewButton_1_3);
-
-		JButton btnNewButton_1_4 = new JButton("New button");
-		btnNewButton_1_4.setBounds(426, 21, 90, 100);
-		frame.getContentPane().add(btnNewButton_1_4);
-
-		JButton btnNewButton_1_1_1 = new JButton("New button");
-		btnNewButton_1_1_1.setBounds(426, 131, 90, 100);
-		frame.getContentPane().add(btnNewButton_1_1_1);
-
-		JButton btnNewButton_1_2_1 = new JButton("New button");
-		btnNewButton_1_2_1.setBounds(426, 241, 90, 100);
-		frame.getContentPane().add(btnNewButton_1_2_1);
-
-		JButton btnNewButton_1_3_1 = new JButton("New button");
-		btnNewButton_1_3_1.setBounds(426, 351, 90, 100);
-		frame.getContentPane().add(btnNewButton_1_3_1);
-
-		JButton btnNewButton_1_5 = new JButton("New button");
-		btnNewButton_1_5.setBounds(528, 21, 90, 100);
-		frame.getContentPane().add(btnNewButton_1_5);
-
-		JButton btnNewButton_1_1_2 = new JButton("New button");
-		btnNewButton_1_1_2.setBounds(528, 131, 90, 100);
-		frame.getContentPane().add(btnNewButton_1_1_2);
-
-		JButton btnNewButton_1_2_2 = new JButton("New button");
-		btnNewButton_1_2_2.setBounds(528, 241, 90, 100);
-		frame.getContentPane().add(btnNewButton_1_2_2);
-
-		JButton btnNewButton_1_3_2 = new JButton("New button");
-		btnNewButton_1_3_2.setBounds(528, 351, 90, 100);
-		frame.getContentPane().add(btnNewButton_1_3_2);
-
-		JButton btnNewButton_1_6 = new JButton("New button");
-		btnNewButton_1_6.setBounds(630, 21, 90, 100);
-		frame.getContentPane().add(btnNewButton_1_6);
-
-		JButton btnNewButton_1_1_3 = new JButton("New button");
-		btnNewButton_1_1_3.setBounds(630, 131, 90, 100);
-		frame.getContentPane().add(btnNewButton_1_1_3);
-
-		JButton btnNewButton_1_2_3 = new JButton("New button");
-		btnNewButton_1_2_3.setBounds(630, 241, 90, 100);
-		frame.getContentPane().add(btnNewButton_1_2_3);
-
-		JButton btnNewButton_1_3_3 = new JButton("New button");
-		btnNewButton_1_3_3.setBounds(630, 351, 90, 100);
-		frame.getContentPane().add(btnNewButton_1_3_3);
+		int storeX = 324;
+        int storeY = 21;
+        
+        JButton btnNewButton_1[][] = new JButton[4][4];
+        for (int i = 0; i < 4; i++) {
+           storeY = 21;
+           for (int j = 0; j < 4; j ++) {
+              btnNewButton_1[i][j] = new JButton();
+              btnNewButton_1[i][j].setBounds(storeX, storeY, 90, 100);
+              frame.getContentPane().add(btnNewButton_1[i][j]);
+              storeY += 110;
+              btnNewButton_1[i][j].addActionListener(new ActionListener() {
+                 public void actionPerformed(ActionEvent e) {
+                    PurchaseFrame purchaseFrame = new PurchaseFrame();
+                    purchaseFrame.frame.setVisible(true); // 다음 프레임 띄우기
+                    purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
+                    purchaseFrame.frame.setResizable(false);
+                    
+                 }
+              });
+           }
+           storeX += 102;
+        }
 
 		JButton 이전창버튼 = new JButton("이전으로");
 		이전창버튼.addActionListener(new ActionListener() {
