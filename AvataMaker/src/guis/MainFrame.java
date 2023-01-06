@@ -90,7 +90,7 @@ public class MainFrame {
       ImageIcon 재능1 = new ImageIcon("재능_1.png");
       ImageIcon 재능0 = new ImageIcon("재능_0.png");
 
-      JLabel nickNameLabel = new JLabel("닉네임");
+      JLabel nickNameLabel = new JLabel(mainnickname);
       nickNameLabel.setBackground(new Color(255, 255, 255));
       nickNameLabel.setHorizontalAlignment(SwingConstants.CENTER);
       nickNameLabel.setBounds(315, 40, 424, 35);
