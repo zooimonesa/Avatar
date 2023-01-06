@@ -6,7 +6,7 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/GGG/Desktop/mysql-connector-j-8.0.31/mysql-connector-j-8.0.31.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/dbutil"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/_DbUtil"/>
+	<classpathentry kind="lib" path="D:/yusumin/mysql-connector-j-8.0.31/mysql-connector-j-8.0.31.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

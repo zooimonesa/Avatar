@@ -162,10 +162,10 @@ public class MissionListFrame {
 		oneDayMissionRefreshButton1.addActionListener(new ActionListener( ) {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				text1 = mis.RandomMission(selectB, 1).getMission();
-				oneDayMissionLabel1_T.setText(text1);
 				if (mis.checkPoint(user_pk, 5)) {
 					mis.usePoint(user_pk, 5);
+					text1 = mis.RandomMission(selectB, 1).getMission();
+					oneDayMissionLabel1_T.setText(text1);
 				} else {
 					JOptionPane.showMessageDialog(null, "포인트가 부족합니다", "알림창", JOptionPane.ERROR_MESSAGE);
 				}
@@ -192,12 +192,11 @@ public class MissionListFrame {
 		oneDayMissionRefreshButton2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				text2 = mis.RandomMission(selectB, 1).getMission();
-				oneDayMissionLabel2_T.setText(text2);
 				if (mis.checkPoint(user_pk, 5)) {
 					mis.usePoint(user_pk, 5);
+					text2 = mis.RandomMission(selectB, 1).getMission();
+					oneDayMissionLabel2_T.setText(text2);
 				} else {
-					
 					JOptionPane.showMessageDialog(null, "포인트가 부족합니다", "알림창", JOptionPane.ERROR_MESSAGE);
 				}
 			}
@@ -224,10 +223,10 @@ public class MissionListFrame {
 		oneWeekMissionRefreshButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				text3 = mis.RandomMission(selectB, 7).getMission();
-				oneWeekMissionLabel1_T.setText(text3);
 				if (mis.checkPoint(user_pk, 5)) {
 					mis.usePoint(user_pk, 5);
+					text3 = mis.RandomMission(selectB, 7).getMission();
+					oneWeekMissionLabel1_T.setText(text3);
 				} else {
 					JOptionPane.showMessageDialog(null, "포인트가 부족합니다", "알림창", JOptionPane.ERROR_MESSAGE);
 				}
