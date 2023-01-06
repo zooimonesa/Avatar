@@ -67,7 +67,8 @@ public class MissionListFrame {
 		GetInfo mf = new GetInfo();
 		
 //		int user_pk = mf.fuserpk;
-		int user_pk = 1;
+		int user_pk = 33
+				;
 
 		
 		frame = new JFrame();
@@ -133,14 +134,30 @@ public class MissionListFrame {
 		oneWeekMissionPanel.add(oneWeekMissionLabel1_T);
 		
 		
+		JLabel refreshNoticelbl = new JLabel();
+		refreshNoticelbl.setText("* 미션 새로고침시 5Point 차감됩니다.");
+		refreshNoticelbl.setBounds(40, 290, 300, 50);
+		frame.getContentPane().add(refreshNoticelbl);
+		
+		JLabel userPointlbl_1 = new JLabel();
+		userPointlbl_1.setText("잔여 포인트 : ");
+		userPointlbl_1.setBounds(45, 340, 200, 50);
+		frame.getContentPane().add(userPointlbl_1);
+		
+		JLabel userPointlbl_2 = new JLabel();
+		userPointlbl_2.setText("0");
+		userPointlbl_2.setBounds(150, 340, 50, 50);
+		frame.getContentPane().add(userPointlbl_2);
+		
+		
 		// 이전버튼 생성
-		JButton previousButton = new JButton("이전으로");
+		JButton previousButton = new JButton("이전 화면으로");
 		previousButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
 			}
 		});
-		previousButton.setBounds(161, 332, 140, 50);
+		previousButton.setBounds(300, 330, 140, 50);
 		frame.getContentPane().add(previousButton);
 		
 		
@@ -151,6 +168,7 @@ public class MissionListFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				mis.insertMission(user_pk, text1, 1);
+				JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);
 				
 			}
 		});
@@ -182,6 +200,7 @@ public class MissionListFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				mis.insertMission(user_pk, text2, 1);
+				JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		oneDayMissionChoiceButton2.setBounds(290, 25, 40, 40);
@@ -213,6 +232,7 @@ public class MissionListFrame {
 			public void actionPerformed(ActionEvent e) {
 				mis.insertMission(user_pk, text3, 7);
 				mis.userMissionProgress(user_pk, text3);
+				JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		oneWeekMissionChoiceButton.setBounds(290, 25, 40, 40);
