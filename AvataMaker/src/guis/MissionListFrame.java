@@ -165,8 +165,12 @@ public class MissionListFrame {
 		oneDayMissionChoiceButton1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				mis.insertMission(user_pk, text1, 1);
-				JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);
+				if(mis.checkMission(user_pk, 1)) {
+					mis.insertMission(user_pk, text1, 1);
+					JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);					
+				} else {
+					JOptionPane.showMessageDialog(null, "미션이 이미 가득 차있습니다.", "오류", JOptionPane.INFORMATION_MESSAGE);
+				}
 				
 			}
 		});
@@ -199,8 +203,12 @@ public class MissionListFrame {
 		oneDayMissionChoiceButton2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				mis.insertMission(user_pk, text2, 1);
-				JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);
+				if(mis.checkMission(user_pk, 1)) {
+					mis.insertMission(user_pk, text2, 1);
+					JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);					
+				} else {
+					JOptionPane.showMessageDialog(null, "미션이 이미 가득 차있습니다.", "오류", JOptionPane.INFORMATION_MESSAGE);
+				}
 			}
 		});
 		oneDayMissionChoiceButton2.setBounds(290, 25, 40, 40);
@@ -232,9 +240,13 @@ public class MissionListFrame {
 		oneWeekMissionChoiceButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				mis.insertMission(user_pk, text3, 7);
-				mis.userMissionProgress(user_pk, text3);
-				JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);
+				if(mis.checkMission(user_pk, 7)) {
+					mis.insertMission(user_pk, text3, 7);
+					mis.userMissionProgress(user_pk, text3);
+					JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);					
+				} else {
+					JOptionPane.showMessageDialog(null, "미션이 이미 가득 차있습니다.", "오류", JOptionPane.INFORMATION_MESSAGE);
+				}
 			}
 		});
 		oneWeekMissionChoiceButton.setBounds(290, 25, 40, 40);

@@ -66,8 +66,8 @@ public class UserOwnMissionListFrame {
 	private void initialize() {	
 		missionSelect mis = new missionSelectImpl();
 		GetInfo mf= new GetInfo();
-//		int user_pk = mf.fuserpk;
-		int user_pk = 1;
+		int user_pk = mf.fuserpk;
+//		int user_pk = 1;
 
 		
 		frame = new JFrame();
