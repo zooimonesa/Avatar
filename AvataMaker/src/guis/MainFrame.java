@@ -82,6 +82,8 @@ public class MainFrame {
 
       ImageIcon 캐릭터 = new ImageIcon("농담곰_메인_기본.png");
       ImageIcon 배경 = new ImageIcon("배경.png");
+      
+      
       ImageIcon 상의 = new ImageIcon(avatar.avatarOnFinding(user_pk, "옷"));
       ImageIcon 얼굴 = new ImageIcon(avatar.avatarOnFinding(user_pk,"얼굴"));
       ImageIcon 다른거 = new ImageIcon("");
