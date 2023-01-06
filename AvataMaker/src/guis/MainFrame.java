@@ -80,7 +80,12 @@ public class MainFrame {
 		frame.setBounds(100, 100, 815, 526);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-
+		
+		ImageIcon 미션버튼 = new ImageIcon("미션버튼.png");
+		ImageIcon 상점버튼 = new ImageIcon("상점버튼.png");
+		ImageIcon 로그보기버튼 = new ImageIcon("로그보기.png");
+		ImageIcon 로그아웃버튼 = new ImageIcon("로그아웃버튼.png");
+		
 		ImageIcon 캐릭터 = new ImageIcon("농담곰_메인_기본.png");
 		ImageIcon 배경 = new ImageIcon("배경.png");
 
@@ -201,7 +206,7 @@ public class MainFrame {
 		giftPointPanel.add(giftPointBoder);
 		giftPointBoder.setHorizontalAlignment(SwingConstants.CENTER);
 
-		JButton missionPoint = new JButton("미션");
+		JButton missionPoint = new JButton(미션버튼);
 		missionPoint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MissionChoiceFrame missionChoiceFrame = new MissionChoiceFrame();
@@ -212,10 +217,12 @@ public class MainFrame {
 
 			}
 		});
+		missionPoint.setBorderPainted(false);
+		missionPoint.setContentAreaFilled(false);
 		missionPoint.setBounds(315, 291, 97, 50);
 		frame.getContentPane().add(missionPoint);
 
-		JButton storePoint = new JButton("상점");
+		JButton storePoint = new JButton(상점버튼);
 		storePoint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				StoreFrame storeFrame = new StoreFrame();
@@ -225,10 +232,12 @@ public class MainFrame {
 				frame.dispose(); // 꺼짐
 			}
 		});
+		storePoint.setBorderPainted(false);
+		storePoint.setContentAreaFilled(false);
 		storePoint.setBounds(424, 291, 97, 50);
 		frame.getContentPane().add(storePoint);
 
-		JButton logButton = new JButton("로그");
+		JButton logButton = new JButton(로그보기버튼);
 		logButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				LogFrame logFrame = new LogFrame();
@@ -238,10 +247,12 @@ public class MainFrame {
 				frame.dispose(); // 꺼짐
 			}
 		});
+		logButton.setBorderPainted(false);
+		logButton.setContentAreaFilled(false);
 		logButton.setBounds(533, 291, 97, 50);
 		frame.getContentPane().add(logButton);
 
-		JButton logOutButton = new JButton("로그아웃");
+		JButton logOutButton = new JButton(로그아웃버튼);
 		logOutButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int answer = JOptionPane.showConfirmDialog(null, "로그아웃하시겠습니까?", "로그아웃창", JOptionPane.YES_NO_OPTION); // 로그아웃
@@ -257,6 +268,8 @@ public class MainFrame {
 				}
 			}
 		});
+		logOutButton.setBorderPainted(false);
+		logOutButton.setContentAreaFilled(false);
 		logOutButton.setBounds(642, 291, 97, 50);
 		frame.getContentPane().add(logOutButton);
 
