@@ -1,13 +1,15 @@
 package character;
+
+
 import java.nio.file.Path;
 
 public interface avatarImage {
 	//이미지 저장하는 폴더 만드는 메소드
 	// 이미지 저장 폴더 만들어주는 메소드
-	 void folderMaker();
+	 void folderMaker(String folderName);
 	
 	//유저가 소유하고 있는 이미지 모두 저장하는 메소드
-	 Path selectEncodedImage(int id) ;
+	 Path selectEncodedImage() ;
 	
 	 
 	//encode화 시킨 바이트 들을 배열에 넣어주는 메소드
@@ -20,7 +22,34 @@ public interface avatarImage {
 	 //이미지 encode화 시켜주는 메소드
 	 byte[] imageEncode();
 	 
- 
+	// USING 정보 변경
+	 int avatarTakeOnOff(int onOff, int user_pk, String onOffEname , String type);
+	 
+	//상점에서 산거 복사 해서 내 db에 넣기
+	 int insertCopy(String nickname, String avatarName);
+	 
+	//가지고  있는 이미지 중에서  착용중인 것들만 불러오기
+	 Path takeOnEncodedImage(int id);
+	 
+	 //착용하고 있는 파일 해제하기
+	 void avatarOff(String ename);
+	 
+	 // 현재 같은 부위에 착용한게 있는지 확인해주는 친구
+	 String avatarOnFinding(int user_pk, String type );
+	 
+	 // 아바타 착용했는지 확인 후 장착 해제
+	 int avatarTakeOff( int user_pk,  String type);
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 	 
 	 
 //	// 이미지 순서(자리) 잡아주는 메소드
