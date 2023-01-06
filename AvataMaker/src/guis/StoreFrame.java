@@ -59,7 +59,10 @@ public class StoreFrame {
 		frame.setBounds(100, 100, 815, 526);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-
+		
+		ImageIcon 머리 = new ImageIcon();  // 캐릭터 옷 아이콘 =================
+		ImageIcon 악세서리 = new ImageIcon();
+		ImageIcon 상의 = new ImageIcon(); // =======================
 		ImageIcon 상점캐릭터 = new ImageIcon("농담곰_상점_기본.png");
 
 		JButton btnNewButton_1 = new JButton("New button");
@@ -150,11 +153,27 @@ public class StoreFrame {
 		이전창버튼.setHorizontalAlignment(SwingConstants.TRAILING);
 		이전창버튼.setBounds(732, 351, 55, 100);
 		frame.getContentPane().add(이전창버튼);
-
-		JLabel lblNewLabel = new JLabel(상점캐릭터);
-		lblNewLabel.setBorder(bb);
-		lblNewLabel.setBounds(12, 21, 300, 430);
-		frame.getContentPane().add(lblNewLabel);
+		
+		JButton btnNewButton = new JButton("아바타적용하기"); // 아바타 적용 버튼 ================================
+		btnNewButton.setBounds(178, 424, 130, 23);
+		frame.getContentPane().add(btnNewButton); // ================================
+		
+		JLabel charHead = new JLabel(머리);  // 상점 캐릭터 착용샷 =======================================================================
+		charHead.setBounds(12, 21, 300, 430);
+		frame.getContentPane().add(charHead);
+		
+		JLabel charAcc = new JLabel(악세서리);
+		charAcc.setBounds(12, 21, 300, 430);
+		frame.getContentPane().add(charAcc);
+		
+		JLabel charTop = new JLabel(상의);
+		charTop.setBounds(12, 21, 300, 430);
+		frame.getContentPane().add(charTop);
+		
+		JLabel mainChar = new JLabel(상점캐릭터);
+		mainChar.setBorder(bb);
+		mainChar.setBounds(12, 21, 300, 430);
+		frame.getContentPane().add(mainChar);  // ==================================================================
 		
 		JLabel lblNewLabel_1 = new JLabel("보유포인트:");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
