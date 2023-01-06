@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
@@ -150,6 +151,7 @@ public class MissionListFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				mis.insertMission(user_pk, text1, 1);
+				
 			}
 		});
 		oneDayMissionChoiceButton1.setBounds(290, 25, 40, 40);
@@ -162,7 +164,11 @@ public class MissionListFrame {
 			public void actionPerformed(ActionEvent e) {
 				text1 = mis.RandomMission(selectB, 1).getMission();
 				oneDayMissionLabel1_T.setText(text1);
-				mis.usePoint(user_pk, 5);
+				if (mis.checkPoint(user_pk, 5)) {
+					mis.usePoint(user_pk, 5);
+				} else {
+					JOptionPane.showMessageDialog(null, "포인트가 부족합니다", "알림창", JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		});
 		oneDayMissionRefreshButton1.setBounds(340, 25, 40, 40);
@@ -188,7 +194,12 @@ public class MissionListFrame {
 			public void actionPerformed(ActionEvent e) {
 				text2 = mis.RandomMission(selectB, 1).getMission();
 				oneDayMissionLabel2_T.setText(text2);
-				mis.usePoint(user_pk, 5);
+				if (mis.checkPoint(user_pk, 5)) {
+					mis.usePoint(user_pk, 5);
+				} else {
+					
+					JOptionPane.showMessageDialog(null, "포인트가 부족합니다", "알림창", JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		});
 		oneDayMissionRefreshButton2.setBounds(340, 25, 40, 40);
@@ -215,7 +226,11 @@ public class MissionListFrame {
 			public void actionPerformed(ActionEvent e) {
 				text3 = mis.RandomMission(selectB, 7).getMission();
 				oneWeekMissionLabel1_T.setText(text3);
-				mis.usePoint(user_pk, 5);
+				if (mis.checkPoint(user_pk, 5)) {
+					mis.usePoint(user_pk, 5);
+				} else {
+					JOptionPane.showMessageDialog(null, "포인트가 부족합니다", "알림창", JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		});
 		oneWeekMissionRefreshButton.setBounds(340, 25, 40, 40);
