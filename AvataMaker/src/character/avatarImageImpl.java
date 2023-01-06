@@ -219,6 +219,7 @@ public class avatarImageImpl implements avatarImage {
 			 String story = rs.getString("story");
 			 System.out.println(story);
 			 list.add(story);
+			 list.add("\n");
 			}
 			return list;
 			
