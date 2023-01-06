@@ -84,12 +84,12 @@ public class MainFrame {
       ImageIcon 배경 = new ImageIcon("배경.png");
       ImageIcon 상의 = new ImageIcon(avatar.avatarOnFinding(user_pk, "옷"));
       ImageIcon 얼굴 = new ImageIcon(avatar.avatarOnFinding(user_pk,"얼굴"));
-      ImageIcon 다른거 = new ImageIcon("목도리.png");
+      ImageIcon 다른거 = new ImageIcon("");
       ImageIcon 능력치바 = new ImageIcon("능력치바.png");
       ImageIcon 체력1 = new ImageIcon("체력_1.png");
       ImageIcon 체력0 = new ImageIcon("체력_0.png");
       ImageIcon 지능1 = new ImageIcon("지능_1.png");
-      ImageIcon 지능0 = new ImageIcon("지능_0.png");
+      ImageIcon 지능0 = new ImageIcon("지능_0.png")
       ImageIcon 재능1 = new ImageIcon("재능_1.png");
       ImageIcon 재능0 = new ImageIcon("재능_0.png");
 
