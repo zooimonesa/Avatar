@@ -18,6 +18,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
 import User.GetInfo;
+import character.avatarImageImpl;
 
 import javax.swing.JPanel;
 
@@ -37,7 +38,7 @@ public class MainFrame {
 	   int maintalent = mf.fmaintalent;
 	   
 
-
+	   avatarImageImpl avatar = new avatarImageImpl();
    public JFrame frame;
    private LineBorder bb = new LineBorder(Color.black, 1, true);
 
@@ -81,7 +82,9 @@ public class MainFrame {
 
       ImageIcon 캐릭터 = new ImageIcon("농담곰_메인_기본.png");
       ImageIcon 배경 = new ImageIcon("배경.png");
-      ImageIcon 상의 = new ImageIcon("목도리.png");
+      ImageIcon 상의 = new ImageIcon(avatar.avatarOnFinding(user_pk, "옷"));
+      ImageIcon 얼굴 = new ImageIcon(avatar.avatarOnFinding(user_pk,"얼굴"));
+      ImageIcon 다른거 = new ImageIcon("목도리.png");
       ImageIcon 능력치바 = new ImageIcon("능력치바.png");
       ImageIcon 체력1 = new ImageIcon("체력_1.png");
       ImageIcon 체력0 = new ImageIcon("체력_0.png");
@@ -269,11 +272,11 @@ public class MainFrame {
       userPointLabel.setBounds(533, 351, 97, 50);
       frame.getContentPane().add(userPointLabel);
 
-      JLabel charHeadLabel = new JLabel();
+      JLabel charHeadLabel = new JLabel(얼굴);
       charHeadLabel.setBounds(40, 40, 150, 200);
       frame.getContentPane().add(charHeadLabel);
 
-      JLabel charAccLabel = new JLabel();
+      JLabel charAccLabel = new JLabel(다른거);
       charAccLabel.setBounds(40, 40, 150, 200);
       frame.getContentPane().add(charAccLabel);
 
