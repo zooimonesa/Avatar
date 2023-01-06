@@ -46,6 +46,30 @@ public class missionSelectImpl implements missionSelect{
 		return list.get(num);
 	}
 
+	// 미션 몇갠지 확인
+	@Override
+	public boolean checkMission(int user_pk, int term) {
+		String sql = "SELECT count(*) as cnt from user_missions where user_pk = ? and term = ?";
+		try(Connection conn = ConnectionProvider.makeConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setInt(1, user_pk);
+			pstmt.setInt(2, term);
+			try(ResultSet rs = pstmt.executeQuery()) {
+				if(rs.next()) {
+					int cnt = rs.getInt("cnt");
+					if(term == 1 && cnt < 6 ) {
+						return true;
+					} else if (term == 7 && cnt < 3) {
+						return true;
+					}
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+	
 	// 수락한 미션 테이블에 넣기
 	@Override
 	public void insertMission(int user_pk, String mission, int term) {
@@ -253,6 +277,8 @@ public class missionSelectImpl implements missionSelect{
 		return m_Dday;
 		
 	}
+
+
 
 
 
