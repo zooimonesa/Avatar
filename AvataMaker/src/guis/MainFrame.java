@@ -89,7 +89,7 @@ public class MainFrame {
       ImageIcon 체력1 = new ImageIcon("체력_1.png");
       ImageIcon 체력0 = new ImageIcon("체력_0.png");
       ImageIcon 지능1 = new ImageIcon("지능_1.png");
-      ImageIcon 지능0 = new ImageIcon("지능_0.png")
+      ImageIcon 지능0 = new ImageIcon("지능_0.png");
       ImageIcon 재능1 = new ImageIcon("재능_1.png");
       ImageIcon 재능0 = new ImageIcon("재능_0.png");
 
