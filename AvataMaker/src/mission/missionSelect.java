@@ -21,9 +21,9 @@ public interface missionSelect {
 	boolean checkPoint(int user_pk, int point);
 		
 	// 진행중인미션 db에 progress입력하기
-	void userMissionProgress(String mission, int user_pk);
+	void userMissionProgress(int user_pk, String mission);
 		
 	// 미션종료 날짜 가져오기
-	String userMissionEndDay(String mission, int user_pk);
+	String userMissionEndDay(int user_pk, String mission);
 	
 }

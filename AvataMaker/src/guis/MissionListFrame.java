@@ -202,7 +202,7 @@ public class MissionListFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				mis.insertMission(user_pk, text3, 7);
-				mis.userMissionProgress(text3);
+				mis.userMissionProgress(user_pk, text3);
 			}
 		});
 		oneWeekMissionChoiceButton.setBounds(290, 25, 40, 40);
