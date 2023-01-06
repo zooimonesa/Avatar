@@ -36,6 +36,7 @@ public class MainFrame {
 	   int mainhealth = mf.fmainhealth;
 	   int mainintelligence = mf.fmainintelligence;
 	   int maintalent = mf.fmaintalent;
+	   int yourstat; // 태현
 	   
 
 	   avatarImageImpl avatar = new avatarImageImpl();
@@ -129,23 +130,61 @@ public class MainFrame {
       JLabel intPoint[] = new JLabel[10];
       JLabel giftPoint[] = new JLabel[10];
 
-      for (int i = 0; i < 10; i++) { // 능력치 조절 라벨 =============================================================
-         healthPoint[i] = new JLabel(체력1); // 체력있음
-//         healthPoint[i] = new JLabel(); // 체력없음
-         healthPoint[i].setBounds(statPointX, 8, 21, 19);
-         healthPointPanel.add(healthPoint[i]);
+      int j = 10;
+		for (int i = 100; i>= 0; i-=10) {
+				if(mainhealth >= i) {
+					yourstat = j;
+					j = 10;
+					break;
+				}else {
+					j--;
+				}
+			}
+		
 
-         intPoint[i] = new JLabel(지능1); // 지능있음
-//         intPoint[i] = new JLabel(); // 지능없음
-         intPoint[i].setBounds(statPointX, 8, 21, 19);
-         intPointPanel.add(intPoint[i]);
+		for (int i = 0; i < yourstat; i++) { // 능력치 조절 라벨 =============================================================
+			healthPoint[i] = new JLabel(체력1); // 체력있음
+//       healthPoint[i] = new JLabel(); // 체력없음
+			healthPoint[i].setBounds(statPointX, 8, 21, 19);
+			healthPointPanel.add(healthPoint[i]);
+			statPointX += 40;
 
-         giftPoint[i] = new JLabel(재능1); // 재능있음
-//         giftPoint[i] = new JLabel(); // 재능없음
-         giftPoint[i].setBounds(statPointX, 8, 21, 19);
-         giftPointPanel.add(giftPoint[i]);
+		}
+		statPointX = 20;
+		for (int i = 100; i>= 0; i-=10) {
+			if(mainintelligence >= i) {
+				yourstat = j;
+				j = 10;
+				break;
+			}else {
+				j--;
+			}
+		}
 
-         statPointX += 40;
+		for (int i = 0; i < yourstat; i++) {
+			intPoint[i] = new JLabel(지능1); // 지능있음
+//       intPoint[i] = new JLabel(); // 지능없음
+			intPoint[i].setBounds(statPointX, 8, 21, 19);
+			intPointPanel.add(intPoint[i]);
+			statPointX += 40;
+		}
+		statPointX = 20;
+		for (int i = 100; i>= 0; i-=10) {
+			if(maintalent >= i) {
+				yourstat = j;
+				j = 10;
+				break;
+			}else {
+				j--;
+			}
+		}
+		for (int i = 0; i < yourstat; i++) {
+			giftPoint[i] = new JLabel(재능1); // 재능있음
+//       giftPoint[i] = new JLabel(); // 재능없음
+			giftPoint[i].setBounds(statPointX, 8, 21, 19);
+			giftPointPanel.add(giftPoint[i]);
+
+			statPointX += 40;
 
       } // =================================================================================
 
@@ -300,17 +339,17 @@ public class MainFrame {
       userPointLabel_1.setBounds(642, 351, 97, 50);
       frame.getContentPane().add(userPointLabel_1);
 
-      JLabel healthPointLabel = new JLabel("체력");
+      JLabel healthPointLabel = new JLabel("체력" + Integer.toString(mainhealth));
       healthPointLabel.setHorizontalAlignment(SwingConstants.CENTER);
       healthPointLabel.setBounds(246, 85, 57, 35);
       frame.getContentPane().add(healthPointLabel);
 
-      JLabel intPointLabel = new JLabel("지능");
+      JLabel intPointLabel = new JLabel("지능" + Integer.toString(mainintelligence));
       intPointLabel.setHorizontalAlignment(SwingConstants.CENTER);
       intPointLabel.setBounds(246, 130, 57, 35);
       frame.getContentPane().add(intPointLabel);
 
-      JLabel giftPointLabel = new JLabel("재능");
+      JLabel giftPointLabel = new JLabel("재능" + Integer.toString(maintalent));
       giftPointLabel.setHorizontalAlignment(SwingConstants.CENTER);
       giftPointLabel.setBounds(246, 175, 57, 35);
       frame.getContentPane().add(giftPointLabel);
