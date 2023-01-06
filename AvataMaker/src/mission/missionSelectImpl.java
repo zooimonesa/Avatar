@@ -49,13 +49,27 @@ public class missionSelectImpl implements missionSelect{
 	// 수락한 미션 테이블에 넣기
 	@Override
 	public void insertMission(int user_pk, String mission, int term) {
-		String sql = "INSERT INTO user_missions(user_pk,mission,term)"
-				+ "values (?,?,?)";
+		int mission_id = 0 ;
+		String classify = "오류";
+		String sql = "INSERT INTO user_missions(user_pk,mission_id,classify,mission,term)"
+				+ "values (?,?,?,?,?)";
+		String sql2 = "SELECT * from missions where mission = ?";
 		try(Connection conn = ConnectionProvider.makeConnection();
-				PreparedStatement pstmt = conn.prepareStatement(sql)) {
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				PreparedStatement stmt = conn.prepareStatement(sql2)) {
+			stmt.setString(1, mission);
+			
+			try(ResultSet rs = stmt.executeQuery()) {
+				if(rs.next()) {
+					mission_id = rs.getInt("mission_id");
+					classify = rs.getString("classify");
+				}
+			}
 			pstmt.setInt(1, user_pk);
-			pstmt.setString(2, mission);
-			pstmt.setInt(3, term);
+			pstmt.setInt(2, mission_id);
+			pstmt.setString(3, classify);
+			pstmt.setString(4, mission);
+			pstmt.setInt(5, term);
 
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
