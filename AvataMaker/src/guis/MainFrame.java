@@ -102,7 +102,7 @@ public class MainFrame {
       nickNameLabel.setBounds(315, 40, 424, 35);
       frame.getContentPane().add(nickNameLabel);
 
-      JLabel storyLabel = new JLabel("스토리");
+      JLabel storyLabel = new JLabel(String.valueOf(avatar.storyOn(user_pk)));
       storyLabel.setBackground(new Color(255, 255, 255));
       storyLabel.setVerticalAlignment(SwingConstants.TOP);
       storyLabel.setHorizontalAlignment(SwingConstants.LEFT);
