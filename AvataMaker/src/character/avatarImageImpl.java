@@ -128,7 +128,7 @@ public class avatarImageImpl implements avatarImage {
 	 
 	@Override // 같은 부위에 착용하고 있는거 확인하기
 	public String avatarOnFinding(int user_pk, String type) {
-		String sql = "SELECT `ename` from avatar_user WHERE   user_pk = ?  AND  ? = '얼굴' AND `using` = 1   ; ";
+		String sql = "SELECT `ename` from avatar_user WHERE   user_pk = ?  AND  `type` = ? AND `using` = 1   ; ";
 		ResultSet rs = null;
 
 		try (Connection conn = ConnectionProvider.makeConnection();
