@@ -50,6 +50,10 @@ public class LogFrame {
 		JButton 닫기버튼 = new JButton("닫기");
 		닫기버튼.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				MainFrame mainFrame = new MainFrame();  // hj 메인 나오게================
+				mainFrame.frame.setVisible(true);
+				mainFrame.frame.setLocationRelativeTo(null); 
+				mainFrame.frame.setResizable(false);  // =====================
 				frame.dispose();
 			}
 		});

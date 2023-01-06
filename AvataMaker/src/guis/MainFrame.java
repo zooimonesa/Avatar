@@ -166,7 +166,7 @@ public class MainFrame {
             missionChoiceFrame.frame.setVisible(true); // 다음 프레임 띄우기
             missionChoiceFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
             missionChoiceFrame.frame.setResizable(false);
-            frame.dispose();
+            frame.dispose(); // 꺼짐
 
          }
       });
@@ -180,7 +180,7 @@ public class MainFrame {
             storeFrame.frame.setVisible(true); // 다음 프레임 띄우기
             storeFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
             storeFrame.frame.setResizable(false);
-
+            frame.dispose();  // 꺼짐
          }
       });
       storePoint.setBounds(424, 291, 97, 50);
@@ -193,6 +193,7 @@ public class MainFrame {
             logFrame.frame.setVisible(true); // 다음 프레임 띄우기
             logFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
             logFrame.frame.setResizable(false);
+            frame.dispose();  // 꺼짐
          }
       });
       logButton.setBounds(533, 291, 97, 50);

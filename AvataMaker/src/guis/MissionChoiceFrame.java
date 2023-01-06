@@ -107,6 +107,10 @@ public class MissionChoiceFrame {
 		JButton previousButton = new JButton("이전으로");
 		previousButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				MainFrame mainFrame = new MainFrame();  // hj 메인 나오게================
+				mainFrame.frame.setVisible(true);
+				mainFrame.frame.setLocationRelativeTo(null); 
+				mainFrame.frame.setResizable(false);  // =====================
 				frame.dispose();
 
 			}
