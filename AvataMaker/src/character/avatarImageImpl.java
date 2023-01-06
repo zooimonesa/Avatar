@@ -110,13 +110,13 @@ public class avatarImageImpl implements avatarImage {
 	}
 
 	@Override // 아바타 db에서 옷 상태 변경
-	public int avatarTakeOnOff(int onOff, int user_pk, String onOffEname , String type) {
+	public int avatarTakeOnOff(int onOff ,int user_pk, String onOffEname ) {
 		String sql = "UPDATE avatar_user SET `using` = ? WHERE user_pk = ? AND `ename` = ?";
 		try (Connection conn = ConnectionProvider.makeConnection();
 				PreparedStatement stmt = conn.prepareStatement(sql)) {
 			stmt.setInt(1, onOff);
 			stmt.setInt(2, user_pk);
-			stmt.setString(3,avatarOnFinding(user_pk, type) );
+			stmt.setString(3, onOffEname);
 			int rs = stmt.executeUpdate();
 			return rs;
 		} catch (SQLException e) {
@@ -124,6 +124,7 @@ public class avatarImageImpl implements avatarImage {
 		}
 		return 0;
 	}
+
 
 	 
 	@Override // 같은 부위에 착용하고 있는거 확인하기
@@ -202,6 +203,38 @@ public class avatarImageImpl implements avatarImage {
 			e.printStackTrace();
 		}
 		return 0;
+	}
+	@Override
+	public List<String> storyOn(int user_pk) {
+		String sql = "SELECT story FROM avatar_user WHERE  user_pk = ?    AND `using` = 1 ";
+		ResultSet rs = null;
+            List<String> list =new ArrayList<>();
+		try (Connection conn = ConnectionProvider.makeConnection();
+				PreparedStatement stmt = conn.prepareStatement(sql)) {
+			stmt.setInt(1, user_pk);
+			
+			rs = stmt.executeQuery();
+			
+			while (rs.next()) {
+			 String story = rs.getString("story");
+			 System.out.println(story);
+			 list.add(story);
+			}
+			return list;
+			
+		} catch (SQLException e) {
+			System.out.println("안됨");
+			e.printStackTrace();
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return null;
 	}
 	
 //	@Override // 가지고 있는 이미지 중에서 착용중인 것들만 불러오기 (대표이미지 불러올때 쓸거임)

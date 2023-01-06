@@ -2,6 +2,7 @@ package character;
 
 
 import java.nio.file.Path;
+import java.util.List;
 
 public interface avatarImage {
 	//이미지 저장하는 폴더 만드는 메소드
@@ -23,7 +24,7 @@ public interface avatarImage {
 	 byte[] imageEncode();
 	 
 	// USING 정보 변경
-	 int avatarTakeOnOff(int onOff, int user_pk, String onOffEname , String type);
+	 int avatarTakeOnOff(int onOff ,int user_pk, String onOffEname );
 	 
 	//상점에서 산거 복사 해서 내 db에 넣기
 	 int insertCopy(String nickname, String avatarName);
@@ -40,7 +41,10 @@ public interface avatarImage {
 	 // 아바타 착용했는지 확인 후 장착 해제
 	 int avatarTakeOff( int user_pk,  String type);
 	 
-	 
+	 //스토리불러오기
+	 List<String> storyOn(int user_pk );
+
+	
 	 
 	 
 	 

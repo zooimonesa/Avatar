@@ -19,8 +19,15 @@ import java.awt.Cursor;
 
 import javax.swing.SwingConstants;
 
-public class PurchaseFrame {
+import User.GetInfo;
+import character.avatarImageImpl;
 
+public class PurchaseFrame {
+	String avatarName = "목도리.png";
+
+	avatarImageImpl avatar = new avatarImageImpl();
+	GetInfo getInfo = new GetInfo();
+	
 	JFrame frame;
 
 	/**
@@ -47,8 +54,8 @@ public class PurchaseFrame {
 	public void customcursor() { // 마우스포인터 ====================================
 
 		Toolkit tk = Toolkit.getDefaultToolkit();
-		Image cursorimage = tk.getImage("대형견_커서.png");
-		Point point = new Point(0, 0);
+		Image cursorimage = tk.getImage("마우스포인터_1.png");
+		Point point = new Point(20, 20);
 		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
 		frame.setCursor(cursor);
 	} // =======================================================
@@ -78,10 +85,34 @@ public class PurchaseFrame {
 		JButton buyButton = new JButton("구입하기");
 		buyButton.setBounds(292, 417, 97, 23);
 		frame.getContentPane().add(buyButton);
+		buyButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				avatar.insertCopy(getInfo.fmainnickname, avatarName);
+				
+				frame.dispose();
+			}
+		});
+		
+		
 		
 		JButton equip_unequipButton = new JButton("착용하기");
 		equip_unequipButton.setBounds(121, 417, 159, 23);
 		frame.getContentPane().add(equip_unequipButton);
+		equip_unequipButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			  String type = "상의"; 
+				
+		String onOffEname =avatar.avatarOnFinding(getInfo.fuserpk, type);
+				avatar.avatarTakeOnOff(1,getInfo.fuserpk, avatarName);				
+				
+				frame.dispose();
+			}
+		});
+		
+		
 		
 		JLabel price = new JLabel("아바타이름");
 		price.setHorizontalAlignment(SwingConstants.CENTER);
