@@ -66,19 +66,22 @@ public class missionSelectImpl implements missionSelect{
 	
 	// 미션 라벨에 나타내기
 	@Override
-	public List<String> userMission(int user_pk, int term) {
+	public List<Missions> userMission(int user_pk, int t) {
 		String sql = "SELECT * from user_missions where user_pk = ? and term = ?";
-		List<String> list = new ArrayList<>();
+		List<Missions> list = new ArrayList<>();
 		try(Connection conn = ConnectionProvider.makeConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql)) {
 			pstmt.setInt(1, user_pk);
-			pstmt.setInt(2, term);
+			pstmt.setInt(2, t);
 			
 			try(ResultSet rs = pstmt.executeQuery()){
 				while(rs.next()) {
+					int mission_id = rs.getInt("mission_id");
+					String classify = rs.getString("classify");
 					String mission = rs.getString("mission");
+					int term = rs.getInt("term");
 					
-					list.add(mission);
+					list.add(new Missions(mission_id, classify, mission, term));
 				}
 			}
 		} catch (SQLException e) {
@@ -137,11 +140,12 @@ public class missionSelectImpl implements missionSelect{
 
 	// 미션포기(테이블에 빼내기)
 	@Override
-	public void cancelMission(String mission) {
-		String sql = "delete from user_missions where mission = ?";
+	public void cancelMission(int user_pk, String mission) {
+		String sql = "delete from user_missions where mission = ? and user_pk = ?";
 		try(Connection conn = ConnectionProvider.makeConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql)) {
 			pstmt.setString(1, mission);
+			pstmt.setInt(2, user_pk);
 			
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
