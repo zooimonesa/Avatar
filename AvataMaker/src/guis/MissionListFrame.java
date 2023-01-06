@@ -66,9 +66,9 @@ public class MissionListFrame {
 
 		GetInfo mf = new GetInfo();
 		
-//		int user_pk = mf.fuserpk;
-		int user_pk = 33
-				;
+		int user_pk = mf.fuserpk;
+//		int user_pk = 33;
+		
 
 		
 		frame = new JFrame();
@@ -134,19 +134,17 @@ public class MissionListFrame {
 		oneWeekMissionPanel.add(oneWeekMissionLabel1_T);
 		
 		
-		JLabel refreshNoticelbl = new JLabel();
-		refreshNoticelbl.setText("* 미션 새로고침시 5Point 차감됩니다.");
+		JLabel refreshNoticelbl = new JLabel("* 미션 새로고침시 5Point 차감됩니다.");
 		refreshNoticelbl.setBounds(40, 290, 300, 50);
 		frame.getContentPane().add(refreshNoticelbl);
 		
-		JLabel userPointlbl_1 = new JLabel();
-		userPointlbl_1.setText("잔여 포인트 : ");
-		userPointlbl_1.setBounds(45, 340, 200, 50);
+		JLabel userPointlbl_1 = new JLabel("잔여 포인트 : ");
+		userPointlbl_1.setBounds(45, 330, 200, 50);
 		frame.getContentPane().add(userPointlbl_1);
 		
 		JLabel userPointlbl_2 = new JLabel();
-		userPointlbl_2.setText("0");
-		userPointlbl_2.setBounds(150, 340, 50, 50);
+		userPointlbl_2.setText(String.valueOf(mf.fmainpoint));
+		userPointlbl_2.setBounds(130, 330, 100, 50);
 		frame.getContentPane().add(userPointlbl_2);
 		
 		
@@ -182,6 +180,8 @@ public class MissionListFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (mis.checkPoint(user_pk, 5)) {
 					mis.usePoint(user_pk, 5);
+					mf.SetUserAll(mf.fmainid);
+					userPointlbl_2.setText(String.valueOf(mf.fmainpoint));
 					text1 = mis.RandomMission(selectB, 1).getMission();
 					oneDayMissionLabel1_T.setText(text1);
 				} else {
@@ -213,6 +213,8 @@ public class MissionListFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (mis.checkPoint(user_pk, 5)) {
 					mis.usePoint(user_pk, 5);
+					mf.SetUserAll(mf.fmainid);
+					userPointlbl_2.setText(String.valueOf(mf.fmainpoint));
 					text2 = mis.RandomMission(selectB, 1).getMission();
 					oneDayMissionLabel2_T.setText(text2);
 				} else {
@@ -245,6 +247,8 @@ public class MissionListFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (mis.checkPoint(user_pk, 5)) {
 					mis.usePoint(user_pk, 5);
+					mf.SetUserAll(mf.fmainid);
+					userPointlbl_2.setText(String.valueOf(mf.fmainpoint));
 					text3 = mis.RandomMission(selectB, 7).getMission();
 					oneWeekMissionLabel1_T.setText(text3);
 				} else {
