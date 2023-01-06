@@ -97,8 +97,8 @@ public class UserOwnMissionListFrame {
 		int dailyY = 17; // 일일미션라벨, 달성, 포기버튼 y좌표고정 + 40씩
 		for (int i = 0; i < 6; i++) {
 
-			dailyMission[i] = new JLabel("미션" + (i + 1) + " : "); // 일일미션라벨
-			dailyMission[i].setBounds(6, dailyY, 280, 30);
+			dailyMission[i] = new JLabel((i + 1) + " : "); // 일일미션라벨
+			dailyMission[i].setBounds(10, dailyY, 280, 30);
 			oneDayMissionPanel.add(dailyMission[i]);
 			
 			dailyMissionT[i] = new JLabel();
@@ -111,10 +111,10 @@ public class UserOwnMissionListFrame {
 				dailyMissionT[i].setText("");
 			}
 			
-			dailyMissionT[i].setBounds(60, dailyY, 280, 30);
+			dailyMissionT[i].setBounds(35, dailyY, 280, 30);
 			oneDayMissionPanel.add(dailyMissionT[i]);
 
-			dailyMissionclear[i] = new JButton("달성"); // 일일미션달성버튼
+			dailyMissionclear[i] = new JButton("완료"); // 일일미션달성버튼
 			dailyMissionclear[i].setActionCommand(String.valueOf(i));
 			dailyMissionclear[i].addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -128,7 +128,7 @@ public class UserOwnMissionListFrame {
 					}
 				}
 			});
-			dailyMissionclear[i].setBounds(311, dailyY, 57, 30);
+			dailyMissionclear[i].setBounds(310, dailyY, 60, 30);
 			oneDayMissionPanel.add(dailyMissionclear[i]);
 
 			dailyMissionGiveUp[i] = new JButton("포기"); // 일일미션포기버튼
@@ -145,7 +145,7 @@ public class UserOwnMissionListFrame {
 					}
 				}
 			});
-			dailyMissionGiveUp[i].setBounds(380, dailyY, 57, 30);
+			dailyMissionGiveUp[i].setBounds(375, dailyY, 60, 30);
 			oneDayMissionPanel.add(dailyMissionGiveUp[i]);
 
 			dailyY += 40;
@@ -167,8 +167,8 @@ public class UserOwnMissionListFrame {
 		
 		int weeklyY = 17; // 주간미션라벨 y좌표고정 + 40씩
 		for (int i = 0; i < 3; i++) {
-			weeklyMission[i] = new JLabel("미션" + (i + 1) + " : " ); // 주간미션라벨
-			weeklyMission[i].setBounds(6, weeklyY, 280, 30);
+			weeklyMission[i] = new JLabel((i + 1) + " : "); // 주간미션라벨
+			weeklyMission[i].setBounds(10, weeklyY, 280, 30);
 			oneWeekMissionPanel.add(weeklyMission[i]);
 
 			weeklyMissionT[i] = new JLabel();
@@ -180,7 +180,7 @@ public class UserOwnMissionListFrame {
 			} catch (IndexOutOfBoundsException e) {
 				weeklyMissionT[i].setText("");
 			}
-			weeklyMissionT[i].setBounds(60, weeklyY, 280, 30);
+			weeklyMissionT[i].setBounds(35, weeklyY, 280, 30);
 			oneWeekMissionPanel.add(weeklyMissionT[i]);
 			
 			weeklyMissionDday[i] = new JLabel();
@@ -188,10 +188,10 @@ public class UserOwnMissionListFrame {
 			if(!weeklyMissionT[i].getText().isEmpty()) {
 				weeklyMissionDday[i].setText(mis.userMissionEndDay(user_pk, weeklyMissionT[i].getText()));
 			}
-			weeklyMissionDday[i].setBounds(280, weeklyY, 280, 30);
+			weeklyMissionDday[i].setBounds(270, weeklyY, 280, 30);
 			oneWeekMissionPanel.add(weeklyMissionDday[i]);
 
-			weeklyMissionClear[i] = new JButton("달성"); // 주간미션달성버튼
+			weeklyMissionClear[i] = new JButton("완료"); // 주간미션달성버튼
 			weeklyMissionClear[i].setActionCommand(String.valueOf(i));
 			weeklyMissionClear[i].addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -206,7 +206,7 @@ public class UserOwnMissionListFrame {
 					}
 				}
 			});
-			weeklyMissionClear[i].setBounds(311, weeklyY, 57, 30);
+			weeklyMissionClear[i].setBounds(310, weeklyY, 60, 30);
 			oneWeekMissionPanel.add(weeklyMissionClear[i]);
 
 			
@@ -224,7 +224,7 @@ public class UserOwnMissionListFrame {
 					}
 				}
 			});
-			weeklyMissionGiveUp[i].setBounds(380, weeklyY, 57, 30);
+			weeklyMissionGiveUp[i].setBounds(375, weeklyY, 60, 30);
 			oneWeekMissionPanel.add(weeklyMissionGiveUp[i]);
 
 			weeklyY += 40;
