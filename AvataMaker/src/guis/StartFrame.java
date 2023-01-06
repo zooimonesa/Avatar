@@ -1,6 +1,5 @@
 package guis;
 
-
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.EventQueue;
@@ -41,19 +40,17 @@ public class StartFrame {
 		audio(); // 배경음악
 		customcursor(); // 마우스 포인터
 	}
-	
-	
-	
+
 	public void customcursor() { // 마우스포인터 ====================================
-		
+
 		Toolkit tk = Toolkit.getDefaultToolkit();
 		Image cursorimage = tk.getImage("대형견_커서.png");
 		Point point = new Point(0, 0);
 		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
 		frmAlpha.setCursor(cursor);
 	} // =======================================================
-	
-	public static void audio() {  // 배경음악 =========================================
+
+	public static void audio() { // 배경음악 =========================================
 		try {
 			File file = new File("헤네시스.wav");
 			clip = AudioSystem.getClip();
@@ -61,10 +58,10 @@ public class StartFrame {
 			// clip.loop(Clip.LOOP_CONTINUOUSLY);
 			clip.start();
 		} catch (Exception e) {
-			
+
 		}
 	} // =========================================================================
- 
+
 	private void initialize() {
 
 		frmAlpha = new JFrame();
@@ -94,18 +91,19 @@ public class StartFrame {
 					userid = id.getText(); // 태현추가
 					userpw = passWord.getText(); // 태현추가
 					System.out.println(userid + userpw);
-					
+
 					uli.CompareUser(userid, userpw);
-					
-					
+
 //					MainFrame mainFrame = new MainFrame();
 //					mainFrame.frame.setVisible(true); // 다음 프레임 띄우기
 //					mainFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 //					mainFrame.frame.setResizable(false);
 //					frmAlpha.setVisible(false);
-					
-			 
-					frmAlpha.dispose();
+
+					if (uli.count == 1) {// 바뀌
+
+						frmAlpha.setVisible(false);
+					}
 					clip.stop();
 				}
 			}
@@ -134,15 +132,18 @@ public class StartFrame {
 				userid = id.getText(); // 태현추가
 				userpw = passWord.getText(); // 태현추가
 				System.out.println(userid + userpw);
-				
+
 				uli.CompareUser(userid, userpw);
 				clip.stop();
-				
+
 //				MainFrame mainFrame = new MainFrame();
 //				mainFrame.frame.setVisible(true); // 다음 프레임 띄우기
 //				mainFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 //				mainFrame.frame.setResizable(false);
-				frmAlpha.dispose();
+				if (uli.count == 1) {//바뀌
+					
+					frmAlpha.setVisible(false);
+				}
 			}
 		});
 
@@ -152,11 +153,13 @@ public class StartFrame {
 		JButton exit = new JButton("종료");
 		exit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int answer = JOptionPane.showConfirmDialog(null, "종료하시겠습니까?", "종료창", JOptionPane.YES_NO_OPTION);  // 프로그램 종료 다이얼로그
+				int answer = JOptionPane.showConfirmDialog(null, "종료하시겠습니까?", "종료창", JOptionPane.YES_NO_OPTION); // 프로그램
+																													// 종료
+																													// 다이얼로그
 				if (answer == JOptionPane.YES_OPTION) { // 사용자가 yes를 눌렀을 경우
 					System.exit(0);
 				} else { // 사용자가 Yes 이외의 값을 눌렀을 경우
-					
+
 				}
 			}
 		});

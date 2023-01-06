@@ -16,7 +16,7 @@ import guis.StartFrame;
 
 public class UserLogIn {
 	
-	int count = 0;
+	public int count = 0;//바뀌
 	 
 
 	public void CompareUser(String uid, String upw) {
