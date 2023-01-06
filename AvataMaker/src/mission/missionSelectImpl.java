@@ -11,8 +11,7 @@ import java.util.Random;
 
 import dbutil.ConnectionProvider;
 
-public class missionSelectImpl implements missionSelect{
-
+public class missionSelectImpl implements missionSelect{	
 	//미션 랜덤 뽑기, 새로고침
 	@Override
 	public Missions RandomMission(String c, int t) {
@@ -46,6 +45,69 @@ public class missionSelectImpl implements missionSelect{
 		return list.get(num);
 	}
 
+	// 미션 선택지 꺼내오기
+	@Override
+	public List<Missions> getSelectMission(int user_pk, int t) {
+		String sql = "SELECT * from user_select where user_pk = ? and term = ?";
+		List<Missions> list = new ArrayList<>();
+		try(Connection conn = ConnectionProvider.makeConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setInt(1, user_pk);
+			pstmt.setInt(2, t);
+			try(ResultSet rs = pstmt.executeQuery()) {
+				while(rs.next()) {
+					int mission_id = rs.getInt("mission_id");
+					String classify = rs.getString("classify");
+					String mission = rs.getString("mission");
+					int term = rs.getInt("term");
+					
+					list.add(new Missions(mission_id,classify,mission,term));
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	// 미션 선택지 저장하기
+	@Override
+	public void setSelectMission(int user_pk, Missions m) {
+		String sql = "INSERT INTO user_select (user_pk,mission_id,classify,mission,term) values (?,?,?,?,?)";
+		try(Connection conn = ConnectionProvider.makeConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setInt(1, user_pk);
+			pstmt.setInt(2, m.getMission_id());
+			pstmt.setString(3, m.getClassify());
+			pstmt.setString(4, m.getMission());
+			pstmt.setInt(5, m.getTerm());
+			
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	// 미션 선택지 업데이트
+	@Override
+	public void updateSelectMission(int user_pk, String mission, Missions m) {
+		String sql = "UPDATE user_select SET user_pk = ?, mission_id = ? classify = ?, mission = ?, term = ? where mission = ? and user = ?";
+		try(Connection conn = ConnectionProvider.makeConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setInt(1, user_pk);
+			pstmt.setInt(2, m.getMission_id());
+			pstmt.setString(3, m.getClassify());
+			pstmt.setString(4, m.getMission());
+			pstmt.setInt(5, m.getTerm());
+			pstmt.setString(6, mission);
+			pstmt.setInt(7, user_pk);
+			
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
 	// 미션 몇갠지 확인
 	@Override
 	public boolean checkMission(int user_pk, int term) {
@@ -277,6 +339,12 @@ public class missionSelectImpl implements missionSelect{
 		return m_Dday;
 		
 	}
+
+
+
+
+
+
 
 
 

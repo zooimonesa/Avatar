@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
 import User.GetInfo;
+import mission.Missions;
 import mission.missionSelect;
 import mission.missionSelectImpl;
 
@@ -63,14 +64,11 @@ public class MissionListFrame {
 	private void initialize(String selectB) {
 		// 인터페이스 불러오기
 		missionSelect mis = new missionSelectImpl();
-
 		GetInfo mf = new GetInfo();
-		
 		int user_pk = mf.fuserpk;
 //		int user_pk = 33;
 		
 
-		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(255, 255, 255));
 		frame.setTitle("미션");
@@ -114,21 +112,35 @@ public class MissionListFrame {
 		oneWeekMissionPanel.add(oneWeekMissionLabel);
 		
 		
+		// 미션 설정
+		if(mis.getSelectMission(user_pk, 1).isEmpty()) {
+			Missions m1 = mis.RandomMission(selectB, 1);
+			Missions m2 = mis.RandomMission(selectB, 1);
+			if(m2.equals(m1)) {
+				m2 = mis.RandomMission(selectB, 1);
+			}
+			Missions m3 = mis.RandomMission(selectB, 7);
+			mis.setSelectMission(user_pk, m1);
+			mis.setSelectMission(user_pk, m2);
+			mis.setSelectMission(user_pk, m3);			
+		}
+		
+		
 		// 미션 내용 불러오기
 		JLabel oneDayMissionLabel1_T = new JLabel();
-		text1 = mis.RandomMission(selectB, 1).getMission(); 
+		text1 = mis.getSelectMission(user_pk, 1).get(0).getMission(); 
 		oneDayMissionLabel1_T.setText(text1);
 		oneDayMissionLabel1_T.setBounds(20, 20, 250, 68);
 		oneDayMissionPanel1.add(oneDayMissionLabel1_T);
 		
 		JLabel oneDayMissionLabel2_T = new JLabel();
-		text2 = mis.RandomMission(selectB, 1).getMission();
+		text2 = mis.getSelectMission(user_pk, 1).get(1).getMission();
 		oneDayMissionLabel2_T.setText(text2);
 		oneDayMissionLabel2_T.setBounds(20, 20, 250, 68);
 		oneDayMissionPanel2.add(oneDayMissionLabel2_T);
 		
 		JLabel oneWeekMissionLabel1_T = new JLabel();
-		text3 = mis.RandomMission(selectB, 7).getMission();
+		text3 = mis.getSelectMission(user_pk, 7).get(0).getMission();
 		oneWeekMissionLabel1_T.setText(text3);
 		oneWeekMissionLabel1_T.setBounds(20, 20, 250, 68);
 		oneWeekMissionPanel.add(oneWeekMissionLabel1_T);
@@ -169,7 +181,7 @@ public class MissionListFrame {
 					mis.insertMission(user_pk, text1, 1);
 					JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);					
 				} else {
-					JOptionPane.showMessageDialog(null, "미션이 이미 가득 차있습니다.", "오류", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "미션이 이미 가득 차있습니다.", "오류", JOptionPane.ERROR_MESSAGE);
 				}
 				
 			}
@@ -186,8 +198,10 @@ public class MissionListFrame {
 					mis.usePoint(user_pk, 5);
 					mf.SetUserAll(mf.fmainid);
 					userPointlbl_2.setText(String.valueOf(mf.fmainpoint));
-					text1 = mis.RandomMission(selectB, 1).getMission();
-					oneDayMissionLabel1_T.setText(text1);
+					Missions m1 = mis.RandomMission(selectB, 1); 
+					mis.updateSelectMission(user_pk, text1, m1);
+					String updateT = m1.getMission();
+					oneDayMissionLabel1_T.setText(updateT);
 				} else {
 					JOptionPane.showMessageDialog(null, "포인트가 부족합니다", "알림창", JOptionPane.ERROR_MESSAGE);
 				}
@@ -207,7 +221,7 @@ public class MissionListFrame {
 					mis.insertMission(user_pk, text2, 1);
 					JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);					
 				} else {
-					JOptionPane.showMessageDialog(null, "미션이 이미 가득 차있습니다.", "오류", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "미션이 이미 가득 차있습니다.", "오류", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
@@ -223,8 +237,10 @@ public class MissionListFrame {
 					mis.usePoint(user_pk, 5);
 					mf.SetUserAll(mf.fmainid);
 					userPointlbl_2.setText(String.valueOf(mf.fmainpoint));
-					text2 = mis.RandomMission(selectB, 1).getMission();
-					oneDayMissionLabel2_T.setText(text2);
+					Missions m2 = mis.RandomMission(selectB, 1); 
+					mis.updateSelectMission(user_pk, text2, m2);
+					String updateT2 = m2.getMission();
+					oneDayMissionLabel2_T.setText(updateT2);
 				} else {
 					JOptionPane.showMessageDialog(null, "포인트가 부족합니다", "알림창", JOptionPane.ERROR_MESSAGE);
 				}
@@ -245,7 +261,7 @@ public class MissionListFrame {
 					mis.userMissionProgress(user_pk, text3);
 					JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);					
 				} else {
-					JOptionPane.showMessageDialog(null, "미션이 이미 가득 차있습니다.", "오류", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "미션이 이미 가득 차있습니다.", "오류", JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
@@ -261,8 +277,10 @@ public class MissionListFrame {
 					mis.usePoint(user_pk, 5);
 					mf.SetUserAll(mf.fmainid);
 					userPointlbl_2.setText(String.valueOf(mf.fmainpoint));
-					text3 = mis.RandomMission(selectB, 7).getMission();
-					oneWeekMissionLabel1_T.setText(text3);
+					Missions m3 = mis.RandomMission(selectB, 7); 
+					mis.updateSelectMission(user_pk, text3, m3);
+					String updateT3 = m3.getMission();
+					oneWeekMissionLabel1_T.setText(updateT3);
 				} else {
 					JOptionPane.showMessageDialog(null, "포인트가 부족합니다", "알림창", JOptionPane.ERROR_MESSAGE);
 				}
