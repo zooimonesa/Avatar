@@ -127,6 +127,7 @@ public class StartFrame {
 				signUpFrame.frame.setResizable(false);
 			}
 		});
+		signUp.setBorderPainted(false);
 		signUp.setBounds(12, 412, 130, 30);
 		frmAlpha.getContentPane().add(signUp);
 
@@ -151,7 +152,7 @@ public class StartFrame {
 				}
 			}
 		});
-
+		logInButton.setBorderPainted(false);
 		logInButton.setBounds(204, 412, 130, 30);
 		frmAlpha.getContentPane().add(logInButton);
 
@@ -168,7 +169,7 @@ public class StartFrame {
 				}
 			}
 		});
-
+		exit.setBorderPainted(false);
 		exit.setBounds(387, 412, 130, 30);
 		frmAlpha.getContentPane().add(exit);
 
