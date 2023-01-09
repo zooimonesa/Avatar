@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
 import User.GetInfo;
@@ -22,6 +23,7 @@ import mission.missionSelectImpl;
 
 import java.awt.Color;
 import java.awt.Cursor;
+import javax.swing.SwingConstants;
 
 public class MissionListFrame {
 	
@@ -99,15 +101,18 @@ public class MissionListFrame {
 		
 		// 미션이름 레이블 적용
 		JLabel oneDayMissionLabel1 = new JLabel("< 일일 미션 > ");
-		oneDayMissionLabel1.setBounds(25, 0, 250, 68);
+		oneDayMissionLabel1.setHorizontalAlignment(SwingConstants.CENTER);
+		oneDayMissionLabel1.setBounds(0, 0, 291, 26);
 		oneDayMissionPanel1.add(oneDayMissionLabel1);
 		
 		JLabel oneDayMissionLabel2 = new JLabel("< 일일 미션 > ");
-		oneDayMissionLabel2.setBounds(25, 0, 250, 68);
+		oneDayMissionLabel2.setHorizontalAlignment(SwingConstants.CENTER);
+		oneDayMissionLabel2.setBounds(0, 0, 291, 26);
 		oneDayMissionPanel2.add(oneDayMissionLabel2);
 		
 		JLabel oneWeekMissionLabel = new JLabel("< 주간 미션 > ");
-		oneWeekMissionLabel.setBounds(25, 0, 250, 68);
+		oneWeekMissionLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		oneWeekMissionLabel.setBounds(0, 0, 291, 26);
 		oneWeekMissionPanel.add(oneWeekMissionLabel);
 		
 		
@@ -129,19 +134,19 @@ public class MissionListFrame {
 		JLabel oneDayMissionLabel1_T = new JLabel();
 		text1 = mis.getSelectMission(user_pk, selectB, 1).get(0).getMission();
 		oneDayMissionLabel1_T.setText(text1);
-		oneDayMissionLabel1_T.setBounds(20, 20, 250, 68);
+		oneDayMissionLabel1_T.setBounds(20, 25, 250, 40);
 		oneDayMissionPanel1.add(oneDayMissionLabel1_T);
 		
-		JLabel oneDayMissionLabel2_T = new JLabel();
+		JTextField oneDayMissionLabel2_T = new JTextField();
 		text2 = mis.getSelectMission(user_pk, selectB, 1).get(1).getMission();
 		oneDayMissionLabel2_T.setText(text2);
-		oneDayMissionLabel2_T.setBounds(20, 20, 250, 68);
+		oneDayMissionLabel2_T.setBounds(20, 25, 250, 40);
 		oneDayMissionPanel2.add(oneDayMissionLabel2_T);
 		
 		JLabel oneWeekMissionLabel1_T = new JLabel();
 		text3 = mis.getSelectMission(user_pk, selectB, 7).get(0).getMission();
 		oneWeekMissionLabel1_T.setText(text3);
-		oneWeekMissionLabel1_T.setBounds(20, 20, 250, 68);
+		oneWeekMissionLabel1_T.setBounds(20, 25, 250, 40);
 		oneWeekMissionPanel.add(oneWeekMissionLabel1_T);
 		
 		
