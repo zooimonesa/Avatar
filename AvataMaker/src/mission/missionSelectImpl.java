@@ -359,28 +359,49 @@ public class missionSelectImpl implements missionSelect{
 	}
 
 	@Override
-	public void userLog(int user_pk) {
-		String sql = "INSERT INTO user_log (user_pk, date, mission) VALUES (?,?,?)";
-		String sql_s = "SELECT user_pk, mission FROM user_select WHERE user_pk = ?";
+	public void userLog(int user_pk, String mission, String state) {
+		String sql = "INSERT INTO user_log (user_pk, date, mission, state) VALUES (?,?,?,?)";
 		LocalDateTime today = LocalDateTime.now();
 		String day = today.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 		try (Connection conn = ConnectionProvider.makeConnection();
-				PreparedStatement stmt = conn.prepareStatement(sql); 
-				PreparedStatement stmt_s = conn.prepareStatement(sql_s)) {
-			stmt_s.setInt(1, user_pk);
+				PreparedStatement stmt = conn.prepareStatement(sql)) {
 			
-			try (ResultSet rs = stmt_s.executeQuery()) {
-				if (rs.next()) {
-					rs.getInt("user_pk");
+			stmt.setInt(1, user_pk);
+			stmt.setString(2, day);
+			stmt.setString(3, mission);
+			stmt.setString(4, state);
+			
+			stmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	@Override
+	public String userLogResult(int user_pk) {
+		String sql = "SELECT * FROM user_log WHERE user_pk = ?";
+		try (Connection conn = ConnectionProvider.makeConnection();
+				PreparedStatement stmt = conn.prepareStatement(sql)) {
+			stmt.setInt(1, user_pk);
+			
+			try (ResultSet rs = stmt.executeQuery()) {
+					if (rs.next()) {
+					rs.getInt(user_pk);
+					String date = rs.getString("date");
 					String mission = rs.getString("mission");
+					String state = rs.getString("state");
 					
+					return "[" + date + "] " + mission + "을 " + state + "했습니다."; 
 				}
-				
 			}
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
+		return null;
 	}
 
 

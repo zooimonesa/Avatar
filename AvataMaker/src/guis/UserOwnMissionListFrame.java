@@ -120,11 +120,13 @@ public class UserOwnMissionListFrame {
 			dailyMissionclear[i].addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					String command = e.getActionCommand();
+					String state = "완료";
 					int num = Integer.valueOf(command);
 					if(!dailyMissionT[num].getText().isEmpty()) {
 						String mission = dailyMissionT[num].getText();
 						mis.successMission(user_pk, 1, mis.getClassify(mission));
 						mis.cancelMission(user_pk, mission);
+						mis.userLog(user_pk, mission, state);
 						dailyMissionT[num].setText("");
 					}
 				}
@@ -138,10 +140,12 @@ public class UserOwnMissionListFrame {
 			dailyMissionGiveUp[i].addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					String command = e.getActionCommand();
+					String state = "포기";
 					int num = Integer.valueOf(command);
 					if(!dailyMissionT[num].getText().isEmpty()) {
 						String mission = dailyMissionT[num].getText(); 
 						mis.cancelMission(user_pk, mission);
+						mis.userLog(user_pk, mission, state);
 						dailyMissionT[num].setText("");
 					}
 				}
@@ -198,10 +202,12 @@ public class UserOwnMissionListFrame {
 				public void actionPerformed(ActionEvent e) {
 					String command = e.getActionCommand();
 					int num = Integer.valueOf(command);
+					String state = "완료";
 					if(!weeklyMissionT[num].getText().isEmpty()) {
 						String mission = weeklyMissionT[num].getText();
 						mis.successMission(user_pk, 7, mis.getClassify(mission));
 						mis.cancelMission(user_pk, mission);
+						mis.userLog(user_pk, mission, state);
 						weeklyMissionT[num].setText("");
 						weeklyMissionDday[num].setText("");
 					}
@@ -217,9 +223,11 @@ public class UserOwnMissionListFrame {
 				public void actionPerformed(ActionEvent e) {
 					String command = e.getActionCommand();
 					int num = Integer.valueOf(command);
+					String state = "포기";
 					if(!weeklyMissionT[num].getText().isEmpty()) {
 						String mission = weeklyMissionT[num].getText();
 						mis.cancelMission(user_pk, mission);
+						mis.userLog(user_pk, mission, state);
 						weeklyMissionT[num].setText("");
 						weeklyMissionDday[num].setText("");
 					}

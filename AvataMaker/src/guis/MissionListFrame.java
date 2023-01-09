@@ -179,8 +179,10 @@ public class MissionListFrame {
 		oneDayMissionChoiceButton1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				String state = "수락";
 				if(mis.checkMission(user_pk, 1)) {
 					mis.insertMission(user_pk, text1, 1);
+					mis.userLog(user_pk, text1, state);
 					JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);					
 				} else {
 					JOptionPane.showMessageDialog(null, "미션이 이미 가득 차있습니다.", "오류", JOptionPane.ERROR_MESSAGE);
@@ -220,8 +222,10 @@ public class MissionListFrame {
 		oneDayMissionChoiceButton2.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				String state = "수락";
 				if(mis.checkMission(user_pk, 1)) {
 					mis.insertMission(user_pk, text2, 1);
+					mis.userLog(user_pk, text2, state);
 					JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);					
 				} else {
 					JOptionPane.showMessageDialog(null, "미션이 이미 가득 차있습니다.", "오류", JOptionPane.ERROR_MESSAGE);
@@ -260,8 +264,10 @@ public class MissionListFrame {
 		oneWeekMissionChoiceButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				String state = "수락";
 				if(mis.checkMission(user_pk, 7)) {
 					mis.insertMission(user_pk, text3, 7);
+					mis.userLog(user_pk, text3, state);
 					mis.userMissionProgress(user_pk, text3);
 					JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);					
 				} else {
