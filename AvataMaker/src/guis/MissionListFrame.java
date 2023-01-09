@@ -180,12 +180,15 @@ public class MissionListFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				if(mis.checkMission(user_pk, 1)) {
-					mis.insertMission(user_pk, text1, 1);
-					JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);					
+					if(mis.insertMission(user_pk, text1, 1) > 0) {
+						mis.insertMission(user_pk, text1, 1);
+						JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);											
+					} else {
+						JOptionPane.showMessageDialog(null, "이미 수락한 미션입니다.", "오류", JOptionPane.ERROR_MESSAGE);
+					}
 				} else {
 					JOptionPane.showMessageDialog(null, "미션이 이미 가득 차있습니다.", "오류", JOptionPane.ERROR_MESSAGE);
-				}
-				
+				}					
 			}
 		});
 		oneDayMissionChoiceButton1.setBounds(290, 25, 40, 40);
@@ -221,8 +224,12 @@ public class MissionListFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(mis.checkMission(user_pk, 1)) {
-					mis.insertMission(user_pk, text2, 1);
-					JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);					
+					if(mis.insertMission(user_pk, text2, 1) > 0) {
+						mis.insertMission(user_pk, text2, 1);
+						JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);											
+					} else {
+						JOptionPane.showMessageDialog(null, "이미 수락한 미션입니다.", "오류", JOptionPane.ERROR_MESSAGE);
+					}
 				} else {
 					JOptionPane.showMessageDialog(null, "미션이 이미 가득 차있습니다.", "오류", JOptionPane.ERROR_MESSAGE);
 				}
@@ -261,9 +268,13 @@ public class MissionListFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if(mis.checkMission(user_pk, 7)) {
-					mis.insertMission(user_pk, text3, 7);
-					mis.userMissionProgress(user_pk, text3);
-					JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);					
+					if(mis.insertMission(user_pk, text3, 7) > 0) {
+						mis.insertMission(user_pk, text3, 7);
+						mis.userMissionProgress(user_pk, text3);
+						JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);					
+					} else {
+						JOptionPane.showMessageDialog(null, "이미 수락한 미션입니다.", "오류", JOptionPane.ERROR_MESSAGE);
+					}
 				} else {
 					JOptionPane.showMessageDialog(null, "미션이 이미 가득 차있습니다.", "오류", JOptionPane.ERROR_MESSAGE);
 				}
