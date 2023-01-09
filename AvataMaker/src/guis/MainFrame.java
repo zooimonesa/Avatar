@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+import javax.swing.JOptionPane; 
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
@@ -239,6 +239,7 @@ public class MainFrame {
 
 		JButton logButton = new JButton(로그보기버튼);
 		logButton.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
 				LogFrame logFrame = new LogFrame();
 				logFrame.frame.setVisible(true); // 다음 프레임 띄우기
