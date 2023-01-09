@@ -40,5 +40,5 @@ public interface missionSelect {
 	void userLog(int user_pk, String mission, String state);
 	
 	// 사용자 로그 불러오기
-	String userLogResult(int user_pk);
+	List<String> userLogResult(int user_pk);
 }
