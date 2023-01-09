@@ -35,5 +35,5 @@ public interface missionSelect {
 	String userMissionEndDay(int user_pk, String mission);
 	
 	// 사용자 로그 생성하기
-	void userLog(int user_pk, String mission);
+	void userLog(int user_pk);
 }
