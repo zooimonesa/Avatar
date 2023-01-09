@@ -30,7 +30,7 @@ public class StartFrame {
 	public JFrame frmAlpha;
 	private JTextField id;
 	private JPasswordField passWord;
-	private static Clip clip; // 배경음악
+	private static Clip clip; // 배경음악 
 
 	String userid; // 태현추가
 	String userpw; // 태현추가
