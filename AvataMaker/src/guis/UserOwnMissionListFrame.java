@@ -126,14 +126,8 @@ public class UserOwnMissionListFrame {
 						String mission = dailyMissionT[num].getText();
 						mis.successMission(user_pk, 1, mis.getClassify(mission));
 						mis.cancelMission(user_pk, mission);
-<<<<<<< HEAD
 						mis.missionLog(user_pk, mission, state);
 						dailyMissionT[num].setText("");
-=======
-//						mis.userLog(user_pk, mission, state);
-//						dailyMissionT[num].setText("");
-						initialize();
->>>>>>> branch 'master' of https://github.com/zooimonesa/Avatar.git
 					}
 				}
 			});
@@ -151,14 +145,8 @@ public class UserOwnMissionListFrame {
 					if(!dailyMissionT[num].getText().isEmpty()) {
 						String mission = dailyMissionT[num].getText(); 
 						mis.cancelMission(user_pk, mission);
-<<<<<<< HEAD
 						mis.missionLog(user_pk, mission, state);
 						dailyMissionT[num].setText("");
-=======
-//						mis.userLog(user_pk, mission, state);
-//						dailyMissionT[num].setText("");
-						initialize();
->>>>>>> branch 'master' of https://github.com/zooimonesa/Avatar.git
 					}
 				}
 			});
@@ -219,16 +207,9 @@ public class UserOwnMissionListFrame {
 						String mission = weeklyMissionT[num].getText();
 						mis.successMission(user_pk, 7, mis.getClassify(mission));
 						mis.cancelMission(user_pk, mission);
-<<<<<<< HEAD
 						mis.missionLog(user_pk, mission, state);
 						weeklyMissionT[num].setText("");
 						weeklyMissionDday[num].setText("");
-=======
-//						mis.userLog(user_pk, mission, state);
-//						weeklyMissionT[num].setText("");
-//						weeklyMissionDday[num].setText("");
-						initialize();
->>>>>>> branch 'master' of https://github.com/zooimonesa/Avatar.git
 					}
 				}
 			});
@@ -246,16 +227,9 @@ public class UserOwnMissionListFrame {
 					if(!weeklyMissionT[num].getText().isEmpty()) {
 						String mission = weeklyMissionT[num].getText();
 						mis.cancelMission(user_pk, mission);
-<<<<<<< HEAD
 						mis.missionLog(user_pk, mission, state);
 						weeklyMissionT[num].setText("");
 						weeklyMissionDday[num].setText("");
-=======
-//						mis.userLog(user_pk, mission, state);
-//						weeklyMissionT[num].setText("");
-//						weeklyMissionDday[num].setText("");
-						initialize();
->>>>>>> branch 'master' of https://github.com/zooimonesa/Avatar.git
 					}
 				}
 			});
