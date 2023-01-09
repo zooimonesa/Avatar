@@ -122,6 +122,8 @@ public class UserOwnMissionListFrame {
 					String command = e.getActionCommand();
 					String state = "완료";
 					int num = Integer.valueOf(command);
+					mf.SetUserAll(mf.fmainid);//태현고침
+
 					if(!dailyMissionT[num].getText().isEmpty()) {
 						String mission = dailyMissionT[num].getText();
 						mis.successMission(user_pk, 1, mis.getClassify(mission));
@@ -202,6 +204,8 @@ public class UserOwnMissionListFrame {
 				public void actionPerformed(ActionEvent e) {
 					String command = e.getActionCommand();
 					int num = Integer.valueOf(command);
+					mf.SetUserAll(mf.fmainid);//태현고침
+
 					String state = "완료";
 					if(!weeklyMissionT[num].getText().isEmpty()) {
 						String mission = weeklyMissionT[num].getText();

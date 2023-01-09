@@ -341,6 +341,16 @@ public class MainFrame {
 		});
 		rankingButton.setBounds(315, 401, 97, 50);
 		frame.getContentPane().add(rankingButton); // ===========================================================
+		
+		JButton tutoButton = new JButton("튜토리얼"); // 튜토리얼 버튼 ===================================
+		tutoButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Tuto tuto = new Tuto();
+				tuto.frame.setVisible(true);
+			}
+		});
+		tutoButton.setBounds(424, 401, 97, 50);
+		frame.getContentPane().add(tutoButton); // ==================================================
 
 		JLabel userPointLabel = new JLabel("포인트:");
 		userPointLabel.setHorizontalAlignment(SwingConstants.LEFT);
