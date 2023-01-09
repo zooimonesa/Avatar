@@ -18,9 +18,11 @@ import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
 import User.GetInfo;
+import User.SignUserIn;
 import character.avatarImageImpl;
 
 import javax.swing.JPanel;
+import javax.swing.JTextPane;
 
 public class MainFrame {
 
@@ -106,10 +108,15 @@ public class MainFrame {
 		nickNameLabel.setBounds(315, 40, 424, 35);
 		frame.getContentPane().add(nickNameLabel);
 
-		JLabel storyLabel = new JLabel(String.valueOf(avatar.storyOn(user_pk)));
+		JTextPane storyLabel = new JTextPane();//태현고침
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i <avatar.storyOn(user_pk).size(); i++) {
+			sb.append(String.valueOf(avatar.storyOn(user_pk).get(i)));
+		}
+		String pkstory = sb.toString();
+		storyLabel.setText(pkstory);
+		storyLabel.setEditable(false);
 		storyLabel.setBackground(new Color(255, 255, 255));
-		storyLabel.setVerticalAlignment(SwingConstants.TOP);
-		storyLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		storyLabel.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
 		storyLabel.setBounds(40, 291, 150, 160);
 		frame.getContentPane().add(storyLabel);
@@ -135,7 +142,7 @@ public class MainFrame {
 		JLabel giftPoint[] = new JLabel[10];
 
 		int j = 10;
-		for (int i = 100; i >= 0; i -= 10) {
+		for (int i = 1000; i >= 0; i -= 100) {
 			if (mainhealth >= i) {
 				yourstat = j;
 				j = 10;
@@ -154,7 +161,7 @@ public class MainFrame {
 
 		}
 		statPointX = 20;
-		for (int i = 100; i >= 0; i -= 10) {
+		for (int i = 1000; i >= 0; i -= 100) {
 			if (mainintelligence >= i) {
 				yourstat = j;
 				j = 10;
@@ -172,7 +179,7 @@ public class MainFrame {
 			statPointX += 40;
 		}
 		statPointX = 20;
-		for (int i = 100; i >= 0; i -= 10) {
+		for (int i = 1000; i >= 0; i -= 100) {
 			if (maintalent >= i) {
 				yourstat = j;
 				j = 10;
@@ -286,7 +293,8 @@ public class MainFrame {
 						if (deleteInfo.equals("지금탈퇴")) {
 
 							// 회원탈퇴메소드넣기
-
+							SignUserIn sui = new SignUserIn();
+							sui.DeleteUser();//태현고침
 							JOptionPane.showMessageDialog(null, "회원탈퇴되었습니다. 로그인창으로 이동합니다.", "회원탈퇴",
 									JOptionPane.WARNING_MESSAGE);
 
