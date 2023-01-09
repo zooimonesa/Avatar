@@ -340,6 +340,31 @@ public class missionSelectImpl implements missionSelect{
 		
 	}
 
+	@Override
+	public void userLog(int user_pk) {
+		String sql = "INSERT INTO user_log (user_pk, date, mission) VALUES (?,?,?)";
+		String sql_s = "SELECT user_pk, mission FROM user_select WHERE user_pk = ?";
+		LocalDateTime today = LocalDateTime.now();
+		String day = today.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+		try (Connection conn = ConnectionProvider.makeConnection();
+				PreparedStatement stmt = conn.prepareStatement(sql); 
+				PreparedStatement stmt_s = conn.prepareStatement(sql_s)) {
+			stmt_s.setInt(1, user_pk);
+			
+			try (ResultSet rs = stmt_s.executeQuery()) {
+				if (rs.next()) {
+					rs.getInt("user_pk");
+					String mission = rs.getString("mission");
+					
+				}
+				
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
 
 
 

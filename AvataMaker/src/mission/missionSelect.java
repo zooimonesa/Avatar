@@ -24,7 +24,7 @@ public interface missionSelect {
 	void cancelMission(int user_pk, String mission);
 	
 	
-	//포인트 빼기
+	// 포인트 빼기
 	public void usePoint(int user_pk, int point);
 	// 포인트 확인하기
 	boolean checkPoint(int user_pk, int point);
@@ -34,4 +34,6 @@ public interface missionSelect {
 	// 미션종료 날짜 가져오기
 	String userMissionEndDay(int user_pk, String mission);
 	
+	// 사용자 로그 생성하기
+	void userLog(int user_pk, String mission);
 }
