@@ -376,6 +376,18 @@ public class avatarImageImpl implements avatarImage {
 		}
 		return 0;
 	}
+	@Override // 착용중인게 있다면 벗고 선택한거 착용하는 메소드
+	public void onSearching(int user_pk, String name, String type) {
+		 String check	 =  avatarOnFinding(user_pk,type);
+		 if(check == null) {
+			 avatarTakeOnOff(1,  user_pk, name);
+		 }else if (check != null) {
+			 avatarTakeOnOff(0,  user_pk, check);
+			 avatarTakeOnOff(1,  user_pk, name);
+		 }
+		}
+		
+	}
 	
 	
 	
@@ -443,4 +455,4 @@ public class avatarImageImpl implements avatarImage {
 	
 	
 
-}
+
