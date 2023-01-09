@@ -23,10 +23,11 @@ import User.GetInfo;
 import character.avatarImageImpl;
 
 public class PurchaseFrame {
-	String avatarName = "목도리.png";
-
+	
+	MainFrame main = new MainFrame();
 	avatarImageImpl avatar = new avatarImageImpl();
-	GetInfo getInfo = new GetInfo();
+	String avatarName ;
+	String type ;
 	
 	JFrame frame;
 
@@ -89,7 +90,10 @@ public class PurchaseFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				
-				avatar.insertCopy(getInfo.fmainnickname, avatarName);
+				
+				avatar.insertCopy(main.mainnickname , avatarName);
+				System.out.println(main.mainnickname);
+				System.out.println(avatarName);
 				
 				frame.dispose();
 			}
@@ -103,10 +107,10 @@ public class PurchaseFrame {
 		equip_unequipButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-			  String type = "상의"; 
+			
 				
-		String onOffEname =avatar.avatarOnFinding(getInfo.fuserpk, type);
-				avatar.avatarTakeOnOff(1,getInfo.fuserpk, avatarName);				
+			  String onOffEname =avatar.avatarOnFinding(main.user_pk, type);
+				avatar.avatarTakeOnOff(1,main.user_pk,avatarName);				
 				
 				frame.dispose();
 			}

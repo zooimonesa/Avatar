@@ -219,7 +219,6 @@ public class avatarImageImpl implements avatarImage {
 			 String story = rs.getString("story");
 			 System.out.println(story);
 			 list.add(story);
-			 list.add("\n");
 			}
 			return list;
 			
@@ -237,6 +236,148 @@ public class avatarImageImpl implements avatarImage {
 		}
 		return null;
 	}
+	@Override
+	public List<String> pngListMeker() {
+		List<String> png = new ArrayList<>();
+		png.add("목도리.png");
+		png.add(1,"썬글라스.png");
+		png.add(2,"썬글라스.png");
+		png.add(3,"썬글라스.png");
+		png.add(4,"썬글라스.png");
+		png.add(5,"썬글라스.png");
+		png.add(6,"썬글라스.png");
+		png.add(7,"썬글라스.png");
+		png.add(8,"썬글라스.png");
+		png.add(9,"썬글라스.png");
+		png.add(10,"썬글라스.png");
+		png.add(11,"썬글라스.png");
+		png.add(12,"썬글라스.png");
+		png.add(13,"썬글라스.png");
+		png.add(14,"썬글라스.png");
+		png.add(15,"썬글라스.png");
+		
+		
+		
+		
+		
+		return png;
+	}
+	@Override // 내 포인트 찾기
+	public int selectMyPoint(String nickname ) {
+		String sql = "SELECT point from userinfo where nickname = '? ";
+		ResultSet rs = null;
+         
+		try (Connection conn = ConnectionProvider.makeConnection();
+				PreparedStatement stmt = conn.prepareStatement(sql)) {
+			stmt.setString(1, nickname);
+			
+			rs = stmt.executeQuery();
+			
+			while (rs.next()) {
+			 int point = rs.getInt("point");
+			 System.out.println(point);
+			 
+			}
+			//return point;
+			
+		} catch (SQLException e) {
+			System.out.println("안됨");
+			e.printStackTrace();
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return 0;
+	}
+	@Override// 물건 값 찾기
+	public int selectAvatarPoint(String name) {
+		String sql = "select price from avatar_store where name = ?";
+		ResultSet rs = null;
+         
+		try (Connection conn = ConnectionProvider.makeConnection();
+				PreparedStatement stmt = conn.prepareStatement(sql)) {
+			stmt.setString(1, name);
+			
+			rs = stmt.executeQuery();
+			
+			while (rs.next()) {
+			 int price = rs.getInt("price");
+			 System.out.println(price);
+			return price; 
+			}
+			
+			
+		} catch (SQLException e) {
+			System.out.println("안됨");
+			e.printStackTrace();
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}		return 0;
+	}
+	@Override //내 포인트 변경
+	public int byAvatar(String nickname, String name) {
+		
+		
+		int point = selectAfterPoint(nickname, name);
+		String sql = "update userinfo  SET point =  ? where nickname = ? ";
+		try (Connection conn = ConnectionProvider.makeConnection();
+				PreparedStatement stmt = conn.prepareStatement(sql)) {
+			
+			stmt.setInt(1, point);
+			stmt.setString(2, nickname);
+			int rs = stmt.executeUpdate();
+			return rs;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}		return 0;
+	}
+	@Override // 이걸로 물건값 변경
+	public int selectAfterPoint(String nickname, String name) {
+		String sql = " select ( select point from userinfo where nickname = ?) -" + 
+				"(select price from avatar_store where name = ?) as mypoit;";
+		ResultSet rs = null;
+         
+		try (Connection conn = ConnectionProvider.makeConnection();
+				PreparedStatement stmt = conn.prepareStatement(sql)) {
+			stmt.setString(1, nickname);
+			stmt.setString(2, name);
+			
+			rs = stmt.executeQuery();
+			
+			while (rs.next()) {
+			 int mypoit = rs.getInt("mypoit");
+			 System.out.println(mypoit);
+			return mypoit; 
+			}
+			
+			
+		} catch (SQLException e) {
+			System.out.println("안됨");
+			e.printStackTrace();
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return 0;
+	}
+	
+	
 	
 //	@Override // 가지고 있는 이미지 중에서 착용중인 것들만 불러오기 (대표이미지 불러올때 쓸거임)
 //	public Path takeOnEncodedImage(int id) {
@@ -295,6 +436,7 @@ public class avatarImageImpl implements avatarImage {
 //		}
 //
 //	}
+	
 	
 	
 	
