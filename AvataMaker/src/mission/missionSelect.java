@@ -5,7 +5,7 @@ public interface missionSelect {
 	//미션 랜덤 뽑기, 새로고침
 	Missions RandomMission(String classify, int term);
 	// 미션 선택지 꺼내오기
-	List<Missions> getSelectMission(int user_pk, int term);
+	List<Missions> getSelectMission(int user_pk, String classify, int term);
 	// 미션 선택지 저장하기
 	void setSelectMission(int user_pk, Missions m);
 	// 미션 선택지 업데이트

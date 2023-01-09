@@ -47,13 +47,14 @@ public class missionSelectImpl implements missionSelect{
 
 	// 미션 선택지 꺼내오기
 	@Override
-	public List<Missions> getSelectMission(int user_pk, int t) {
-		String sql = "SELECT * from user_select where user_pk = ? and term = ?";
+	public List<Missions> getSelectMission(int user_pk, String cl, int t) {
+		String sql = "SELECT * from user_select where user_pk = ? and term = ? and classify = ?";
 		List<Missions> list = new ArrayList<>();
 		try(Connection conn = ConnectionProvider.makeConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql)) {
 			pstmt.setInt(1, user_pk);
 			pstmt.setInt(2, t);
+			pstmt.setString(3, cl);
 			try(ResultSet rs = pstmt.executeQuery()) {
 				while(rs.next()) {
 					int mission_id = rs.getInt("mission_id");
