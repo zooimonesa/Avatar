@@ -107,10 +107,12 @@ public class PurchaseFrame {
 		equip_unequipButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				avatar.onSearching(main.user_pk, avatarName, type);
+				
 			
 				
-			  String onOffEname =avatar.avatarOnFinding(main.user_pk, type);
-				avatar.avatarTakeOnOff(1,main.user_pk,avatarName);				
+//			  String onOffEname =avatar.avatarOnFinding(main.user_pk, type);
+//				avatar.avatarTakeOnOff(1,main.user_pk,avatarName);				
 				
 				frame.dispose();
 			}
