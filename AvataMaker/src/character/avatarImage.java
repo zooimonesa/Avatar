@@ -43,13 +43,22 @@ public interface avatarImage {
 	 
 	 //스토리불러오기
 	 List<String> storyOn(int user_pk );
+	 
+	 //버튼에 넣을 값 리스트 만들
+	 List<String> pngListMeker();
 
 	
+	 // 내 포인트 찾기
+	 int selectMyPoint(String nickname );
 	 
+	// 물건 값 찾기
+    int selectAvatarPoint(String name );
 	 
-	 
-	 
-	 
+  //내 포인트 변경
+   int byAvatar( String nickname, String name);
+   
+   // 이걸로 물건값 변경
+   int selectAfterPoint(String nickname, String name );
 	 
 	 
 	 

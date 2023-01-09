@@ -5,7 +5,7 @@ public interface missionSelect {
 	//미션 랜덤 뽑기, 새로고침
 	Missions RandomMission(String classify, int term);
 	// 미션 선택지 꺼내오기
-	List<Missions> getSelectMission(int user_pk, int term);
+	List<Missions> getSelectMission(int user_pk, String classify, int term);
 	// 미션 선택지 저장하기
 	void setSelectMission(int user_pk, Missions m);
 	// 미션 선택지 업데이트
@@ -13,7 +13,7 @@ public interface missionSelect {
 	// 미션 몇갠지 확인
 	boolean checkMission(int user_pk, int term);
 	// 수락한 미션 테이블에 넣기
-	void insertMission(int user_pk, String mission, int term);
+	int insertMission(int user_pk, String mission, int term);
 	
 	
 	// 미션 라벨에 나타내기
@@ -22,9 +22,11 @@ public interface missionSelect {
 	void successMission(int user_pk, int term, String classify);
 	// 미션포기(테이블에 빼내기)
 	void cancelMission(int user_pk, String mission);
+	// 종목확인
+	String getClassify(String mission);
 	
 	
-	//포인트 빼기
+	// 포인트 빼기
 	public void usePoint(int user_pk, int point);
 	// 포인트 확인하기
 	boolean checkPoint(int user_pk, int point);
@@ -34,4 +36,9 @@ public interface missionSelect {
 	// 미션종료 날짜 가져오기
 	String userMissionEndDay(int user_pk, String mission);
 	
+	// 사용자 로그 생성하기
+	void userLog(int user_pk, String mission, String state);
+	
+	// 사용자 로그 불러오기
+	List<String> userLogResult(int user_pk);
 }

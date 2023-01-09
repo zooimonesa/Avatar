@@ -47,13 +47,14 @@ public class missionSelectImpl implements missionSelect{
 
 	// 미션 선택지 꺼내오기
 	@Override
-	public List<Missions> getSelectMission(int user_pk, int t) {
-		String sql = "SELECT * from user_select where user_pk = ? and term = ?";
+	public List<Missions> getSelectMission(int user_pk, String cl, int t) {
+		String sql = "SELECT * from user_select where user_pk = ? and term = ? and classify = ?";
 		List<Missions> list = new ArrayList<>();
 		try(Connection conn = ConnectionProvider.makeConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql)) {
 			pstmt.setInt(1, user_pk);
 			pstmt.setInt(2, t);
+			pstmt.setString(3, cl);
 			try(ResultSet rs = pstmt.executeQuery()) {
 				while(rs.next()) {
 					int mission_id = rs.getInt("mission_id");
@@ -90,16 +91,15 @@ public class missionSelectImpl implements missionSelect{
 	// 미션 선택지 업데이트
 	@Override
 	public void updateSelectMission(int user_pk, String mission, Missions m) {
-		String sql = "UPDATE user_select SET user_pk = ?, mission_id = ? classify = ?, mission = ?, term = ? where mission = ? and user = ?";
+		String sql = "UPDATE user_select SET mission_id = ?, classify = ?, mission = ?, term = ? where mission = ? and user_pk = ?";
 		try(Connection conn = ConnectionProvider.makeConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql)) {
-			pstmt.setInt(1, user_pk);
-			pstmt.setInt(2, m.getMission_id());
-			pstmt.setString(3, m.getClassify());
-			pstmt.setString(4, m.getMission());
-			pstmt.setInt(5, m.getTerm());
-			pstmt.setString(6, mission);
-			pstmt.setInt(7, user_pk);
+			pstmt.setInt(1, m.getMission_id());
+			pstmt.setString(2, m.getClassify());
+			pstmt.setString(3, m.getMission());
+			pstmt.setInt(4, m.getTerm());
+			pstmt.setString(5, mission);
+			pstmt.setInt(6, user_pk);
 			
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
@@ -134,7 +134,7 @@ public class missionSelectImpl implements missionSelect{
 	
 	// 수락한 미션 테이블에 넣기
 	@Override
-	public void insertMission(int user_pk, String mission, int term) {
+	public int insertMission(int user_pk, String mission, int term) {
 		int mission_id = 0 ;
 		String classify = "오류";
 		String sql = "INSERT INTO user_missions(user_pk,mission_id,classify,mission,term)"
@@ -157,10 +157,11 @@ public class missionSelectImpl implements missionSelect{
 			pstmt.setString(4, mission);
 			pstmt.setInt(5, term);
 
-			pstmt.executeUpdate();
+			return pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return 0;
 	}
 
 	
@@ -252,6 +253,23 @@ public class missionSelectImpl implements missionSelect{
 			e.printStackTrace();
 		}
 	}
+	// 종목확인
+	@Override
+	public String getClassify(String mission) {
+		String sql = "select classify from missions where mission = ?";
+		try(Connection conn = ConnectionProvider.makeConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setString(1, mission);
+			try(ResultSet rs = pstmt.executeQuery()) {
+				if(rs.next()) {
+					return rs.getString("classify");
+					}
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+		}
+		return null;
+	}
 
 	// 포인트 빼기
 	@Override
@@ -339,6 +357,57 @@ public class missionSelectImpl implements missionSelect{
 		return m_Dday;
 		
 	}
+
+	@Override
+	public void userLog(int user_pk, String mission, String state) {
+		String sql = "INSERT INTO user_log (user_pk, date, mission, state) VALUES (?,?,?,?)";
+		LocalDateTime today = LocalDateTime.now();
+		String day = today.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+		try (Connection conn = ConnectionProvider.makeConnection();
+				PreparedStatement stmt = conn.prepareStatement(sql)) {
+			
+			stmt.setInt(1, user_pk);
+			stmt.setString(2, day);
+			stmt.setString(3, mission);
+			stmt.setString(4, state);
+			
+			stmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+
+	@Override
+	public List<String> userLogResult(int user_pk) {
+		List<String> list = new ArrayList<>();
+		String sql = "SELECT * FROM user_log WHERE user_pk = ?";
+		try (Connection conn = ConnectionProvider.makeConnection();
+				PreparedStatement stmt = conn.prepareStatement(sql)) {
+			stmt.setInt(1, user_pk);
+			
+			try (ResultSet rs = stmt.executeQuery()) {
+				while (rs.next()) {
+					
+				String date = rs.getString("date");
+				String mission = rs.getString("mission");
+				String state = rs.getString("state");
+					
+				String result = "[" + date + "] " + mission + "을 " + state + "했습니다.\n"; 
+				list.add(result);
+				
+				}
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+
+
 
 
 
