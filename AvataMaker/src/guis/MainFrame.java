@@ -347,18 +347,19 @@ public class MainFrame {
 		userPointLabel.setBounds(533, 351, 97, 50);
 		frame.getContentPane().add(userPointLabel);
 
-		JLabel charHeadLabel = new JLabel(얼굴);
-		charHeadLabel.setBounds(40, 40, 150, 200);
-		frame.getContentPane().add(charHeadLabel);
+		JLabel charTopLabel = new JLabel(상의);
+		charTopLabel.setBounds(40, 40, 150, 200);
+		frame.getContentPane().add(charTopLabel);
 
 		JLabel charAccLabel = new JLabel(다른거);
 		charAccLabel.setBounds(40, 40, 150, 200);
 		frame.getContentPane().add(charAccLabel);
 
-		JLabel charTopLabel = new JLabel(상의);
-		charTopLabel.setBounds(40, 40, 150, 200);
-		frame.getContentPane().add(charTopLabel);
 
+		JLabel charHeadLabel = new JLabel(얼굴);
+		charHeadLabel.setBounds(40, 40, 150, 200);
+		frame.getContentPane().add(charHeadLabel);
+		
 		JLabel userCharLabel = new JLabel(캐릭터);
 		userCharLabel.setBounds(40, 40, 150, 200);
 		frame.getContentPane().add(userCharLabel);
