@@ -362,7 +362,7 @@ public class missionSelectImpl implements missionSelect{
 	@Override
 	public void missionLog(int user_pk, String mission, String state) {
 		String sql = "INSERT INTO user_log (user_pk, date, mission, state) "
-				+ "VALUES (?,?,?,?,?)";
+				+ "VALUES (?,?,?,?)";
 		LocalDateTime today = LocalDateTime.now();
 		String day = today.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 		try (Connection conn = ConnectionProvider.makeConnection();

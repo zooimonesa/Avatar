@@ -179,13 +179,13 @@ public class MissionListFrame {
     	  public void actionPerformed(ActionEvent e) {
     		  String state = "수락";
     		  if(mis.checkMission(user_pk, 1)) {
-    			  if(!oneDayMissionLabel2_T.getText().isEmpty() && !oneDayMissionLabel2_T.getText().equals(text1)) {
+    			  if(!oneDayMissionLabel2_T.getText().isEmpty() && !oneDayMissionLabel1_T.getText().equals(text1)) {
     				  // 미션 등록
-    				  mis.insertMission(user_pk, selectB, oneDayMissionLabel2_T.getText(), 1);
-    				  mis.missionLog(user_pk, oneDayMissionLabel2_T.getText(), state);
+    				  mis.insertMission(user_pk, selectB, oneDayMissionLabel1_T.getText(), 1);
+    				  mis.missionLog(user_pk, oneDayMissionLabel1_T.getText(), state);
     				  JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);   
     				  // 새로운 미션
-    				  oneDayMissionLabel2_T.setText(text1);
+    				  oneDayMissionLabel1_T.setText(text1);
     			  } else {
     				  JOptionPane.showMessageDialog(null, "미션내용을 입력해주세요.", "오류", JOptionPane.ERROR_MESSAGE);
     			  }
