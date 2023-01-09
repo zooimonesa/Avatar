@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
@@ -13,6 +14,8 @@ import mission.missionSelect;
 import mission.missionSelectImpl;
 
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -59,12 +62,16 @@ public class LogFrame {
 		frame.getContentPane().add(logTextLabel);
 		
 		List<String> log = mis.userLogResult(user_pk);
-		JLabel userLogLabel = new JLabel();
+		JTextArea userLog = new JTextArea();
+		String a = "";
 		for(int i = 0; i < log.size(); i++) {
-			userLogLabel.setText(log.get(i));
+			a += log.get(i);
 		}
-		userLogLabel.setBounds(12, 50, 403, 410);
-		frame.getContentPane().add(userLogLabel);
+		userLog.setText(a);
+		
+		
+		userLog.setBounds(12, 50, 403, 410);
+		frame.getContentPane().add(userLog);
 		
 		JButton 닫기버튼 = new JButton("닫기");
 		닫기버튼.addActionListener(new ActionListener() {
