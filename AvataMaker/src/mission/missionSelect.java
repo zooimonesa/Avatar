@@ -5,7 +5,7 @@ public interface missionSelect {
 	//미션 랜덤 뽑기, 새로고침
 	Missions RandomMission(String classify, int term);
 	// 미션 선택지 꺼내오기
-	List<Missions> getSelectMission(int user_pk, int term);
+	List<Missions> getSelectMission(int user_pk, String classify, int term);
 	// 미션 선택지 저장하기
 	void setSelectMission(int user_pk, Missions m);
 	// 미션 선택지 업데이트
@@ -22,6 +22,8 @@ public interface missionSelect {
 	void successMission(int user_pk, int term, String classify);
 	// 미션포기(테이블에 빼내기)
 	void cancelMission(int user_pk, String mission);
+	// 종목확인
+	String getClassify(String mission);
 	
 	
 	// 포인트 빼기

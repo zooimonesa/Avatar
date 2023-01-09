@@ -47,13 +47,14 @@ public class missionSelectImpl implements missionSelect{
 
 	// 미션 선택지 꺼내오기
 	@Override
-	public List<Missions> getSelectMission(int user_pk, int t) {
-		String sql = "SELECT * from user_select where user_pk = ? and term = ?";
+	public List<Missions> getSelectMission(int user_pk, String cl, int t) {
+		String sql = "SELECT * from user_select where user_pk = ? and term = ? and classify = ?";
 		List<Missions> list = new ArrayList<>();
 		try(Connection conn = ConnectionProvider.makeConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql)) {
 			pstmt.setInt(1, user_pk);
 			pstmt.setInt(2, t);
+			pstmt.setString(3, cl);
 			try(ResultSet rs = pstmt.executeQuery()) {
 				while(rs.next()) {
 					int mission_id = rs.getInt("mission_id");
@@ -252,6 +253,23 @@ public class missionSelectImpl implements missionSelect{
 			e.printStackTrace();
 		}
 	}
+	// 종목확인
+	@Override
+	public String getClassify(String mission) {
+		String sql = "select classify from missions where mission = ?";
+		try(Connection conn = ConnectionProvider.makeConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setString(1, mission);
+			try(ResultSet rs = pstmt.executeQuery()) {
+				if(rs.next()) {
+					return rs.getString("classify");
+					}
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+		}
+		return null;
+	}
 
 	// 포인트 빼기
 	@Override
@@ -364,6 +382,8 @@ public class missionSelectImpl implements missionSelect{
 			e.printStackTrace();
 		}
 	}
+
+
 
 
 
