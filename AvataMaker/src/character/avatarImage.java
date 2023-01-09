@@ -60,8 +60,8 @@ public interface avatarImage {
    // 이걸로 물건값 변경
    int selectAfterPoint(String nickname, String name );
 	 
-	 
-	 
+	// 같은 부위에 착용중인 친구 있으면 해제하고 착용하기 
+   void onSearching(int user_pk, String name, String type);
 	 
 	 
 	 
