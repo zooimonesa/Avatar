@@ -135,7 +135,7 @@ public class missionSelectImpl implements missionSelect{
 	
 	// 수락한 미션 테이블에 넣기
 	@Override
-	public void insertMission(int user_pk, String mission, int term) {
+	public int insertMission(int user_pk, String mission, int term) {
 		int mission_id = 0 ;
 		String classify = "오류";
 		String sql = "INSERT INTO user_missions(user_pk,mission_id,classify,mission,term)"
@@ -158,10 +158,11 @@ public class missionSelectImpl implements missionSelect{
 			pstmt.setString(4, mission);
 			pstmt.setInt(5, term);
 
-			pstmt.executeUpdate();
+			return pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return 0;
 	}
 
 	
