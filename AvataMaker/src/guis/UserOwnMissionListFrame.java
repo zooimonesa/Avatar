@@ -126,7 +126,7 @@ public class UserOwnMissionListFrame {
 						String mission = dailyMissionT[num].getText();
 						mis.successMission(user_pk, 1, mis.getClassify(mission));
 						mis.cancelMission(user_pk, mission);
-						mis.userLog(user_pk, mission, state);
+						mis.missionLog(user_pk, mission, state);
 						dailyMissionT[num].setText("");
 					}
 				}
@@ -145,7 +145,7 @@ public class UserOwnMissionListFrame {
 					if(!dailyMissionT[num].getText().isEmpty()) {
 						String mission = dailyMissionT[num].getText(); 
 						mis.cancelMission(user_pk, mission);
-						mis.userLog(user_pk, mission, state);
+						mis.missionLog(user_pk, mission, state);
 						dailyMissionT[num].setText("");
 					}
 				}
@@ -207,7 +207,7 @@ public class UserOwnMissionListFrame {
 						String mission = weeklyMissionT[num].getText();
 						mis.successMission(user_pk, 7, mis.getClassify(mission));
 						mis.cancelMission(user_pk, mission);
-						mis.userLog(user_pk, mission, state);
+						mis.missionLog(user_pk, mission, state);
 						weeklyMissionT[num].setText("");
 						weeklyMissionDday[num].setText("");
 					}
@@ -227,7 +227,7 @@ public class UserOwnMissionListFrame {
 					if(!weeklyMissionT[num].getText().isEmpty()) {
 						String mission = weeklyMissionT[num].getText();
 						mis.cancelMission(user_pk, mission);
-						mis.userLog(user_pk, mission, state);
+						mis.missionLog(user_pk, mission, state);
 						weeklyMissionT[num].setText("");
 						weeklyMissionDday[num].setText("");
 					}

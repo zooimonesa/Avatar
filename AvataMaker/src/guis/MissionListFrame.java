@@ -62,8 +62,13 @@ public class MissionListFrame {
 
 	private void initialize(String selectB) {
 		// 인터페이스 불러오기
-		missionSelect mis = new missionSelectImpl();
 		GetInfo mf = new GetInfo();
+		int mainpoint = mf.fmainpoint;
+		int mainhealth = mf.fmainhealth;
+		int mainintelligence = mf.fmainintelligence;
+		int maintalent = mf.fmaintalent;
+		missionSelect mis = new missionSelectImpl();
+		
 		int user_pk = mf.fuserpk;
 //		int user_pk = 33;
 		
@@ -181,7 +186,7 @@ public class MissionListFrame {
 					if(mis.insertMission(user_pk, text1, 1) > 0) {
 						// 미션등록
 //						mis.insertMission(user_pk, text1, 1);
-						mis.userLog(user_pk, text1, state);
+						mis.missionLog(user_pk, text2, state);
 						JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);
 						// 새로운 미션
 						Missions m1 = mis.RandomMission(selectB, 1); 
@@ -234,7 +239,7 @@ public class MissionListFrame {
 					if(mis.insertMission(user_pk, text2, 1) > 0) {
 						// 미션 등록
 //						mis.insertMission(user_pk, text2, 1);
-						mis.userLog(user_pk, text2, state);
+						mis.missionLog(user_pk, text2, state);
 						JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);	
 						// 새로운 미션
 						Missions m2 = mis.RandomMission(selectB, 1); 
@@ -287,7 +292,7 @@ public class MissionListFrame {
 					if(mis.insertMission(user_pk, text3, 7) > 0) {
 						// 미션 등록
 //						mis.insertMission(user_pk, text3, 7);
-						mis.userLog(user_pk, text3, state);
+						mis.missionLog(user_pk, text2, state);
 						mis.userMissionProgress(user_pk, text3);
 						JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);
 						// 새로운 미션
