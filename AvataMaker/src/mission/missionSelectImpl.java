@@ -380,20 +380,23 @@ public class missionSelectImpl implements missionSelect{
 
 
 	@Override
-	public String userLogResult(int user_pk) {
+	public List<String> userLogResult(int user_pk) {
+		List<String> list = new ArrayList<>();
 		String sql = "SELECT * FROM user_log WHERE user_pk = ?";
 		try (Connection conn = ConnectionProvider.makeConnection();
 				PreparedStatement stmt = conn.prepareStatement(sql)) {
 			stmt.setInt(1, user_pk);
 			
 			try (ResultSet rs = stmt.executeQuery()) {
-					if (rs.next()) {
-					rs.getInt(user_pk);
-					String date = rs.getString("date");
-					String mission = rs.getString("mission");
-					String state = rs.getString("state");
+				while (rs.next()) {
 					
-					return "[" + date + "] " + mission + "을 " + state + "했습니다."; 
+				String date = rs.getString("date");
+				String mission = rs.getString("mission");
+				String state = rs.getString("state");
+					
+				String result = "[" + date + "] " + mission + "을 " + state + "했습니다.\n"; 
+				list.add(result);
+				
 				}
 			}
 			
@@ -401,7 +404,7 @@ public class missionSelectImpl implements missionSelect{
 			e.printStackTrace();
 		}
 		
-		return null;
+		return list;
 	}
 
 

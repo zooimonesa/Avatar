@@ -10,6 +10,8 @@ public class missiontest {
 //	mis.userLog(33, "1시간동안 걷기", "완료");
 //	mis.userLog(33, "2시간동안 걷기", "완료");
 	
-	mis.userLogResult(33);
+	System.out.println(mis.userLogResult(33).get(0));
+	
+	
 	}
 }
