@@ -13,7 +13,7 @@ public interface missionSelect {
 	// 미션 몇갠지 확인
 	boolean checkMission(int user_pk, int term);
 	// 수락한 미션 테이블에 넣기
-	int insertMission(int user_pk, String mission, int term);
+	int insertMission(int user_pk, String classify, String mission, int term);
 	
 	
 	// 미션 라벨에 나타내기

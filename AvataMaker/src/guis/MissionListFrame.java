@@ -138,8 +138,9 @@ public class MissionListFrame {
       oneDayMissionPanel1.add(oneDayMissionLabel1_T);
       
       JTextField oneDayMissionLabel2_T = new JTextField();
-      text2 = mis.getSelectMission(user_pk, selectB, 1).get(1).getMission();
+      text2 = "미션을 입력하세요.";
       oneDayMissionLabel2_T.setText(text2);
+      oneDayMissionLabel2_T.setForeground(Color.gray);
       oneDayMissionLabel2_T.setBounds(20, 25, 250, 40);
       oneDayMissionPanel2.add(oneDayMissionLabel2_T);
       
@@ -183,9 +184,8 @@ public class MissionListFrame {
          public void actionPerformed(ActionEvent arg0) {
             String state = "수락";
             if(mis.checkMission(user_pk, 1)) {
-               if(mis.insertMission(user_pk, text1, 1) > 0) {
+               if(mis.insertMission(user_pk, selectB, text1, 1) > 0) {
                   // 미션등록
-//                  mis.insertMission(user_pk, text1, 1);
                   mis.userLog(user_pk, text1, state);
                   JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);
                   // 새로운 미션
@@ -236,18 +236,15 @@ public class MissionListFrame {
          public void actionPerformed(ActionEvent e) {
             String state = "수락";
             if(mis.checkMission(user_pk, 1)) {
-               if(mis.insertMission(user_pk, text2, 1) > 0) {
+               if(!oneDayMissionLabel2_T.getText().isEmpty() && !oneDayMissionLabel2_T.getText().equals(text2)) {
                   // 미션 등록
-//                  mis.insertMission(user_pk, text2, 1);
-                  mis.userLog(user_pk, text2, state);
+            	  mis.insertMission(user_pk, selectB, oneDayMissionLabel2_T.getText(), 1);
+                  mis.userLog(user_pk, oneDayMissionLabel2_T.getText(), state);
                   JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);   
                   // 새로운 미션
-                  Missions m2 = mis.RandomMission(selectB, 1); 
-                  mis.updateSelectMission(user_pk, text2, m2);
-                  text2 = m2.getMission();
                   oneDayMissionLabel2_T.setText(text2);
                } else {
-                  JOptionPane.showMessageDialog(null, "이미 수락한 미션입니다.", "오류", JOptionPane.ERROR_MESSAGE);
+                  JOptionPane.showMessageDialog(null, "미션내용을 입력해주세요.", "오류", JOptionPane.ERROR_MESSAGE);
                }
             } else {
                JOptionPane.showMessageDialog(null, "미션이 이미 가득 차있습니다.", "오류", JOptionPane.ERROR_MESSAGE);
@@ -289,9 +286,8 @@ public class MissionListFrame {
          public void actionPerformed(ActionEvent e) {
             String state = "수락";
             if(mis.checkMission(user_pk, 7)) {
-               if(mis.insertMission(user_pk, text3, 7) > 0) {
+               if(mis.insertMission(user_pk, selectB, text3, 7) > 0) {
                   // 미션 등록
-//                  mis.insertMission(user_pk, text3, 7);
                   mis.userLog(user_pk, text3, state);
                   mis.userMissionProgress(user_pk, text3);
                   JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);
