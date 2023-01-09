@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
 import User.GetInfo;
+import mission.Missions;
 import mission.missionSelect;
 import mission.missionSelectImpl;
 
@@ -122,7 +123,7 @@ public class UserOwnMissionListFrame {
 					int num = Integer.valueOf(command);
 					if(!dailyMissionT[num].getText().isEmpty()) {
 						String mission = dailyMissionT[num].getText();
-						mis.successMission(user_pk, 1, mis.userMission(user_pk, 1).get(num).getClassify());
+						mis.successMission(user_pk, 1, mis.getClassify(mission));
 						mis.cancelMission(user_pk, mission);
 						dailyMissionT[num].setText("");
 					}
@@ -199,7 +200,7 @@ public class UserOwnMissionListFrame {
 					int num = Integer.valueOf(command);
 					if(!weeklyMissionT[num].getText().isEmpty()) {
 						String mission = weeklyMissionT[num].getText();
-						mis.successMission(user_pk, 7, mis.userMission(user_pk, 7).get(num).getClassify());
+						mis.successMission(user_pk, 7, mis.getClassify(mission));
 						mis.cancelMission(user_pk, mission);
 						weeklyMissionT[num].setText("");
 						weeklyMissionDday[num].setText("");
@@ -241,5 +242,6 @@ public class UserOwnMissionListFrame {
 		frame.setBounds(100, 100, 471, 545);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
+	
 
 }

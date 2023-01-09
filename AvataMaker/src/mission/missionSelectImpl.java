@@ -253,6 +253,23 @@ public class missionSelectImpl implements missionSelect{
 			e.printStackTrace();
 		}
 	}
+	// 종목확인
+	@Override
+	public String getClassify(String mission) {
+		String sql = "select classify from missions where mission = ?";
+		try(Connection conn = ConnectionProvider.makeConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setString(1, mission);
+			try(ResultSet rs = pstmt.executeQuery()) {
+				if(rs.next()) {
+					return rs.getString("classify");
+					}
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+		}
+		return null;
+	}
 
 	// 포인트 빼기
 	@Override
@@ -340,6 +357,8 @@ public class missionSelectImpl implements missionSelect{
 		return m_Dday;
 		
 	}
+
+
 
 
 

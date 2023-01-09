@@ -22,6 +22,8 @@ public interface missionSelect {
 	void successMission(int user_pk, int term, String classify);
 	// 미션포기(테이블에 빼내기)
 	void cancelMission(int user_pk, String mission);
+	// 종목확인
+	String getClassify(String mission);
 	
 	
 	//포인트 빼기
