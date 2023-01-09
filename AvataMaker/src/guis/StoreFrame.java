@@ -133,10 +133,14 @@ public class StoreFrame {
 		btnNewButton_1_3.setBounds(324, 351, 90, 100);
 		frame.getContentPane().add(btnNewButton_1_3);
 
-		JButton btnNewButton_1_4 = new JButton("New button");
+		JButton btnNewButton_1_4 = new JButton("사슴뿔");
 		btnNewButton_1_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
+				purchaseFrame.avatarName = "사슴뿔.png";
+				purchaseFrame.type = "얼굴";
+				
+				
 				purchaseFrame.frame.setVisible(true); // 다음 프레임 띄우기
 				purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				purchaseFrame.frame.setResizable(false);
@@ -150,6 +154,10 @@ public class StoreFrame {
 		btnNewButton_1_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
+				
+				purchaseFrame.avatarName = "썬글라스.png";
+				purchaseFrame.type = "얼굴";
+				
 				purchaseFrame.frame.setVisible(true); // 다음 프레임 띄우기
 				purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				purchaseFrame.frame.setResizable(false);
