@@ -345,9 +345,11 @@ public class missionSelectImpl implements missionSelect{
 		
 	}
 
+	// 미션 로그 데이터 생성하기
 	@Override
-	public void userLog(int user_pk, String mission, String state) {
-		String sql = "INSERT INTO user_log (user_pk, date, mission, state) VALUES (?,?,?,?)";
+	public void missionLog(int user_pk, String mission, String state) {
+		String sql = "INSERT INTO user_log (user_pk, date, mission, state) "
+				+ "VALUES (?,?,?,?,?)";
 		LocalDateTime today = LocalDateTime.now();
 		String day = today.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 		try (Connection conn = ConnectionProvider.makeConnection();
@@ -366,10 +368,13 @@ public class missionSelectImpl implements missionSelect{
 	}
 
 
+
+	// 유저 로그데이터 보여주기
 	@Override
 	public List<String> userLogResult(int user_pk) {
 		List<String> list = new ArrayList<>();
 		String sql = "SELECT * FROM user_log WHERE user_pk = ?";
+		
 		try (Connection conn = ConnectionProvider.makeConnection();
 				PreparedStatement stmt = conn.prepareStatement(sql)) {
 			stmt.setInt(1, user_pk);
@@ -381,7 +386,7 @@ public class missionSelectImpl implements missionSelect{
 				String mission = rs.getString("mission");
 				String state = rs.getString("state");
 					
-				String result = "[" + date + "] " + mission + "을 " + state + "했습니다.\n"; 
+				String result = "[" + date + "]    미션      " + mission + "을 " + state + "했습니다.\n"; 
 				list.add(result);
 				
 				}

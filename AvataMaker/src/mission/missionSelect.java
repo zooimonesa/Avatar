@@ -36,8 +36,8 @@ public interface missionSelect {
 	// 미션종료 날짜 가져오기
 	String userMissionEndDay(int user_pk, String mission);
 	
-	// 사용자 로그 생성하기
-	void userLog(int user_pk, String mission, String state);
+	// 사용자 미션 로그 생성하기
+	void missionLog(int user_pk, String mission, String state);
 	
 	// 사용자 로그 불러오기
 	List<String> userLogResult(int user_pk);
