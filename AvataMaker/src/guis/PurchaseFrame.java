@@ -1,7 +1,5 @@
 package guis;
 
-
- 
 import java.awt.EventQueue;
 import java.awt.Image;
 import java.awt.Point;
@@ -19,16 +17,8 @@ import java.awt.Cursor;
 
 import javax.swing.SwingConstants;
 
-import User.GetInfo;
-import character.avatarImageImpl;
-
 public class PurchaseFrame {
-	
-	MainFrame main = new MainFrame();
-	avatarImageImpl avatar = new avatarImageImpl();
-	String avatarName ;
-	String type ;
-	
+
 	JFrame frame;
 
 	/**
@@ -80,45 +70,32 @@ public class PurchaseFrame {
 				frame.dispose();
 			}
 		});
-		previousButton.setBounds(12, 417, 97, 23);
+		previousButton.setBounds(12, 417, 90, 23);
 		frame.getContentPane().add(previousButton);
 		
 		JButton buyButton = new JButton("구입하기");
-		buyButton.setBounds(292, 417, 97, 23);
+		buyButton.setBounds(299, 417, 90, 23);
 		frame.getContentPane().add(buyButton);
-		buyButton.addActionListener(new ActionListener() {
+		
+		JButton unequipButton = new JButton("해제하기");
+		unequipButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				
-				
-				avatar.insertCopy(main.mainnickname , avatarName);
-				System.out.println(main.mainnickname);
-				System.out.println(avatarName);
-				
-				frame.dispose();
 			}
 		});
+		unequipButton.setBounds(206, 417, 81, 23);
+		frame.getContentPane().add(unequipButton);
 		
-		
-		
-		JButton equip_unequipButton = new JButton("착용하기");
-		equip_unequipButton.setBounds(121, 417, 159, 23);
-		frame.getContentPane().add(equip_unequipButton);
-		equip_unequipButton.addActionListener(new ActionListener() {
+		JButton equipButton = new JButton("착용하기");
+		equipButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				avatar.onSearching(main.user_pk, avatarName, type);
 				
-			
-				
-//			  String onOffEname =avatar.avatarOnFinding(main.user_pk, type);
-//				avatar.avatarTakeOnOff(1,main.user_pk,avatarName);				
-				
-				frame.dispose();
 			}
 		});
-		
-		
+		equipButton.setBounds(114, 417, 81, 23);
+		frame.getContentPane().add(equipButton);
 		
 		JLabel price = new JLabel("아바타이름");
 		price.setHorizontalAlignment(SwingConstants.CENTER);

@@ -352,10 +352,6 @@ public class StoreFrame {
 		이전창버튼.setBounds(732, 351, 55, 100);
 		frame.getContentPane().add(이전창버튼);
 		
-		JButton btnNewButton = new JButton("아바타적용하기"); // 아바타 적용 버튼 ================================
-		btnNewButton.setBounds(178, 424, 130, 23);
-		frame.getContentPane().add(btnNewButton); // ================================
-		
 		JLabel charHead = new JLabel(머리);  // 상점 캐릭터 착용샷 =======================================================================
 		charHead.setBounds(12, 21, 300, 430);
 		frame.getContentPane().add(charHead);
