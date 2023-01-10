@@ -1,6 +1,9 @@
 package guis;
 
 import java.awt.EventQueue;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Toolkit;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -19,6 +22,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.awt.Cursor;
 
 public class LogFrame {
 	GetInfo mf = new GetInfo();
@@ -43,8 +47,18 @@ public class LogFrame {
 
 	public LogFrame() {
 		initialize();
+		customcursor();
 	}
+	
+	public void customcursor() { // 마우스포인터 ====================================
 
+		Toolkit tk = Toolkit.getDefaultToolkit();
+		Image cursorimage = tk.getImage("대형견_커서.png");
+		Point point = new Point(0, 0);
+		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
+		frame.setCursor(cursor);
+	} // =======================================================
+	
 	private void initialize() {
 		missionSelect mis = new missionSelectImpl();
 		frame = new JFrame();
@@ -68,7 +82,6 @@ public class LogFrame {
 			a += log.get(i);
 		}
 		userLog.setText(a);
-		
 		
 		userLog.setBounds(12, 50, 403, 410);
 		frame.getContentPane().add(userLog);
