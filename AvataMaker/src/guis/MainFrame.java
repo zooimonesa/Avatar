@@ -27,7 +27,7 @@ import javax.swing.JTextPane;
 public class MainFrame {
 
 	GetInfo mf = new GetInfo();
-	int user_pk = mf.fuserpk;
+	public int user_pk = mf.fuserpk;
 	String mainid = mf.fmainid; // 태현
 	String mainnickname = mf.fmainnickname;
 
