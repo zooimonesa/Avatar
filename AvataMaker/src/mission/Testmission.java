@@ -21,7 +21,19 @@ public class Testmission {
 		
 //		System.out.println(mis.userMissionEndDay("유산소운동 1시간씩 매일 하기 "));
 		
-		String nu = "";
-		System.out.println(nu == null);
+//		String nu = "";
+//		System.out.println(nu == null);
+		
+		Missions m1 = mis.userMission(34, 1).get(0);
+//		System.out.println(m1);
+//		System.out.println(mis.userMission(34, 1));
+//		System.out.println(mis.userMission(34, 1).contains(m1));
+		for (Missions m2 : mis.userMission(34, 1)) {
+			if(m2.getMission().equals(m1.getMission())) {
+				System.out.println(true);
+			} else {
+				System.out.println(false);
+			}
+		}
 	}
 }
