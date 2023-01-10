@@ -18,6 +18,7 @@ import java.awt.Cursor;
 import javax.swing.SwingConstants;
 
 import character.avatarImageImpl;
+import character.onOff;
 
 public class PurchaseFrame {
 	
@@ -26,11 +27,14 @@ public class PurchaseFrame {
 	String avatarName ;
 	String type ;
 	JFrame frame;
+	boolean go;
+	boolean gogo;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+ 
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -44,7 +48,7 @@ public class PurchaseFrame {
 	}
 
 	public PurchaseFrame() {
-		initialize();
+		initialize(go,gogo);
 		customcursor();
 	}
 
@@ -57,7 +61,13 @@ public class PurchaseFrame {
 		frame.setCursor(cursor);
 	} // =======================================================
 	
-	private void initialize() {
+	public void initialize(boolean go,boolean gogo ) {
+		 
+		
+		
+		System.out.println(go);
+		System.out.println(gogo);
+		
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(255, 255, 255));
 		frame.setBackground(new Color(255, 255, 255));
@@ -81,13 +91,24 @@ public class PurchaseFrame {
 		
 		JButton buyButton = new JButton("구입하기");
 		buyButton.setBounds(299, 417, 90, 23);
+		
+
+		avatar.insertCopy(main.mainnickname , avatarName);
+		System.out.println(main.mainnickname);
+		System.out.println(avatarName);
+		
 		frame.getContentPane().add(buyButton);
+		if(go == false) {
+		buyButton.setEnabled(go);
+		}else {
+			buyButton.setEnabled(true);
+		}
 		
 		JButton unequipButton = new JButton("해제하기");
 		unequipButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				
+				avatar.avatarTakeOnOff(0,main.user_pk,avatarName);
 			}
 		});
 		unequipButton.setBounds(206, 417, 81, 23);
@@ -97,12 +118,17 @@ public class PurchaseFrame {
 		equipButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				avatar.onSearching(main.user_pk, avatarName, type);
 				
 			}
 		});
 		equipButton.setBounds(114, 417, 81, 23);
 		frame.getContentPane().add(equipButton);
-		
+		if(gogo == false) {
+		equipButton.setEnabled(gogo);
+		}else {
+			equipButton.setEnabled(true);
+		}
 		JLabel price = new JLabel("아바타이름");
 		price.setHorizontalAlignment(SwingConstants.CENTER);
 		price.setBounds(12, 51, 159, 31);
