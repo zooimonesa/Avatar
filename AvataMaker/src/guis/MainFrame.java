@@ -93,7 +93,7 @@ public class MainFrame {
 
 		ImageIcon 상의 = new ImageIcon(avatar.avatarOnFinding(user_pk, "옷"));
 		ImageIcon 얼굴 = new ImageIcon(avatar.avatarOnFinding(user_pk, "얼굴"));
-		ImageIcon 다른거 = new ImageIcon("");
+		ImageIcon 악세사리 = new ImageIcon(avatar.avatarOnFinding(user_pk, "악세사리"));
 		ImageIcon 능력치바 = new ImageIcon("능력치바.png");
 		ImageIcon 체력1 = new ImageIcon("체력_1.png");
 		ImageIcon 체력0 = new ImageIcon("체력_0.png");
@@ -361,7 +361,7 @@ public class MainFrame {
 		charTopLabel.setBounds(40, 40, 150, 200);
 		frame.getContentPane().add(charTopLabel);
 
-		JLabel charAccLabel = new JLabel(다른거);
+		JLabel charAccLabel = new JLabel(악세사리);
 		charAccLabel.setBounds(40, 40, 150, 200);
 		frame.getContentPane().add(charAccLabel);
 
