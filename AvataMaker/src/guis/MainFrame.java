@@ -226,7 +226,7 @@ public class MainFrame {
 		});
 		missionPoint.setBorderPainted(false);
 		missionPoint.setContentAreaFilled(false);
-		missionPoint.setBounds(315, 291, 97, 50);
+		missionPoint.setBounds(315, 291, 97, 60);
 		frame.getContentPane().add(missionPoint);
 
 		JButton storePoint = new JButton(상점버튼);
@@ -241,7 +241,7 @@ public class MainFrame {
 		});
 		storePoint.setBorderPainted(false);
 		storePoint.setContentAreaFilled(false);
-		storePoint.setBounds(424, 291, 97, 50);
+		storePoint.setBounds(424, 291, 97, 60);
 		frame.getContentPane().add(storePoint);
 
 		JButton logButton = new JButton(로그보기버튼);
@@ -257,7 +257,7 @@ public class MainFrame {
 		});
 		logButton.setBorderPainted(false);
 		logButton.setContentAreaFilled(false);
-		logButton.setBounds(533, 291, 97, 50);
+		logButton.setBounds(533, 291, 97, 60);
 		frame.getContentPane().add(logButton);
 
 		JButton logOutButton = new JButton(로그아웃버튼);
@@ -278,7 +278,7 @@ public class MainFrame {
 		});
 		logOutButton.setBorderPainted(false);
 		logOutButton.setContentAreaFilled(false);
-		logOutButton.setBounds(642, 291, 97, 50);
+		logOutButton.setBounds(642, 291, 97, 60);
 		frame.getContentPane().add(logOutButton);
 
 		JButton deleteUserInfo = new JButton("회원탈퇴");
