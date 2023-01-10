@@ -17,8 +17,14 @@ import java.awt.Cursor;
 
 import javax.swing.SwingConstants;
 
-public class PurchaseFrame {
+import character.avatarImageImpl;
 
+public class PurchaseFrame {
+	
+	MainFrame main = new MainFrame();
+	avatarImageImpl avatar = new avatarImageImpl();
+	String avatarName ;
+	String type ;
 	JFrame frame;
 
 	/**

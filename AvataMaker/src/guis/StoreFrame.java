@@ -18,7 +18,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class StoreFrame {
-
+	MainFrame main = new MainFrame();
 	JFrame frame;
 	private LineBorder bb = new LineBorder(Color.black, 1, true);
 
