@@ -387,6 +387,15 @@ public class avatarImageImpl implements avatarImage {
 			 avatarTakeOnOff(1,  user_pk, name);
 		 }
 		}
+	@Override
+	public void MyPointByAvatar(String nickname, String name) {
+		if (selectAfterPoint(nickname,  name ) <0) {
+			System.out.println("돈이 부족합니다.");
+		}else if (selectAfterPoint(nickname,  name )>0) {
+			byAvatar(  nickname ,  name);
+			insertCopy(nickname , name);
+		}
+	}
 		
 	}
 	
