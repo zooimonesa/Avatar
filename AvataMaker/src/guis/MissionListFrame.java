@@ -234,7 +234,8 @@ public class MissionListFrame {
     				  JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);
     				  // 새로운 미션
     				  Missions m1 = Noduplicate(user_pk, selectB, 1); 
-    				  mis.updateSelectMission(user_pk, text2, m1);
+    				  mis.deleteSelectMission(user_pk, text2);
+    				  mis.setSelectMission(user_pk, m1);
     				  text2 = m1.getMission();
     				  oneDayMissionLabel2_T.setText(text2);
     			  } else {
@@ -264,7 +265,8 @@ public class MissionListFrame {
     			  while(text2.equals(m1.getMission())) {
     				  m1 = Noduplicate(user_pk, selectB, 1);
     			  }
-    			  mis.updateSelectMission(user_pk, text2, m1);
+    			  mis.deleteSelectMission(user_pk, text2);
+    			  mis.setSelectMission(user_pk, m1);
     			  text2 = m1.getMission();
     			  oneDayMissionLabel2_T.setText(text2);
     		  } else {
@@ -291,7 +293,8 @@ public class MissionListFrame {
                   JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);
                   // 새로운 미션
                   Missions m2 = Noduplicate(user_pk, selectB, 7);
-                  mis.updateSelectMission(user_pk, text3, m2);
+                  mis.deleteSelectMission(user_pk, text3);
+                  mis.setSelectMission(user_pk, m2);
                   text3 = m2.getMission();
                   oneWeekMissionLabel1_T.setText(text3);
                } else {
@@ -321,7 +324,8 @@ public class MissionListFrame {
                while(text3.equals(m2.getMission())) {
             	   m2 = Noduplicate(user_pk, selectB, 7);
                }
-               mis.updateSelectMission(user_pk, text3, m2);
+               mis.deleteSelectMission(user_pk, text3);
+               mis.setSelectMission(user_pk, m2);
                text3 = m2.getMission();
                oneWeekMissionLabel1_T.setText(text3);
             } else {
