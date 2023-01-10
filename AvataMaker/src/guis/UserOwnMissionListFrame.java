@@ -1,5 +1,6 @@
 package guis;
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Toolkit;
@@ -90,7 +91,7 @@ public class UserOwnMissionListFrame {
 		oneDayMissionPanel.setBounds(6, 33, 443, 258);
 		frame.getContentPane().add(oneDayMissionPanel);
 		oneDayMissionPanel.setLayout(null);
-
+		
 		JLabel[] dailyMission = new JLabel[6]; // 일일미션라벨배열
 		JLabel[] dailyMissionT = new JLabel[6]; // 일일미션텍스트라벨배열
 		JButton[] dailyMissionclear = new JButton[6]; // 일일미션달성버튼배열
@@ -203,18 +204,26 @@ public class UserOwnMissionListFrame {
 			oneWeekMissionPanel.add(weeklyMissionT[i]);
 			
 			weeklyMissionDday[i] = new JLabel();
-			// sql에 마감 날짜 없으면 오류남
-			if(!weeklyMissionT[i].getText().isEmpty()) {
-				weeklyMissionDday[i].setText(mis.userMissionEndDay(user_pk, weeklyMissionT[i].getText()));
-			}
 			weeklyMissionDday[i].setBounds(270, weeklyY, 280, 30);
 			oneWeekMissionPanel.add(weeklyMissionDday[i]);
 
 			weeklyMissionClear[i] = new JButton("완료"); // 주간미션달성버튼
 			// 버튼 락 걸기
 			if(!weeklyMissionT[i].getText().isEmpty()) {
-				weeklyMissionClear[i].setEnabled(false);
+				if(mis.userMissionEndDay(user_pk, weeklyMissionT[i].getText()).contains("D - -")) {
+					// 지나간 미션 없애기
+					mis.cancelMission(user_pk, weeklyMissionT[i].getText());
+					initialize();
+				} else {
+					weeklyMissionDday[i].setText(mis.userMissionEndDay(user_pk, weeklyMissionT[i].getText()));
+					weeklyMissionClear[i].setEnabled(false);
+				}
 			}
+			// 버튼 락 열기
+			if(weeklyMissionDday[i].getText().equals("D - 0")) {
+				weeklyMissionClear[i].setEnabled(true);
+			}
+			
 			weeklyMissionClear[i].setActionCommand(String.valueOf(i));
 			weeklyMissionClear[i].addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
