@@ -8,6 +8,7 @@ import java.awt.Image;
 import java.awt.Point;
 import java.awt.Toolkit;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -55,8 +56,13 @@ public class MissionChoiceFrame {
 		frame.setBounds(100, 100, 450, 450);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-
-		JButton exerciseButton = new JButton("운동");
+		
+		ImageIcon 운동버튼 = new ImageIcon("운동버튼.png");
+		ImageIcon 공부버튼 = new ImageIcon("공부버튼.png");
+		ImageIcon 취미버튼 = new ImageIcon("취미버튼.png");
+		
+		
+		JButton exerciseButton = new JButton(운동버튼);
 		exerciseButton.setBackground(new Color(255, 255, 255));
 		exerciseButton.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 30));
 		exerciseButton.addActionListener(new ActionListener() {
@@ -70,7 +76,7 @@ public class MissionChoiceFrame {
 		exerciseButton.setBounds(30, 30, 370, 80);
 		frame.getContentPane().add(exerciseButton);
 
-		JButton studyButton = new JButton("공부");
+		JButton studyButton = new JButton(공부버튼);
 		studyButton.setBackground(new Color(255, 255, 255));
 		studyButton.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 30));
 		studyButton.addActionListener(new ActionListener() {
@@ -84,7 +90,7 @@ public class MissionChoiceFrame {
 		studyButton.setBounds(30, 120, 370, 80);
 		frame.getContentPane().add(studyButton);
 
-		JButton hobbyButton = new JButton("취미");
+		JButton hobbyButton = new JButton(취미버튼);
 		hobbyButton.setBackground(new Color(255, 255, 255));
 		hobbyButton.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 30));
 		hobbyButton.addActionListener(new ActionListener() {
