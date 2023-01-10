@@ -108,7 +108,7 @@ public class PurchaseFrame {
 		unequipButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				
+				avatarTakeOnOff(0,main.user_pk,avatarName);
 			}
 		});
 		unequipButton.setBounds(206, 417, 81, 23);
