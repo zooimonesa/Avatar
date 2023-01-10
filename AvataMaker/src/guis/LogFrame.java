@@ -28,6 +28,7 @@ import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Font;
 
 public class LogFrame {
 	GetInfo mf = new GetInfo();
@@ -86,13 +87,15 @@ public class LogFrame {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel logTextLabel = new JLabel(mainnickname + "의 로그");
+		logTextLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		logTextLabel.setVerticalAlignment(SwingConstants.TOP);
-		logTextLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		logTextLabel.setBounds(185, 20, 100, 100);
+		logTextLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		logTextLabel.setBounds(145, 20, 140, 20);
 		frame.getContentPane().add(logTextLabel);
 		
 		List<String> log = mis.userLogResult(user_pk);
 		userLog = new JTextArea();
+		userLog.setFont(new Font("경기천년제목 Light", Font.PLAIN, 15));
 		String a = "";
 		for(int i = 0; i < log.size(); i++) {
 			a += log.get(i);
@@ -108,9 +111,12 @@ public class LogFrame {
 		scroll.setBounds(18, 50, 400, 350);
 		userLog.setBounds(18, 50, 400, 350);
 		
-		frame.add(scroll);
+		frame.getContentPane().add(scroll);
 		
 		JButton 닫기버튼 = new JButton("닫기");
+		닫기버튼.setForeground(new Color(255, 255, 255));
+		닫기버튼.setBackground(new Color(0, 128, 255));
+		닫기버튼.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		닫기버튼.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MainFrame mainFrame = new MainFrame();  // hj 메인 나오게================
@@ -120,7 +126,7 @@ public class LogFrame {
 				frame.dispose();
 			}
 		});
-		닫기버튼.setBounds(291, 430, 124, 71);
+		닫기버튼.setBounds(291, 456, 124, 45);
 		frame.getContentPane().add(닫기버튼);
 	}
 

@@ -217,7 +217,7 @@ public class avatarImageImpl implements avatarImage {
 			
 			while (rs.next()) {
 			 String story = rs.getString("story");
-			 System.out.println(story);
+			  
 			 list.add(story);
 			 list.add("\n");
 			}

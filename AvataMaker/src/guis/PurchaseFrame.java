@@ -74,9 +74,11 @@ public class PurchaseFrame {
 		frame.setBounds(100, 100, 417, 489);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
-		ImageIcon baseStoreChar = new ImageIcon("농담곰_상점_미리보기.png");
-		ImageIcon charEquipMent = new ImageIcon("목도리_상점_미리보기.png");
+		ImageIcon 배경 = new ImageIcon("미리보기"+ main.avatar.avatarOnFinding(main.user_pk, "배경"));
+		ImageIcon 얼굴 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "얼굴"));  // 캐릭터 옷 아이콘 =================
+		ImageIcon 악세서리 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "악세사리"));
+		ImageIcon 상의 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "옷")); // =======================
+		ImageIcon 상점캐릭터 = new ImageIcon("농담곰_상점_기본.png");
 		
 		
 		JButton previousButton = new JButton("이전으로");
@@ -144,13 +146,27 @@ public class PurchaseFrame {
 		
 		
 		
+		JLabel charHead = new JLabel(얼굴);  // 상점 캐릭터 착용샷 =======================================================================
+		charHead.setBounds(52, 21, 300, 430);
+		frame.getContentPane().add(charHead);
 		
-		JLabel wearChar = new JLabel(charEquipMent);
-		wearChar.setBounds(0, 0, 400, 450);
-		frame.getContentPane().add(wearChar);
+		JLabel charAcc = new JLabel(악세서리);
+		charAcc.setBounds(52, 21, 300, 430);
+		frame.getContentPane().add(charAcc);
 		
-		JLabel baseChar = new JLabel(baseStoreChar);
-		baseChar.setBounds(0, 0, 400, 450);
-		frame.getContentPane().add(baseChar);
+		JLabel charTop = new JLabel(상의);
+		charTop.setBounds(52, 21, 300, 430);
+		frame.getContentPane().add(charTop);
+		
+		JLabel mainChar = new JLabel(상점캐릭터);
+		//mainChar.setBorder(bb);
+		mainChar.setBounds(60, 21, 300, 430);
+		frame.getContentPane().add(mainChar); 
+		
+		JLabel main = new JLabel(배경);
+		//main.setBorder(bb);
+		main.setBounds(60, 21, 300, 430);
+		frame.getContentPane().add(main);
+		
 	}
 }
