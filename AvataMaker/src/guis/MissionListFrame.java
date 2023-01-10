@@ -6,9 +6,14 @@ import java.awt.Point;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
+
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -24,7 +29,9 @@ import User.GetInfo;
 import mission.Missions;
 import mission.missionSelect;
 import mission.missionSelectImpl;
+import sun.tools.jar.resources.jar;
 
+import java.awt.Checkbox;
 import java.awt.Color;
 import java.awt.Cursor;
 import javax.swing.SwingConstants;
@@ -36,6 +43,10 @@ public class MissionListFrame {
    String text1;
    String text2;
    String text3;
+
+private JCheckBox term1;
+
+private JCheckBox term7;
 
    public static void main(String[] args) {
       EventQueue.invokeLater(new Runnable() {
@@ -132,6 +143,8 @@ public class MissionListFrame {
       // 미션 내용 불러오기
       JTextField oneDayMissionLabel1_T = new JTextField();
       text1 = "미션을 입력하세요.";
+      
+      
       oneDayMissionLabel1_T.setText(text1);
       oneDayMissionLabel1_T.setForeground(Color.gray);
       oneDayMissionLabel1_T.setBounds(20, 25, 250, 40);
@@ -154,6 +167,44 @@ public class MissionListFrame {
 		}
       });
       oneDayMissionPanel1.add(oneDayMissionLabel1_T);
+      
+      term1 = new JCheckBox("1일");
+      term1.setBounds(280, 25, 50, 20); 
+      term1.setBackground(Color.WHITE);
+      oneDayMissionPanel1.add(term1);
+
+      term7 = new JCheckBox("7일");
+      term7.setBounds(280, 45, 50, 20); 
+      term7.setBackground(Color.WHITE);
+      oneDayMissionPanel1.add(term7);
+      
+      ButtonGroup bg = new ButtonGroup();
+      bg.add(term1);
+      bg.add(term7);
+      
+      
+      term1.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			int term = 0;
+			if(term1.isSelected()) {
+				term = 1;
+			}
+		}
+	});
+      term7.addActionListener(new ActionListener() {
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			int term = 0;
+			if(term7.isSelected()) {
+				term = 7;
+			}
+		}
+	});
+      
+     
       
       JLabel oneDayMissionLabel2_T = new JLabel();
       text2 = mis.getSelectMission(user_pk, selectB, 1).get(0).getMission();
@@ -200,7 +251,9 @@ public class MissionListFrame {
       oneDayMissionChoiceButton1.addActionListener(new ActionListener() {
     	  @Override
     	  public void actionPerformed(ActionEvent e) {
-    		  String state = "수락";
+    		String state = "수락";
+    		  
+    		  
     		  if(mis.checkMission(user_pk, 1)) {
     			  if(!oneDayMissionLabel2_T.getText().isEmpty() && !oneDayMissionLabel1_T.getText().equals("")) {
     				  // 미션 등록
