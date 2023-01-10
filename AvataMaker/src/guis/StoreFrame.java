@@ -84,9 +84,9 @@ public class StoreFrame {
 		onoff.mainOnOff(onoff.avatarGet(main.user_pk), onoff.storeAvatarGet());
 		onoff.avatarGet(main.user_pk);
 		
-		ImageIcon 얼굴 = new ImageIcon(main.avatar.avatarOnFinding(main.user_pk, "얼굴"));  // 캐릭터 옷 아이콘 =================
-		ImageIcon 악세서리 = new ImageIcon(main.avatar.avatarOnFinding(main.user_pk, "악세사리"));
-		ImageIcon 상의 = new ImageIcon(main.avatar.avatarOnFinding(main.user_pk, "옷")); // =======================
+		ImageIcon 얼굴 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "얼굴"));  // 캐릭터 옷 아이콘 =================
+		ImageIcon 악세서리 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "악세사리"));
+		ImageIcon 상의 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "옷")); // =======================
 		ImageIcon 상점캐릭터 = new ImageIcon("농담곰_상점_기본.png");
 		ImageIcon 목도리 = new ImageIcon( onoff.findGetAva(a));
 		ImageIcon 요리사 = new ImageIcon(onoff.findGetAva(c));
