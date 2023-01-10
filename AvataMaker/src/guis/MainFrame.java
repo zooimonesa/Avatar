@@ -23,6 +23,7 @@ import character.avatarImageImpl;
 
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
+import java.awt.Font;
 
 public class MainFrame {
 
@@ -107,12 +108,14 @@ public class MainFrame {
 		ImageIcon 재능0 = new ImageIcon("재능_0.png");
 
 		JLabel nickNameLabel = new JLabel(mainnickname);
+		nickNameLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		nickNameLabel.setBackground(new Color(255, 255, 255));
 		nickNameLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		nickNameLabel.setBounds(315, 40, 424, 35);
 		frame.getContentPane().add(nickNameLabel);
 
 		JTextPane storyLabel = new JTextPane();//태현고침
+		storyLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i <avatar.storyOn(user_pk).size(); i++) {
 			sb.append(String.valueOf(avatar.storyOn(user_pk).get(i)));
@@ -363,6 +366,7 @@ public class MainFrame {
 		frame.getContentPane().add(tutoButton); // ==================================================
 
 		JLabel userPointLabel = new JLabel("포인트:");
+		userPointLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		userPointLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		userPointLabel.setBounds(533, 351, 97, 50);
 		frame.getContentPane().add(userPointLabel);
@@ -390,23 +394,27 @@ public class MainFrame {
 		frame.getContentPane().add(charBackgroundLabel);
 
 		JLabel userPointLabel_1 = new JLabel(Integer.toString(mainpoint));
+		userPointLabel_1.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		userPointLabel_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		userPointLabel_1.setBounds(642, 351, 97, 50);
 		frame.getContentPane().add(userPointLabel_1);
 
-		JLabel healthPointLabel = new JLabel("체력" + Integer.toString(mainhealth));
+		JLabel healthPointLabel = new JLabel("체력: " + Integer.toString(mainhealth));
+		healthPointLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		healthPointLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		healthPointLabel.setBounds(246, 85, 57, 35);
+		healthPointLabel.setBounds(202, 85, 101, 35);
 		frame.getContentPane().add(healthPointLabel);
 
-		JLabel intPointLabel = new JLabel("지능" + Integer.toString(mainintelligence));
+		JLabel intPointLabel = new JLabel("지능: " + Integer.toString(mainintelligence));
+		intPointLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		intPointLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		intPointLabel.setBounds(246, 130, 57, 35);
+		intPointLabel.setBounds(202, 130, 101, 35);
 		frame.getContentPane().add(intPointLabel);
 
-		JLabel giftPointLabel = new JLabel("재능" + Integer.toString(maintalent));
+		JLabel giftPointLabel = new JLabel("재능: " + Integer.toString(maintalent));
+		giftPointLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		giftPointLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		giftPointLabel.setBounds(246, 175, 57, 35);
+		giftPointLabel.setBounds(202, 175, 101, 35);
 		frame.getContentPane().add(giftPointLabel);
 
 //      ImageIcon mainBackGround = new ImageIcon("메인배경화면예시.png");
