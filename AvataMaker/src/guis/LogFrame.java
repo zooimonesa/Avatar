@@ -99,9 +99,19 @@ public class LogFrame {
 		}
 		
 		userLog.setText(a);
+<<<<<<< HEAD
 		userLog.setLineWrap(true); 
 //		(userLog).setEditable(false);
 
+=======
+		
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(12, 10, 403, 410);
+		frame.getContentPane().add(scrollPane);
+		
+		scrollPane.setViewportView(userLog);
+>>>>>>> branch 'master' of https://github.com/zooimonesa/Avatar.git
 		
 		JScrollPane scroll = new JScrollPane(userLog);
 		userLog.setBorder(new LineBorder(new Color(0, 0, 0)));
