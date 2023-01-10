@@ -211,6 +211,10 @@ public class UserOwnMissionListFrame {
 			oneWeekMissionPanel.add(weeklyMissionDday[i]);
 
 			weeklyMissionClear[i] = new JButton("완료"); // 주간미션달성버튼
+			// 버튼 락 걸기
+			if(!weeklyMissionT[i].getText().isEmpty()) {
+				weeklyMissionClear[i].setEnabled(false);
+			}
 			weeklyMissionClear[i].setActionCommand(String.valueOf(i));
 			weeklyMissionClear[i].addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
