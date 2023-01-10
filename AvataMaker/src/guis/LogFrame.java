@@ -88,36 +88,27 @@ public class LogFrame {
 		JLabel logTextLabel = new JLabel(mainnickname + "의 로그");
 		logTextLabel.setVerticalAlignment(SwingConstants.TOP);
 		logTextLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		logTextLabel.setBounds(12, 10, 100, 100);
+		logTextLabel.setBounds(20, 10, 100, 100);
 		frame.getContentPane().add(logTextLabel);
 		
 		List<String> log = mis.userLogResult(user_pk);
-		JPanel textPnl = new JPanel();
-		textPnl.setBounds(12, 50, 400, 350);
 		userLog = new JTextArea();
 		String a = "";
 		for(int i = 0; i < log.size(); i++) {
 			a += log.get(i);
 		}
+		
 		userLog.setText(a);
+		userLog.setLineWrap(true); 
+		(userLog).setEditable(false);
+
 		
-		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(12, 10, 403, 410);
-		frame.getContentPane().add(scrollPane);
-		
-		scrollPane.setViewportView(userLog);
-		
-//		(userLog).setEditable(false);
+		JScrollPane scroll = new JScrollPane(userLog);
 		userLog.setBorder(new LineBorder(new Color(0, 0, 0)));
-		scrollPane = new JScrollPane(userLog);
-		scrollPane.getVerticalScrollBar().setValue(scrollPane.getVerticalScrollBar().getMaximum());
-//		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
-//		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-//		textPnl.add(scrollPane);
-		userLog.setBounds(12, 50, 400, 350);
+		scroll.setBounds(18, 50, 400, 350);
+		userLog.setBounds(18, 50, 400, 350);
 		
-		frame.getContentPane().add(userLog);
+		frame.add(scroll);
 		
 		JButton 닫기버튼 = new JButton("닫기");
 		닫기버튼.addActionListener(new ActionListener() {
@@ -131,5 +122,11 @@ public class LogFrame {
 		});
 		닫기버튼.setBounds(291, 430, 124, 71);
 		frame.getContentPane().add(닫기버튼);
+	}
+
+
+	private void add(JScrollPane scroll) {
+		// TODO Auto-generated method stub
+		
 	}
 }
