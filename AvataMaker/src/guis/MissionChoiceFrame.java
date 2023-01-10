@@ -56,6 +56,7 @@ public class MissionChoiceFrame {
 		frame.getContentPane().setLayout(null);
 
 		JButton exerciseButton = new JButton("운동");
+		exerciseButton.setBackground(new Color(255, 255, 255));
 		exerciseButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MissionListFrame 미션프레임새창 = new MissionListFrame("운동");
@@ -68,6 +69,7 @@ public class MissionChoiceFrame {
 		frame.getContentPane().add(exerciseButton);
 
 		JButton studyButton = new JButton("공부");
+		studyButton.setBackground(new Color(255, 255, 255));
 		studyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MissionListFrame missionListFrame = new MissionListFrame("공부");
@@ -80,6 +82,7 @@ public class MissionChoiceFrame {
 		frame.getContentPane().add(studyButton);
 
 		JButton hobbyButton = new JButton("취미");
+		hobbyButton.setBackground(new Color(255, 255, 255));
 		hobbyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MissionListFrame missionListFrame = new MissionListFrame("취미");
@@ -92,6 +95,7 @@ public class MissionChoiceFrame {
 		frame.getContentPane().add(hobbyButton);
 
 		JButton userOwnMissionButton = new JButton("보유미션보기");
+		userOwnMissionButton.setBackground(new Color(200, 230, 250));
 		userOwnMissionButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				UserOwnMissionListFrame userOwnMissionListFrame = new UserOwnMissionListFrame();
@@ -105,6 +109,7 @@ public class MissionChoiceFrame {
 		frame.getContentPane().add(userOwnMissionButton);
 
 		JButton previousButton = new JButton("이전으로");
+		previousButton.setBackground(new Color(200, 230, 250));
 		previousButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MainFrame mainFrame = new MainFrame();  // hj 메인 나오게================
