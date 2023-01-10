@@ -79,7 +79,7 @@ public class StartFrame {
 		
 		ImageIcon 메인 = new ImageIcon("메인예시원본.gif");
 		JLabel mainImage = new JLabel(메인);
-		mainImage.setBounds(12, 10, 505, 259);
+		mainImage.setBounds(12, 0, 505, 300);
 		frmAlpha.getContentPane().add(mainImage);
 
 		id = new JTextField();
