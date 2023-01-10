@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.border.LineBorder;
 
 import User.GetInfo;
 import mission.missionSelect;
@@ -82,7 +83,7 @@ public class LogFrame {
 			a += log.get(i);
 		}
 		userLog.setText(a);
-		
+		userLog.setBorder(new LineBorder(new Color(0, 0, 0)));
 		userLog.setBounds(12, 50, 403, 410);
 		frame.getContentPane().add(userLog);
 		
