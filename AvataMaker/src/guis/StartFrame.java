@@ -72,9 +72,9 @@ public class StartFrame {
 		frmAlpha.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmAlpha.getContentPane().setLayout(null);
 		
-		ImageIcon 로그인버튼 = new ImageIcon("로그인.png");
-		ImageIcon 회원가입버튼 = new ImageIcon("회원가입.png");
-		ImageIcon 종료하기버튼 = new ImageIcon("종료하기.png");
+		ImageIcon 로그인버튼 = new ImageIcon("로그인_시작.png");
+		ImageIcon 회원가입버튼 = new ImageIcon("회원가입_시작.png");
+		ImageIcon 종료하기버튼 = new ImageIcon("종료하기_시작.png");
 		
 		
 		ImageIcon 메인 = new ImageIcon("메인예시원본.gif");
