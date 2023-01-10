@@ -3,6 +3,7 @@ package guis;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Toolkit;
@@ -174,13 +175,16 @@ public class StartFrame {
 		frmAlpha.getContentPane().add(exit);
 
 		JLabel idLabel = new JLabel("아이디");
+		idLabel.setBackground(new Color(255, 255, 255));
+		idLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 20));
 		idLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		idLabel.setBounds(85, 310, 57, 15);
+		idLabel.setBounds(73, 307, 79, 21);
 		frmAlpha.getContentPane().add(idLabel);
 
 		JLabel passWordLabel = new JLabel("비밀번호");
+		passWordLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 20));
 		passWordLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		passWordLabel.setBounds(85, 353, 57, 15);
+		passWordLabel.setBounds(73, 350, 79, 21);
 		frmAlpha.getContentPane().add(passWordLabel);
 	}
 
