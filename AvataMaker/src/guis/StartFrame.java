@@ -3,6 +3,7 @@ package guis;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Toolkit;
@@ -71,14 +72,14 @@ public class StartFrame {
 		frmAlpha.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmAlpha.getContentPane().setLayout(null);
 		
-		ImageIcon 로그인버튼 = new ImageIcon("로그인.png");
-		ImageIcon 회원가입버튼 = new ImageIcon("회원가입.png");
-		ImageIcon 종료하기버튼 = new ImageIcon("종료하기.png");
+		ImageIcon 로그인버튼 = new ImageIcon("로그인_시작.png");
+		ImageIcon 회원가입버튼 = new ImageIcon("회원가입_시작.png");
+		ImageIcon 종료하기버튼 = new ImageIcon("종료하기_시작.png");
 		
 		
 		ImageIcon 메인 = new ImageIcon("메인예시원본.gif");
 		JLabel mainImage = new JLabel(메인);
-		mainImage.setBounds(12, 10, 505, 259);
+		mainImage.setBounds(12, 0, 505, 300);
 		frmAlpha.getContentPane().add(mainImage);
 
 		id = new JTextField();
@@ -174,13 +175,16 @@ public class StartFrame {
 		frmAlpha.getContentPane().add(exit);
 
 		JLabel idLabel = new JLabel("아이디");
+		idLabel.setBackground(new Color(255, 255, 255));
+		idLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 20));
 		idLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		idLabel.setBounds(85, 310, 57, 15);
+		idLabel.setBounds(73, 307, 79, 21);
 		frmAlpha.getContentPane().add(idLabel);
 
 		JLabel passWordLabel = new JLabel("비밀번호");
+		passWordLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 20));
 		passWordLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		passWordLabel.setBounds(85, 353, 57, 15);
+		passWordLabel.setBounds(73, 350, 79, 21);
 		frmAlpha.getContentPane().add(passWordLabel);
 	}
 

@@ -11,6 +11,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
+import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -26,6 +28,7 @@ import mission.missionSelectImpl;
 import java.awt.Color;
 import java.awt.Cursor;
 import javax.swing.SwingConstants;
+import java.awt.Font;
 
 public class MissionListFrame {
    
@@ -103,25 +106,28 @@ public class MissionListFrame {
       
       // 미션이름 레이블 적용
       JLabel oneDayMissionLabel1 = new JLabel("< 개인 미션 > ");
+      oneDayMissionLabel1.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
       oneDayMissionLabel1.setHorizontalAlignment(SwingConstants.CENTER);
-      oneDayMissionLabel1.setBounds(50, 0, 291, 26);
+      oneDayMissionLabel1.setBounds(60, 0, 291, 26);
       oneDayMissionPanel1.add(oneDayMissionLabel1);
       
       JLabel oneDayMissionLabel2 = new JLabel("< 일일 미션 > ");
+      oneDayMissionLabel2.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
       oneDayMissionLabel2.setHorizontalAlignment(SwingConstants.CENTER);
-      oneDayMissionLabel2.setBounds(50, 0, 291, 26);
+      oneDayMissionLabel2.setBounds(60, 0, 291, 26);
       oneDayMissionPanel2.add(oneDayMissionLabel2);
       
       JLabel oneWeekMissionLabel = new JLabel("< 주간 미션 > ");
+      oneWeekMissionLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
       oneWeekMissionLabel.setHorizontalAlignment(SwingConstants.CENTER);
-      oneWeekMissionLabel.setBounds(50, 0, 291, 26);
+      oneWeekMissionLabel.setBounds(60, 0, 291, 26);
       oneWeekMissionPanel.add(oneWeekMissionLabel);
       
       
       // 미션 설정
       if(mis.getSelectMission(user_pk, selectB, 1).isEmpty()) {
-         Missions m1 = mis.RandomMission(selectB, 1);
-         Missions m2 = mis.RandomMission(selectB, 7);
+    	 Missions m1 = Noduplicate(user_pk, selectB, 1);
+         Missions m2 = Noduplicate(user_pk, selectB, 7);
          mis.setSelectMission(user_pk, m1);
          mis.setSelectMission(user_pk, m2);
       }
@@ -129,6 +135,7 @@ public class MissionListFrame {
       
       // 미션 내용 불러오기
       JTextField oneDayMissionLabel1_T = new JTextField();
+      oneDayMissionLabel1_T.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 12));
       text1 = "미션을 입력하세요.";
       oneDayMissionLabel1_T.setText(text1);
       oneDayMissionLabel1_T.setForeground(Color.gray);
@@ -154,12 +161,14 @@ public class MissionListFrame {
       oneDayMissionPanel1.add(oneDayMissionLabel1_T);
       
       JLabel oneDayMissionLabel2_T = new JLabel();
+      oneDayMissionLabel2_T.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 12));
       text2 = mis.getSelectMission(user_pk, selectB, 1).get(0).getMission();
       oneDayMissionLabel2_T.setText(text2);
       oneDayMissionLabel2_T.setBounds(20, 25, 250, 40);
       oneDayMissionPanel2.add(oneDayMissionLabel2_T);
       
       JLabel oneWeekMissionLabel1_T = new JLabel();
+      oneWeekMissionLabel1_T.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 12));
       text3 = mis.getSelectMission(user_pk, selectB, 7).get(0).getMission();
       oneWeekMissionLabel1_T.setText(text3);
       oneWeekMissionLabel1_T.setBounds(20, 25, 250, 40);
@@ -167,10 +176,12 @@ public class MissionListFrame {
       
       
       JLabel refreshNoticelbl = new JLabel("* 미션 새로고침시 5Point 차감됩니다.");
+      refreshNoticelbl.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 13));
       refreshNoticelbl.setBounds(40, 290, 300, 50);
       frame.getContentPane().add(refreshNoticelbl);
       
       JLabel userPointlbl_1 = new JLabel("잔여 포인트 : ");
+      userPointlbl_1.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 13));
       userPointlbl_1.setBounds(45, 330, 200, 50);
       frame.getContentPane().add(userPointlbl_1);
       
@@ -182,6 +193,9 @@ public class MissionListFrame {
       
       // 이전버튼 생성
       JButton previousButton = new JButton("이전 화면으로");
+      previousButton.setForeground(new Color(255, 255, 255));
+      previousButton.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+      previousButton.setBackground(new Color(0, 128, 255));
       previousButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
             frame.dispose();
@@ -231,8 +245,9 @@ public class MissionListFrame {
     				  mis.missionLog(user_pk, text2, state);
     				  JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);
     				  // 새로운 미션
-    				  Missions m1 = mis.RandomMission(selectB, 1); 
-    				  mis.updateSelectMission(user_pk, text2, m1);
+    				  Missions m1 = Noduplicate(user_pk, selectB, 1); 
+    				  mis.deleteSelectMission(user_pk, text2);
+    				  mis.setSelectMission(user_pk, m1);
     				  text2 = m1.getMission();
     				  oneDayMissionLabel2_T.setText(text2);
     			  } else {
@@ -243,9 +258,10 @@ public class MissionListFrame {
     		  }               
     	  }
       });
-      oneDayMissionChoiceButton2.setBounds(290, 25, 40, 40);
+      oneDayMissionChoiceButton2.setBounds(340, 25, 40, 40);
       oneDayMissionPanel2.add(oneDayMissionChoiceButton2);
       
+      // 두번째 새로고침
       JButton oneDayMissionRefreshButton2 = new JButton();
       oneDayMissionRefreshButton2.setIcon(convertToIcon("새로고침.PNG", 40, 40));
       oneDayMissionRefreshButton2.addActionListener(new ActionListener( ) {
@@ -257,8 +273,12 @@ public class MissionListFrame {
     			  mf.SetUserAll(mf.fmainid);
     			  userPointlbl_2.setText(String.valueOf(mf.fmainpoint));
     			  // 미션바꾸기
-    			  Missions m1 = mis.RandomMission(selectB, 1); 
-    			  mis.updateSelectMission(user_pk, text2, m1);
+    			  Missions m1 = Noduplicate(user_pk, selectB, 1);
+    			  while(text2.equals(m1.getMission())) {
+    				  m1 = Noduplicate(user_pk, selectB, 1);
+    			  }
+    			  mis.deleteSelectMission(user_pk, text2);
+    			  mis.setSelectMission(user_pk, m1);
     			  text2 = m1.getMission();
     			  oneDayMissionLabel2_T.setText(text2);
     		  } else {
@@ -266,7 +286,7 @@ public class MissionListFrame {
     		  }
     	  }
       });
-      oneDayMissionRefreshButton2.setBounds(340, 25, 40, 40);
+      oneDayMissionRefreshButton2.setBounds(290, 25, 40, 40);
       oneDayMissionPanel2.add(oneDayMissionRefreshButton2);
       
       
@@ -284,8 +304,9 @@ public class MissionListFrame {
                   mis.userMissionProgress(user_pk, text3);
                   JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);
                   // 새로운 미션
-                  Missions m2 = mis.RandomMission(selectB, 7); 
-                  mis.updateSelectMission(user_pk, text3, m2);
+                  Missions m2 = Noduplicate(user_pk, selectB, 7);
+                  mis.deleteSelectMission(user_pk, text3);
+                  mis.setSelectMission(user_pk, m2);
                   text3 = m2.getMission();
                   oneWeekMissionLabel1_T.setText(text3);
                } else {
@@ -296,9 +317,10 @@ public class MissionListFrame {
             }
          }
       });
-      oneWeekMissionChoiceButton.setBounds(290, 25, 40, 40);
+      oneWeekMissionChoiceButton.setBounds(340, 25, 40, 40);
       oneWeekMissionPanel.add(oneWeekMissionChoiceButton);
       
+      // 세번째 새로고침
       JButton oneWeekMissionRefreshButton = new JButton();
       oneWeekMissionRefreshButton.setIcon(convertToIcon("새로고침.PNG", 40, 40));
       oneWeekMissionRefreshButton.addActionListener(new ActionListener() {
@@ -310,8 +332,12 @@ public class MissionListFrame {
                mf.SetUserAll(mf.fmainid);
                userPointlbl_2.setText(String.valueOf(mf.fmainpoint));
                // 미션변경
-               Missions m2 = mis.RandomMission(selectB, 7); 
-               mis.updateSelectMission(user_pk, text3, m2);
+               Missions m2 = Noduplicate(user_pk, selectB, 7);
+               while(text3.equals(m2.getMission())) {
+            	   m2 = Noduplicate(user_pk, selectB, 7);
+               }
+               mis.deleteSelectMission(user_pk, text3);
+               mis.setSelectMission(user_pk, m2);
                text3 = m2.getMission();
                oneWeekMissionLabel1_T.setText(text3);
             } else {
@@ -319,7 +345,7 @@ public class MissionListFrame {
             }
          }
       });
-      oneWeekMissionRefreshButton.setBounds(340, 25, 40, 40);
+      oneWeekMissionRefreshButton.setBounds(290, 25, 40, 40);
       oneWeekMissionPanel.add(oneWeekMissionRefreshButton);
    }   
    
@@ -332,4 +358,18 @@ public class MissionListFrame {
       ImageIcon icon = new ImageIcon(image);
       return icon;
    }
+   
+   public Missions Noduplicate(int user_pk, String selectB, int term) {
+	 missionSelect mis = new missionSelectImpl();
+	 Missions m1 = mis.RandomMission(selectB, term);
+	 List<Missions> list = new ArrayList<>(mis.userMission(user_pk, term));
+  	 for (int i = 0; i < list.size(); i++) {
+  		 if(list.get(i).getMission().equals(m1.getMission())) {
+  			 m1 = mis.RandomMission(selectB, term);
+  			 i = 0;
+  		 	}
+		}
+  	 return m1;
+   }
+   
 }

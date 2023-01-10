@@ -8,8 +8,8 @@ public interface missionSelect {
 	List<Missions> getSelectMission(int user_pk, String classify, int term);
 	// 미션 선택지 저장하기
 	void setSelectMission(int user_pk, Missions m);
-	// 미션 선택지 업데이트
-	void updateSelectMission(int user_pk, String mission, Missions m);
+	// 미션 선택지 삭제
+	void deleteSelectMission(int user_pk, String mission);
 	// 미션 몇갠지 확인
 	boolean checkMission(int user_pk, int term);
 	// 수락한 미션 테이블에 넣기

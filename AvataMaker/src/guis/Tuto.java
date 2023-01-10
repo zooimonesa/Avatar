@@ -1,6 +1,7 @@
 package guis;
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,6 +14,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Toolkit;
 
 public class Tuto implements ActionListener, ItemListener {
 
@@ -52,7 +56,17 @@ public class Tuto implements ActionListener, ItemListener {
 
 	public Tuto() {
 		initialize();
+		customcursor();
 	}
+
+	public void customcursor() { // 마우스포인터 ====================================
+
+		Toolkit tk = Toolkit.getDefaultToolkit();
+		Image cursorimage = tk.getImage("대형견_커서.png");
+		Point point = new Point(0, 0);
+		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
+		frame.setCursor(cursor);
+	} // =======================================================
 
 	private void initialize() {
 		frame = new JFrame();
@@ -359,7 +373,7 @@ public class Tuto implements ActionListener, ItemListener {
 
 		tuto_11.add(screen11);
 		tuto_11.setVisible(false); // 11페이지 끝===============================================================
-		
+
 		tuto_12 = new JPanel(); // 12페이지 시작 ================================================================
 		ImageIcon scene12 = new ImageIcon("튜토리얼_11.png");
 		tuto_12.setBackground(new Color(255, 255, 255));
@@ -386,7 +400,7 @@ public class Tuto implements ActionListener, ItemListener {
 
 		tuto_12.add(screen12);
 		tuto_12.setVisible(false); // 12페이지 끝===============================================================
-		
+
 		tuto_13 = new JPanel(); // 13페이지 시작 ================================================================
 		ImageIcon scene13 = new ImageIcon("튜토리얼_12.png");
 		tuto_13.setBackground(new Color(255, 255, 255));
@@ -413,7 +427,7 @@ public class Tuto implements ActionListener, ItemListener {
 
 		tuto_13.add(screen13);
 		tuto_13.setVisible(false); // 13페이지 끝===============================================================
-		
+
 		tuto_14 = new JPanel(); // 14페이지 시작 ================================================================
 		ImageIcon scene14 = new ImageIcon("튜토리얼_13.png");
 		tuto_14.setBackground(new Color(255, 255, 255));
@@ -440,7 +454,7 @@ public class Tuto implements ActionListener, ItemListener {
 
 		tuto_14.add(screen14);
 		tuto_14.setVisible(false); // 14페이지 끝===============================================================
-		
+
 		tuto_15 = new JPanel(); // 15페이지 시작 ================================================================
 		ImageIcon scene15 = new ImageIcon("튜토리얼_14.png");
 		tuto_15.setBackground(new Color(255, 255, 255));
@@ -467,14 +481,14 @@ public class Tuto implements ActionListener, ItemListener {
 
 		tuto_15.add(screen15);
 		tuto_15.setVisible(false); // 15페이지 끝===============================================================
-		
+
 		tuto_16 = new JPanel(); // 16페이지 시작 ================================================================
 		ImageIcon scene16 = new ImageIcon("튜토리얼_15.png");
 		tuto_16.setBackground(new Color(255, 255, 255));
 		tuto_16.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_16);
 		tuto_16.setLayout(null);
-		
+
 		ImageIcon next16 = new ImageIcon("");
 		JButton tuto16Next = new JButton(next16); // 다음페이지 버튼
 		tuto16Next.setBorderPainted(false);
@@ -491,17 +505,17 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_16.add(tuto16Next);
 		JLabel screen16 = new JLabel(scene16); // 이미지
 		screen16.setBounds(0, 0, 684, 561);
-		
+
 		tuto_16.add(screen16);
 		tuto_16.setVisible(false); // 16페이지 끝===============================================================
-		
+
 		tuto_17 = new JPanel(); // 17페이지 시작 ================================================================
 		ImageIcon scene17 = new ImageIcon("튜토리얼_16.png");
 		tuto_17.setBackground(new Color(255, 255, 255));
 		tuto_17.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_17);
 		tuto_17.setLayout(null);
-		
+
 		ImageIcon next17 = new ImageIcon("");
 		JButton tuto17Next = new JButton(next17); // 다음페이지 버튼
 		tuto17Next.setBorderPainted(false);
@@ -518,17 +532,17 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_17.add(tuto17Next);
 		JLabel screen17 = new JLabel(scene17); // 이미지
 		screen17.setBounds(0, 0, 684, 561);
-		
+
 		tuto_17.add(screen17);
 		tuto_17.setVisible(false); // 17페이지 끝===============================================================
-		
+
 		tuto_18 = new JPanel(); // 18페이지 시작 ================================================================
 		ImageIcon scene18 = new ImageIcon("튜토리얼_17.png");
 		tuto_18.setBackground(new Color(255, 255, 255));
 		tuto_18.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_18);
 		tuto_18.setLayout(null);
-		
+
 		ImageIcon next18 = new ImageIcon("");
 		JButton tuto18Next = new JButton(next18); // 다음페이지 버튼
 		tuto18Next.setBorderPainted(false);
@@ -545,17 +559,17 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_18.add(tuto18Next);
 		JLabel screen18 = new JLabel(scene18); // 이미지
 		screen18.setBounds(0, 0, 684, 561);
-		
+
 		tuto_18.add(screen18);
 		tuto_18.setVisible(false); // 18페이지 끝===============================================================
-		
+
 		tuto_19 = new JPanel(); // 19페이지 시작 ================================================================
 		ImageIcon scene19 = new ImageIcon("튜토리얼_18.png");
 		tuto_19.setBackground(new Color(255, 255, 255));
 		tuto_19.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_19);
 		tuto_19.setLayout(null);
-		
+
 		ImageIcon next19 = new ImageIcon("");
 		JButton tuto19Next = new JButton(next19); // 다음페이지 버튼
 		tuto19Next.setBorderPainted(false);
@@ -572,17 +586,17 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_19.add(tuto19Next);
 		JLabel screen19 = new JLabel(scene19); // 이미지
 		screen19.setBounds(0, 0, 684, 561);
-		
+
 		tuto_19.add(screen19);
 		tuto_19.setVisible(false); // 19페이지 끝===============================================================
-		
+
 		tuto_20 = new JPanel(); // 20페이지 시작 ================================================================
 		ImageIcon scene20 = new ImageIcon("튜토리얼_19.png");
 		tuto_20.setBackground(new Color(255, 255, 255));
 		tuto_20.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_20);
 		tuto_20.setLayout(null);
-		
+
 		ImageIcon next20 = new ImageIcon("");
 		JButton tuto20Next = new JButton(next20); // 다음페이지 버튼
 		tuto20Next.setBorderPainted(false);
@@ -599,17 +613,17 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_20.add(tuto20Next);
 		JLabel screen20 = new JLabel(scene20); // 이미지
 		screen20.setBounds(0, 0, 684, 561);
-		
+
 		tuto_20.add(screen20);
 		tuto_20.setVisible(false); // 20페이지 끝===============================================================
-		
+
 		tuto_21 = new JPanel(); // 21페이지 시작 ================================================================
 		ImageIcon scene21 = new ImageIcon("튜토리얼_20.png");
 		tuto_21.setBackground(new Color(255, 255, 255));
 		tuto_21.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_21);
 		tuto_21.setLayout(null);
-		
+
 		ImageIcon next21 = new ImageIcon("");
 		JButton tuto21Next = new JButton(next21); // 다음페이지 버튼
 		tuto21Next.setBorderPainted(false);
@@ -626,17 +640,17 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_21.add(tuto21Next);
 		JLabel screen21 = new JLabel(scene21); // 이미지
 		screen21.setBounds(0, 0, 684, 561);
-		
+
 		tuto_21.add(screen21);
 		tuto_21.setVisible(false); // 21페이지 끝===============================================================
-		
+
 		tuto_22 = new JPanel(); // 22페이지 시작 ================================================================
 		ImageIcon scene22 = new ImageIcon("튜토리얼_21.png");
 		tuto_22.setBackground(new Color(255, 255, 255));
 		tuto_22.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_22);
 		tuto_22.setLayout(null);
-		
+
 		ImageIcon next22 = new ImageIcon("");
 		JButton tuto22Next = new JButton(next22); // 다음페이지 버튼
 		tuto22Next.setBorderPainted(false);
@@ -653,17 +667,17 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_22.add(tuto22Next);
 		JLabel screen22 = new JLabel(scene22); // 이미지
 		screen22.setBounds(0, 0, 684, 561);
-		
+
 		tuto_22.add(screen22);
 		tuto_22.setVisible(false); // 22페이지 끝===============================================================
-		
+
 		tuto_23 = new JPanel(); // 23페이지 시작 ================================================================
 		ImageIcon scene23 = new ImageIcon("튜토리얼_22.png");
 		tuto_23.setBackground(new Color(255, 255, 255));
 		tuto_23.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_23);
 		tuto_23.setLayout(null);
-		
+
 		ImageIcon next23 = new ImageIcon("");
 		JButton tuto23Next = new JButton(next23); // 다음페이지 버튼
 		tuto23Next.setBorderPainted(false);
@@ -680,18 +694,19 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_23.add(tuto23Next);
 		JLabel screen23 = new JLabel(scene23); // 이미지
 		screen23.setBounds(0, 0, 684, 561);
-		
+
 		tuto_23.add(screen23);
 		tuto_23.setVisible(false); // 23페이지 끝===============================================================
-		
-		tuto_24 = new JPanel(); // 24페이지 시작 ================================================================
+
+		tuto_24 = new JPanel(); // 24페이지 시작 (선택지 패널)================================================================
 		ImageIcon scene24 = new ImageIcon("튜토리얼_23.png");
 		tuto_24.setBackground(new Color(255, 255, 255));
 		tuto_24.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_24);
 		tuto_24.setLayout(null);
-		
+
 		JButton btnNewButton = new JButton("응.");
+		btnNewButton.setBackground(new Color(186, 184, 254));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tuto_25.setVisible(true);
@@ -700,10 +715,11 @@ public class Tuto implements ActionListener, ItemListener {
 			}
 		});
 		btnNewButton.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 20));
-		btnNewButton.setBounds(400, 300, 200, 30);
+		btnNewButton.setBounds(418, 279, 210, 65);
 		tuto_24.add(btnNewButton);
-		
+
 		JButton btnNewButton_1 = new JButton("아니.");
+		btnNewButton_1.setBackground(new Color(186, 184, 254));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tuto_30.setVisible(true);
@@ -712,9 +728,9 @@ public class Tuto implements ActionListener, ItemListener {
 			}
 		});
 		btnNewButton_1.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 20));
-		btnNewButton_1.setBounds(400, 400, 200, 30);
+		btnNewButton_1.setBounds(418, 380, 210, 65);
 		tuto_24.add(btnNewButton_1);
-		
+
 //		ImageIcon next24 = new ImageIcon("");
 //		JButton tuto24Next = new JButton(next24); // 다음페이지 버튼
 //		tuto24Next.setBorderPainted(false);
@@ -731,17 +747,17 @@ public class Tuto implements ActionListener, ItemListener {
 //		tuto_24.add(tuto24Next);
 		JLabel screen24 = new JLabel(scene24); // 이미지
 		screen24.setBounds(0, 0, 684, 561);
-		
+
 		tuto_24.add(screen24);
 		tuto_24.setVisible(false); // 24페이지 끝===============================================================
-		
+
 		tuto_25 = new JPanel(); // 25페이지 시작 ================================================================
 		ImageIcon scene25 = new ImageIcon("튜토리얼_24.png");
 		tuto_25.setBackground(new Color(255, 255, 255));
 		tuto_25.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_25);
 		tuto_25.setLayout(null);
-		
+
 		ImageIcon next25 = new ImageIcon("");
 		JButton tuto25Next = new JButton(next25); // 다음페이지 버튼
 		tuto25Next.setBorderPainted(false);
@@ -758,17 +774,17 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_25.add(tuto25Next);
 		JLabel screen25 = new JLabel(scene25); // 이미지
 		screen25.setBounds(0, 0, 684, 561);
-		
+
 		tuto_25.add(screen25);
 		tuto_25.setVisible(false); // 25페이지 끝===============================================================
-		
+
 		tuto_26 = new JPanel(); // 26페이지 시작 ================================================================
 		ImageIcon scene26 = new ImageIcon("튜토리얼_25.png");
 		tuto_26.setBackground(new Color(255, 255, 255));
 		tuto_26.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_26);
 		tuto_26.setLayout(null);
-		
+
 		ImageIcon next26 = new ImageIcon("");
 		JButton tuto26Next = new JButton(next26); // 다음페이지 버튼
 		tuto26Next.setBorderPainted(false);
@@ -785,17 +801,17 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_26.add(tuto26Next);
 		JLabel screen26 = new JLabel(scene26); // 이미지
 		screen26.setBounds(0, 0, 684, 561);
-		
+
 		tuto_26.add(screen26);
 		tuto_26.setVisible(false); // 26페이지 끝===============================================================
-		
+
 		tuto_27 = new JPanel(); // 27페이지 시작 ================================================================
 		ImageIcon scene27 = new ImageIcon("튜토리얼_26.png");
 		tuto_27.setBackground(new Color(255, 255, 255));
 		tuto_27.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_27);
 		tuto_27.setLayout(null);
-		
+
 		ImageIcon next27 = new ImageIcon("");
 		JButton tuto27Next = new JButton(next27); // 다음페이지 버튼
 		tuto27Next.setBorderPainted(false);
@@ -812,17 +828,17 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_27.add(tuto27Next);
 		JLabel screen27 = new JLabel(scene27); // 이미지
 		screen27.setBounds(0, 0, 684, 561);
-		
+
 		tuto_27.add(screen27);
 		tuto_27.setVisible(false); // 27페이지 끝===============================================================
-		
+
 		tuto_28 = new JPanel(); // 28페이지 시작 ================================================================
 		ImageIcon scene28 = new ImageIcon("튜토리얼_27.png");
 		tuto_28.setBackground(new Color(255, 255, 255));
 		tuto_28.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_28);
 		tuto_28.setLayout(null);
-		
+
 		ImageIcon next28 = new ImageIcon("");
 		JButton tuto28Next = new JButton(next28); // 다음페이지 버튼
 		tuto28Next.setBorderPainted(false);
@@ -839,17 +855,17 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_28.add(tuto28Next);
 		JLabel screen28 = new JLabel(scene28); // 이미지
 		screen28.setBounds(0, 0, 684, 561);
-		
+
 		tuto_28.add(screen28);
 		tuto_28.setVisible(false); // 28페이지 끝===============================================================
-		
+
 		tuto_29 = new JPanel(); // 29페이지 시작 ================================================================
 		ImageIcon scene29 = new ImageIcon("튜토리얼_28.png");
 		tuto_29.setBackground(new Color(255, 255, 255));
 		tuto_29.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_29);
 		tuto_29.setLayout(null);
-		
+
 		ImageIcon next29 = new ImageIcon("");
 		JButton tuto29Next = new JButton(next29); // 다음페이지 버튼
 		tuto29Next.setBorderPainted(false);
@@ -866,17 +882,17 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_29.add(tuto29Next);
 		JLabel screen29 = new JLabel(scene29); // 이미지
 		screen29.setBounds(0, 0, 684, 561);
-		
+
 		tuto_29.add(screen29);
 		tuto_29.setVisible(false); // 29페이지 끝===============================================================
-		
+
 		tuto_30 = new JPanel(); // 30페이지 시작 ================================================================
 		ImageIcon scene30 = new ImageIcon("튜토리얼_29.png");
 		tuto_30.setBackground(new Color(255, 255, 255));
 		tuto_30.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_30);
 		tuto_30.setLayout(null);
-		
+
 		ImageIcon next30 = new ImageIcon("");
 		JButton tuto30Next = new JButton(next30); // 다음페이지 버튼
 		tuto30Next.setBorderPainted(false);
@@ -893,17 +909,17 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_30.add(tuto30Next);
 		JLabel screen30 = new JLabel(scene30); // 이미지
 		screen30.setBounds(0, 0, 684, 561);
-		
+
 		tuto_30.add(screen30);
 		tuto_30.setVisible(false); // 30페이지 끝===============================================================
-		
+
 		tuto_31 = new JPanel(); // 31페이지 시작 ================================================================
 		ImageIcon scene31 = new ImageIcon("튜토리얼_30.png");
 		tuto_31.setBackground(new Color(255, 255, 255));
 		tuto_31.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_31);
 		tuto_31.setLayout(null);
-		
+
 		ImageIcon next31 = new ImageIcon("");
 		JButton tuto31Next = new JButton(next31); // 다음페이지 버튼
 		tuto31Next.setBorderPainted(false);
@@ -920,17 +936,17 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_31.add(tuto31Next);
 		JLabel screen31 = new JLabel(scene31); // 이미지
 		screen31.setBounds(0, 0, 684, 561);
-		
+
 		tuto_31.add(screen31);
 		tuto_31.setVisible(false); // 31페이지 끝===============================================================
-		
+
 		tuto_32 = new JPanel(); // 32페이지 시작 ================================================================
 		ImageIcon scene32 = new ImageIcon("튜토리얼_31.png");
 		tuto_32.setBackground(new Color(255, 255, 255));
 		tuto_32.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_32);
 		tuto_32.setLayout(null);
-		
+
 		ImageIcon next32 = new ImageIcon("");
 		JButton tuto32Next = new JButton(next32); // 다음페이지 버튼
 		tuto32Next.setBorderPainted(false);
@@ -942,16 +958,15 @@ public class Tuto implements ActionListener, ItemListener {
 //				tuto_31.setVisible(true);
 //				tuto_30.setVisible(false);
 				frame.dispose();
-				System.out.println("다음으로");
 			}
 		});
 		tuto_32.add(tuto32Next);
 		JLabel screen32 = new JLabel(scene32); // 이미지
 		screen32.setBounds(0, 0, 684, 561);
-		
+
 		tuto_32.add(screen32);
 		tuto_32.setVisible(false); // 32페이지 끝===============================================================
-		
+
 	}
 
 	public static void main(String[] args) {
@@ -969,13 +984,11 @@ public class Tuto implements ActionListener, ItemListener {
 
 	@Override
 	public void itemStateChanged(ItemEvent e) {
-		// TODO 자동 생성된 메소드 스텁
 
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO 자동 생성된 메소드 스텁
 
 	}
 }

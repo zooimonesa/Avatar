@@ -88,7 +88,7 @@ public class LogFrame {
 		JLabel logTextLabel = new JLabel(mainnickname + "의 로그");
 		logTextLabel.setVerticalAlignment(SwingConstants.TOP);
 		logTextLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		logTextLabel.setBounds(20, 10, 100, 100);
+		logTextLabel.setBounds(185, 20, 100, 100);
 		frame.getContentPane().add(logTextLabel);
 		
 		List<String> log = mis.userLogResult(user_pk);

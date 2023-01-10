@@ -88,18 +88,14 @@ public class missionSelectImpl implements missionSelect{
 			e.printStackTrace();
 		}
 	}
-	// 미션 선택지 업데이트
+	// 미션 선택지 삭제
 	@Override
-	public void updateSelectMission(int user_pk, String mission, Missions m) {
-		String sql = "UPDATE user_select SET mission_id = ?, classify = ?, mission = ?, term = ? where mission = ? and user_pk = ?";
+	public void deleteSelectMission(int user_pk, String mission) {
+		String sql = "DELETE FROM user_select where mission = ? and user_pk = ?";
 		try(Connection conn = ConnectionProvider.makeConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql)) {
-			pstmt.setInt(1, m.getMission_id());
-			pstmt.setString(2, m.getClassify());
-			pstmt.setString(3, m.getMission());
-			pstmt.setInt(4, m.getTerm());
-			pstmt.setString(5, mission);
-			pstmt.setInt(6, user_pk);
+			pstmt.setString(1, mission);
+			pstmt.setInt(2, user_pk);
 			
 			pstmt.executeUpdate();
 		} catch (SQLException e) {

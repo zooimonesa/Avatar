@@ -85,7 +85,7 @@ public class MainFrame {
 		
 		ImageIcon 미션버튼 = new ImageIcon("미션버튼.png");
 		ImageIcon 상점버튼 = new ImageIcon("상점버튼.png");
-		ImageIcon 로그보기버튼 = new ImageIcon("로그보기버튼.png");
+		ImageIcon 로그보기버튼 = new ImageIcon("로그보기.png");
 		ImageIcon 로그아웃버튼 = new ImageIcon("로그아웃버튼.png");
 		ImageIcon 랭킹 = new ImageIcon("랭킹버튼.png");
 		ImageIcon 튜토리얼 = new ImageIcon("튜토리얼버튼.png");

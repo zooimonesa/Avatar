@@ -3,10 +3,12 @@ package guis;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Toolkit;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -54,8 +56,15 @@ public class MissionChoiceFrame {
 		frame.setBounds(100, 100, 450, 450);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-
-		JButton exerciseButton = new JButton("운동");
+		
+		ImageIcon 운동버튼 = new ImageIcon("운동버튼.png");
+		ImageIcon 공부버튼 = new ImageIcon("공부버튼.png");
+		ImageIcon 취미버튼 = new ImageIcon("취미버튼.png");
+		
+		
+		JButton exerciseButton = new JButton(운동버튼);
+		exerciseButton.setBackground(new Color(255, 255, 255));
+		exerciseButton.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 30));
 		exerciseButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MissionListFrame 미션프레임새창 = new MissionListFrame("운동");
@@ -67,7 +76,9 @@ public class MissionChoiceFrame {
 		exerciseButton.setBounds(30, 30, 370, 80);
 		frame.getContentPane().add(exerciseButton);
 
-		JButton studyButton = new JButton("공부");
+		JButton studyButton = new JButton(공부버튼);
+		studyButton.setBackground(new Color(255, 255, 255));
+		studyButton.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 30));
 		studyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MissionListFrame missionListFrame = new MissionListFrame("공부");
@@ -79,7 +90,9 @@ public class MissionChoiceFrame {
 		studyButton.setBounds(30, 120, 370, 80);
 		frame.getContentPane().add(studyButton);
 
-		JButton hobbyButton = new JButton("취미");
+		JButton hobbyButton = new JButton(취미버튼);
+		hobbyButton.setBackground(new Color(255, 255, 255));
+		hobbyButton.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 30));
 		hobbyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MissionListFrame missionListFrame = new MissionListFrame("취미");
@@ -92,6 +105,8 @@ public class MissionChoiceFrame {
 		frame.getContentPane().add(hobbyButton);
 
 		JButton userOwnMissionButton = new JButton("보유미션보기");
+		userOwnMissionButton.setBackground(new Color(200, 230, 250));
+		userOwnMissionButton.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		userOwnMissionButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				UserOwnMissionListFrame userOwnMissionListFrame = new UserOwnMissionListFrame();
@@ -105,6 +120,8 @@ public class MissionChoiceFrame {
 		frame.getContentPane().add(userOwnMissionButton);
 
 		JButton previousButton = new JButton("이전으로");
+		previousButton.setBackground(new Color(200, 230, 250));
+		previousButton.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		previousButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MainFrame mainFrame = new MainFrame();  // hj 메인 나오게================

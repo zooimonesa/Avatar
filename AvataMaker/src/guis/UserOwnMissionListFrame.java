@@ -1,5 +1,6 @@
 package guis;
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Toolkit;
@@ -9,6 +10,7 @@ import java.awt.Color;
 import java.awt.Cursor;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -89,7 +91,7 @@ public class UserOwnMissionListFrame {
 		oneDayMissionPanel.setBounds(6, 33, 443, 258);
 		frame.getContentPane().add(oneDayMissionPanel);
 		oneDayMissionPanel.setLayout(null);
-
+		
 		JLabel[] dailyMission = new JLabel[6]; // 일일미션라벨배열
 		JLabel[] dailyMissionT = new JLabel[6]; // 일일미션텍스트라벨배열
 		JButton[] dailyMissionclear = new JButton[6]; // 일일미션달성버튼배열
@@ -122,10 +124,21 @@ public class UserOwnMissionListFrame {
 					String command = e.getActionCommand();
 					String state = "완료";
 					int num = Integer.valueOf(command);
+					String mission = dailyMissionT[num].getText();
 					mf.SetUserAll(mf.fmainid);//태현고침
-
+					if (!dailyMissionT[num].getText().isEmpty()) {
+						 if (mis.getClassify(mission).equals("운동")) {
+							JOptionPane.showMessageDialog(null, "미션완료 \n 10Point와 체력 100을 획득하였습니다. " , "미션 완료", JOptionPane.INFORMATION_MESSAGE);
+						} else if (mis.getClassify(mission).equals("공부")) {
+							JOptionPane.showMessageDialog(null, "미션완료 \n 10Point와 지능 100을 획득하였습니다. " , "미션 완료", JOptionPane.INFORMATION_MESSAGE);
+						} else if (mis.getClassify(mission).equals("취미")) {
+							JOptionPane.showMessageDialog(null, "미션완료 \n 10Point와 재능 100을 획득하였습니다. " , "미션 완료", JOptionPane.INFORMATION_MESSAGE);
+						}
+					} else {
+						JOptionPane.showMessageDialog(null, "등록 된 미션이 없습니다. " , "오류", JOptionPane.ERROR_MESSAGE);
+					}
+					
 					if(!dailyMissionT[num].getText().isEmpty()) {
-						String mission = dailyMissionT[num].getText();
 						mis.successMission(user_pk, 1, mis.getClassify(mission));
 						mis.cancelMission(user_pk, mission);
 						mis.missionLog(user_pk, mission, state);
@@ -191,24 +204,48 @@ public class UserOwnMissionListFrame {
 			oneWeekMissionPanel.add(weeklyMissionT[i]);
 			
 			weeklyMissionDday[i] = new JLabel();
-			// sql에 마감 날짜 없으면 오류남
-			if(!weeklyMissionT[i].getText().isEmpty()) {
-				weeklyMissionDday[i].setText(mis.userMissionEndDay(user_pk, weeklyMissionT[i].getText()));
-			}
 			weeklyMissionDday[i].setBounds(270, weeklyY, 280, 30);
 			oneWeekMissionPanel.add(weeklyMissionDday[i]);
 
 			weeklyMissionClear[i] = new JButton("완료"); // 주간미션달성버튼
+			// 버튼 락 걸기
+			if(!weeklyMissionT[i].getText().isEmpty()) {
+				if(mis.userMissionEndDay(user_pk, weeklyMissionT[i].getText()).contains("D - -")) {
+					// 지나간 미션 없애기
+					mis.cancelMission(user_pk, weeklyMissionT[i].getText());
+					initialize();
+				} else {
+					weeklyMissionDday[i].setText(mis.userMissionEndDay(user_pk, weeklyMissionT[i].getText()));
+					weeklyMissionClear[i].setEnabled(false);
+				}
+			}
+			// 버튼 락 열기
+			if(weeklyMissionDday[i].getText().equals("D - 0")) {
+				weeklyMissionClear[i].setEnabled(true);
+			}
+			
 			weeklyMissionClear[i].setActionCommand(String.valueOf(i));
 			weeklyMissionClear[i].addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					String command = e.getActionCommand();
 					int num = Integer.valueOf(command);
 					mf.SetUserAll(mf.fmainid);//태현고침
-
+					String mission = weeklyMissionT[num].getText();
 					String state = "완료";
+					if (!weeklyMissionT[num].getText().isEmpty()) {
+						if (mis.getClassify(mission).equals("운동")) {
+							JOptionPane.showMessageDialog(null, "미션완료 \n 100Point와 체력 200을 획득하였습니다. " , "미션 완료", JOptionPane.INFORMATION_MESSAGE);
+						} else if (mis.getClassify(mission).equals("공부")) {
+							JOptionPane.showMessageDialog(null, "미션완료 \n 100Point와 지능 200을 획득하였습니다. " , "미션 완료", JOptionPane.INFORMATION_MESSAGE);
+						} else if (mis.getClassify(mission).equals("취미")) {
+							JOptionPane.showMessageDialog(null, "미션완료 \n 100Point와 재능 200을 획득하였습니다. " , "미션 완료", JOptionPane.INFORMATION_MESSAGE);
+						} 
+					} else {
+						JOptionPane.showMessageDialog(null, "등록 된 미션이 없습니다. " , "오류", JOptionPane.ERROR_MESSAGE);
+					}
+				
+					
 					if(!weeklyMissionT[num].getText().isEmpty()) {
-						String mission = weeklyMissionT[num].getText();
 						mis.successMission(user_pk, 7, mis.getClassify(mission));
 						mis.cancelMission(user_pk, mission);
 						mis.missionLog(user_pk, mission, state);
