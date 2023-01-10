@@ -186,7 +186,9 @@ public class MissionListFrame {
       frame.getContentPane().add(userPointlbl_1);
       
       JLabel userPointlbl_2 = new JLabel();
-      userPointlbl_2.setText(String.valueOf(mf.fmainpoint));
+      userPointlbl_2.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 13));
+      userPointlbl_2.setHorizontalAlignment(SwingConstants.RIGHT);
+      userPointlbl_2.setText(String.valueOf(mf.fmainpoint) + "P");
       userPointlbl_2.setBounds(130, 330, 100, 50);
       frame.getContentPane().add(userPointlbl_2);
       
