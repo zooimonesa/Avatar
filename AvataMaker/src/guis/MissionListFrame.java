@@ -184,6 +184,7 @@ public class MissionListFrame {
       
       // 이전버튼 생성
       JButton previousButton = new JButton("이전 화면으로");
+      previousButton.setBackground(new Color(200, 230, 250));
       previousButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
             frame.dispose();
