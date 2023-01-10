@@ -100,7 +100,13 @@ public class LogFrame {
 			a += log.get(i);
 		}
 		userLog.setText(a);
-
+		
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(12, 10, 403, 410);
+		frame.getContentPane().add(scrollPane);
+		
+		scrollPane.setViewportView(userLog);
 		
 //		(userLog).setEditable(false);
 		userLog.setBorder(new LineBorder(new Color(0, 0, 0)));
