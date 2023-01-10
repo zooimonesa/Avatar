@@ -3,6 +3,7 @@ package guis;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Toolkit;
@@ -57,6 +58,7 @@ public class MissionChoiceFrame {
 
 		JButton exerciseButton = new JButton("운동");
 		exerciseButton.setBackground(new Color(255, 255, 255));
+		exerciseButton.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 30));
 		exerciseButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MissionListFrame 미션프레임새창 = new MissionListFrame("운동");
@@ -70,6 +72,7 @@ public class MissionChoiceFrame {
 
 		JButton studyButton = new JButton("공부");
 		studyButton.setBackground(new Color(255, 255, 255));
+		studyButton.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 30));
 		studyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MissionListFrame missionListFrame = new MissionListFrame("공부");
@@ -83,6 +86,7 @@ public class MissionChoiceFrame {
 
 		JButton hobbyButton = new JButton("취미");
 		hobbyButton.setBackground(new Color(255, 255, 255));
+		hobbyButton.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 30));
 		hobbyButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MissionListFrame missionListFrame = new MissionListFrame("취미");
@@ -96,6 +100,7 @@ public class MissionChoiceFrame {
 
 		JButton userOwnMissionButton = new JButton("보유미션보기");
 		userOwnMissionButton.setBackground(new Color(200, 230, 250));
+		userOwnMissionButton.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		userOwnMissionButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				UserOwnMissionListFrame userOwnMissionListFrame = new UserOwnMissionListFrame();
@@ -110,6 +115,7 @@ public class MissionChoiceFrame {
 
 		JButton previousButton = new JButton("이전으로");
 		previousButton.setBackground(new Color(200, 230, 250));
+		previousButton.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		previousButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MainFrame mainFrame = new MainFrame();  // hj 메인 나오게================
