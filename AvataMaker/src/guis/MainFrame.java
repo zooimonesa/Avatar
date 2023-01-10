@@ -13,7 +13,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane; 
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
@@ -83,7 +83,7 @@ public class MainFrame {
 		frame.setBounds(100, 100, 815, 526);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+
 		ImageIcon 미션버튼 = new ImageIcon("미션버튼.png");
 		ImageIcon 상점버튼 = new ImageIcon("상점버튼.png");
 		ImageIcon 로그보기버튼 = new ImageIcon("로그보기.png");
@@ -91,8 +91,7 @@ public class MainFrame {
 		ImageIcon 랭킹 = new ImageIcon("랭킹버튼.png");
 		ImageIcon 튜토리얼 = new ImageIcon("튜토리얼버튼.png");
 		ImageIcon 회원탈퇴 = new ImageIcon("회원탈퇴버튼.png");
-		
-		
+
 		ImageIcon 캐릭터 = new ImageIcon("농담곰_메인_기본.png");
 		ImageIcon 배경 = new ImageIcon(avatar.avatarOnFinding(user_pk, "배경"));
 
@@ -114,10 +113,10 @@ public class MainFrame {
 		nickNameLabel.setBounds(315, 40, 424, 35);
 		frame.getContentPane().add(nickNameLabel);
 
-		JTextPane storyLabel = new JTextPane();//태현고침
+		JTextPane storyLabel = new JTextPane();// 태현고침
 		storyLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		StringBuilder sb = new StringBuilder();
-		for (int i = 0; i <avatar.storyOn(user_pk).size(); i++) {
+		for (int i = 0; i < avatar.storyOn(user_pk).size(); i++) {
 			sb.append(String.valueOf(avatar.storyOn(user_pk).get(i)));
 		}
 		String pkstory = sb.toString();
@@ -253,7 +252,7 @@ public class MainFrame {
 
 		JButton logButton = new JButton(로그보기버튼);
 		logButton.addActionListener(new ActionListener() {
-			
+
 			public void actionPerformed(ActionEvent e) {
 				LogFrame logFrame = new LogFrame();
 				logFrame.frame.setVisible(true); // 다음 프레임 띄우기
@@ -291,9 +290,9 @@ public class MainFrame {
 		JButton deleteUserInfo = new JButton(회원탈퇴);
 		deleteUserInfo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if (e.getActionCommand().equals("회원탈퇴")) { // 회원탈퇴 버튼 ====================================
+				if (e.getActionCommand().equals("")) { // 회원탈퇴 버튼 ====================================
 					while (true) {
-
+						
 						String deleteInfo = JOptionPane.showInputDialog(null, "회원탈퇴를 원하시면 '지금탈퇴'를 입력하세요. ", "회원탈퇴",
 								JOptionPane.OK_CANCEL_OPTION);
 
@@ -301,7 +300,7 @@ public class MainFrame {
 
 							// 회원탈퇴메소드넣기
 							SignUserIn sui = new SignUserIn();
-							sui.DeleteUser();//태현고침
+							sui.DeleteUser();// 태현고침
 							JOptionPane.showMessageDialog(null, "회원탈퇴되었습니다. 로그인창으로 이동합니다.", "회원탈퇴",
 									JOptionPane.WARNING_MESSAGE);
 
@@ -318,17 +317,7 @@ public class MainFrame {
 						}
 					}
 				}
-//               else if (e.getActionCommand().equals("확인")) {
-//               int result = JOptionPane.showConfirmDialog(null, "프로그램을 종료하시 것습니까?", "제목",
-//                     JOptionPane.OK_CANCEL_OPTION);
-//
-//               System.out.printf("%d\n", result);
-//               if (result == 0) { // OK=0 , Cancel=2 리턴
-//                  System.exit(0);
-//               }
-//            } else {
-//               JOptionPane.showMessageDialog(null, "회원탈퇴되었습니다. 로그인창으로 이동합니다.", "회원탈퇴", JOptionPane.WARNING_MESSAGE);
-//            }
+
 			}
 
 		});
@@ -336,8 +325,8 @@ public class MainFrame {
 		deleteUserInfo.setContentAreaFilled(false);
 		deleteUserInfo.setBounds(642, 401, 97, 60);
 		frame.getContentPane().add(deleteUserInfo);
-		
-		JButton rankingButton = new JButton(랭킹);  // 랭킹 버튼 =====================================================
+
+		JButton rankingButton = new JButton(랭킹); // 랭킹 버튼 =====================================================
 		rankingButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				RankingFrame rankingFrame = new RankingFrame();
@@ -345,14 +334,14 @@ public class MainFrame {
 				rankingFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				rankingFrame.frame.setResizable(false);
 				frame.dispose();
-				
+
 			}
 		});
 		rankingButton.setBorderPainted(false);
 		rankingButton.setContentAreaFilled(false);
 		rankingButton.setBounds(315, 401, 97, 60);
 		frame.getContentPane().add(rankingButton); // ===========================================================
-		
+
 		JButton tutoButton = new JButton(튜토리얼); // 튜토리얼 버튼 ===================================
 		tutoButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -379,11 +368,10 @@ public class MainFrame {
 		charAccLabel.setBounds(40, 40, 150, 200);
 		frame.getContentPane().add(charAccLabel);
 
-
 		JLabel charHeadLabel = new JLabel(얼굴);
 		charHeadLabel.setBounds(40, 40, 150, 200);
 		frame.getContentPane().add(charHeadLabel);
-		
+
 		JLabel userCharLabel = new JLabel(캐릭터);
 		userCharLabel.setBounds(40, 40, 150, 200);
 		frame.getContentPane().add(userCharLabel);
