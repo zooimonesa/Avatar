@@ -5,9 +5,12 @@ import java.awt.EventQueue;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
+import javax.swing.border.LineBorder;
 
 import User.GetInfo;
 import mission.missionSelect;
@@ -69,8 +72,13 @@ public class LogFrame {
 		}
 		userLog.setText(a);
 		
+//		(userLog).setEditable(false);
+		userLog.setBorder(new LineBorder(new Color(0, 0, 0)));
+		JScrollPane scrollPane = new JScrollPane(userLog);
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 		
-		userLog.setBounds(12, 50, 403, 410);
+		userLog.setBounds(12, 50, 400, 350);
 		frame.getContentPane().add(userLog);
 		
 		JButton 닫기버튼 = new JButton("닫기");
