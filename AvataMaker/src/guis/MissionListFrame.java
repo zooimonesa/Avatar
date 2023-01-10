@@ -12,8 +12,6 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -31,7 +29,6 @@ import mission.missionSelect;
 import mission.missionSelectImpl;
 import sun.tools.jar.resources.jar;
 
-import java.awt.Checkbox;
 import java.awt.Color;
 import java.awt.Cursor;
 import javax.swing.SwingConstants;
@@ -44,10 +41,10 @@ public class MissionListFrame {
    String text1;
    String text2;
    String text3;
-
-private JCheckBox term1;
-
-private JCheckBox term7;
+   
+   int term = -1;
+   JCheckBox term1;
+   JCheckBox term7;
 
    public static void main(String[] args) {
       EventQueue.invokeLater(new Runnable() {
@@ -173,7 +170,7 @@ private JCheckBox term7;
       });
       oneDayMissionPanel1.add(oneDayMissionLabel1_T);
       
-      term1 = new JCheckBox("1일");
+      term1 = new JCheckBox("1일", true);
       term1.setBounds(280, 25, 50, 20); 
       term1.setBackground(Color.WHITE);
       oneDayMissionPanel1.add(term1);
@@ -192,17 +189,17 @@ private JCheckBox term7;
 		
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			int term = 0;
 			if(term1.isSelected()) {
 				term = 1;
 			}
 		}
 	});
+   
       term7.addActionListener(new ActionListener() {
 		
+
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			int term = 0;
 			if(term7.isSelected()) {
 				term = 7;
 			}
@@ -265,14 +262,25 @@ private JCheckBox term7;
     		String state = "수락";
     		  
     		  
-    		  if(mis.checkMission(user_pk, 1)) {
+    		  if(mis.checkMission(user_pk, term)) {
     			  if(!oneDayMissionLabel2_T.getText().isEmpty() && !oneDayMissionLabel1_T.getText().equals("")) {
-    				  // 미션 등록
-    				  mis.insertMission(user_pk, selectB, oneDayMissionLabel1_T.getText(), 1);
-    				  mis.missionLog(user_pk, oneDayMissionLabel1_T.getText(), state);
-    				  JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);   
-    				  // 새로운 미션
-    				  oneDayMissionLabel1_T.setText(text1);
+    				  	if (term == 1) {
+    				  		// 미션 등록
+    				  		mis.insertMission(user_pk, selectB, oneDayMissionLabel1_T.getText(), term);
+    				  		mis.missionLog(user_pk, oneDayMissionLabel1_T.getText(), state);
+    				  		JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);   
+    				  		// 새로운 미션
+    				  		oneDayMissionLabel1_T.setText(text1);
+    				  	} else if (term == 7) {
+    				  		// 미션 등록
+    				  		mis.insertMission(user_pk, selectB, oneDayMissionLabel1_T.getText(), term);
+    				  		mis.missionLog(user_pk, oneDayMissionLabel1_T.getText(), state);
+    				  		mis.userMissionProgress(user_pk, text1);
+    				  		JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);   
+    				  		// 새로운 미션
+    				  		oneDayMissionLabel1_T.setText(text1);
+    				  	} 
+    				  	
     			  } else {
     				  JOptionPane.showMessageDialog(null, "미션내용을 입력해주세요.", "오류", JOptionPane.ERROR_MESSAGE);
     			  }
