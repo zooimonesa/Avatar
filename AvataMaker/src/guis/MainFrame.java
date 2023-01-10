@@ -384,7 +384,7 @@ public class MainFrame {
 		JLabel userPointLabel_1 = new JLabel(Integer.toString(mainpoint) + "P");
 		userPointLabel_1.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		userPointLabel_1.setHorizontalAlignment(SwingConstants.RIGHT);
-		userPointLabel_1.setBounds(642, 220, 97, 50);
+		userPointLabel_1.setBounds(630, 220, 107, 50);
 		frame.getContentPane().add(userPointLabel_1);
 
 		JLabel healthPointLabel = new JLabel("체력: " + Integer.toString(mainhealth));
