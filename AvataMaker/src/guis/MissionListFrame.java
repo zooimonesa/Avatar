@@ -9,6 +9,8 @@ import javax.swing.JFrame;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -131,6 +133,24 @@ public class MissionListFrame {
       oneDayMissionLabel1_T.setText(text1);
       oneDayMissionLabel1_T.setForeground(Color.gray);
       oneDayMissionLabel1_T.setBounds(20, 25, 250, 40);
+      oneDayMissionLabel1_T.addMouseListener(new MouseListener() {
+		@Override
+		public void mouseClicked(MouseEvent arg0) {
+			oneDayMissionLabel1_T.setText("");
+		}
+		@Override
+		public void mouseEntered(MouseEvent e) {
+		}
+		@Override
+		public void mouseExited(MouseEvent e) {
+		}
+		@Override
+		public void mousePressed(MouseEvent e) {
+		}
+		@Override
+		public void mouseReleased(MouseEvent e) {
+		}
+      });
       oneDayMissionPanel1.add(oneDayMissionLabel1_T);
       
       JLabel oneDayMissionLabel2_T = new JLabel();
@@ -179,7 +199,7 @@ public class MissionListFrame {
     	  public void actionPerformed(ActionEvent e) {
     		  String state = "수락";
     		  if(mis.checkMission(user_pk, 1)) {
-    			  if(!oneDayMissionLabel2_T.getText().isEmpty() && !oneDayMissionLabel1_T.getText().equals(text1)) {
+    			  if(!oneDayMissionLabel2_T.getText().isEmpty() && !oneDayMissionLabel1_T.getText().equals("")) {
     				  // 미션 등록
     				  mis.insertMission(user_pk, selectB, oneDayMissionLabel1_T.getText(), 1);
     				  mis.missionLog(user_pk, oneDayMissionLabel1_T.getText(), state);
