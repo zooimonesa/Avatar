@@ -84,6 +84,9 @@ public class StoreFrame {
 		onoff.mainOnOff(onoff.avatarGet(main.user_pk), onoff.storeAvatarGet());
 		onoff.avatarGet(main.user_pk);
 		
+		
+		
+		ImageIcon 배경 = new ImageIcon("미리보기"+ main.avatar.avatarOnFinding(main.user_pk, "배경"));
 		ImageIcon 얼굴 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "얼굴"));  // 캐릭터 옷 아이콘 =================
 		ImageIcon 악세서리 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "악세사리"));
 		ImageIcon 상의 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "옷")); // =======================
@@ -500,7 +503,12 @@ public class StoreFrame {
 		JLabel mainChar = new JLabel(상점캐릭터);
 		mainChar.setBorder(bb);
 		mainChar.setBounds(12, 21, 300, 430);
-		frame.getContentPane().add(mainChar);  // ==================================================================
+		frame.getContentPane().add(mainChar); 
+		
+		JLabel main = new JLabel(배경);
+		main.setBorder(bb);
+		main.setBounds(12, 21, 300, 430);
+		frame.getContentPane().add(main); // ==================================================================
 		
 		JLabel lblNewLabel_1 = new JLabel("보유포인트:");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
