@@ -399,7 +399,7 @@ public class missionSelectImpl implements missionSelect{
 				String mission = rs.getString("mission");
 				String state = rs.getString("state");
 					
-				String result = "[" + date + "] " + mission + "을 " + state + "했습니다.\n"; 
+				String result = "   [" + date + "] \n " + "   " + mission + "를 " + state + "했습니다.\n"; 
 				list.add(result);
 				
 				}

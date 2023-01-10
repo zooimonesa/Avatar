@@ -8,12 +8,16 @@ import java.awt.Toolkit;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
 import User.GetInfo;
+import User.UserLogIn;
 import mission.missionSelect;
 import mission.missionSelectImpl;
 
@@ -30,6 +34,8 @@ public class LogFrame {
 	String mainnickname = mf.fmainnickname;
 	int user_pk = mf.fuserpk;
 	JFrame frame;
+	private JTextArea userLog;
+	private JScrollPane scrollPane;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -45,10 +51,19 @@ public class LogFrame {
 			}
 		});
 	}
+	
 
 	public LogFrame() {
 		initialize();
 		customcursor();
+	}
+	
+	void addLog(String log){
+		
+		userLog.append(log + "\n");  // 로그 내용을 JTextArea 위에 붙여주고
+		
+		userLog.setCaretPosition(userLog.getDocument().getLength());  // 맨아래로 스크롤한다.
+		
 	}
 	
 	public void customcursor() { // 마우스포인터 ====================================
@@ -73,19 +88,27 @@ public class LogFrame {
 		JLabel logTextLabel = new JLabel(mainnickname + "의 로그");
 		logTextLabel.setVerticalAlignment(SwingConstants.TOP);
 		logTextLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		logTextLabel.setBounds(12, 10, 100, 100);
+		logTextLabel.setBounds(20, 10, 100, 100);
 		frame.getContentPane().add(logTextLabel);
 		
 		List<String> log = mis.userLogResult(user_pk);
-		JTextArea userLog = new JTextArea();
+		userLog = new JTextArea();
 		String a = "";
 		for(int i = 0; i < log.size(); i++) {
 			a += log.get(i);
 		}
+		
 		userLog.setText(a);
+		userLog.setLineWrap(true); 
+		(userLog).setEditable(false);
+
+		
+		JScrollPane scroll = new JScrollPane(userLog);
 		userLog.setBorder(new LineBorder(new Color(0, 0, 0)));
-		userLog.setBounds(12, 50, 403, 410);
-		frame.getContentPane().add(userLog);
+		scroll.setBounds(18, 50, 400, 350);
+		userLog.setBounds(18, 50, 400, 350);
+		
+		frame.add(scroll);
 		
 		JButton 닫기버튼 = new JButton("닫기");
 		닫기버튼.addActionListener(new ActionListener() {
@@ -99,5 +122,11 @@ public class LogFrame {
 		});
 		닫기버튼.setBounds(291, 430, 124, 71);
 		frame.getContentPane().add(닫기버튼);
+	}
+
+
+	private void add(JScrollPane scroll) {
+		// TODO Auto-generated method stub
+		
 	}
 }
