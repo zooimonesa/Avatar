@@ -8,6 +8,7 @@ import java.awt.Toolkit;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -16,6 +17,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
 import User.GetInfo;
+import User.UserLogIn;
 import mission.missionSelect;
 import mission.missionSelectImpl;
 
@@ -32,6 +34,8 @@ public class LogFrame {
 	String mainnickname = mf.fmainnickname;
 	int user_pk = mf.fuserpk;
 	JFrame frame;
+	private JTextArea userLog;
+	private JScrollPane scrollPane;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -47,10 +51,19 @@ public class LogFrame {
 			}
 		});
 	}
+	
 
 	public LogFrame() {
 		initialize();
 		customcursor();
+	}
+	
+	void addLog(String log){
+		
+		userLog.append(log + "\n");  // 로그 내용을 JTextArea 위에 붙여주고
+		
+		userLog.setCaretPosition(userLog.getDocument().getLength());  // 맨아래로 스크롤한다.
+		
 	}
 	
 	public void customcursor() { // 마우스포인터 ====================================
@@ -79,7 +92,9 @@ public class LogFrame {
 		frame.getContentPane().add(logTextLabel);
 		
 		List<String> log = mis.userLogResult(user_pk);
-		JTextArea userLog = new JTextArea();
+		JPanel textPnl = new JPanel();
+		textPnl.setBounds(12, 50, 400, 350);
+		userLog = new JTextArea();
 		String a = "";
 		for(int i = 0; i < log.size(); i++) {
 			a += log.get(i);
@@ -89,14 +104,13 @@ public class LogFrame {
 		
 //		(userLog).setEditable(false);
 		userLog.setBorder(new LineBorder(new Color(0, 0, 0)));
-		JScrollPane scrollPane = new JScrollPane(userLog);
-		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
-		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-		
+		scrollPane = new JScrollPane(userLog);
+		scrollPane.getVerticalScrollBar().setValue(scrollPane.getVerticalScrollBar().getMaximum());
+//		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+//		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+//		textPnl.add(scrollPane);
 		userLog.setBounds(12, 50, 400, 350);
-
-		userLog.setBorder(new LineBorder(new Color(0, 0, 0)));
-		userLog.setBounds(12, 50, 403, 410);
+		
 		frame.getContentPane().add(userLog);
 		
 		JButton 닫기버튼 = new JButton("닫기");
