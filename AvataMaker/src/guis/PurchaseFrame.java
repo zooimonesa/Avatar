@@ -91,6 +91,12 @@ public class PurchaseFrame {
 		
 		JButton buyButton = new JButton("구입하기");
 		buyButton.setBounds(299, 417, 90, 23);
+		
+
+		avatar.insertCopy(main.mainnickname , avatarName);
+		System.out.println(main.mainnickname);
+		System.out.println(avatarName);
+		
 		frame.getContentPane().add(buyButton);
 		if(go == false) {
 		buyButton.setEnabled(go);
@@ -112,6 +118,7 @@ public class PurchaseFrame {
 		equipButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				avatar.onSearching(main.user_pk, avatarName, type);
 				
 			}
 		});
