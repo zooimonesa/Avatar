@@ -542,11 +542,11 @@ public class StoreFrame {
         
         
         
-		ImageIcon 이전으로 = new ImageIcon("src/image/이전으로_상점.png");
-		JButton 이전창버튼 = new JButton(이전으로);
-		이전창버튼.setContentAreaFilled(false);
-		이전창버튼.setBorderPainted(false);
-		이전창버튼.setHorizontalTextPosition(SwingConstants.LEADING);
+		JButton 이전창버튼 = new JButton("<html>이<br/>전<br/>으<br/>로</html>");
+		이전창버튼.setForeground(new Color(255, 255, 255));
+		이전창버튼.setBackground(new Color(0, 128, 255));
+		이전창버튼.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+		이전창버튼.setHorizontalTextPosition(SwingConstants.CENTER);
 		이전창버튼.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MainFrame mainFrame = new MainFrame();  // hj 메인 나오게================
@@ -556,7 +556,6 @@ public class StoreFrame {
 				frame.dispose();
 			}
 		});
-		이전창버튼.setHorizontalAlignment(SwingConstants.LEADING);
 		이전창버튼.setBounds(727, 351, 60, 100);
 		frame.getContentPane().add(이전창버튼);
 		
