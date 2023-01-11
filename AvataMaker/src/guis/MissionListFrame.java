@@ -27,7 +27,7 @@ import User.GetInfo;
 import mission.Missions;
 import mission.missionSelect;
 import mission.missionSelectImpl;
-import sun.tools.jar.resources.jar;
+//import sun.tools.jar.resources.jar;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -148,12 +148,12 @@ public class MissionListFrame {
       
       // 미션 내용 불러오기
       JTextField oneDayMissionLabel1_T = new JTextField();
-      oneDayMissionLabel1_T.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 12));
+      oneDayMissionLabel1_T.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 13));
       text1 = "미션을 입력하세요.";
       
       oneDayMissionLabel1_T.setText(text1);
       oneDayMissionLabel1_T.setForeground(Color.gray);
-      oneDayMissionLabel1_T.setBounds(20, 25, 250, 40);
+      oneDayMissionLabel1_T.setBounds(15, 29, 250, 35);
       oneDayMissionLabel1_T.addMouseListener(new MouseListener() {
 		@Override
 		public void mouseClicked(MouseEvent arg0) {
@@ -178,13 +178,15 @@ public class MissionListFrame {
       oneDayMissionPanel1.add(oneDayMissionLabel1_T);
       
       term1 = new JCheckBox("1일", true);
-      term1.setBounds(280, 25, 50, 20); 
+      term1.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 13));
+      term1.setBounds(285, 25, 50, 20); 
       term1.setBackground(Color.WHITE);
       term1.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 12));
       oneDayMissionPanel1.add(term1);
 
       term7 = new JCheckBox("7일");
-      term7.setBounds(280, 45, 50, 20); 
+      term7.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 13));
+      term7.setBounds(285, 45, 50, 20); 
       term7.setBackground(Color.WHITE);
       term7.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 12));
       oneDayMissionPanel1.add(term7);
@@ -218,14 +220,14 @@ public class MissionListFrame {
      
       
       JLabel oneDayMissionLabel2_T = new JLabel();
-      oneDayMissionLabel2_T.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 12));
+      oneDayMissionLabel2_T.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 13));
       text2 = mis.getSelectMission(user_pk, selectB, 1).get(0).getMission();
       oneDayMissionLabel2_T.setText(text2);
       oneDayMissionLabel2_T.setBounds(20, 25, 250, 40);
       oneDayMissionPanel2.add(oneDayMissionLabel2_T);
       
       JLabel oneWeekMissionLabel1_T = new JLabel();
-      oneWeekMissionLabel1_T.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 12));
+      oneWeekMissionLabel1_T.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 13));
       text3 = mis.getSelectMission(user_pk, selectB, 7).get(0).getMission();
       oneWeekMissionLabel1_T.setText(text3);
       oneWeekMissionLabel1_T.setBounds(20, 25, 250, 40);
@@ -252,9 +254,8 @@ public class MissionListFrame {
       
       // 이전버튼 생성
       JButton previousButton = new JButton("이전 화면으로");
-      previousButton.setForeground(new Color(255, 255, 255));
       previousButton.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
-      previousButton.setBackground(new Color(0, 128, 255));
+      previousButton.setBackground(new Color(200, 230, 250));
       previousButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
             frame.dispose();
@@ -274,7 +275,7 @@ public class MissionListFrame {
     		  
     		  
     		  if(mis.checkMission(user_pk, term)) {
-    			  if(!oneDayMissionLabel2_T.getText().isEmpty() && !oneDayMissionLabel1_T.getText().equals("")) {
+    			  if(!oneDayMissionLabel1_T.getText().isEmpty() && !oneDayMissionLabel1_T.getText().equals("미션을 입력하세요.")) {
     				  	if (term == 1) {
     				  		// 미션 등록
     				  		mis.insertMission(user_pk, selectB, oneDayMissionLabel1_T.getText(), term);

@@ -116,7 +116,7 @@ public class MissionChoiceFrame {
 
 			}
 		});
-		userOwnMissionButton.setBounds(30, 317, 122, 53);
+		userOwnMissionButton.setBounds(30, 325, 122, 53);
 		frame.getContentPane().add(userOwnMissionButton);
 
 		JButton previousButton = new JButton("이전으로");
@@ -132,7 +132,7 @@ public class MissionChoiceFrame {
 
 			}
 		});
-		previousButton.setBounds(278, 317, 122, 53);
+		previousButton.setBounds(278, 325, 122, 53);
 		frame.getContentPane().add(previousButton);
 	}
 

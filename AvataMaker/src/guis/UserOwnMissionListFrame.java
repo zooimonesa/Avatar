@@ -239,15 +239,27 @@ public class UserOwnMissionListFrame {
          weeklyMissionClears[i].setBackground(new Color(240, 250, 255));
          
          if(!weeklyMissionTs[i].getText().isEmpty()) {
-            if(mis.userMissionEndDay(user_pk, weeklyMissionTs[i].getText()).contains("D - -")) {
-               // 지나간 미션 없애기
-               mis.cancelMission(user_pk, weeklyMissionTs[i].getText());
-               initialize();
+        	// 미션 락걸기
+        	weeklyMissionClears[i].setEnabled(false);
+        	// 지나간 미션 아닐때
+            if(!mis.userMissionEndDay(user_pk, weeklyMissionTs[i].getText()).contains("D - -")) {
+            	weeklyMissionDdays[i].setText(mis.userMissionEndDay(user_pk, weeklyMissionTs[i].getText()));
+            	if(weeklyMissionDdays[i].getText().contains("2") 
+                		|| weeklyMissionDdays[i].getText().contains("1")
+                		|| weeklyMissionDdays[i].getText().contains("0")) {
+            		weeklyMissionTs[i].setForeground(Color.red);
+                	weeklyMissionDdays[i].setForeground(Color.red);
+            	}
             } else {
-               weeklyMissionDdays[i].setText(mis.userMissionEndDay(user_pk, weeklyMissionTs[i].getText()));
+            	// 지나간 미션 없애기
+                mis.cancelMission(user_pk, weeklyMissionTs[i].getText());
+                initialize();
             }
          }
-         
+                  
+         if(weeklyMissionDdays[i].getText().contains("0")) {
+        	 weeklyMissionClears[i].setEnabled(true);
+         }
          
          weeklyMissionClears[i].setActionCommand(String.valueOf(i));
          weeklyMissionClears[i].addActionListener(new ActionListener() {
@@ -338,17 +350,30 @@ public class UserOwnMissionListFrame {
          try {
             if(mis.userMission(user_pk, 7).get(i) != null) {
                String text = mis.userMission(user_pk, 7).get(i).getMission();
-               weeklyMissionTs[i].setText(text);            
+               weeklyMissionTs[i].setText(text);
+               weeklyMissionTs[i].setForeground(Color.black);
             }
          } catch (IndexOutOfBoundsException e) {
             weeklyMissionTs[i].setText("");
          }
          weeklyMissionDdays[i].setText("");
+         weeklyMissionDdays[i].setForeground(Color.black);
+         weeklyMissionClears[i].setEnabled(true);
          
          if(!weeklyMissionTs[i].getText().isEmpty()) {
             weeklyMissionDdays[i].setText(mis.userMissionEndDay(user_pk, weeklyMissionTs[i].getText()));
-            
+            weeklyMissionClears[i].setEnabled(false);
+	          if (weeklyMissionDdays[i].getText().contains("2") 
+	        		 || weeklyMissionDdays[i].getText().contains("1")
+	        		 || weeklyMissionDdays[i].getText().contains("0")) {
+	        	 weeklyMissionTs[i].setForeground(Color.red);
+	        	 weeklyMissionDdays[i].setForeground(Color.red);
+	         }
+	          if(weeklyMissionDdays[i].getText().contains("0")) {
+	        	  weeklyMissionClears[i].setEnabled(true);
+	          }
          }
+            
       }
    }
    

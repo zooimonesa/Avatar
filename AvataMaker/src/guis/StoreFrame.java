@@ -68,7 +68,7 @@ public class StoreFrame {
 		
 		String a = "목도리.png";	
 		String c = "요리사.png";
-		String d = "조리도구.png";
+		String d = "조리기구.png";
 		String e = "앞치마.png";
 		String f = "튜브.png";
 		String g = "사슴뿔.png";
@@ -249,10 +249,11 @@ public class StoreFrame {
 		btnNewButton_1_2_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
-				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
-
+		
 				purchaseFrame.avatarName = "요리사.png";
 				purchaseFrame.type = "얼굴";
+				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
+
 				purchaseFrame.frame.setVisible(true); // 다음 프레임 띄우기
 				purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				purchaseFrame.frame.setResizable(false);

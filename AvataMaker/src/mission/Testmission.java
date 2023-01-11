@@ -24,16 +24,32 @@ public class Testmission {
 //		String nu = "";
 //		System.out.println(nu == null);
 		
-		Missions m1 = mis.userMission(34, 1).get(0);
+//		Missions m1 = mis.userMission(34, 1).get(0);
 //		System.out.println(m1);
 //		System.out.println(mis.userMission(34, 1));
 //		System.out.println(mis.userMission(34, 1).contains(m1));
-		for (Missions m2 : mis.userMission(34, 1)) {
-			if(m2.getMission().equals(m1.getMission())) {
-				System.out.println(true);
-			} else {
-				System.out.println(false);
-			}
-		}
+//		for (Missions m2 : mis.userMission(34, 1)) {
+//			if(m2.getMission().equals(m1.getMission())) {
+//				System.out.println(true);
+//			} else {
+//				System.out.println(false);
+//			}
+//		}
+		String d = "D - 2";
+		String d1 = "D - 1";
+		
+		System.out.println(d.contains("2"));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 }
