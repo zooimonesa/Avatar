@@ -83,7 +83,7 @@ public class StartFrame {
 		frmAlpha.getContentPane().add(mainImage);
 
 		id = new JTextField();
-		id.setBounds(164, 307, 205, 21);
+		id.setBounds(200, 310, 180, 25);
 		frmAlpha.getContentPane().add(id);
 		id.setColumns(10);
 
@@ -115,7 +115,7 @@ public class StartFrame {
 			}
 		});
 
-		passWord.setBounds(164, 350, 205, 21);
+		passWord.setBounds(200, 350, 180, 25);
 		frmAlpha.getContentPane().add(passWord);
 		passWord.setColumns(10);
 
@@ -178,13 +178,13 @@ public class StartFrame {
 		idLabel.setBackground(new Color(255, 255, 255));
 		idLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 20));
 		idLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		idLabel.setBounds(73, 307, 79, 21);
+		idLabel.setBounds(102, 313, 79, 21);
 		frmAlpha.getContentPane().add(idLabel);
 
 		JLabel passWordLabel = new JLabel("비밀번호");
 		passWordLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 20));
 		passWordLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		passWordLabel.setBounds(73, 350, 79, 21);
+		passWordLabel.setBounds(110, 352, 79, 21);
 		frmAlpha.getContentPane().add(passWordLabel);
 	}
 
