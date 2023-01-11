@@ -394,7 +394,7 @@ public class MainFrame {
 
 		JLabel charBackgroundLabel = new JLabel(배경);
 		charBackgroundLabel.setBounds(40, 40, 150, 200);
-		userCharLabel.setBorder(bb);
+		charBackgroundLabel.setBorder(bb);
 		frame.getContentPane().add(charBackgroundLabel);
 
 		JLabel userPointLabel_1 = new JLabel(Integer.toString(mainpoint) + "P");
