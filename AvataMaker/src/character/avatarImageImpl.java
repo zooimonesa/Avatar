@@ -18,6 +18,8 @@ import javax.swing.JOptionPane;
 
 import dbutil.ConnectionProvider;
 
+
+
 public class avatarImageImpl implements avatarImage {
 
 	@Override // 이미지 저장하는 폴더 만드는 메소드
@@ -395,7 +397,7 @@ public class avatarImageImpl implements avatarImage {
 			System.out.println("돈이 부족합니다.");
 			JOptionPane.showMessageDialog(null, "돈이 부족합니다.", "Message",
 					JOptionPane.ERROR_MESSAGE);
-		}else if (selectAfterPoint(nickname,  name )>0) {
+		}else if (selectAfterPoint(nickname,  name )>=0) {
 			byAvatar(  nickname ,  name);
 			insertCopy(nickname , name);
 			JOptionPane.showMessageDialog(null, "구매성공.", "Message",
