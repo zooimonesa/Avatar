@@ -29,6 +29,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import java.awt.Font;
 import java.awt.Graphics;
+import javax.swing.JTree;
 
 public class MainFrame {
 
@@ -100,6 +101,7 @@ public class MainFrame {
 		ImageIcon 랭킹 = new ImageIcon("src/image/랭킹버튼.png");
 		ImageIcon 튜토리얼 = new ImageIcon("src/image/튜토리얼버튼.png");
 		ImageIcon 회원탈퇴 = new ImageIcon("src/image/회원탈퇴버튼.png");
+		ImageIcon 메인배경 = new ImageIcon("src/image/메인화면_배경.png");
 
 		ImageIcon 캐릭터 = new ImageIcon("src/image/농담곰_메인_기본.png");
 		ImageIcon 배경 = new ImageIcon("src/image/" + avatar.avatarOnFinding(user_pk, "배경"));
@@ -118,7 +120,7 @@ public class MainFrame {
 		JLabel nickNameLabel = new JLabel(mainnickname);
 		nickNameLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		nickNameLabel.setBackground(new Color(255, 255, 255));
-		nickNameLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		nickNameLabel.setHorizontalAlignment(SwingConstants.LEFT);
 		nickNameLabel.setBounds(315, 40, 424, 35);
 		frame.getContentPane().add(nickNameLabel);
 
@@ -132,7 +134,7 @@ public class MainFrame {
 		storyLabel.setText(pkstory);
 		storyLabel.setEditable(false);
 		storyLabel.setBackground(new Color(255, 255, 255));
-		storyLabel.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
+		storyLabel.setBorder(new LineBorder(new Color(0, 0, 0), 3, true));
 		storyLabel.setBounds(40, 291, 150, 160);
 		frame.getContentPane().add(storyLabel);
 
@@ -394,7 +396,7 @@ public class MainFrame {
 
 		JLabel charBackgroundLabel = new JLabel(배경);
 		charBackgroundLabel.setBounds(40, 40, 150, 200);
-		charBackgroundLabel.setBorder(bb);
+		charBackgroundLabel.setBorder(new LineBorder(new Color(0, 0, 0), 3, true));
 		frame.getContentPane().add(charBackgroundLabel);
 
 		JLabel userPointLabel_1 = new JLabel(Integer.toString(mainpoint) + "P");
@@ -420,6 +422,28 @@ public class MainFrame {
 		giftPointLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		giftPointLabel.setBounds(202, 175, 101, 35);
 		frame.getContentPane().add(giftPointLabel);
+		
+		JLabel healthPointLabel_1 = new JLabel("닉네임:");
+		healthPointLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		healthPointLabel_1.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+		healthPointLabel_1.setBounds(202, 40, 101, 35);
+		frame.getContentPane().add(healthPointLabel_1);
+		
+		JLabel healthPointLabel_1_1 = new JLabel("아바타");
+		healthPointLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		healthPointLabel_1_1.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+		healthPointLabel_1_1.setBounds(40, 10, 150, 30);
+		frame.getContentPane().add(healthPointLabel_1_1);
+		
+		JLabel healthPointLabel_1_1_1 = new JLabel("스토리");
+		healthPointLabel_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		healthPointLabel_1_1_1.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+		healthPointLabel_1_1_1.setBounds(40, 263, 150, 30);
+		frame.getContentPane().add(healthPointLabel_1_1_1);
+		
+		JLabel mainBackGround = new JLabel(메인배경);
+		mainBackGround.setBounds(0, 0, 799, 487);
+		frame.getContentPane().add(mainBackGround);
 
 //      ImageIcon mainBackGround = new ImageIcon("메인배경화면예시.png");
 //      JLabel lblNewLabel = new JLabel(mainBackGround);
