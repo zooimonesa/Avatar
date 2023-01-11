@@ -42,7 +42,7 @@ public class MissionChoiceFrame {
 	public void customcursor() { // 마우스포인터 ====================================
 
 		Toolkit tk = Toolkit.getDefaultToolkit();
-		Image cursorimage = tk.getImage("대형견_커서.png");
+		Image cursorimage = tk.getImage("src/image/대형견_커서.png");
 		Point point = new Point(0, 0);
 		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
 		frame.setCursor(cursor);
@@ -57,9 +57,9 @@ public class MissionChoiceFrame {
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		ImageIcon 운동버튼 = new ImageIcon("운동버튼.png");
-		ImageIcon 공부버튼 = new ImageIcon("공부버튼.png");
-		ImageIcon 취미버튼 = new ImageIcon("취미버튼.png");
+		ImageIcon 운동버튼 = new ImageIcon("src/image/운동버튼.png");
+		ImageIcon 공부버튼 = new ImageIcon("src/image/공부버튼.png");
+		ImageIcon 취미버튼 = new ImageIcon("src/image/취미버튼.png");
 		
 		
 		JButton exerciseButton = new JButton(운동버튼);

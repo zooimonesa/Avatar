@@ -46,7 +46,7 @@ public class StartFrame {
 	public void customcursor() { // 마우스포인터 ====================================
 
 		Toolkit tk = Toolkit.getDefaultToolkit();
-		Image cursorimage = tk.getImage("대형견_커서.png");
+		Image cursorimage = tk.getImage("src/image/대형견_커서.png");
 		Point point = new Point(0, 0);
 		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
 		frmAlpha.setCursor(cursor);
@@ -54,7 +54,7 @@ public class StartFrame {
 
 	public static void audio() { // 배경음악 =========================================
 		try {
-			File file = new File("헤네시스.wav");
+			File file = new File("src/image/헤네시스.wav");
 			clip = AudioSystem.getClip();
 			clip.open(AudioSystem.getAudioInputStream(file));
 			// clip.loop(Clip.LOOP_CONTINUOUSLY);
@@ -73,12 +73,12 @@ public class StartFrame {
 		frmAlpha.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmAlpha.getContentPane().setLayout(null);
 		
-		ImageIcon 로그인버튼 = new ImageIcon("로그인_시작.png");
-		ImageIcon 회원가입버튼 = new ImageIcon("회원가입_시작.png");
-		ImageIcon 종료하기버튼 = new ImageIcon("종료하기_시작.png");
+		ImageIcon 로그인버튼 = new ImageIcon("src/image/로그인_시작.png");
+		ImageIcon 회원가입버튼 = new ImageIcon("src/image/회원가입_시작.png");
+		ImageIcon 종료하기버튼 = new ImageIcon("src/image/종료하기_시작.png");
 		
 		
-		ImageIcon 메인 = new ImageIcon("메인예시원본.gif");
+		ImageIcon 메인 = new ImageIcon("src/image/메인예시원본.gif");
 		JLabel mainImage = new JLabel(메인);
 		mainImage.setBounds(12, 0, 505, 300);
 		frmAlpha.getContentPane().add(mainImage);

@@ -68,8 +68,8 @@ public class SignUpFrame {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(255, 255, 255));
 		
-		ImageIcon 회원가입버튼 = new ImageIcon("회원가입버튼.png");
-		ImageIcon 취소하기버튼 = new ImageIcon("취소하기버튼.png");
+		ImageIcon 회원가입버튼 = new ImageIcon("src/image/회원가입버튼.png");
+		ImageIcon 취소하기버튼 = new ImageIcon("src/image/취소하기버튼.png");
 
 		frame.setTitle("회원가입");
 		frame.setBounds(100, 100, 450, 445);

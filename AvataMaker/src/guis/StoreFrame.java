@@ -54,7 +54,7 @@ public class StoreFrame {
 	public void customcursor() { // 마우스포인터 ====================================
 
 		Toolkit tk = Toolkit.getDefaultToolkit();
-		Image cursorimage = tk.getImage("대형견_커서.png");
+		Image cursorimage = tk.getImage("src/image/대형견_커서.png");
 		Point point = new Point(0, 0);
 		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
 		frame.setCursor(cursor);
@@ -68,22 +68,22 @@ public class StoreFrame {
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		String a = "목도리.png";	
-		String c = "요리사.png";
-		String d = "조리도구.png";
-		String e = "앞치마.png";
-		String f = "튜브.png";
-		String g = "사슴뿔.png";
-		String h = "썬글라스.png";
-		String i = "겨울배경.png";
-		String j = "용사검.png";
-		String k = "용사투구.png";
-		String l = "용사갑옷.png";
-		String m = "물총.png";
-		String n = "고구마.png";
-		String o = "용사의방.png";
-		String p = "여름.png";
-		String q = "주방.png";
+		String a = "src/image/목도리.png";	
+		String c = "src/image/요리사.png";
+		String d = "src/image/조리도구.png";
+		String e = "src/image/앞치마.png";
+		String f = "src/image/튜브.png";
+		String g = "src/image/사슴뿔.png";
+		String h = "src/image/썬글라스.png";
+		String i = "src/image/겨울배경.png";
+		String j = "src/image/용사검.png";
+		String k = "src/image/용사투구.png";
+		String l = "src/image/용사갑옷.png";
+		String m = "src/image/물총.png";
+		String n = "src/image/고구마.png";
+		String o = "src/image/용사의방.png";
+		String p = "src/image/여름.png";
+		String q = "src/image/주방.png";
 		onOff onoff= new onOff();
 		onoff.mainOnOff(onoff.avatarGet(main.user_pk), onoff.storeAvatarGet());
 		onoff.avatarGet(main.user_pk);
@@ -111,7 +111,7 @@ public class StoreFrame {
 		ImageIcon 여름 = new ImageIcon(onoff.findGetAva(p));
 		ImageIcon 주방 = new ImageIcon(onoff.findGetAva(q));
 
-		JButton btnNewButton_1 = new JButton("목도리.png");
+		JButton btnNewButton_1 = new JButton("src/image/목도리.png");
 		btnNewButton_1.setIcon(목도리);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -120,7 +120,7 @@ public class StoreFrame {
 				if(ok == btnNewButton_1) {
 					
 					PurchaseFrame purchaseFrame = new PurchaseFrame();
-				purchaseFrame.avatarName = "목도리.png";
+				purchaseFrame.avatarName = "src/image/목도리.png";
 				purchaseFrame.avatarName2 = "목도리";
 				purchaseFrame.type = "옷";
 				 
@@ -155,7 +155,7 @@ public class StoreFrame {
 				
 				
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
-				purchaseFrame.avatarName = "튜브.png";
+				purchaseFrame.avatarName = "src/image/튜브.png";
 				purchaseFrame.avatarName2 = "튜브";
 				purchaseFrame.type = "옷";
 				
@@ -179,7 +179,7 @@ public class StoreFrame {
 			public void actionPerformed(ActionEvent e) {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				
-				purchaseFrame.avatarName = "앞치마.png";
+				purchaseFrame.avatarName = "src/image/앞치마.png";
 				purchaseFrame.avatarName2 = "앞치마";
 				purchaseFrame.type = "옷";
 				
@@ -203,7 +203,7 @@ public class StoreFrame {
 			public void actionPerformed(ActionEvent e) {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				
-				purchaseFrame.avatarName = "용사갑옷.png";
+				purchaseFrame.avatarName = "src/image/용사갑옷.png";
 				purchaseFrame.avatarName2 = "용사갑옷";
 				purchaseFrame.type = "옷";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
@@ -224,7 +224,7 @@ public class StoreFrame {
 		btnNewButton_1_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
-				purchaseFrame.avatarName = "사슴뿔.png";
+				purchaseFrame.avatarName = "src/image/사슴뿔.png";
 				purchaseFrame.avatarName2 = "사슴뿔";
 				purchaseFrame.type = "얼굴";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
@@ -247,7 +247,7 @@ public class StoreFrame {
 			public void actionPerformed(ActionEvent e) {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				
-				purchaseFrame.avatarName = "썬글라스.png";
+				purchaseFrame.avatarName = "src/image/썬글라스.png";
 				purchaseFrame.avatarName2 = "썬글라스";
 				purchaseFrame.type = "얼굴";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
@@ -269,7 +269,7 @@ public class StoreFrame {
 			public void actionPerformed(ActionEvent e) {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 		
-				purchaseFrame.avatarName = "요리사.png";
+				purchaseFrame.avatarName = "src/image/요리사.png";
 				purchaseFrame.avatarName2 = "요리사";
 				purchaseFrame.type = "얼굴";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
@@ -291,7 +291,7 @@ public class StoreFrame {
 			public void actionPerformed(ActionEvent e) {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				
-				purchaseFrame.avatarName = "용사투구.png";
+				purchaseFrame.avatarName = "src/image/용사투구.png";
 				purchaseFrame.avatarName2 = "용사투구";
 				purchaseFrame.type = "얼굴";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
@@ -315,7 +315,7 @@ public class StoreFrame {
 			public void actionPerformed(ActionEvent e) {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				
-				purchaseFrame.avatarName = "고구마.png";
+				purchaseFrame.avatarName = "src/image/고구마.png";
 				purchaseFrame.avatarName2 = "고구마";
 				purchaseFrame.type = "악세사리";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
@@ -337,7 +337,7 @@ public class StoreFrame {
 			public void actionPerformed(ActionEvent e) {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				
-				purchaseFrame.avatarName = "물총.png";
+				purchaseFrame.avatarName = "src/image/물총.png";
 				purchaseFrame.avatarName2 = "물총";
 				purchaseFrame.type = "악세사리";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
@@ -359,7 +359,7 @@ public class StoreFrame {
 			public void actionPerformed(ActionEvent e) {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				
-				purchaseFrame.avatarName = "조리도구.png";
+				purchaseFrame.avatarName = "src/image/조리도구.png";
 				purchaseFrame.avatarName2 = "조리도구";
 				purchaseFrame.type = "악세사리";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
@@ -383,7 +383,7 @@ public class StoreFrame {
 			public void actionPerformed(ActionEvent e) {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				
-				purchaseFrame.avatarName = "용사검.png";
+				purchaseFrame.avatarName = "src/image/용사검.png";
 				purchaseFrame.avatarName2 = "용사검";
 				purchaseFrame.type = "악세사리";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
@@ -404,7 +404,7 @@ public class StoreFrame {
 		btnNewButton_1_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
-				purchaseFrame.avatarName = "겨울배경.png";
+				purchaseFrame.avatarName = "src/image/겨울배경.png";
 				purchaseFrame.avatarName2 = "겨울";
 				purchaseFrame.type = "배경";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
@@ -427,7 +427,7 @@ public class StoreFrame {
 			public void actionPerformed(ActionEvent e) {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				
-				purchaseFrame.avatarName = "주방.png";
+				purchaseFrame.avatarName = "src/image/주방.png";
 				purchaseFrame.avatarName2 = "주방";
 				purchaseFrame.type = "배경";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
@@ -449,7 +449,7 @@ public class StoreFrame {
 			public void actionPerformed(ActionEvent e) {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				
-				purchaseFrame.avatarName = "여름.png";
+				purchaseFrame.avatarName = "src/image/여름.png";
 				purchaseFrame.avatarName2 = "여름";
 				purchaseFrame.type = "배경";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
@@ -470,7 +470,7 @@ public class StoreFrame {
 		btnNewButton_1_3_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
-				purchaseFrame.avatarName = "용사의방.png";
+				purchaseFrame.avatarName = "src/image/용사의방.png";
 				purchaseFrame.avatarName2 = "용사의방";
 				purchaseFrame.type = "배경";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
@@ -525,7 +525,7 @@ public class StoreFrame {
         
         
         
-		ImageIcon 이전으로 = new ImageIcon("이전으로_상점.png");
+		ImageIcon 이전으로 = new ImageIcon("src/image/이전으로_상점.png");
 		JButton 이전창버튼 = new JButton(이전으로);
 		이전창버튼.setContentAreaFilled(false);
 		이전창버튼.setBorderPainted(false);

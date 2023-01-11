@@ -56,7 +56,7 @@ public class PurchaseFrame {
    public void customcursor() { // 마우스포인터 ====================================
 
       Toolkit tk = Toolkit.getDefaultToolkit();
-      Image cursorimage = tk.getImage("마우스포인터_1.png");
+      Image cursorimage = tk.getImage("src/image/마우스포인터_1.png");
       Point point = new Point(20, 20);
       Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
       frame.setCursor(cursor);
@@ -74,7 +74,7 @@ public class PurchaseFrame {
       frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
       frame.getContentPane().setLayout(null);
 
-      ImageIcon 상점캐릭터 = new ImageIcon("농담곰_상점_기본.png");
+      ImageIcon 상점캐릭터 = new ImageIcon("src/image/농담곰_상점_기본.png");
       
       
 

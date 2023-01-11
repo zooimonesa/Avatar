@@ -2,6 +2,9 @@ package guis;
 
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JButton;
@@ -14,6 +17,7 @@ import javax.swing.border.TitledBorder;
 import User.UserRanking;
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Font;
 
 public class RankingFrame {
@@ -41,8 +45,18 @@ public class RankingFrame {
 
 	public RankingFrame() {
 		initialize();
+		customcursor();
 	}
 
+	public void customcursor() { // 마우스포인터 ====================================
+
+		Toolkit tk = Toolkit.getDefaultToolkit();
+		Image cursorimage = tk.getImage("src/image/대형견_커서.png");
+		Point point = new Point(0, 0);
+		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
+		frame.setCursor(cursor);
+	} // =======================================================
+	
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(255, 255, 255));

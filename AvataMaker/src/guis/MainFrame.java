@@ -79,7 +79,7 @@ public class MainFrame {
 	public void customcursor() { // 마우스포인터 ====================================
 
 		Toolkit tk = Toolkit.getDefaultToolkit();
-		Image cursorimage = tk.getImage("대형견_커서.png");
+		Image cursorimage = tk.getImage("src/image/대형견_커서.png");
 		Point point = new Point(0, 0);
 		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
 		frame.setCursor(cursor);
@@ -93,27 +93,27 @@ public class MainFrame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
-		ImageIcon 미션버튼 = new ImageIcon("미션버튼.png");
-		ImageIcon 상점버튼 = new ImageIcon("상점버튼.png");
-		ImageIcon 로그보기버튼 = new ImageIcon("로그보기.png");
-		ImageIcon 로그아웃버튼 = new ImageIcon("로그아웃버튼.png");
-		ImageIcon 랭킹 = new ImageIcon("랭킹버튼.png");
-		ImageIcon 튜토리얼 = new ImageIcon("튜토리얼버튼.png");
-		ImageIcon 회원탈퇴 = new ImageIcon("회원탈퇴버튼.png");
+		ImageIcon 미션버튼 = new ImageIcon("src/image/미션버튼.png");
+		ImageIcon 상점버튼 = new ImageIcon("src/image/상점버튼.png");
+		ImageIcon 로그보기버튼 = new ImageIcon("src/image/로그보기.png");
+		ImageIcon 로그아웃버튼 = new ImageIcon("src/image/로그아웃버튼.png");
+		ImageIcon 랭킹 = new ImageIcon("src/image/랭킹버튼.png");
+		ImageIcon 튜토리얼 = new ImageIcon("src/image/튜토리얼버튼.png");
+		ImageIcon 회원탈퇴 = new ImageIcon("src/image/회원탈퇴버튼.png");
 
-		ImageIcon 캐릭터 = new ImageIcon("농담곰_메인_기본.png");
+		ImageIcon 캐릭터 = new ImageIcon("src/image/농담곰_메인_기본.png");
 		ImageIcon 배경 = new ImageIcon(avatar.avatarOnFinding(user_pk, "배경"));
 		
 		ImageIcon 상의 = new ImageIcon(avatar.avatarOnFinding(user_pk, "옷")); 
 		ImageIcon 얼굴 = new ImageIcon(avatar.avatarOnFinding(user_pk, "얼굴")); 
 		ImageIcon 악세사리 = new ImageIcon(avatar.avatarOnFinding(user_pk, "악세사리")); 
-		ImageIcon 능력치바 = new ImageIcon("능력치바.png");
-		ImageIcon 체력1 = new ImageIcon("체력_1.png");
-		ImageIcon 체력0 = new ImageIcon("체력_0.png");
-		ImageIcon 지능1 = new ImageIcon("지능_1.png");
-		ImageIcon 지능0 = new ImageIcon("지능_0.png");
-		ImageIcon 재능1 = new ImageIcon("재능_1.png");
-		ImageIcon 재능0 = new ImageIcon("재능_0.png");
+		ImageIcon 능력치바 = new ImageIcon("src/image/능력치바.png");
+		ImageIcon 체력1 = new ImageIcon("src/image/체력_1.png");
+		ImageIcon 체력0 = new ImageIcon("src/image/체력_0.png");
+		ImageIcon 지능1 = new ImageIcon("src/image/지능_1.png");
+		ImageIcon 지능0 = new ImageIcon("src/image/지능_0.png");
+		ImageIcon 재능1 = new ImageIcon("src/image/재능_1.png");
+		ImageIcon 재능0 = new ImageIcon("src/image/재능_0.png");
 
 		JLabel nickNameLabel = new JLabel(mainnickname);
 		nickNameLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
