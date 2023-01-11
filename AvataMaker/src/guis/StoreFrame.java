@@ -1,5 +1,7 @@
 package guis;
 
+
+
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.EventQueue;
@@ -473,8 +475,11 @@ public class StoreFrame {
         
         
         
-
-		JButton 이전창버튼 = new JButton("이전으로");
+		ImageIcon 이전으로 = new ImageIcon("이전으로_상점.png");
+		JButton 이전창버튼 = new JButton(이전으로);
+		이전창버튼.setContentAreaFilled(false);
+		이전창버튼.setBorderPainted(false);
+		이전창버튼.setHorizontalTextPosition(SwingConstants.LEADING);
 		이전창버튼.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MainFrame mainFrame = new MainFrame();  // hj 메인 나오게================
@@ -484,7 +489,7 @@ public class StoreFrame {
 				frame.dispose();
 			}
 		});
-		이전창버튼.setHorizontalAlignment(SwingConstants.TRAILING);
+		이전창버튼.setHorizontalAlignment(SwingConstants.LEADING);
 		이전창버튼.setBounds(732, 351, 55, 100);
 		frame.getContentPane().add(이전창버튼);
 		
