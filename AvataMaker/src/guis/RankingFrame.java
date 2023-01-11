@@ -72,7 +72,7 @@ public class RankingFrame {
 		panel.setBackground(new Color(255, 255, 255));
 		panel.setBorder(new TitledBorder(null, "체력랭킹", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		((javax.swing.border.TitledBorder) panel.getBorder()).setTitleFont(new Font("경기천년제목 Bold", Font.PLAIN, 19));
-		panel.setBounds(10, 20, 416, 105);
+		panel.setBounds(10, 20, 350, 105);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		GetUserRank();

@@ -540,7 +540,7 @@ public class StoreFrame {
 			}
 		});
 		이전창버튼.setHorizontalAlignment(SwingConstants.LEADING);
-		이전창버튼.setBounds(732, 351, 55, 100);
+		이전창버튼.setBounds(710, 351, 60, 100);
 		frame.getContentPane().add(이전창버튼);
 		
 		JLabel charHead = new JLabel(얼굴);  // 상점 캐릭터 착용샷 =======================================================================
