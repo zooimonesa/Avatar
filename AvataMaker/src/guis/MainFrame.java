@@ -1,9 +1,11 @@
 package guis;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.EventQueue;
 import java.awt.Image;
+import java.awt.Insets;
 import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -16,6 +18,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
 import User.GetInfo;
@@ -25,6 +28,7 @@ import character.avatarImageImpl;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import java.awt.Font;
+import java.awt.Graphics;
 
 public class MainFrame {
 
@@ -49,7 +53,6 @@ public class MainFrame {
 	private LineBorder bb = new LineBorder(Color.black, 1, true);
 
 	public static void main(String[] args) {
-		
 		UIManager.put("OptionPane.messageFont", (new Font("경기천년제목 Bold", Font.PLAIN, 15)));
 	    UIManager.put("OptionPane.buttonFont", (new Font("경기천년제목 Bold", Font.PLAIN, 15)));
 	    
@@ -76,7 +79,7 @@ public class MainFrame {
 	public void customcursor() { // 마우스포인터 ====================================
 
 		Toolkit tk = Toolkit.getDefaultToolkit();
-		Image cursorimage = tk.getImage("대형견_커서.png");
+		Image cursorimage = tk.getImage("src/image/대형견_커서.png");
 		Point point = new Point(0, 0);
 		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
 		frame.setCursor(cursor);
@@ -90,30 +93,30 @@ public class MainFrame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
-		ImageIcon 미션버튼 = new ImageIcon("미션버튼.png");
-		ImageIcon 상점버튼 = new ImageIcon("상점버튼.png");
-		ImageIcon 로그보기버튼 = new ImageIcon("로그보기.png");
-		ImageIcon 로그아웃버튼 = new ImageIcon("로그아웃버튼.png");
-		ImageIcon 랭킹 = new ImageIcon("랭킹버튼.png");
-		ImageIcon 튜토리얼 = new ImageIcon("튜토리얼버튼.png");
-		ImageIcon 회원탈퇴 = new ImageIcon("회원탈퇴버튼.png");
+		ImageIcon 미션버튼 = new ImageIcon("src/image/미션버튼.png");
+		ImageIcon 상점버튼 = new ImageIcon("src/image/상점버튼.png");
+		ImageIcon 로그보기버튼 = new ImageIcon("src/image/로그보기.png");
+		ImageIcon 로그아웃버튼 = new ImageIcon("src/image/로그아웃버튼.png");
+		ImageIcon 랭킹 = new ImageIcon("src/image/랭킹버튼.png");
+		ImageIcon 튜토리얼 = new ImageIcon("src/image/튜토리얼버튼.png");
+		ImageIcon 회원탈퇴 = new ImageIcon("src/image/회원탈퇴버튼.png");
 
-		ImageIcon 캐릭터 = new ImageIcon("농담곰_메인_기본.png");
-		ImageIcon 배경 = new ImageIcon(avatar.avatarOnFinding(user_pk, "배경"));
+		ImageIcon 캐릭터 = new ImageIcon("src/image/농담곰_메인_기본.png");
+		ImageIcon 배경 = new ImageIcon("src/image/" + avatar.avatarOnFinding(user_pk, "배경"));
 		
-		ImageIcon 상의 = new ImageIcon(avatar.avatarOnFinding(user_pk, "옷")); 
-		ImageIcon 얼굴 = new ImageIcon(avatar.avatarOnFinding(user_pk, "얼굴")); 
-		ImageIcon 악세사리 = new ImageIcon(avatar.avatarOnFinding(user_pk, "악세사리")); 
-		ImageIcon 능력치바 = new ImageIcon("능력치바.png");
-		ImageIcon 체력1 = new ImageIcon("체력_1.png");
-		ImageIcon 체력0 = new ImageIcon("체력_0.png");
-		ImageIcon 지능1 = new ImageIcon("지능_1.png");
-		ImageIcon 지능0 = new ImageIcon("지능_0.png");
-		ImageIcon 재능1 = new ImageIcon("재능_1.png");
-		ImageIcon 재능0 = new ImageIcon("재능_0.png");
+		ImageIcon 상의 = new ImageIcon("src/image/" + avatar.avatarOnFinding(user_pk, "옷")); 
+		ImageIcon 얼굴 = new ImageIcon("src/image/" + avatar.avatarOnFinding(user_pk, "얼굴")); 
+		ImageIcon 악세사리 = new ImageIcon("src/image/" + avatar.avatarOnFinding(user_pk, "악세사리")); 
+		ImageIcon 능력치바 = new ImageIcon("src/image/능력치바.png");
+		ImageIcon 체력1 = new ImageIcon("src/image/체력_1.png");
+		ImageIcon 체력0 = new ImageIcon("src/image/체력_0.png");
+		ImageIcon 지능1 = new ImageIcon("src/image/지능_1.png");
+		ImageIcon 지능0 = new ImageIcon("src/image/지능_0.png");
+		ImageIcon 재능1 = new ImageIcon("src/image/재능_1.png");
+		ImageIcon 재능0 = new ImageIcon("src/image/재능_0.png");
 
 		JLabel nickNameLabel = new JLabel(mainnickname);
-		nickNameLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 20));
+		nickNameLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		nickNameLabel.setBackground(new Color(255, 255, 255));
 		nickNameLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		nickNameLabel.setBounds(315, 40, 424, 35);
@@ -226,6 +229,7 @@ public class MainFrame {
 		giftPointBoder.setHorizontalAlignment(SwingConstants.CENTER);
 
 		JButton missionPoint = new JButton(미션버튼);
+		missionPoint.setBorderPainted(false);
 		missionPoint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MissionChoiceFrame missionChoiceFrame = new MissionChoiceFrame();
@@ -236,12 +240,14 @@ public class MainFrame {
 
 			}
 		});
-		missionPoint.setBorderPainted(false);
 		missionPoint.setContentAreaFilled(false);
-		missionPoint.setBounds(315, 291, 97, 60);
+		missionPoint.setBounds(326, 291, 85, 65);
+		missionPoint.setBorder(bb);
 		frame.getContentPane().add(missionPoint);
 
 		JButton storePoint = new JButton(상점버튼);
+		storePoint.setBorderPainted(false);
+		storePoint.setBorder(new LineBorder(new Color(0, 0, 0)));
 		storePoint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				StoreFrame storeFrame = new StoreFrame();
@@ -251,12 +257,13 @@ public class MainFrame {
 				frame.dispose(); // 꺼짐
 			}
 		});
-		storePoint.setBorderPainted(false);
 		storePoint.setContentAreaFilled(false);
-		storePoint.setBounds(424, 291, 97, 60);
+		storePoint.setBounds(437, 291, 85, 65);
 		frame.getContentPane().add(storePoint);
 
 		JButton logButton = new JButton(로그보기버튼);
+		logButton.setBorderPainted(false);
+		logButton.setBorder(new LineBorder(new Color(0, 0, 0)));
 		logButton.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
@@ -267,12 +274,13 @@ public class MainFrame {
 				frame.dispose(); // 꺼짐
 			}
 		});
-		logButton.setBorderPainted(false);
 		logButton.setContentAreaFilled(false);
-		logButton.setBounds(533, 291, 97, 60);
+		logButton.setBounds(545, 291, 85, 65);
 		frame.getContentPane().add(logButton);
 
 		JButton logOutButton = new JButton(로그아웃버튼);
+		logOutButton.setBorderPainted(false);
+		logOutButton.setBorder(new LineBorder(new Color(0, 0, 0)));
 		logOutButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int answer = JOptionPane.showConfirmDialog(null, "로그아웃하시겠습니까?", "로그아웃창", JOptionPane.YES_NO_OPTION); // 로그아웃
@@ -288,12 +296,13 @@ public class MainFrame {
 				}
 			}
 		});
-		logOutButton.setBorderPainted(false);
 		logOutButton.setContentAreaFilled(false);
-		logOutButton.setBounds(642, 291, 97, 60);
+		logOutButton.setBounds(545, 406, 85, 65);
 		frame.getContentPane().add(logOutButton);
 
 		JButton deleteUserInfo = new JButton(회원탈퇴);
+		deleteUserInfo.setBorderPainted(false);
+		deleteUserInfo.setBorder(new LineBorder(new Color(0, 0, 0)));
 		deleteUserInfo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (e.getActionCommand().equals("")) { // 회원탈퇴 버튼 ====================================
@@ -327,12 +336,13 @@ public class MainFrame {
 			}
 
 		});
-		deleteUserInfo.setBorderPainted(false);
 		deleteUserInfo.setContentAreaFilled(false);
-		deleteUserInfo.setBounds(642, 401, 97, 60);
+		deleteUserInfo.setBounds(654, 406, 85, 65);
 		frame.getContentPane().add(deleteUserInfo);
 
 		JButton rankingButton = new JButton(랭킹); // 랭킹 버튼 =====================================================
+		rankingButton.setBorderPainted(false);
+		rankingButton.setBorder(new LineBorder(new Color(0, 0, 0)));
 		rankingButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				RankingFrame rankingFrame = new RankingFrame();
@@ -343,21 +353,21 @@ public class MainFrame {
 
 			}
 		});
-		rankingButton.setBorderPainted(false);
 		rankingButton.setContentAreaFilled(false);
-		rankingButton.setBounds(315, 401, 97, 60);
+		rankingButton.setBounds(654, 291, 85, 65);
 		frame.getContentPane().add(rankingButton); // ===========================================================
 
 		JButton tutoButton = new JButton(튜토리얼); // 튜토리얼 버튼 ===================================
+		tutoButton.setBorderPainted(false);
+		tutoButton.setBorder(new LineBorder(new Color(0, 0, 0)));
 		tutoButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Tuto tuto = new Tuto();
 				tuto.frame.setVisible(true);
 			}
 		});
-		tutoButton.setBorderPainted(false);
 		tutoButton.setContentAreaFilled(false);
-		tutoButton.setBounds(424, 401, 97, 60);
+		tutoButton.setBounds(437, 406, 85, 65);
 		frame.getContentPane().add(tutoButton); // ==================================================
 
 		JLabel userPointLabel = new JLabel("포인트:");
@@ -384,7 +394,7 @@ public class MainFrame {
 
 		JLabel charBackgroundLabel = new JLabel(배경);
 		charBackgroundLabel.setBounds(40, 40, 150, 200);
-		userCharLabel.setBorder(bb);
+		charBackgroundLabel.setBorder(bb);
 		frame.getContentPane().add(charBackgroundLabel);
 
 		JLabel userPointLabel_1 = new JLabel(Integer.toString(mainpoint) + "P");

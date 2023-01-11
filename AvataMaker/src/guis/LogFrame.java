@@ -70,7 +70,7 @@ public class LogFrame {
 	public void customcursor() { // 마우스포인터 ====================================
 
 		Toolkit tk = Toolkit.getDefaultToolkit();
-		Image cursorimage = tk.getImage("대형견_커서.png");
+		Image cursorimage = tk.getImage("src/image/대형견_커서.png");
 		Point point = new Point(0, 0);
 		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
 		frame.setCursor(cursor);
@@ -114,8 +114,7 @@ public class LogFrame {
 		frame.getContentPane().add(scroll);
 		
 		JButton 닫기버튼 = new JButton("닫기");
-		닫기버튼.setForeground(new Color(255, 255, 255));
-		닫기버튼.setBackground(new Color(0, 128, 255));
+		닫기버튼.setBackground(new Color(200, 230, 250));
 		닫기버튼.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		닫기버튼.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -126,7 +125,7 @@ public class LogFrame {
 				frame.dispose();
 			}
 		});
-		닫기버튼.setBounds(291, 456, 124, 45);
+		닫기버튼.setBounds(291, 430, 124, 45);
 		frame.getContentPane().add(닫기버튼);
 	}
 

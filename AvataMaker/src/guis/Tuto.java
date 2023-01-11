@@ -62,7 +62,7 @@ public class Tuto implements ActionListener, ItemListener {
 	public void customcursor() { // 마우스포인터 ====================================
 
 		Toolkit tk = Toolkit.getDefaultToolkit();
-		Image cursorimage = tk.getImage("대형견_커서.png");
+		Image cursorimage = tk.getImage("src/image/대형견_커서.png");
 		Point point = new Point(0, 0);
 		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
 		frame.setCursor(cursor);
@@ -78,7 +78,7 @@ public class Tuto implements ActionListener, ItemListener {
 		frame.getContentPane().setLayout(null);
 
 		tuto_1 = new JPanel(); // 튜토리얼 시작 ================================================================
-		ImageIcon scene1 = new ImageIcon("튜토리얼_0.png");
+		ImageIcon scene1 = new ImageIcon("src/image/튜토리얼_0.png");
 		tuto_1.setBackground(new Color(255, 255, 255));
 		tuto_1.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_1);
@@ -105,7 +105,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_1.setVisible(true); // 1페이지 끝===============================================================
 
 		tuto_2 = new JPanel(); // 2페이지 시작 ================================================================
-		ImageIcon scene2 = new ImageIcon("튜토리얼_1.png");
+		ImageIcon scene2 = new ImageIcon("src/image/튜토리얼_1.png");
 		tuto_2.setBackground(new Color(255, 255, 255));
 		tuto_2.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_2);
@@ -132,7 +132,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_2.setVisible(false); // 2페이지 끝===============================================================
 
 		tuto_3 = new JPanel(); // 3페이지 시작 ================================================================
-		ImageIcon scene3 = new ImageIcon("튜토리얼_2.png");
+		ImageIcon scene3 = new ImageIcon("src/image/튜토리얼_2.png");
 		tuto_3.setBackground(new Color(255, 255, 255));
 		tuto_3.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_3);
@@ -159,7 +159,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_3.setVisible(false); // 3페이지 끝===============================================================
 
 		tuto_4 = new JPanel(); // 4페이지 시작 ================================================================
-		ImageIcon scene4 = new ImageIcon("튜토리얼_3.png");
+		ImageIcon scene4 = new ImageIcon("src/image/튜토리얼_3.png");
 		tuto_4.setBackground(new Color(255, 255, 255));
 		tuto_4.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_4);
@@ -186,7 +186,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_4.setVisible(false); // 4페이지 끝===============================================================
 
 		tuto_5 = new JPanel(); // 5페이지 시작 ================================================================
-		ImageIcon scene5 = new ImageIcon("튜토리얼_4.png");
+		ImageIcon scene5 = new ImageIcon("src/image/튜토리얼_4.png");
 		tuto_5.setBackground(new Color(255, 255, 255));
 		tuto_5.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_5);
@@ -213,7 +213,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_5.setVisible(false); // 5페이지 끝===============================================================
 
 		tuto_6 = new JPanel(); // 6페이지 시작 ================================================================
-		ImageIcon scene6 = new ImageIcon("튜토리얼_5.png");
+		ImageIcon scene6 = new ImageIcon("src/image/튜토리얼_5.png");
 		tuto_6.setBackground(new Color(255, 255, 255));
 		tuto_6.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_6);
@@ -240,7 +240,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_6.setVisible(false); // 6페이지 끝===============================================================
 
 		tuto_7 = new JPanel(); // 7페이지 시작 ================================================================
-		ImageIcon scene7 = new ImageIcon("튜토리얼_6.png");
+		ImageIcon scene7 = new ImageIcon("src/image/튜토리얼_6.png");
 		tuto_7.setBackground(new Color(255, 255, 255));
 		tuto_7.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_7);
@@ -267,7 +267,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_7.setVisible(false); // 7페이지 끝===============================================================
 
 		tuto_8 = new JPanel(); // 8페이지 시작 ================================================================
-		ImageIcon scene8 = new ImageIcon("튜토리얼_7.png");
+		ImageIcon scene8 = new ImageIcon("src/image/튜토리얼_7.png");
 		tuto_8.setBackground(new Color(255, 255, 255));
 		tuto_8.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_8);
@@ -294,7 +294,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_8.setVisible(false); // 8페이지 끝===============================================================
 
 		tuto_9 = new JPanel(); // 9페이지 시작 ================================================================
-		ImageIcon scene9 = new ImageIcon("튜토리얼_8.png");
+		ImageIcon scene9 = new ImageIcon("src/image/튜토리얼_8.png");
 		tuto_9.setBackground(new Color(255, 255, 255));
 		tuto_9.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_9);
@@ -321,7 +321,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_9.setVisible(false); // 9페이지 끝===============================================================
 
 		tuto_10 = new JPanel(); // 10페이지 시작 ================================================================
-		ImageIcon scene10 = new ImageIcon("튜토리얼_9.png");
+		ImageIcon scene10 = new ImageIcon("src/image/튜토리얼_9.png");
 		tuto_10.setBackground(new Color(255, 255, 255));
 		tuto_10.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_10);
@@ -348,7 +348,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_10.setVisible(false); // 10페이지 끝===============================================================
 
 		tuto_11 = new JPanel(); // 11페이지 시작 ================================================================
-		ImageIcon scene11 = new ImageIcon("튜토리얼_10.png");
+		ImageIcon scene11 = new ImageIcon("src/image/튜토리얼_10.png");
 		tuto_11.setBackground(new Color(255, 255, 255));
 		tuto_11.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_11);
@@ -375,7 +375,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_11.setVisible(false); // 11페이지 끝===============================================================
 
 		tuto_12 = new JPanel(); // 12페이지 시작 ================================================================
-		ImageIcon scene12 = new ImageIcon("튜토리얼_11.png");
+		ImageIcon scene12 = new ImageIcon("src/image/튜토리얼_11.png");
 		tuto_12.setBackground(new Color(255, 255, 255));
 		tuto_12.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_12);
@@ -402,7 +402,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_12.setVisible(false); // 12페이지 끝===============================================================
 
 		tuto_13 = new JPanel(); // 13페이지 시작 ================================================================
-		ImageIcon scene13 = new ImageIcon("튜토리얼_12.png");
+		ImageIcon scene13 = new ImageIcon("src/image/튜토리얼_12.png");
 		tuto_13.setBackground(new Color(255, 255, 255));
 		tuto_13.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_13);
@@ -429,7 +429,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_13.setVisible(false); // 13페이지 끝===============================================================
 
 		tuto_14 = new JPanel(); // 14페이지 시작 ================================================================
-		ImageIcon scene14 = new ImageIcon("튜토리얼_13.png");
+		ImageIcon scene14 = new ImageIcon("src/image/튜토리얼_13.png");
 		tuto_14.setBackground(new Color(255, 255, 255));
 		tuto_14.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_14);
@@ -456,7 +456,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_14.setVisible(false); // 14페이지 끝===============================================================
 
 		tuto_15 = new JPanel(); // 15페이지 시작 ================================================================
-		ImageIcon scene15 = new ImageIcon("튜토리얼_14.png");
+		ImageIcon scene15 = new ImageIcon("src/image/튜토리얼_14.png");
 		tuto_15.setBackground(new Color(255, 255, 255));
 		tuto_15.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_15);
@@ -483,7 +483,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_15.setVisible(false); // 15페이지 끝===============================================================
 
 		tuto_16 = new JPanel(); // 16페이지 시작 ================================================================
-		ImageIcon scene16 = new ImageIcon("튜토리얼_15.png");
+		ImageIcon scene16 = new ImageIcon("src/image/튜토리얼_15.png");
 		tuto_16.setBackground(new Color(255, 255, 255));
 		tuto_16.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_16);
@@ -510,7 +510,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_16.setVisible(false); // 16페이지 끝===============================================================
 
 		tuto_17 = new JPanel(); // 17페이지 시작 ================================================================
-		ImageIcon scene17 = new ImageIcon("튜토리얼_16.png");
+		ImageIcon scene17 = new ImageIcon("src/image/튜토리얼_16.png");
 		tuto_17.setBackground(new Color(255, 255, 255));
 		tuto_17.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_17);
@@ -537,7 +537,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_17.setVisible(false); // 17페이지 끝===============================================================
 
 		tuto_18 = new JPanel(); // 18페이지 시작 ================================================================
-		ImageIcon scene18 = new ImageIcon("튜토리얼_17.png");
+		ImageIcon scene18 = new ImageIcon("src/image/튜토리얼_17.png");
 		tuto_18.setBackground(new Color(255, 255, 255));
 		tuto_18.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_18);
@@ -564,7 +564,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_18.setVisible(false); // 18페이지 끝===============================================================
 
 		tuto_19 = new JPanel(); // 19페이지 시작 ================================================================
-		ImageIcon scene19 = new ImageIcon("튜토리얼_18.png");
+		ImageIcon scene19 = new ImageIcon("src/image/튜토리얼_18.png");
 		tuto_19.setBackground(new Color(255, 255, 255));
 		tuto_19.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_19);
@@ -591,7 +591,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_19.setVisible(false); // 19페이지 끝===============================================================
 
 		tuto_20 = new JPanel(); // 20페이지 시작 ================================================================
-		ImageIcon scene20 = new ImageIcon("튜토리얼_19.png");
+		ImageIcon scene20 = new ImageIcon("src/image/튜토리얼_19.png");
 		tuto_20.setBackground(new Color(255, 255, 255));
 		tuto_20.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_20);
@@ -618,7 +618,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_20.setVisible(false); // 20페이지 끝===============================================================
 
 		tuto_21 = new JPanel(); // 21페이지 시작 ================================================================
-		ImageIcon scene21 = new ImageIcon("튜토리얼_20.png");
+		ImageIcon scene21 = new ImageIcon("src/image/튜토리얼_20.png");
 		tuto_21.setBackground(new Color(255, 255, 255));
 		tuto_21.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_21);
@@ -645,7 +645,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_21.setVisible(false); // 21페이지 끝===============================================================
 
 		tuto_22 = new JPanel(); // 22페이지 시작 ================================================================
-		ImageIcon scene22 = new ImageIcon("튜토리얼_21.png");
+		ImageIcon scene22 = new ImageIcon("src/image/튜토리얼_21.png");
 		tuto_22.setBackground(new Color(255, 255, 255));
 		tuto_22.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_22);
@@ -672,7 +672,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_22.setVisible(false); // 22페이지 끝===============================================================
 
 		tuto_23 = new JPanel(); // 23페이지 시작 ================================================================
-		ImageIcon scene23 = new ImageIcon("튜토리얼_22.png");
+		ImageIcon scene23 = new ImageIcon("src/image/튜토리얼_22.png");
 		tuto_23.setBackground(new Color(255, 255, 255));
 		tuto_23.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_23);
@@ -699,7 +699,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_23.setVisible(false); // 23페이지 끝===============================================================
 
 		tuto_24 = new JPanel(); // 24페이지 시작 (선택지 패널)================================================================
-		ImageIcon scene24 = new ImageIcon("튜토리얼_23.png");
+		ImageIcon scene24 = new ImageIcon("src/image/튜토리얼_23.png");
 		tuto_24.setBackground(new Color(255, 255, 255));
 		tuto_24.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_24);
@@ -752,7 +752,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_24.setVisible(false); // 24페이지 끝===============================================================
 
 		tuto_25 = new JPanel(); // 25페이지 시작 ================================================================
-		ImageIcon scene25 = new ImageIcon("튜토리얼_24.png");
+		ImageIcon scene25 = new ImageIcon("src/image/튜토리얼_24.png");
 		tuto_25.setBackground(new Color(255, 255, 255));
 		tuto_25.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_25);
@@ -779,7 +779,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_25.setVisible(false); // 25페이지 끝===============================================================
 
 		tuto_26 = new JPanel(); // 26페이지 시작 ================================================================
-		ImageIcon scene26 = new ImageIcon("튜토리얼_25.png");
+		ImageIcon scene26 = new ImageIcon("src/image/튜토리얼_25.png");
 		tuto_26.setBackground(new Color(255, 255, 255));
 		tuto_26.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_26);
@@ -806,7 +806,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_26.setVisible(false); // 26페이지 끝===============================================================
 
 		tuto_27 = new JPanel(); // 27페이지 시작 ================================================================
-		ImageIcon scene27 = new ImageIcon("튜토리얼_26.png");
+		ImageIcon scene27 = new ImageIcon("src/image/튜토리얼_26.png");
 		tuto_27.setBackground(new Color(255, 255, 255));
 		tuto_27.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_27);
@@ -833,7 +833,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_27.setVisible(false); // 27페이지 끝===============================================================
 
 		tuto_28 = new JPanel(); // 28페이지 시작 ================================================================
-		ImageIcon scene28 = new ImageIcon("튜토리얼_27.png");
+		ImageIcon scene28 = new ImageIcon("src/image/튜토리얼_27.png");
 		tuto_28.setBackground(new Color(255, 255, 255));
 		tuto_28.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_28);
@@ -860,7 +860,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_28.setVisible(false); // 28페이지 끝===============================================================
 
 		tuto_29 = new JPanel(); // 29페이지 시작 ================================================================
-		ImageIcon scene29 = new ImageIcon("튜토리얼_28.png");
+		ImageIcon scene29 = new ImageIcon("src/image/튜토리얼_28.png");
 		tuto_29.setBackground(new Color(255, 255, 255));
 		tuto_29.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_29);
@@ -887,7 +887,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_29.setVisible(false); // 29페이지 끝===============================================================
 
 		tuto_30 = new JPanel(); // 30페이지 시작 ================================================================
-		ImageIcon scene30 = new ImageIcon("튜토리얼_29.png");
+		ImageIcon scene30 = new ImageIcon("src/image/튜토리얼_29.png");
 		tuto_30.setBackground(new Color(255, 255, 255));
 		tuto_30.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_30);
@@ -914,7 +914,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_30.setVisible(false); // 30페이지 끝===============================================================
 
 		tuto_31 = new JPanel(); // 31페이지 시작 ================================================================
-		ImageIcon scene31 = new ImageIcon("튜토리얼_30.png");
+		ImageIcon scene31 = new ImageIcon("src/image/튜토리얼_30.png");
 		tuto_31.setBackground(new Color(255, 255, 255));
 		tuto_31.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_31);
@@ -941,7 +941,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_31.setVisible(false); // 31페이지 끝===============================================================
 
 		tuto_32 = new JPanel(); // 32페이지 시작 ================================================================
-		ImageIcon scene32 = new ImageIcon("튜토리얼_31.png");
+		ImageIcon scene32 = new ImageIcon("src/image/튜토리얼_31.png");
 		tuto_32.setBackground(new Color(255, 255, 255));
 		tuto_32.setBounds(0, 0, 684, 561);
 		frame.getContentPane().add(tuto_32);

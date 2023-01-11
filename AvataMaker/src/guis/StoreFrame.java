@@ -54,7 +54,7 @@ public class StoreFrame {
 	public void customcursor() { // 마우스포인터 ====================================
 
 		Toolkit tk = Toolkit.getDefaultToolkit();
-		Image cursorimage = tk.getImage("대형견_커서.png");
+		Image cursorimage = tk.getImage("src/image/대형견_커서.png");
 		Point point = new Point(0, 0);
 		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
 		frame.setCursor(cursor);
@@ -70,7 +70,7 @@ public class StoreFrame {
 		
 		String a = "목도리.png";	
 		String c = "요리사.png";
-		String d = "조리도구.png";
+		String d = "조리기구.png";
 		String e = "앞치마.png";
 		String f = "튜브.png";
 		String g = "사슴뿔.png";
@@ -89,27 +89,27 @@ public class StoreFrame {
 		onoff.avatarGet(main.user_pk);
 	
 		
-		ImageIcon 배경 = new ImageIcon("미리보기"+ main.avatar.avatarOnFinding(main.user_pk, "배경"));
-		ImageIcon 얼굴 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "얼굴"));  // 캐릭터 옷 아이콘 =================
-		ImageIcon 악세서리 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "악세사리"));
-		ImageIcon 상의 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "옷")); // =======================
-		ImageIcon 상점캐릭터 = new ImageIcon("농담곰_상점_기본.png");
-		ImageIcon 목도리 = new ImageIcon( onoff.findGetAva(a));
-		ImageIcon 요리사 = new ImageIcon(onoff.findGetAva(c));
-		ImageIcon 조리기구 = new ImageIcon(onoff.findGetAva(d));
-		ImageIcon 앞치마 = new ImageIcon(onoff.findGetAva(e));
-		ImageIcon 튜브 = new ImageIcon(onoff.findGetAva(f));
-		ImageIcon 사슴뿔 = new ImageIcon(onoff.findGetAva(g));
-		ImageIcon 썬글라스 = new ImageIcon(onoff.findGetAva(h));
-		ImageIcon 겨울배경 = new ImageIcon(onoff.findGetAva(i));
-		ImageIcon 용사검 = new ImageIcon(onoff.findGetAva(j));
-		ImageIcon 용사투구 = new ImageIcon(onoff.findGetAva(k));
-		ImageIcon 용사갑옷 = new ImageIcon(onoff.findGetAva(l));
-		ImageIcon 물총 = new ImageIcon(onoff.findGetAva(m));
-		ImageIcon 고구마 = new ImageIcon(onoff.findGetAva(n));
-		ImageIcon 용사의방 = new ImageIcon(onoff.findGetAva(o));
-		ImageIcon 여름 = new ImageIcon(onoff.findGetAva(p));
-		ImageIcon 주방 = new ImageIcon(onoff.findGetAva(q));
+		ImageIcon 배경 = new ImageIcon("src/image/미리보기"+ main.avatar.avatarOnFinding(main.user_pk, "배경"));
+		ImageIcon 얼굴 = new ImageIcon("src/image/미리보기" + main.avatar.avatarOnFinding(main.user_pk, "얼굴"));  // 캐릭터 옷 아이콘 =================
+		ImageIcon 악세서리 = new ImageIcon("src/image/미리보기" + main.avatar.avatarOnFinding(main.user_pk, "악세사리"));
+		ImageIcon 상의 = new ImageIcon("src/image/미리보기" + main.avatar.avatarOnFinding(main.user_pk, "옷")); // =======================
+		ImageIcon 상점캐릭터 = new ImageIcon("src/image/농담곰_상점_기본.png");
+		ImageIcon 목도리 = new ImageIcon("src/image/" + onoff.findGetAva(a));
+		ImageIcon 요리사 = new ImageIcon("src/image/" + onoff.findGetAva(c));
+		ImageIcon 조리기구 = new ImageIcon("src/image/" + onoff.findGetAva(d));
+		ImageIcon 앞치마 = new ImageIcon("src/image/" + onoff.findGetAva(e));
+		ImageIcon 튜브 = new ImageIcon("src/image/" + onoff.findGetAva(f));
+		ImageIcon 사슴뿔 = new ImageIcon("src/image/" + onoff.findGetAva(g));
+		ImageIcon 썬글라스 = new ImageIcon("src/image/" + onoff.findGetAva(h));
+		ImageIcon 겨울배경 = new ImageIcon("src/image/" + onoff.findGetAva(i));
+		ImageIcon 용사검 = new ImageIcon("src/image/" + onoff.findGetAva(j));
+		ImageIcon 용사투구 = new ImageIcon("src/image/" + onoff.findGetAva(k));
+		ImageIcon 용사갑옷 = new ImageIcon("src/image/" + onoff.findGetAva(l));
+		ImageIcon 물총 = new ImageIcon("src/image/" + onoff.findGetAva(m));
+		ImageIcon 고구마 = new ImageIcon("src/image/" + onoff.findGetAva(n));
+		ImageIcon 용사의방 = new ImageIcon("src/image/" + onoff.findGetAva(o));
+		ImageIcon 여름 = new ImageIcon("src/image/" + onoff.findGetAva(p));
+		ImageIcon 주방 = new ImageIcon("src/image/" + onoff.findGetAva(q));
 
 		JButton btnNewButton_1 = new JButton("목도리.png");
 		btnNewButton_1.setIcon(목도리);
@@ -525,7 +525,7 @@ public class StoreFrame {
         
         
         
-		ImageIcon 이전으로 = new ImageIcon("이전으로_상점.png");
+		ImageIcon 이전으로 = new ImageIcon("src/image/이전으로_상점.png");
 		JButton 이전창버튼 = new JButton(이전으로);
 		이전창버튼.setContentAreaFilled(false);
 		이전창버튼.setBorderPainted(false);
