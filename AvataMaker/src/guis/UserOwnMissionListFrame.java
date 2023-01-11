@@ -14,7 +14,10 @@ import java.awt.Cursor;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
+
 import java.awt.event.ActionListener;
 import java.util.List;
 import java.awt.event.ActionEvent;
@@ -78,7 +81,9 @@ public class UserOwnMissionListFrame {
       GetInfo mf= new GetInfo();
       int user_pk = mf.fuserpk;
 //      int user_pk = 1;
-
+      
+      UIManager.put("OptionPane.messageFont", (new Font("경기천년제목 Bold", Font.PLAIN, 15)));
+      UIManager.put("OptionPane.buttonFont", (new Font("경기천년제목 Bold", Font.PLAIN, 15)));
       
       frame = new JFrame();
       frame.setTitle("보유미션");
