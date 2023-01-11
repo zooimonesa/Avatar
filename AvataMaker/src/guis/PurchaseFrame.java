@@ -94,11 +94,9 @@ public class PurchaseFrame {
 		JButton buyButton = new JButton("구입하기");
 		buyButton.setBounds(299, 417, 90, 23);
 		
-		avatar.byAvatar(main.mainnickname,  avatarName);
-		avatar.insertCopy(main.mainnickname , avatarName);
-		System.out.println(main.mainnickname);
-		System.out.println(avatarName);
 		
+		
+		avatar.MyPointByAvatar(main.mainnickname, avatarName);
 		frame.getContentPane().add(buyButton);
 		if(go == false) {
 		buyButton.setEnabled(go);

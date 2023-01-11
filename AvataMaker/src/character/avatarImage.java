@@ -63,8 +63,8 @@ public interface avatarImage {
 	// 같은 부위에 착용중인 친구 있으면 해제하고 착용하기 
    void onSearching(int user_pk, String name, String type);
 	 
-	 
-	 
+  //내 돈이랑 아바타 포인트 비교해서 구매 가능한지 확인	 
+    void MyPointByAvatar( String nickname , String name);
 //	// 이미지 순서(자리) 잡아주는 메소드
 //	void imagePosition(String imageName);
 //	//p.setComponentZOrder(변수이름, 1 이미지 순서); (이미지 레이어 지정 해주는 메소드)
