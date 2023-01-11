@@ -218,7 +218,8 @@ public class PurchaseFrame {
       buyButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
 
-            avatar.insertCopy(main.mainnickname, avatarName);
+            
+            avatar.MyPointByAvatar(main.mainnickname, avatarName);
             gougou = true;
             gou = false;
             StoreFrame sf = new StoreFrame();
