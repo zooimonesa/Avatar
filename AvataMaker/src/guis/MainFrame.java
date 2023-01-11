@@ -1,9 +1,11 @@
 package guis;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.EventQueue;
 import java.awt.Image;
+import java.awt.Insets;
 import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -16,6 +18,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
 import User.GetInfo;
@@ -25,6 +28,7 @@ import character.avatarImageImpl;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import java.awt.Font;
+import java.awt.Graphics;
 
 public class MainFrame {
 
@@ -49,7 +53,6 @@ public class MainFrame {
 	private LineBorder bb = new LineBorder(Color.black, 1, true);
 
 	public static void main(String[] args) {
-		
 		UIManager.put("OptionPane.messageFont", (new Font("경기천년제목 Bold", Font.PLAIN, 15)));
 	    UIManager.put("OptionPane.buttonFont", (new Font("경기천년제목 Bold", Font.PLAIN, 15)));
 	    
@@ -113,7 +116,7 @@ public class MainFrame {
 		ImageIcon 재능0 = new ImageIcon("재능_0.png");
 
 		JLabel nickNameLabel = new JLabel(mainnickname);
-		nickNameLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 20));
+		nickNameLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		nickNameLabel.setBackground(new Color(255, 255, 255));
 		nickNameLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		nickNameLabel.setBounds(315, 40, 424, 35);
@@ -239,6 +242,7 @@ public class MainFrame {
 		missionPoint.setBorderPainted(false);
 		missionPoint.setContentAreaFilled(false);
 		missionPoint.setBounds(315, 291, 97, 60);
+		missionPoint.setBorder(bb);
 		frame.getContentPane().add(missionPoint);
 
 		JButton storePoint = new JButton(상점버튼);
@@ -290,7 +294,7 @@ public class MainFrame {
 		});
 		logOutButton.setBorderPainted(false);
 		logOutButton.setContentAreaFilled(false);
-		logOutButton.setBounds(642, 291, 97, 60);
+		logOutButton.setBounds(533, 406, 97, 60);
 		frame.getContentPane().add(logOutButton);
 
 		JButton deleteUserInfo = new JButton(회원탈퇴);
@@ -345,7 +349,7 @@ public class MainFrame {
 		});
 		rankingButton.setBorderPainted(false);
 		rankingButton.setContentAreaFilled(false);
-		rankingButton.setBounds(315, 401, 97, 60);
+		rankingButton.setBounds(642, 291, 97, 60);
 		frame.getContentPane().add(rankingButton); // ===========================================================
 
 		JButton tutoButton = new JButton(튜토리얼); // 튜토리얼 버튼 ===================================
