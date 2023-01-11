@@ -1,5 +1,6 @@
 package guis;
 
+
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.EventQueue;
@@ -159,7 +160,8 @@ public class Tuto implements ActionListener, ItemListener {
 //		});
 		
 		JButton 미션튜토 = new JButton("미션 등록과 수행");
-		미션튜토.setBackground(new Color(0, 255, 255));
+		미션튜토.setForeground(new Color(255, 255, 255));
+		미션튜토.setBackground(new Color(0, 64, 128));
 		미션튜토.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		미션튜토.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -171,7 +173,8 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_3.add(미션튜토);
 		
 		JButton 상점튜토 = new JButton("상점과 상품구매");
-		상점튜토.setBackground(new Color(0, 255, 255));
+		상점튜토.setForeground(new Color(255, 255, 255));
+		상점튜토.setBackground(new Color(0, 64, 128));
 		상점튜토.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		상점튜토.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -183,7 +186,8 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_3.add(상점튜토);
 		
 		JButton 랭킹튜토 = new JButton("랭킹순위");
-		랭킹튜토.setBackground(new Color(0, 255, 255));
+		랭킹튜토.setForeground(new Color(255, 255, 255));
+		랭킹튜토.setBackground(new Color(0, 64, 128));
 		랭킹튜토.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		랭킹튜토.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -195,7 +199,8 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_3.add(랭킹튜토);
 		
 		JButton 탈퇴튜토 = new JButton("회원탈퇴");
-		탈퇴튜토.setBackground(new Color(0, 255, 255));
+		탈퇴튜토.setForeground(new Color(255, 255, 255));
+		탈퇴튜토.setBackground(new Color(0, 64, 128));
 		탈퇴튜토.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		탈퇴튜토.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -207,7 +212,8 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_3.add(탈퇴튜토);
 		
 		JButton 튜토끝 = new JButton("괜찮아.");
-		튜토끝.setBackground(new Color(0, 255, 255));
+		튜토끝.setForeground(new Color(255, 255, 255));
+		튜토끝.setBackground(new Color(0, 64, 128));
 		튜토끝.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tuto_36.setVisible(true);
@@ -246,7 +252,8 @@ public class Tuto implements ActionListener, ItemListener {
 //		});
 		
 		JButton 미션튜토2 = new JButton("미션 등록과 수행");
-		미션튜토2.setBackground(new Color(0, 255, 255));
+		미션튜토2.setForeground(new Color(255, 255, 255));
+		미션튜토2.setBackground(new Color(0, 64, 128));
 		미션튜토2.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		미션튜토2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -258,7 +265,8 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_4.add(미션튜토2);
 		
 		JButton 상점튜토2 = new JButton("상점과 상품구매");
-		상점튜토2.setBackground(new Color(0, 255, 255));
+		상점튜토2.setForeground(new Color(255, 255, 255));
+		상점튜토2.setBackground(new Color(0, 64, 128));
 		상점튜토2.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		상점튜토2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -270,7 +278,8 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_4.add(상점튜토2);
 		
 		JButton 랭킹튜토2 = new JButton("랭킹순위");
-		랭킹튜토2.setBackground(new Color(0, 255, 255));
+		랭킹튜토2.setForeground(new Color(255, 255, 255));
+		랭킹튜토2.setBackground(new Color(0, 64, 128));
 		랭킹튜토2.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		랭킹튜토2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -282,7 +291,8 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_4.add(랭킹튜토2);
 		
 		JButton 탈퇴튜토2 = new JButton("회원탈퇴");
-		탈퇴튜토2.setBackground(new Color(0, 255, 255));
+		탈퇴튜토2.setForeground(new Color(255, 255, 255));
+		탈퇴튜토2.setBackground(new Color(0, 64, 128));
 		탈퇴튜토2.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		탈퇴튜토2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -294,7 +304,8 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto_4.add(탈퇴튜토2);
 		
 		JButton 튜토끝2 = new JButton("괜찮아.");
-		튜토끝2.setBackground(new Color(0, 255, 255));
+		튜토끝2.setForeground(new Color(255, 255, 255));
+		튜토끝2.setBackground(new Color(0, 64, 128));
 		튜토끝2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tuto_36.setVisible(true);
