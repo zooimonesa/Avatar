@@ -125,7 +125,7 @@ public class MainFrame {
 		frame.getContentPane().add(nickNameLabel);
 
 		JTextPane storyLabel = new JTextPane();// 태현고침
-		storyLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+		storyLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 13));
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < avatar.storyOn(user_pk).size(); i++) {
 			sb.append(String.valueOf(avatar.storyOn(user_pk).get(i)));
