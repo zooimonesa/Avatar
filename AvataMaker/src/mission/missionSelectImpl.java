@@ -312,7 +312,7 @@ public class missionSelectImpl implements missionSelect{
 		LocalDateTime dday = today.plusDays(7);
 		String endDay = dday.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 		
-		String sql = "UPDATE user_missions SET progress = ? WHERE mission = ? and user_pk = ?";
+		String sql = "UPDATE user_missions SET progress = ? WHERE mission = ? and user_pk = ? and term = 7";
 		try (Connection conn = ConnectionProvider.makeConnection();
 				PreparedStatement stmt = conn.prepareStatement(sql)) {
 			stmt.setString(1, endDay);
@@ -329,7 +329,7 @@ public class missionSelectImpl implements missionSelect{
 	
 	// 미션종료 날짜 Dday로 알려주기
 	public String userMissionEndDay(int user_pk, String mission) {
-		String sql = "SELECT * FROM user_missions WHERE mission = ? and user_pk = ?";
+		String sql = "SELECT * FROM user_missions WHERE mission = ? and user_pk = ? and term = 7";
 		String userDday = null;
 		try (Connection conn = ConnectionProvider.makeConnection();
 				PreparedStatement stmt = conn.prepareStatement(sql)) {

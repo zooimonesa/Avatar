@@ -288,7 +288,7 @@ public class MissionListFrame {
     				  		// 미션 등록
     				  		mis.insertMission(user_pk, selectB, oneDayMissionLabel1_T.getText(), term);
     				  		mis.missionLog(user_pk, oneDayMissionLabel1_T.getText(), state);
-    				  		mis.userMissionProgress(user_pk, text1);
+    				  		mis.userMissionProgress(user_pk, oneDayMissionLabel1_T.getText());
     				  		JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);   
     				  		// 새로운 미션
     				  		oneDayMissionLabel1_T.setText(text1);
