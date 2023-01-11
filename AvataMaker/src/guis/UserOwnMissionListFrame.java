@@ -93,10 +93,10 @@ public class UserOwnMissionListFrame {
 
 		JPanel oneDayMissionPanel = new JPanel(); // 일일미션패널 ====================================================
 		oneDayMissionPanel.setBackground(new Color(255, 255, 255));
-		oneDayMissionPanel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		oneDayMissionPanel.setToolTipText("");
 		oneDayMissionPanel
 				.setBorder(new TitledBorder(null, "일일미션", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		((javax.swing.border.TitledBorder) oneDayMissionPanel.getBorder()).setTitleFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		oneDayMissionPanel.setBounds(6, 33, 443, 258);
 		frame.getContentPane().add(oneDayMissionPanel);
 		oneDayMissionPanel.setLayout(null);
@@ -191,6 +191,7 @@ public class UserOwnMissionListFrame {
 		oneWeekMissionPanel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		oneWeekMissionPanel
 				.setBorder(new TitledBorder(null, "주간미션", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		((javax.swing.border.TitledBorder) oneWeekMissionPanel.getBorder()).setTitleFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		oneWeekMissionPanel.setBounds(6, 301, 443, 142);
 		frame.getContentPane().add(oneWeekMissionPanel);
 		oneWeekMissionPanel.setLayout(null);
@@ -305,7 +306,7 @@ public class UserOwnMissionListFrame {
 				frame.dispose();
 			}
 		});
-		btnNewButton_10.setBounds(170, 460, 117, 23);
+		btnNewButton_10.setBounds(170, 463, 117, 27);
 		frame.getContentPane().add(btnNewButton_10);
 		frame.setBounds(100, 100, 471, 545);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
