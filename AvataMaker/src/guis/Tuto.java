@@ -53,6 +53,12 @@ public class Tuto implements ActionListener, ItemListener {
 	private JPanel tuto_30;
 	private JPanel tuto_31;
 	private JPanel tuto_32;
+	private JPanel tuto_33;
+	private JPanel tuto_34;
+	private JPanel tuto_35;
+	private JPanel tuto_36;
+	private JPanel tuto_37;
+	private JPanel tuto_38;
 
 	public Tuto() {
 		initialize();
@@ -138,20 +144,80 @@ public class Tuto implements ActionListener, ItemListener {
 		frame.getContentPane().add(tuto_3);
 		tuto_3.setLayout(null);
 
-		ImageIcon next3 = new ImageIcon("");
-		JButton tuto3Next = new JButton(next3); // 다음페이지 버튼
-		tuto3Next.setBorderPainted(false);
-		tuto3Next.setContentAreaFilled(false);
-		tuto3Next.setFocusPainted(false);
-		tuto3Next.setBounds(0, 0, 684, 561);
-		tuto3Next.addActionListener(new ActionListener() {
+//		ImageIcon next3 = new ImageIcon("");
+//		JButton tuto3Next = new JButton(next3); // 다음페이지 버튼
+//		tuto3Next.setBorderPainted(false);
+//		tuto3Next.setContentAreaFilled(false);
+//		tuto3Next.setFocusPainted(false);
+//		tuto3Next.setBounds(0, 0, 684, 561);
+//		tuto3Next.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				tuto_4.setVisible(true);
+//				tuto_3.setVisible(false);
+//				System.out.println("다음으로");
+//			}
+//		});
+		
+		JButton 미션튜토 = new JButton("미션 등록과 수행");
+		미션튜토.setBackground(new Color(0, 255, 255));
+		미션튜토.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+		미션튜토.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tuto_4.setVisible(true);
+				tuto_5.setVisible(true);
 				tuto_3.setVisible(false);
-				System.out.println("다음으로");
 			}
 		});
-		tuto_3.add(tuto3Next);
+		미션튜토.setBounds(21, 64, 135, 107);
+		tuto_3.add(미션튜토);
+		
+		JButton 상점튜토 = new JButton("상점과 상품구매");
+		상점튜토.setBackground(new Color(0, 255, 255));
+		상점튜토.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+		상점튜토.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tuto_23.setVisible(true);
+				tuto_3.setVisible(false);
+			}
+		});
+		상점튜토.setBounds(188, 64, 135, 107);
+		tuto_3.add(상점튜토);
+		
+		JButton 랭킹튜토 = new JButton("랭킹순위");
+		랭킹튜토.setBackground(new Color(0, 255, 255));
+		랭킹튜토.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+		랭킹튜토.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tuto_27.setVisible(true);
+				tuto_3.setVisible(false);
+			}
+		});
+		랭킹튜토.setBounds(354, 64, 135, 107);
+		tuto_3.add(랭킹튜토);
+		
+		JButton 탈퇴튜토 = new JButton("회원탈퇴");
+		탈퇴튜토.setBackground(new Color(0, 255, 255));
+		탈퇴튜토.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+		탈퇴튜토.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tuto_30.setVisible(true);
+				tuto_3.setVisible(false);
+			}
+		});
+		탈퇴튜토.setBounds(519, 64, 135, 107);
+		tuto_3.add(탈퇴튜토);
+		
+		JButton 튜토끝 = new JButton("괜찮아.");
+		튜토끝.setBackground(new Color(0, 255, 255));
+		튜토끝.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tuto_36.setVisible(true);
+				tuto_3.setVisible(false);
+			}
+		});
+		튜토끝.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+		튜토끝.setBounds(225, 510, 227, 35);
+		tuto_3.add(튜토끝);
+//		tuto_3.add(tuto3Next);
 		JLabel screen3 = new JLabel(scene3); // 이미지
 		screen3.setBounds(0, 0, 684, 561);
 
@@ -165,20 +231,80 @@ public class Tuto implements ActionListener, ItemListener {
 		frame.getContentPane().add(tuto_4);
 		tuto_4.setLayout(null);
 
-		ImageIcon next4 = new ImageIcon("");
-		JButton tuto4Next = new JButton(next4); // 다음페이지 버튼
-		tuto4Next.setBorderPainted(false);
-		tuto4Next.setContentAreaFilled(false);
-		tuto4Next.setFocusPainted(false);
-		tuto4Next.setBounds(0, 0, 684, 561);
-		tuto4Next.addActionListener(new ActionListener() {
+//		ImageIcon next4 = new ImageIcon("");
+//		JButton tuto4Next = new JButton(next4); // 다음페이지 버튼
+//		tuto4Next.setBorderPainted(false);
+//		tuto4Next.setContentAreaFilled(false);
+//		tuto4Next.setFocusPainted(false);
+//		tuto4Next.setBounds(0, 0, 684, 561);
+//		tuto4Next.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				tuto_5.setVisible(true);
+//				tuto_4.setVisible(false);
+//				System.out.println("다음으로");
+//			}
+//		});
+		
+		JButton 미션튜토2 = new JButton("미션 등록과 수행");
+		미션튜토2.setBackground(new Color(0, 255, 255));
+		미션튜토2.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+		미션튜토2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tuto_5.setVisible(true);
 				tuto_4.setVisible(false);
-				System.out.println("다음으로");
 			}
 		});
-		tuto_4.add(tuto4Next);
+		미션튜토2.setBounds(21, 64, 135, 107);
+		tuto_4.add(미션튜토2);
+		
+		JButton 상점튜토2 = new JButton("상점과 상품구매");
+		상점튜토2.setBackground(new Color(0, 255, 255));
+		상점튜토2.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+		상점튜토2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tuto_23.setVisible(true);
+				tuto_4.setVisible(false);
+			}
+		});
+		상점튜토2.setBounds(188, 64, 135, 107);
+		tuto_4.add(상점튜토2);
+		
+		JButton 랭킹튜토2 = new JButton("랭킹순위");
+		랭킹튜토2.setBackground(new Color(0, 255, 255));
+		랭킹튜토2.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+		랭킹튜토2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tuto_27.setVisible(true);
+				tuto_4.setVisible(false);
+			}
+		});
+		랭킹튜토2.setBounds(354, 64, 135, 107);
+		tuto_4.add(랭킹튜토2);
+		
+		JButton 탈퇴튜토2 = new JButton("회원탈퇴");
+		탈퇴튜토2.setBackground(new Color(0, 255, 255));
+		탈퇴튜토2.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+		탈퇴튜토2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tuto_30.setVisible(true);
+				tuto_4.setVisible(false);
+			}
+		});
+		탈퇴튜토2.setBounds(519, 64, 135, 107);
+		tuto_4.add(탈퇴튜토2);
+		
+		JButton 튜토끝2 = new JButton("괜찮아.");
+		튜토끝2.setBackground(new Color(0, 255, 255));
+		튜토끝2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tuto_36.setVisible(true);
+				tuto_4.setVisible(false);
+			}
+		});
+		튜토끝2.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+		튜토끝2.setBounds(225, 510, 227, 35);
+		tuto_4.add(튜토끝2);
+//		tuto_4.add(tuto4Next);
 		JLabel screen4 = new JLabel(scene4); // 이미지
 		screen4.setBounds(0, 0, 684, 561);
 
@@ -659,7 +785,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto22Next.setBounds(0, 0, 684, 561);
 		tuto22Next.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tuto_23.setVisible(true);
+				tuto_4.setVisible(true);
 				tuto_22.setVisible(false);
 				System.out.println("다음으로");
 			}
@@ -705,46 +831,23 @@ public class Tuto implements ActionListener, ItemListener {
 		frame.getContentPane().add(tuto_24);
 		tuto_24.setLayout(null);
 
-		JButton btnNewButton = new JButton("응.");
-		btnNewButton.setBackground(new Color(186, 184, 254));
-		btnNewButton.addActionListener(new ActionListener() {
+		
+
+
+		ImageIcon next24 = new ImageIcon("");
+		JButton tuto24Next = new JButton(next24); // 다음페이지 버튼
+		tuto24Next.setBorderPainted(false);
+		tuto24Next.setContentAreaFilled(false);
+		tuto24Next.setFocusPainted(false);
+		tuto24Next.setBounds(0, 0, 684, 561);
+		tuto24Next.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tuto_25.setVisible(true);
 				tuto_24.setVisible(false);
 				System.out.println("다음으로");
 			}
 		});
-		btnNewButton.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 20));
-		btnNewButton.setBounds(418, 279, 210, 65);
-		tuto_24.add(btnNewButton);
-
-		JButton btnNewButton_1 = new JButton("아니.");
-		btnNewButton_1.setBackground(new Color(186, 184, 254));
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				tuto_30.setVisible(true);
-				tuto_24.setVisible(false);
-				System.out.println("다음으로");
-			}
-		});
-		btnNewButton_1.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 20));
-		btnNewButton_1.setBounds(418, 380, 210, 65);
-		tuto_24.add(btnNewButton_1);
-
-//		ImageIcon next24 = new ImageIcon("");
-//		JButton tuto24Next = new JButton(next24); // 다음페이지 버튼
-//		tuto24Next.setBorderPainted(false);
-//		tuto24Next.setContentAreaFilled(false);
-//		tuto24Next.setFocusPainted(false);
-//		tuto24Next.setBounds(0, 0, 684, 561);
-//		tuto24Next.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				tuto_25.setVisible(true);
-//				tuto_24.setVisible(false);
-//				System.out.println("다음으로");
-//			}
-//		});
-//		tuto_24.add(tuto24Next);
+		tuto_24.add(tuto24Next);
 		JLabel screen24 = new JLabel(scene24); // 이미지
 		screen24.setBounds(0, 0, 684, 561);
 
@@ -793,7 +896,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto26Next.setBounds(0, 0, 684, 561);
 		tuto26Next.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tuto_27.setVisible(true);
+				tuto_4.setVisible(true);
 				tuto_26.setVisible(false);
 				System.out.println("다음으로");
 			}
@@ -874,7 +977,7 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto29Next.setBounds(0, 0, 684, 561);
 		tuto29Next.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tuto_30.setVisible(true);
+				tuto_4.setVisible(true);
 				tuto_29.setVisible(false);
 				System.out.println("다음으로");
 			}
@@ -955,9 +1058,8 @@ public class Tuto implements ActionListener, ItemListener {
 		tuto32Next.setBounds(0, 0, 684, 561);
 		tuto32Next.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				tuto_31.setVisible(true);
-//				tuto_30.setVisible(false);
-				frame.dispose();
+				tuto_33.setVisible(true);
+				tuto_32.setVisible(false);
 			}
 		});
 		tuto_32.add(tuto32Next);
@@ -966,6 +1068,163 @@ public class Tuto implements ActionListener, ItemListener {
 
 		tuto_32.add(screen32);
 		tuto_32.setVisible(false); // 32페이지 끝===============================================================
+		
+		tuto_33 = new JPanel(); // 33페이지 시작 ================================================================
+		ImageIcon scene33 = new ImageIcon("src/image/튜토리얼_32.png");
+		tuto_33.setBackground(new Color(255, 255, 255));
+		tuto_33.setBounds(0, 0, 684, 561);
+		frame.getContentPane().add(tuto_33);
+		tuto_33.setLayout(null);
+
+		ImageIcon next33 = new ImageIcon("");
+		JButton tuto33Next = new JButton(next33); // 다음페이지 버튼
+		tuto33Next.setBorderPainted(false);
+		tuto33Next.setContentAreaFilled(false);
+		tuto33Next.setFocusPainted(false);
+		tuto33Next.setBounds(0, 0, 684, 561);
+		tuto33Next.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tuto_34.setVisible(true);
+				tuto_33.setVisible(false);
+			}
+		});
+		tuto_33.add(tuto33Next);
+		JLabel screen33 = new JLabel(scene33); // 이미지
+		screen33.setBounds(0, 0, 684, 561);
+
+		tuto_33.add(screen33);
+		tuto_33.setVisible(false); // 33페이지 끝===============================================================
+		
+		tuto_34 = new JPanel(); // 34페이지 시작 ================================================================
+		ImageIcon scene34 = new ImageIcon("src/image/튜토리얼_33.png");
+		tuto_34.setBackground(new Color(255, 255, 255));
+		tuto_34.setBounds(0, 0, 684, 561);
+		frame.getContentPane().add(tuto_34);
+		tuto_34.setLayout(null);
+
+		ImageIcon next34 = new ImageIcon("");
+		JButton tuto34Next = new JButton(next34); // 다음페이지 버튼
+		tuto34Next.setBorderPainted(false);
+		tuto34Next.setContentAreaFilled(false);
+		tuto34Next.setFocusPainted(false);
+		tuto34Next.setBounds(0, 0, 684, 561);
+		tuto34Next.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tuto_35.setVisible(true);
+				tuto_34.setVisible(false);
+			}
+		});
+		tuto_34.add(tuto34Next);
+		JLabel screen34 = new JLabel(scene34); // 이미지
+		screen34.setBounds(0, 0, 684, 561);
+
+		tuto_34.add(screen34);
+		tuto_34.setVisible(false); // 34페이지 끝===============================================================
+		
+		tuto_35 = new JPanel(); // 35페이지 시작 ================================================================
+		ImageIcon scene35 = new ImageIcon("src/image/튜토리얼_34.png");
+		tuto_35.setBackground(new Color(255, 255, 255));
+		tuto_35.setBounds(0, 0, 684, 561);
+		frame.getContentPane().add(tuto_35);
+		tuto_35.setLayout(null);
+
+		ImageIcon next35 = new ImageIcon("");
+		JButton tuto35Next = new JButton(next34); // 다음페이지 버튼
+		tuto35Next.setBorderPainted(false);
+		tuto35Next.setContentAreaFilled(false);
+		tuto35Next.setFocusPainted(false);
+		tuto35Next.setBounds(0, 0, 684, 561);
+		tuto35Next.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tuto_4.setVisible(true);
+				tuto_35.setVisible(false);
+			}
+		});
+		tuto_35.add(tuto35Next);
+		JLabel screen35 = new JLabel(scene35); // 이미지
+		screen35.setBounds(0, 0, 684, 561);
+
+		tuto_35.add(screen35);
+		tuto_35.setVisible(false); // 35페이지 끝===============================================================
+		
+		tuto_36 = new JPanel(); // 36페이지 시작 ================================================================
+		ImageIcon scene36 = new ImageIcon("src/image/튜토리얼_35.png");
+		tuto_36.setBackground(new Color(255, 255, 255));
+		tuto_36.setBounds(0, 0, 684, 561);
+		frame.getContentPane().add(tuto_36);
+		tuto_36.setLayout(null);
+
+		ImageIcon next36 = new ImageIcon("");
+		JButton tuto36Next = new JButton(next36); // 다음페이지 버튼
+		tuto36Next.setBorderPainted(false);
+		tuto36Next.setContentAreaFilled(false);
+		tuto36Next.setFocusPainted(false);
+		tuto36Next.setBounds(0, 0, 684, 561);
+		tuto36Next.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tuto_37.setVisible(true);
+				tuto_36.setVisible(false);
+			}
+		});
+		tuto_36.add(tuto36Next);
+		JLabel screen36 = new JLabel(scene36); // 이미지
+		screen36.setBounds(0, 0, 684, 561);
+
+		tuto_36.add(screen36);
+		tuto_36.setVisible(false); // 36페이지 끝===============================================================
+		
+		tuto_37 = new JPanel(); // 37페이지 시작 ================================================================
+		ImageIcon scene37 = new ImageIcon("src/image/튜토리얼_36.png");
+		tuto_37.setBackground(new Color(255, 255, 255));
+		tuto_37.setBounds(0, 0, 684, 561);
+		frame.getContentPane().add(tuto_37);
+		tuto_37.setLayout(null);
+
+		ImageIcon next37 = new ImageIcon("");
+		JButton tuto37Next = new JButton(next37); // 다음페이지 버튼
+		tuto37Next.setBorderPainted(false);
+		tuto37Next.setContentAreaFilled(false);
+		tuto37Next.setFocusPainted(false);
+		tuto37Next.setBounds(0, 0, 684, 561);
+		tuto37Next.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tuto_38.setVisible(true);
+				tuto_37.setVisible(false);
+			}
+		});
+		tuto_37.add(tuto37Next);
+		JLabel screen37 = new JLabel(scene37); // 이미지
+		screen37.setBounds(0, 0, 684, 561);
+
+		tuto_37.add(screen37);
+		tuto_37.setVisible(false); // 37페이지 끝===============================================================
+		
+		tuto_38 = new JPanel(); // 38페이지 시작 ================================================================
+		ImageIcon scene38 = new ImageIcon("src/image/튜토리얼_37.png");
+		tuto_38.setBackground(new Color(255, 255, 255));
+		tuto_38.setBounds(0, 0, 684, 561);
+		frame.getContentPane().add(tuto_38);
+		tuto_38.setLayout(null);
+
+		ImageIcon next38 = new ImageIcon("");
+		JButton tuto38Next = new JButton(next38); // 다음페이지 버튼
+		tuto38Next.setBorderPainted(false);
+		tuto38Next.setContentAreaFilled(false);
+		tuto38Next.setFocusPainted(false);
+		tuto38Next.setBounds(0, 0, 684, 561);
+		tuto38Next.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+//				tuto_39.setVisible(true);
+//				tuto_38.setVisible(false);
+				frame.dispose();
+			}
+		});
+		tuto_38.add(tuto38Next);
+		JLabel screen38 = new JLabel(scene38); // 이미지
+		screen38.setBounds(0, 0, 684, 561);
+
+		tuto_38.add(screen38);
+		tuto_38.setVisible(false); // 38페이지 끝===============================================================
 
 	}
 
