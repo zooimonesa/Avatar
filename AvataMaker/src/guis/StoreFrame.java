@@ -24,6 +24,7 @@ import javax.swing.border.LineBorder;
 
 import character.avatarImageImpl;
 import character.onOff;
+import java.awt.Font;
 
 public class StoreFrame {
 	
@@ -112,6 +113,7 @@ public class StoreFrame {
 		ImageIcon 주방 = new ImageIcon("src/image/" + onoff.findGetAva(q));
 
 		JButton btnNewButton_1 = new JButton("목도리.png");
+		btnNewButton_1.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnNewButton_1.setIcon(목도리);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -150,6 +152,7 @@ public class StoreFrame {
 		
 
 		JButton btnNewButton_1_1 = new JButton(튜브);
+		btnNewButton_1_1.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnNewButton_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -174,6 +177,7 @@ public class StoreFrame {
 		frame.getContentPane().add(btnNewButton_1_1);
 
 		JButton btnNewButton_1_2 = new JButton();
+		btnNewButton_1_2.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnNewButton_1_2.setIcon(앞치마);
 		btnNewButton_1_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -197,6 +201,7 @@ public class StoreFrame {
 		frame.getContentPane().add(btnNewButton_1_2);
 
 		JButton btnNewButton_1_3 = new JButton();
+		btnNewButton_1_3.setBorder(new LineBorder(new Color(0, 0, 0)));
 		 btnNewButton_1_3.setIcon(용사갑옷);
 		
 		btnNewButton_1_3.addActionListener(new ActionListener() {
@@ -220,6 +225,7 @@ public class StoreFrame {
 		frame.getContentPane().add(btnNewButton_1_3);
 
 		JButton btnNewButton_1_4 = new JButton();
+		btnNewButton_1_4.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnNewButton_1_4.setIcon(사슴뿔);
 		btnNewButton_1_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -241,6 +247,7 @@ public class StoreFrame {
 		frame.getContentPane().add(btnNewButton_1_4);
 
 		JButton btnNewButton_1_1_1 = new JButton();
+		btnNewButton_1_1_1.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnNewButton_1_1_1.setIcon(썬글라스);
 	
 		btnNewButton_1_1_1.addActionListener(new ActionListener() {
@@ -264,6 +271,7 @@ public class StoreFrame {
 		frame.getContentPane().add(btnNewButton_1_1_1);
 
 		JButton btnNewButton_1_2_1 = new JButton();
+		btnNewButton_1_2_1.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnNewButton_1_2_1.setIcon(요리사);
 		btnNewButton_1_2_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -286,6 +294,7 @@ public class StoreFrame {
 		frame.getContentPane().add(btnNewButton_1_2_1);
 
 		JButton btnNewButton_1_3_1 = new JButton();
+		btnNewButton_1_3_1.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnNewButton_1_3_1.setIcon(용사투구);
 		btnNewButton_1_3_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -308,6 +317,7 @@ public class StoreFrame {
 		frame.getContentPane().add(btnNewButton_1_3_1);
 
 		JButton btnNewButton_1_5 = new JButton();
+		btnNewButton_1_5.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnNewButton_1_5.setIcon(고구마);
 	
 		btnNewButton_1_5.addActionListener(new ActionListener() {
@@ -332,6 +342,7 @@ public class StoreFrame {
 		frame.getContentPane().add(btnNewButton_1_5);
 
 		JButton btnNewButton_1_1_2 = new JButton();
+		btnNewButton_1_1_2.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnNewButton_1_1_2.setIcon(물총);
 		btnNewButton_1_1_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -354,6 +365,7 @@ public class StoreFrame {
 		frame.getContentPane().add(btnNewButton_1_1_2);
 
 		JButton btnNewButton_1_2_2 = new JButton();
+		btnNewButton_1_2_2.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnNewButton_1_2_2.setIcon(조리기구);
 		btnNewButton_1_2_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -376,6 +388,7 @@ public class StoreFrame {
 		frame.getContentPane().add(btnNewButton_1_2_2);
 
 		JButton btnNewButton_1_3_2 = new JButton();
+		btnNewButton_1_3_2.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnNewButton_1_3_2.setIcon(용사검);
 		
 		
@@ -400,6 +413,7 @@ public class StoreFrame {
 		frame.getContentPane().add(btnNewButton_1_3_2);
 
 		JButton btnNewButton_1_6 = new JButton();
+		btnNewButton_1_6.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnNewButton_1_6.setIcon(겨울배경);
 		btnNewButton_1_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -421,6 +435,7 @@ public class StoreFrame {
 		frame.getContentPane().add(btnNewButton_1_6);
 
 		JButton btnNewButton_1_1_3 = new JButton();
+		btnNewButton_1_1_3.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnNewButton_1_1_3.setIcon(주방);
 		btnNewButton_1_1_3.addActionListener(new ActionListener() {
 			
@@ -444,6 +459,7 @@ public class StoreFrame {
 		frame.getContentPane().add(btnNewButton_1_1_3);
 
 		JButton btnNewButton_1_2_3= new JButton();
+		btnNewButton_1_2_3.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnNewButton_1_2_3.setIcon(여름);
 		btnNewButton_1_2_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -466,6 +482,7 @@ public class StoreFrame {
 		frame.getContentPane().add(btnNewButton_1_2_3);
 
 		JButton btnNewButton_1_3_3 = new JButton();
+		btnNewButton_1_3_3.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnNewButton_1_3_3.setIcon(용사의방);
 		btnNewButton_1_3_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -540,10 +557,11 @@ public class StoreFrame {
 			}
 		});
 		이전창버튼.setHorizontalAlignment(SwingConstants.LEADING);
-		이전창버튼.setBounds(710, 351, 60, 100);
+		이전창버튼.setBounds(727, 351, 60, 100);
 		frame.getContentPane().add(이전창버튼);
 		
 		JLabel charHead = new JLabel(얼굴);  // 상점 캐릭터 착용샷 =======================================================================
+		charHead.setBorder(new LineBorder(new Color(0, 0, 0), 3));
 		charHead.setBounds(12, 21, 300, 430);
 		frame.getContentPane().add(charHead);
 		
@@ -568,15 +586,17 @@ public class StoreFrame {
 		
 		
 		JLabel lblNewLabel_1 = new JLabel("보유포인트:");
+		lblNewLabel_1.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBounds(528, 462, 90, 15);
+		lblNewLabel_1.setBounds(426, 462, 90, 15);
 		frame.getContentPane().add(lblNewLabel_1);
 		
 		MainFrame main2 = new MainFrame();
 		
-		JLabel lblNewLabel_2 = new JLabel( String.valueOf(main2.mainpoint));
+		JLabel lblNewLabel_2 = new JLabel( String.valueOf(main2.mainpoint) + "P");
+		lblNewLabel_2.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblNewLabel_2.setBounds(630, 461, 157, 16);
+		lblNewLabel_2.setBounds(563, 461, 157, 16);
 		frame.getContentPane().add(lblNewLabel_2);
 	}
 
