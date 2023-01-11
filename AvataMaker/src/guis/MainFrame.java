@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 
 import User.GetInfo;
@@ -36,6 +37,7 @@ public class MainFrame {
 		mf.SetUserAll(mainid);
 	}
 
+	
 	int mainpoint = mf.fmainpoint;
 	int mainhealth = mf.fmainhealth;
 	int mainintelligence = mf.fmainintelligence;
@@ -47,6 +49,9 @@ public class MainFrame {
 	private LineBorder bb = new LineBorder(Color.black, 1, true);
 
 	public static void main(String[] args) {
+		UIManager.put("OptionPane.messageFont", (new Font("경기천년제목 Bold", Font.PLAIN, 15)));
+	    UIManager.put("OptionPane.buttonFont", (new Font("경기천년제목 Bold", Font.PLAIN, 15)));
+	    
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

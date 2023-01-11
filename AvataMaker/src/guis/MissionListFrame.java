@@ -32,6 +32,8 @@ import sun.tools.jar.resources.jar;
 import java.awt.Color;
 import java.awt.Cursor;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+
 import java.awt.Font;
 
 public class MissionListFrame {
@@ -83,6 +85,9 @@ public class MissionListFrame {
 //      int user_pk = 33;
       
 
+      UIManager.put("OptionPane.messageFont", (new Font("경기천년제목 Bold", Font.PLAIN, 15)));
+      UIManager.put("OptionPane.buttonFont", (new Font("경기천년제목 Bold", Font.PLAIN, 15)));
+      
       frame = new JFrame();
       frame.getContentPane().setBackground(new Color(255, 255, 255));
       frame.setTitle("미션");

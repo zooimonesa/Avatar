@@ -20,6 +20,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 
 import User.UserLogIn;
 
@@ -115,6 +116,9 @@ public class StartFrame {
 			}
 		});
 
+		UIManager.put("OptionPane.messageFont", (new Font("경기천년제목 Bold", Font.PLAIN, 15)));
+	    UIManager.put("OptionPane.buttonFont", (new Font("경기천년제목 Bold", Font.PLAIN, 15)));
+	      
 		passWord.setBounds(200, 350, 180, 25);
 		frmAlpha.getContentPane().add(passWord);
 		passWord.setColumns(10);
