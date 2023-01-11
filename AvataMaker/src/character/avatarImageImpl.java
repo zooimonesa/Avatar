@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import dbutil.ConnectionProvider;
 
 public class avatarImageImpl implements avatarImage {
@@ -391,9 +393,13 @@ public class avatarImageImpl implements avatarImage {
 	public void MyPointByAvatar(String nickname, String name) {
 		if (selectAfterPoint(nickname,  name ) <0) {
 			System.out.println("돈이 부족합니다.");
+			JOptionPane.showMessageDialog(null, "돈이 부족합니다.", "Message",
+					JOptionPane.ERROR_MESSAGE);
 		}else if (selectAfterPoint(nickname,  name )>0) {
 			byAvatar(  nickname ,  name);
 			insertCopy(nickname , name);
+			JOptionPane.showMessageDialog(null, "구매성공.", "Message",
+					JOptionPane.INFORMATION_MESSAGE);
 		}
 	}
 		
