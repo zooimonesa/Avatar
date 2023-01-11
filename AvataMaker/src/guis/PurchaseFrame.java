@@ -20,6 +20,7 @@ import javax.swing.SwingConstants;
 import User.GetInfo;
 import character.avatarImageImpl;
 import character.onOff;
+import java.awt.Font;
 
 public class PurchaseFrame {
 
@@ -199,6 +200,9 @@ public class PurchaseFrame {
       }
 
       JButton previousButton = new JButton("이전으로");
+      previousButton.setForeground(new Color(255, 255, 255));
+      previousButton.setBackground(new Color(0, 128, 255));
+      previousButton.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
       previousButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
           StoreFrame sf = new StoreFrame();
@@ -214,6 +218,9 @@ public class PurchaseFrame {
       frame.getContentPane().add(previousButton);
 
       JButton buyButton = new JButton("구입하기");
+      buyButton.setForeground(new Color(255, 255, 255));
+      buyButton.setBackground(new Color(0, 128, 192));
+      buyButton.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
       buyButton.setBounds(292, 417, 97, 23);
       frame.getContentPane().add(buyButton);
       buyButton.addActionListener(new ActionListener() {
@@ -240,7 +247,10 @@ public class PurchaseFrame {
          buyButton.setEnabled(true);
       }
 
-      JButton unequipButton = new JButton("해제하기");
+      JButton unequipButton = new JButton("해제");
+      unequipButton.setForeground(new Color(255, 255, 255));
+      unequipButton.setBackground(new Color(0, 0, 255));
+      unequipButton.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
       unequipButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
 
@@ -257,7 +267,10 @@ public class PurchaseFrame {
       unequipButton.setBounds(206, 417, 81, 23);
       frame.getContentPane().add(unequipButton);
 
-      JButton equipButton = new JButton("착용하기");
+      JButton equipButton = new JButton("착용");
+      equipButton.setForeground(new Color(255, 255, 255));
+      equipButton.setBackground(new Color(0, 0, 255));
+      equipButton.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
       equipButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
 
@@ -279,15 +292,17 @@ public class PurchaseFrame {
          equipButton.setEnabled(true);
       }
       JLabel price = new JLabel("아바타 이름:     "+avatarName2 );
-      price.setHorizontalAlignment(SwingConstants.CENTER);
-      price.setBounds(12, 51, 159, 31);
+      price.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+      price.setHorizontalAlignment(SwingConstants.LEFT);
+      price.setBounds(12, 10, 275, 31);
       frame.getContentPane().add(price);
       
       
       int avatarPint =  avatar.selectAvatarPoint(avatarName);
       JLabel avatarName = new JLabel("아바타 가격:    " +  String.valueOf(avatarPint));
-      avatarName.setHorizontalAlignment(SwingConstants.CENTER);
-      avatarName.setBounds(12, 10, 159, 31);
+      avatarName.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+      avatarName.setHorizontalAlignment(SwingConstants.LEFT);
+      avatarName.setBounds(12, 38, 275, 31);
       frame.getContentPane().add(avatarName);
 
 //      JLabel charHead = new JLabel(얼굴);  // 상점 캐릭터 착용샷 =======================================================================
