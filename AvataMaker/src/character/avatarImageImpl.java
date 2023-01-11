@@ -22,7 +22,7 @@ import dbutil.ConnectionProvider;
 
 public class avatarImageImpl implements avatarImage {
 
-	@Override // 이미지 저장하는 폴더 만드는 메소드
+	@Override // 이미지 저장하는 폴더 만드는 메소드 사용 못했음 ㅜㅜ
 	public void folderMaker(String folderName) {
 		String path = "D:\\" +  folderName ; 
 		File Folder = new File(path);
@@ -37,7 +37,7 @@ public class avatarImageImpl implements avatarImage {
 			System.out.println("이미 폴더가 생성되어 있습니다.");
 		}
 	}
-	@Override // 유저가 소유하고 있는 이미지 모두 저장하는 메소드
+	@Override // 유저가 소유하고 있는 이미지 모두 저장하는 메소드 사용 못했음 ㅜㅜ
 	public Path selectEncodedImage() {
 		String sql = "SELECT * FROM avatar_store ";
 		ResultSet rs = null;
@@ -188,11 +188,7 @@ public class avatarImageImpl implements avatarImage {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	@Override
-	public void avatarOff(String ename) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 	@Override // 아바타 착용했는지 확인 후 장착 해제
 	public int avatarTakeOff(int user_pk, String type) {
 		String sql = "UPDATE avatar_user SET `using` = 0 WHERE user_pk = ? AND `ename` = ?";
@@ -245,21 +241,21 @@ public class avatarImageImpl implements avatarImage {
 	public List<String> pngListMeker() {
 		List<String> png = new ArrayList<>();
 		png.add("목도리.png");
-		png.add(1,"썬글라스.png");
-		png.add(2,"썬글라스.png");
-		png.add(3,"썬글라스.png");
-		png.add(4,"썬글라스.png");
-		png.add(5,"썬글라스.png");
-		png.add(6,"썬글라스.png");
-		png.add(7,"썬글라스.png");
-		png.add(8,"썬글라스.png");
-		png.add(9,"썬글라스.png");
-		png.add(10,"썬글라스.png");
-		png.add(11,"썬글라스.png");
-		png.add(12,"썬글라스.png");
-		png.add(13,"썬글라스.png");
-		png.add(14,"썬글라스.png");
-		png.add(15,"썬글라스.png");
+		png.add("요리사.png");
+		png.add("조리기구.png");
+		png.add("앞치마.png");
+		png.add("튜브.png");
+		png.add("사슴뿔.png");
+		png.add("썬글라스.png");
+		png.add("겨울배경.png");
+		png.add("용사검.png");
+		png.add("용사투구.png");
+		png.add("용사갑옷.png");
+		png.add("물총.png");
+		png.add("고구마.png");
+		png.add("용사의방.png");
+		png.add("여름.png");
+		png.add("주방.png");
 		
 		
 		

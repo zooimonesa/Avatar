@@ -32,8 +32,7 @@ public interface avatarImage {
 	//가지고  있는 이미지 중에서  착용중인 것들만 불러오기
 	 Path takeOnEncodedImage(int id);
 	 
-	 //착용하고 있는 파일 해제하기
-	 void avatarOff(String ename);
+	 
 	 
 	 // 현재 같은 부위에 착용한게 있는지 확인해주는 친구
 	 String avatarOnFinding(int user_pk, String type );
