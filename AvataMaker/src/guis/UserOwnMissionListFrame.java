@@ -1,6 +1,7 @@
 package guis;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Toolkit;
@@ -17,6 +18,7 @@ import java.awt.event.ActionListener;
 import java.util.List;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 
 import User.GetInfo;
@@ -79,16 +81,19 @@ public class UserOwnMissionListFrame {
 		
 		frame = new JFrame();
 		frame.setTitle("보유미션");
+		frame.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		frame.getContentPane().setBackground(new Color(255, 255, 255));
 		frame.getContentPane().setLayout(null);
 
-		JLabel lblNewLabel = new JLabel("보유미션");
+		JLabel lblNewLabel = new JLabel("<보유미션>");
+		lblNewLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 20));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(187, 10, 73, 30);
+		lblNewLabel.setBounds(180, 5, 100, 30);
 		frame.getContentPane().add(lblNewLabel);
 
 		JPanel oneDayMissionPanel = new JPanel(); // 일일미션패널 ====================================================
 		oneDayMissionPanel.setBackground(new Color(255, 255, 255));
+		oneDayMissionPanel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		oneDayMissionPanel.setToolTipText("");
 		oneDayMissionPanel
 				.setBorder(new TitledBorder(null, "일일미션", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -105,7 +110,8 @@ public class UserOwnMissionListFrame {
 		for (int i = 0; i < 6; i++) {
 
 			dailyMission[i] = new JLabel((i + 1) + " : "); // 일일미션라벨
-			dailyMission[i].setBounds(10, dailyY, 280, 30);
+			dailyMission[i].setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+			dailyMission[i].setBounds(15, dailyY, 280, 30);
 			oneDayMissionPanel.add(dailyMission[i]);
 			
 			dailyMissionTs[i] = new JLabel();
@@ -118,10 +124,13 @@ public class UserOwnMissionListFrame {
 				dailyMissionTs[i].setText("");
 			}
 			
-			dailyMissionTs[i].setBounds(35, dailyY, 280, 30);
+			dailyMissionTs[i].setBounds(40, dailyY, 280, 30);
+			dailyMissionTs[i].setFont(new Font("경기천년제목 Bold", Font.PLAIN, 13));
 			oneDayMissionPanel.add(dailyMissionTs[i]);
 
 			dailyMissionclear[i] = new JButton("완료"); // 일일미션달성버튼
+			dailyMissionclear[i].setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+			dailyMissionclear[i].setBackground(new Color(240, 250, 255));
 			dailyMissionclear[i].setActionCommand(String.valueOf(i));
 			dailyMissionclear[i].addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -154,6 +163,8 @@ public class UserOwnMissionListFrame {
 			oneDayMissionPanel.add(dailyMissionclear[i]);
 
 			dailyMissionGiveUp[i] = new JButton("포기"); // 일일미션포기버튼
+			dailyMissionGiveUp[i].setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+			dailyMissionGiveUp[i].setBackground(new Color(240, 250, 255));
 			// 몇번째 버튼을 선택했는지 정보를 들고 있음
 			dailyMissionGiveUp[i].setActionCommand(String.valueOf(i));
 			dailyMissionGiveUp[i].addActionListener(new ActionListener() {
@@ -177,6 +188,7 @@ public class UserOwnMissionListFrame {
 
 		JPanel oneWeekMissionPanel = new JPanel(); // 주간미션패널 ===================================================
 		oneWeekMissionPanel.setBackground(new Color(255, 255, 255));
+		oneWeekMissionPanel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		oneWeekMissionPanel
 				.setBorder(new TitledBorder(null, "주간미션", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		oneWeekMissionPanel.setBounds(6, 301, 443, 142);
@@ -192,10 +204,12 @@ public class UserOwnMissionListFrame {
 		int weeklyY = 17; // 주간미션라벨 y좌표고정 + 40씩
 		for (int i = 0; i < 3; i++) {
 			weeklyMission[i] = new JLabel((i + 1) + " : "); // 주간미션라벨
-			weeklyMission[i].setBounds(10, weeklyY, 280, 30);
+			weeklyMission[i].setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+			weeklyMission[i].setBounds(15, weeklyY, 280, 30);
 			oneWeekMissionPanel.add(weeklyMission[i]);
 
 			weeklyMissionTs[i] = new JLabel();
+			weeklyMissionTs[i].setFont(new Font("경기천년제목 Bold", Font.PLAIN, 13));
 			try {
 				if(mis.userMission(user_pk, 7).get(i) != null) {
 					String text = mis.userMission(user_pk, 7).get(i).getMission();
@@ -204,14 +218,17 @@ public class UserOwnMissionListFrame {
 			} catch (IndexOutOfBoundsException e) {
 				weeklyMissionTs[i].setText("");
 			}
-			weeklyMissionTs[i].setBounds(35, weeklyY, 280, 30);
+			weeklyMissionTs[i].setBounds(40, weeklyY, 280, 30);
 			oneWeekMissionPanel.add(weeklyMissionTs[i]);
 			
 			weeklyMissionDdays[i] = new JLabel();
-			weeklyMissionDdays[i].setBounds(270, weeklyY, 280, 30);
+			weeklyMissionDdays[i].setFont(new Font("경기천년제목 Bold", Font.PLAIN, 13));
+			weeklyMissionDdays[i].setBounds(260, weeklyY, 280, 30);
 			oneWeekMissionPanel.add(weeklyMissionDdays[i]);
 
 			weeklyMissionClears[i] = new JButton("완료"); // 주간미션달성버튼
+			weeklyMissionClears[i].setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+			weeklyMissionClears[i].setBackground(new Color(240, 250, 255));
 			
 			if(!weeklyMissionTs[i].getText().isEmpty()) {
 				if(mis.userMissionEndDay(user_pk, weeklyMissionTs[i].getText()).contains("D - -")) {
@@ -258,6 +275,8 @@ public class UserOwnMissionListFrame {
 
 			
 			weeklyMissionGiveUp[i] = new JButton("포기"); // 주간미션포기버튼
+			weeklyMissionGiveUp[i].setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+			weeklyMissionGiveUp[i].setBackground(new Color(240, 250, 255));
 			weeklyMissionGiveUp[i].setActionCommand(String.valueOf(i));
 			weeklyMissionGiveUp[i].addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
@@ -279,12 +298,14 @@ public class UserOwnMissionListFrame {
 		}
 
 		JButton btnNewButton_10 = new JButton("닫기");
+		btnNewButton_10.setBackground(new Color(200, 230, 250));
+		btnNewButton_10.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
 		btnNewButton_10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
 			}
 		});
-		btnNewButton_10.setBounds(175, 473, 117, 23);
+		btnNewButton_10.setBounds(170, 460, 117, 23);
 		frame.getContentPane().add(btnNewButton_10);
 		frame.setBounds(100, 100, 471, 545);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
