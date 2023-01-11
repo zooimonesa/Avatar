@@ -167,7 +167,7 @@ public class Tuto implements ActionListener, ItemListener {
 				tuto_3.setVisible(false);
 			}
 		});
-		미션튜토.setBounds(21, 64, 135, 107);
+		미션튜토.setBounds(21, 97, 135, 107);
 		tuto_3.add(미션튜토);
 		
 		JButton 상점튜토 = new JButton("상점과 상품구매");
@@ -179,7 +179,7 @@ public class Tuto implements ActionListener, ItemListener {
 				tuto_3.setVisible(false);
 			}
 		});
-		상점튜토.setBounds(188, 64, 135, 107);
+		상점튜토.setBounds(188, 97, 135, 107);
 		tuto_3.add(상점튜토);
 		
 		JButton 랭킹튜토 = new JButton("랭킹순위");
@@ -191,7 +191,7 @@ public class Tuto implements ActionListener, ItemListener {
 				tuto_3.setVisible(false);
 			}
 		});
-		랭킹튜토.setBounds(354, 64, 135, 107);
+		랭킹튜토.setBounds(354, 97, 135, 107);
 		tuto_3.add(랭킹튜토);
 		
 		JButton 탈퇴튜토 = new JButton("회원탈퇴");
@@ -203,7 +203,7 @@ public class Tuto implements ActionListener, ItemListener {
 				tuto_3.setVisible(false);
 			}
 		});
-		탈퇴튜토.setBounds(519, 64, 135, 107);
+		탈퇴튜토.setBounds(519, 97, 135, 107);
 		tuto_3.add(탈퇴튜토);
 		
 		JButton 튜토끝 = new JButton("괜찮아.");
@@ -254,7 +254,7 @@ public class Tuto implements ActionListener, ItemListener {
 				tuto_4.setVisible(false);
 			}
 		});
-		미션튜토2.setBounds(21, 64, 135, 107);
+		미션튜토2.setBounds(21, 97, 135, 107);
 		tuto_4.add(미션튜토2);
 		
 		JButton 상점튜토2 = new JButton("상점과 상품구매");
@@ -266,7 +266,7 @@ public class Tuto implements ActionListener, ItemListener {
 				tuto_4.setVisible(false);
 			}
 		});
-		상점튜토2.setBounds(188, 64, 135, 107);
+		상점튜토2.setBounds(188, 97, 135, 107);
 		tuto_4.add(상점튜토2);
 		
 		JButton 랭킹튜토2 = new JButton("랭킹순위");
@@ -278,7 +278,7 @@ public class Tuto implements ActionListener, ItemListener {
 				tuto_4.setVisible(false);
 			}
 		});
-		랭킹튜토2.setBounds(354, 64, 135, 107);
+		랭킹튜토2.setBounds(354, 97, 135, 107);
 		tuto_4.add(랭킹튜토2);
 		
 		JButton 탈퇴튜토2 = new JButton("회원탈퇴");
@@ -290,7 +290,7 @@ public class Tuto implements ActionListener, ItemListener {
 				tuto_4.setVisible(false);
 			}
 		});
-		탈퇴튜토2.setBounds(519, 64, 135, 107);
+		탈퇴튜토2.setBounds(519, 97, 135, 107);
 		tuto_4.add(탈퇴튜토2);
 		
 		JButton 튜토끝2 = new JButton("괜찮아.");
@@ -1234,6 +1234,8 @@ public class Tuto implements ActionListener, ItemListener {
 				try {
 					Tuto window = new Tuto();
 					window.frame.setVisible(true);
+					window.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
+					window.frame.setResizable(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

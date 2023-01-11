@@ -366,6 +366,9 @@ public class MainFrame {
 			public void actionPerformed(ActionEvent e) {
 				Tuto tuto = new Tuto();
 				tuto.frame.setVisible(true);
+				tuto.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
+				tuto.frame.setResizable(false);
+				
 			}
 		});
 		tutoButton.setContentAreaFilled(false);
