@@ -32,6 +32,8 @@ import sun.tools.jar.resources.jar;
 import java.awt.Color;
 import java.awt.Cursor;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+
 import java.awt.Font;
 
 public class MissionListFrame {
@@ -42,7 +44,7 @@ public class MissionListFrame {
    String text2;
    String text3;
    
-   int term = -1;
+   int term = 1;
    JCheckBox term1;
    JCheckBox term7;
 
@@ -83,6 +85,9 @@ public class MissionListFrame {
 //      int user_pk = 33;
       
 
+      UIManager.put("OptionPane.messageFont", (new Font("경기천년제목 Bold", Font.PLAIN, 15)));
+      UIManager.put("OptionPane.buttonFont", (new Font("경기천년제목 Bold", Font.PLAIN, 15)));
+      
       frame = new JFrame();
       frame.getContentPane().setBackground(new Color(255, 255, 255));
       frame.setTitle("미션");
@@ -146,14 +151,16 @@ public class MissionListFrame {
       oneDayMissionLabel1_T.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 12));
       text1 = "미션을 입력하세요.";
       
-      
       oneDayMissionLabel1_T.setText(text1);
       oneDayMissionLabel1_T.setForeground(Color.gray);
       oneDayMissionLabel1_T.setBounds(20, 25, 250, 40);
       oneDayMissionLabel1_T.addMouseListener(new MouseListener() {
 		@Override
 		public void mouseClicked(MouseEvent arg0) {
-			oneDayMissionLabel1_T.setText("");
+			if(oneDayMissionLabel1_T.getText().equals("미션을 입력하세요.")) {
+				oneDayMissionLabel1_T.setText("");
+				oneDayMissionLabel1_T.setForeground(Color.black);
+			}
 		}
 		@Override
 		public void mouseEntered(MouseEvent e) {
@@ -255,7 +262,7 @@ public class MissionListFrame {
       frame.getContentPane().add(previousButton);
       
       
-      // 선택하기 or 새로고침 눌렀을때 변화
+      // 선택하기 변화
       JButton oneDayMissionChoiceButton1 = new JButton();
       oneDayMissionChoiceButton1.setIcon(convertToIcon("체크.PNG", 50, 50));
       oneDayMissionChoiceButton1.addActionListener(new ActionListener() {
@@ -273,6 +280,7 @@ public class MissionListFrame {
     				  		JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);   
     				  		// 새로운 미션
     				  		oneDayMissionLabel1_T.setText(text1);
+    				  		oneDayMissionLabel1_T.setForeground(Color.gray);
     				  	} else if (term == 7) {
     				  		// 미션 등록
     				  		mis.insertMission(user_pk, selectB, oneDayMissionLabel1_T.getText(), term);
@@ -281,6 +289,7 @@ public class MissionListFrame {
     				  		JOptionPane.showMessageDialog(null, "미션 등록 완료 ", "미션 시작", JOptionPane.INFORMATION_MESSAGE);   
     				  		// 새로운 미션
     				  		oneDayMissionLabel1_T.setText(text1);
+    				  		oneDayMissionLabel1_T.setForeground(Color.gray);
     				  	} 
     				  	
     			  } else {
@@ -330,23 +339,27 @@ public class MissionListFrame {
       oneDayMissionRefreshButton2.addActionListener(new ActionListener( ) {
     	  @Override
     	  public void actionPerformed(ActionEvent e) {
-    		  if (mis.checkPoint(user_pk, 5)) {
-    			  //포인트 변경
-    			  mis.usePoint(user_pk, 5);
-    			  mf.SetUserAll(mf.fmainid);
-    			  userPointlbl_2.setText(String.valueOf(mf.fmainpoint));
-    			  // 미션바꾸기
-    			  Missions m1 = Noduplicate(user_pk, selectB, 1);
-    			  while(text2.equals(m1.getMission())) {
-    				  m1 = Noduplicate(user_pk, selectB, 1);
-    			  }
-    			  mis.deleteSelectMission(user_pk, text2);
-    			  mis.setSelectMission(user_pk, m1);
-    			  text2 = m1.getMission();
-    			  oneDayMissionLabel2_T.setText(text2);
+    		  if(mis.checkMission(user_pk, 1)) {
+	    		  if (mis.checkPoint(user_pk, 5)) {
+	    			  //포인트 변경
+	    			  mis.usePoint(user_pk, 5);
+	    			  mf.SetUserAll(mf.fmainid);
+	    			  userPointlbl_2.setText(String.valueOf(mf.fmainpoint) + "P");
+	    			  // 미션바꾸기
+	    			  Missions m1 = Noduplicate(user_pk, selectB, 1);
+	    			  while(text2.equals(m1.getMission())) {
+	    				  m1 = Noduplicate(user_pk, selectB, 1);
+	    			  }
+	    			  mis.deleteSelectMission(user_pk, text2);
+	    			  mis.setSelectMission(user_pk, m1);
+	    			  text2 = m1.getMission();
+	    			  oneDayMissionLabel2_T.setText(text2);
+	    		  } else {
+	    			  JOptionPane.showMessageDialog(null, "포인트가 부족합니다", "알림창", JOptionPane.ERROR_MESSAGE);
+	    		  }
     		  } else {
-    			  JOptionPane.showMessageDialog(null, "포인트가 부족합니다", "알림창", JOptionPane.ERROR_MESSAGE);
-    		  }
+    			  JOptionPane.showMessageDialog(null, "미션이 이미 가득 차있습니다.", "오류", JOptionPane.ERROR_MESSAGE);
+    		  }  
     	  }
       });
       oneDayMissionRefreshButton2.setBounds(290, 25, 40, 40);
@@ -389,23 +402,27 @@ public class MissionListFrame {
       oneWeekMissionRefreshButton.addActionListener(new ActionListener() {
          @Override
          public void actionPerformed(ActionEvent e) {
-            if (mis.checkPoint(user_pk, 5)) {
-               // 포인트 사용
-               mis.usePoint(user_pk, 5);
-               mf.SetUserAll(mf.fmainid);
-               userPointlbl_2.setText(String.valueOf(mf.fmainpoint));
-               // 미션변경
-               Missions m2 = Noduplicate(user_pk, selectB, 7);
-               while(text3.equals(m2.getMission())) {
-            	   m2 = Noduplicate(user_pk, selectB, 7);
-               }
-               mis.deleteSelectMission(user_pk, text3);
-               mis.setSelectMission(user_pk, m2);
-               text3 = m2.getMission();
-               oneWeekMissionLabel1_T.setText(text3);
-            } else {
-               JOptionPane.showMessageDialog(null, "포인트가 부족합니다", "알림창", JOptionPane.ERROR_MESSAGE);
-            }
+        	 if(mis.checkMission(user_pk, 7)) {
+	            if (mis.checkPoint(user_pk, 5)) {
+	               // 포인트 사용
+	               mis.usePoint(user_pk, 5);
+	               mf.SetUserAll(mf.fmainid);
+	               userPointlbl_2.setText(String.valueOf(mf.fmainpoint) + "P");
+	               // 미션변경
+	               Missions m2 = Noduplicate(user_pk, selectB, 7);
+	               while(text3.equals(m2.getMission())) {
+	            	   m2 = Noduplicate(user_pk, selectB, 7);
+	               }
+	               mis.deleteSelectMission(user_pk, text3);
+	               mis.setSelectMission(user_pk, m2);
+	               text3 = m2.getMission();
+	               oneWeekMissionLabel1_T.setText(text3);
+	            } else {
+	               JOptionPane.showMessageDialog(null, "포인트가 부족합니다", "알림창", JOptionPane.ERROR_MESSAGE);
+	            }
+        	 } else {
+                 JOptionPane.showMessageDialog(null, "미션이 이미 가득 차있습니다.", "오류", JOptionPane.ERROR_MESSAGE);
+              }
          }
       });
       oneWeekMissionRefreshButton.setBounds(290, 25, 40, 40);
