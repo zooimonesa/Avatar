@@ -272,7 +272,7 @@ public class MissionListFrame {
     		  
     		  
     		  if(mis.checkMission(user_pk, term)) {
-    			  if(!oneDayMissionLabel2_T.getText().isEmpty() && !oneDayMissionLabel1_T.getText().equals("")) {
+    			  if(!oneDayMissionLabel1_T.getText().isEmpty() && !oneDayMissionLabel1_T.getText().equals("미션을 입력하세요.")) {
     				  	if (term == 1) {
     				  		// 미션 등록
     				  		mis.insertMission(user_pk, selectB, oneDayMissionLabel1_T.getText(), term);
