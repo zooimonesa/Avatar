@@ -49,6 +49,7 @@ public class MainFrame {
 	private LineBorder bb = new LineBorder(Color.black, 1, true);
 
 	public static void main(String[] args) {
+		
 		UIManager.put("OptionPane.messageFont", (new Font("경기천년제목 Bold", Font.PLAIN, 15)));
 	    UIManager.put("OptionPane.buttonFont", (new Font("경기천년제목 Bold", Font.PLAIN, 15)));
 	    
@@ -112,7 +113,7 @@ public class MainFrame {
 		ImageIcon 재능0 = new ImageIcon("재능_0.png");
 
 		JLabel nickNameLabel = new JLabel(mainnickname);
-		nickNameLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+		nickNameLabel.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 20));
 		nickNameLabel.setBackground(new Color(255, 255, 255));
 		nickNameLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		nickNameLabel.setBounds(315, 40, 424, 35);

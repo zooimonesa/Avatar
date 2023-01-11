@@ -180,11 +180,13 @@ public class MissionListFrame {
       term1 = new JCheckBox("1일", true);
       term1.setBounds(280, 25, 50, 20); 
       term1.setBackground(Color.WHITE);
+      term1.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 12));
       oneDayMissionPanel1.add(term1);
 
       term7 = new JCheckBox("7일");
       term7.setBounds(280, 45, 50, 20); 
       term7.setBackground(Color.WHITE);
+      term7.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 12));
       oneDayMissionPanel1.add(term7);
       
       ButtonGroup bg = new ButtonGroup();
