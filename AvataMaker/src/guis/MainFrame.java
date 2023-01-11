@@ -229,6 +229,7 @@ public class MainFrame {
 		giftPointBoder.setHorizontalAlignment(SwingConstants.CENTER);
 
 		JButton missionPoint = new JButton(미션버튼);
+		missionPoint.setBorderPainted(false);
 		missionPoint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MissionChoiceFrame missionChoiceFrame = new MissionChoiceFrame();
@@ -239,13 +240,14 @@ public class MainFrame {
 
 			}
 		});
-		missionPoint.setBorderPainted(false);
 		missionPoint.setContentAreaFilled(false);
-		missionPoint.setBounds(315, 291, 97, 60);
+		missionPoint.setBounds(326, 291, 85, 65);
 		missionPoint.setBorder(bb);
 		frame.getContentPane().add(missionPoint);
 
 		JButton storePoint = new JButton(상점버튼);
+		storePoint.setBorderPainted(false);
+		storePoint.setBorder(new LineBorder(new Color(0, 0, 0)));
 		storePoint.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				StoreFrame storeFrame = new StoreFrame();
@@ -255,12 +257,13 @@ public class MainFrame {
 				frame.dispose(); // 꺼짐
 			}
 		});
-		storePoint.setBorderPainted(false);
 		storePoint.setContentAreaFilled(false);
-		storePoint.setBounds(424, 291, 97, 60);
+		storePoint.setBounds(437, 291, 85, 65);
 		frame.getContentPane().add(storePoint);
 
 		JButton logButton = new JButton(로그보기버튼);
+		logButton.setBorderPainted(false);
+		logButton.setBorder(new LineBorder(new Color(0, 0, 0)));
 		logButton.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
@@ -271,12 +274,13 @@ public class MainFrame {
 				frame.dispose(); // 꺼짐
 			}
 		});
-		logButton.setBorderPainted(false);
 		logButton.setContentAreaFilled(false);
-		logButton.setBounds(533, 291, 97, 60);
+		logButton.setBounds(545, 291, 85, 65);
 		frame.getContentPane().add(logButton);
 
 		JButton logOutButton = new JButton(로그아웃버튼);
+		logOutButton.setBorderPainted(false);
+		logOutButton.setBorder(new LineBorder(new Color(0, 0, 0)));
 		logOutButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int answer = JOptionPane.showConfirmDialog(null, "로그아웃하시겠습니까?", "로그아웃창", JOptionPane.YES_NO_OPTION); // 로그아웃
@@ -292,12 +296,13 @@ public class MainFrame {
 				}
 			}
 		});
-		logOutButton.setBorderPainted(false);
 		logOutButton.setContentAreaFilled(false);
-		logOutButton.setBounds(533, 406, 97, 60);
+		logOutButton.setBounds(545, 406, 85, 65);
 		frame.getContentPane().add(logOutButton);
 
 		JButton deleteUserInfo = new JButton(회원탈퇴);
+		deleteUserInfo.setBorderPainted(false);
+		deleteUserInfo.setBorder(new LineBorder(new Color(0, 0, 0)));
 		deleteUserInfo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (e.getActionCommand().equals("")) { // 회원탈퇴 버튼 ====================================
@@ -331,12 +336,13 @@ public class MainFrame {
 			}
 
 		});
-		deleteUserInfo.setBorderPainted(false);
 		deleteUserInfo.setContentAreaFilled(false);
-		deleteUserInfo.setBounds(642, 401, 97, 60);
+		deleteUserInfo.setBounds(654, 406, 85, 65);
 		frame.getContentPane().add(deleteUserInfo);
 
 		JButton rankingButton = new JButton(랭킹); // 랭킹 버튼 =====================================================
+		rankingButton.setBorderPainted(false);
+		rankingButton.setBorder(new LineBorder(new Color(0, 0, 0)));
 		rankingButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				RankingFrame rankingFrame = new RankingFrame();
@@ -347,21 +353,21 @@ public class MainFrame {
 
 			}
 		});
-		rankingButton.setBorderPainted(false);
 		rankingButton.setContentAreaFilled(false);
-		rankingButton.setBounds(642, 291, 97, 60);
+		rankingButton.setBounds(654, 291, 85, 65);
 		frame.getContentPane().add(rankingButton); // ===========================================================
 
 		JButton tutoButton = new JButton(튜토리얼); // 튜토리얼 버튼 ===================================
+		tutoButton.setBorderPainted(false);
+		tutoButton.setBorder(new LineBorder(new Color(0, 0, 0)));
 		tutoButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Tuto tuto = new Tuto();
 				tuto.frame.setVisible(true);
 			}
 		});
-		tutoButton.setBorderPainted(false);
 		tutoButton.setContentAreaFilled(false);
-		tutoButton.setBounds(424, 401, 97, 60);
+		tutoButton.setBounds(437, 406, 85, 65);
 		frame.getContentPane().add(tutoButton); // ==================================================
 
 		JLabel userPointLabel = new JLabel("포인트:");
