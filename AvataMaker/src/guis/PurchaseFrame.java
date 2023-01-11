@@ -17,6 +17,7 @@ import java.awt.Cursor;
 
 import javax.swing.SwingConstants;
 
+import User.GetInfo;
 import character.avatarImageImpl;
 import character.onOff;
 
@@ -217,9 +218,10 @@ public class PurchaseFrame {
       frame.getContentPane().add(buyButton);
       buyButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
-
-            
+        	
+            GetInfo mf = new GetInfo();
             avatar.MyPointByAvatar(main.mainnickname, avatarName);
+            mf.SetUserAll(mf.fmainid);//태현고침
             gougou = true;
             gou = false;
             StoreFrame sf = new StoreFrame();
