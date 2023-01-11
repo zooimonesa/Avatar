@@ -89,7 +89,7 @@ public class StoreFrame {
 		onoff.mainOnOff(onoff.avatarGet(main.user_pk), onoff.storeAvatarGet());
 		onoff.avatarGet(main.user_pk);
 	
-		
+		ImageIcon 스토어배경 = new ImageIcon("src/image/스토어_배경.png");
 		ImageIcon 배경 = new ImageIcon("src/image/미리보기"+ main.avatar.avatarOnFinding(main.user_pk, "배경"));
 		ImageIcon 얼굴 = new ImageIcon("src/image/미리보기" + main.avatar.avatarOnFinding(main.user_pk, "얼굴"));  // 캐릭터 옷 아이콘 =================
 		ImageIcon 악세서리 = new ImageIcon("src/image/미리보기" + main.avatar.avatarOnFinding(main.user_pk, "악세사리"));
@@ -597,6 +597,10 @@ public class StoreFrame {
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblNewLabel_2.setBounds(563, 461, 157, 16);
 		frame.getContentPane().add(lblNewLabel_2);
+		
+		JLabel mainBackGround = new JLabel(스토어배경);
+		mainBackGround.setBounds(0, 0, 799, 487);
+		frame.getContentPane().add(mainBackGround);
 	}
 
 }
