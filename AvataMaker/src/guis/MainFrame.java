@@ -434,13 +434,13 @@ public class MainFrame {
 		
 		JLabel healthPointLabel_1_1 = new JLabel("아바타");
 		healthPointLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		healthPointLabel_1_1.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+		healthPointLabel_1_1.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 18));
 		healthPointLabel_1_1.setBounds(40, 10, 150, 30);
 		frame.getContentPane().add(healthPointLabel_1_1);
 		
 		JLabel healthPointLabel_1_1_1 = new JLabel("스토리");
 		healthPointLabel_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		healthPointLabel_1_1_1.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+		healthPointLabel_1_1_1.setFont(new Font("경기천년제목 Bold", Font.PLAIN, 18));
 		healthPointLabel_1_1_1.setBounds(40, 263, 150, 30);
 		frame.getContentPane().add(healthPointLabel_1_1_1);
 		
