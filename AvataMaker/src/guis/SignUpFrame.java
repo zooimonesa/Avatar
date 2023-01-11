@@ -58,7 +58,7 @@ public class SignUpFrame {
 	public void customcursor() { // 마우스포인터 ====================================
 		
 		Toolkit tk = Toolkit.getDefaultToolkit();
-		Image cursorimage = tk.getImage("대형견_커서.png");
+		Image cursorimage = tk.getImage("src/image/대형견_커서.png");
 		Point point = new Point(0, 0);
 		Cursor cursor = tk.createCustomCursor(cursorimage, point, "haha");
 		frame.setCursor(cursor);
