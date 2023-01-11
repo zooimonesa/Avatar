@@ -65,7 +65,7 @@ public class RankingFrame {
 				frame.dispose();
 			}
 		});
-		btnNewButton.setBounds(159, 394, 120, 35);
+		btnNewButton.setBounds(159, 395, 120, 35);
 		frame.getContentPane().add(btnNewButton);
 
 		JPanel panel = new JPanel();

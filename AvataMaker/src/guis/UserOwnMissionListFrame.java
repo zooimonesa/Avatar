@@ -148,11 +148,11 @@ public class UserOwnMissionListFrame {
                mf.SetUserAll(mf.fmainid);//태현고침
                if (!dailyMissionTs[num].getText().isEmpty()) {
                    if (mis.getClassify(mission).equals("운동")) {
-                     JOptionPane.showMessageDialog(null, "미션완료 \n 10Point와 체력 100을 획득하였습니다. " , "미션 완료", JOptionPane.INFORMATION_MESSAGE);
+                     JOptionPane.showMessageDialog(null, "미션완료 \n10Point와 체력 100을 획득하였습니다. " , "미션 완료", JOptionPane.INFORMATION_MESSAGE);
                   } else if (mis.getClassify(mission).equals("공부")) {
-                     JOptionPane.showMessageDialog(null, "미션완료 \n 10Point와 지능 100을 획득하였습니다. " , "미션 완료", JOptionPane.INFORMATION_MESSAGE);
+                     JOptionPane.showMessageDialog(null, "미션완료 \n10Point와 지능 100을 획득하였습니다. " , "미션 완료", JOptionPane.INFORMATION_MESSAGE);
                   } else if (mis.getClassify(mission).equals("취미")) {
-                     JOptionPane.showMessageDialog(null, "미션완료 \n 10Point와 재능 100을 획득하였습니다. " , "미션 완료", JOptionPane.INFORMATION_MESSAGE);
+                     JOptionPane.showMessageDialog(null, "미션완료 \n10Point와 재능 100을 획득하였습니다. " , "미션 완료", JOptionPane.INFORMATION_MESSAGE);
                   }
                } else {
                   JOptionPane.showMessageDialog(null, "등록 된 미션이 없습니다. " , "오류", JOptionPane.ERROR_MESSAGE);
@@ -271,11 +271,11 @@ public class UserOwnMissionListFrame {
                String state = "완료";
                if (!weeklyMissionTs[num].getText().isEmpty()) {
                   if (mis.getClassify(mission).equals("운동")) {
-                     JOptionPane.showMessageDialog(null, "미션완료 \n 100Point와 체력 200을 획득하였습니다. " , "미션 완료", JOptionPane.INFORMATION_MESSAGE);
+                     JOptionPane.showMessageDialog(null, "미션완료 \n100Point와 체력 200을 획득하였습니다. " , "미션 완료", JOptionPane.INFORMATION_MESSAGE);
                   } else if (mis.getClassify(mission).equals("공부")) {
-                     JOptionPane.showMessageDialog(null, "미션완료 \n 100Point와 지능 200을 획득하였습니다. " , "미션 완료", JOptionPane.INFORMATION_MESSAGE);
+                     JOptionPane.showMessageDialog(null, "미션완료 \n100Point와 지능 200을 획득하였습니다. " , "미션 완료", JOptionPane.INFORMATION_MESSAGE);
                   } else if (mis.getClassify(mission).equals("취미")) {
-                     JOptionPane.showMessageDialog(null, "미션완료 \n 100Point와 재능 200을 획득하였습니다. " , "미션 완료", JOptionPane.INFORMATION_MESSAGE);
+                     JOptionPane.showMessageDialog(null, "미션완료 \n100Point와 재능 200을 획득하였습니다. " , "미션 완료", JOptionPane.INFORMATION_MESSAGE);
                   } 
                } else {
                   JOptionPane.showMessageDialog(null, "등록 된 미션이 없습니다. " , "오류", JOptionPane.ERROR_MESSAGE);
