@@ -80,14 +80,14 @@ public class PurchaseFrame {
 
       if (type == "얼굴") {
 
-         ImageIcon 얼굴 = new ImageIcon("미리보기" + avatarName); // 캐릭터 옷 아이콘 =================
+         ImageIcon 얼굴 = new ImageIcon("src/image/미리보기" + avatarName); // 캐릭터 옷 아이콘 =================
          JLabel charHead = new JLabel(얼굴); // 상점 캐릭터 착용샷
          charHead.setBounds(60, 21, 300, 430);
          frame.getContentPane().add(charHead);
 
-         ImageIcon 배경 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "배경"));
-         ImageIcon 악세서리 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "악세사리"));
-         ImageIcon 상의 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "옷"));
+         ImageIcon 배경 = new ImageIcon("src/image/미리보기" + main.avatar.avatarOnFinding(main.user_pk, "배경"));
+         ImageIcon 악세서리 = new ImageIcon("src/image/미리보기" + main.avatar.avatarOnFinding(main.user_pk, "악세사리"));
+         ImageIcon 상의 = new ImageIcon("src/image/미리보기" + main.avatar.avatarOnFinding(main.user_pk, "옷"));
 
          JLabel charAcc = new JLabel(악세서리);
          charAcc.setBounds(60, 21, 300, 430);
@@ -109,16 +109,16 @@ public class PurchaseFrame {
       }
       if (type == "악세사리") {
 
-         ImageIcon 악세서리 = new ImageIcon("미리보기" + avatarName);
+         ImageIcon 악세서리 = new ImageIcon("src/image/미리보기" + avatarName);
          JLabel charAcc = new JLabel(악세서리);
          charAcc.setBounds(60, 21, 300, 430);
          frame.getContentPane().add(charAcc);
-         ImageIcon 얼굴 = new ImageIcon("미리보기"+main.avatar.avatarOnFinding(main.user_pk, "얼굴"));
+         ImageIcon 얼굴 = new ImageIcon("src/image/미리보기"+main.avatar.avatarOnFinding(main.user_pk, "얼굴"));
 
          JLabel charHead = new JLabel(얼굴);
          charHead.setBounds(60, 21, 300, 430);
          frame.getContentPane().add(charHead);
-         ImageIcon 상의 = new ImageIcon("미리보기"+main.avatar.avatarOnFinding(main.user_pk, "옷"));
+         ImageIcon 상의 = new ImageIcon("src/image/미리보기"+main.avatar.avatarOnFinding(main.user_pk, "옷"));
          JLabel charTop = new JLabel(상의);
          charTop.setBounds(60, 21, 300, 430);
          frame.getContentPane().add(charTop);
@@ -127,7 +127,7 @@ public class PurchaseFrame {
          mainChar.setBounds(65, 25, 300, 430);
          frame.getContentPane().add(mainChar);
 
-         ImageIcon 배경 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "배경"));
+         ImageIcon 배경 = new ImageIcon("src/image/미리보기" + main.avatar.avatarOnFinding(main.user_pk, "배경"));
          JLabel main = new JLabel(배경);
 
          main.setBounds(60, 0, 300, 415);
@@ -135,15 +135,15 @@ public class PurchaseFrame {
       }
       if (type == "옷") {
 
-         ImageIcon 상의 = new ImageIcon("미리보기" + avatarName);
+         ImageIcon 상의 = new ImageIcon("src/image/미리보기" + avatarName);
          JLabel charTop = new JLabel(상의);
          charTop.setBounds(60, 21, 300, 430);
          frame.getContentPane().add(charTop);
 
-         ImageIcon 배경 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "배경"));
-         ImageIcon 얼굴 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "얼굴")); // 캐릭터 옷 아이콘
+         ImageIcon 배경 = new ImageIcon("src/image/미리보기" + main.avatar.avatarOnFinding(main.user_pk, "배경"));
+         ImageIcon 얼굴 = new ImageIcon("src/image/미리보기" + main.avatar.avatarOnFinding(main.user_pk, "얼굴")); // 캐릭터 옷 아이콘
                                                                            // =================
-         ImageIcon 악세서리 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "악세사리"));
+         ImageIcon 악세서리 = new ImageIcon("src/image/미리보기" + main.avatar.avatarOnFinding(main.user_pk, "악세사리"));
 
          JLabel charHead = new JLabel(얼굴); // 상점 캐릭터 착용샷
                                     // =======================================================================
@@ -167,10 +167,10 @@ public class PurchaseFrame {
 
       if (type == "배경") {
 
-         ImageIcon 상의 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "옷"));
-         ImageIcon 얼굴 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "얼굴")); // 캐릭터 옷 아이콘
+         ImageIcon 상의 = new ImageIcon("src/image/미리보기" + main.avatar.avatarOnFinding(main.user_pk, "옷"));
+         ImageIcon 얼굴 = new ImageIcon("src/image/미리보기" + main.avatar.avatarOnFinding(main.user_pk, "얼굴")); // 캐릭터 옷 아이콘
                                                                            // =================
-         ImageIcon 악세서리 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "악세사리"));
+         ImageIcon 악세서리 = new ImageIcon("src/image/미리보기" + main.avatar.avatarOnFinding(main.user_pk, "악세사리"));
 
          JLabel charHead = new JLabel(얼굴); // 상점 캐릭터 착용샷
                                     // =======================================================================
@@ -190,7 +190,7 @@ public class PurchaseFrame {
          mainChar.setBounds(65, 25, 300, 430);
          frame.getContentPane().add(mainChar);
 
-         ImageIcon 배경 = new ImageIcon("미리보기" + avatarName);
+         ImageIcon 배경 = new ImageIcon("src/image/미리보기" + avatarName);
          JLabel charMain = new JLabel(배경);
          charMain.setBounds(60, 0, 300, 415);
          frame.getContentPane().add(charMain);
