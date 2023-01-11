@@ -160,6 +160,7 @@ public class UserOwnMissionListFrame {
                
                if(!dailyMissionTs[num].getText().isEmpty()) {
                   mis.successMission(user_pk, 1, mis.getClassify(mission));
+                  mf.SetUserAll(mf.fmainid);
                   mis.cancelMission(user_pk, mission);
                   mis.missionLog(user_pk, mission, state);
                   dailyRefresh(user_pk);
@@ -284,6 +285,7 @@ public class UserOwnMissionListFrame {
                
                if(!weeklyMissionTs[num].getText().isEmpty()) {
                   mis.successMission(user_pk, 7, mis.getClassify(mission));
+                  mf.SetUserAll(mf.fmainid);
                   mis.cancelMission(user_pk, mission);
                   mis.missionLog(user_pk, mission, state);
                   weeklyRefresh(user_pk);
