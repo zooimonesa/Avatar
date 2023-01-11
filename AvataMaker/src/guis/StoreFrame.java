@@ -70,7 +70,7 @@ public class StoreFrame {
 		
 		String a = "목도리.png";	
 		String c = "요리사.png";
-		String d = "조리도구.png";
+		String d = "조리기구.png";
 		String e = "앞치마.png";
 		String f = "튜브.png";
 		String g = "사슴뿔.png";

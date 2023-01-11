@@ -102,11 +102,11 @@ public class MainFrame {
 		ImageIcon 회원탈퇴 = new ImageIcon("src/image/회원탈퇴버튼.png");
 
 		ImageIcon 캐릭터 = new ImageIcon("src/image/농담곰_메인_기본.png");
-		ImageIcon 배경 = new ImageIcon(avatar.avatarOnFinding(user_pk, "배경"));
+		ImageIcon 배경 = new ImageIcon("src/image/" + avatar.avatarOnFinding(user_pk, "배경"));
 		
-		ImageIcon 상의 = new ImageIcon(avatar.avatarOnFinding(user_pk, "옷")); 
-		ImageIcon 얼굴 = new ImageIcon(avatar.avatarOnFinding(user_pk, "얼굴")); 
-		ImageIcon 악세사리 = new ImageIcon(avatar.avatarOnFinding(user_pk, "악세사리")); 
+		ImageIcon 상의 = new ImageIcon("src/image/" + avatar.avatarOnFinding(user_pk, "옷")); 
+		ImageIcon 얼굴 = new ImageIcon("src/image/" + avatar.avatarOnFinding(user_pk, "얼굴")); 
+		ImageIcon 악세사리 = new ImageIcon("src/image/" + avatar.avatarOnFinding(user_pk, "악세사리")); 
 		ImageIcon 능력치바 = new ImageIcon("src/image/능력치바.png");
 		ImageIcon 체력1 = new ImageIcon("src/image/체력_1.png");
 		ImageIcon 체력0 = new ImageIcon("src/image/체력_0.png");
