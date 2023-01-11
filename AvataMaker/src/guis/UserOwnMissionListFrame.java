@@ -234,8 +234,14 @@ public class UserOwnMissionListFrame {
          weeklyMissionDdays[i].setBounds(260, weeklyY, 280, 30);
          oneWeekMissionPanel.add(weeklyMissionDdays[i]);
 
+         weeklyMissionClears[i] = new JButton("완료"); // 주간미션달성버튼
+         weeklyMissionClears[i].setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
+         weeklyMissionClears[i].setBackground(new Color(240, 250, 255));
          
          if(!weeklyMissionTs[i].getText().isEmpty()) {
+        	// 미션 락걸기
+        	weeklyMissionClears[i].setEnabled(false);
+        	// 지나간 미션 아닐때
             if(!mis.userMissionEndDay(user_pk, weeklyMissionTs[i].getText()).contains("D - -")) {
             	weeklyMissionDdays[i].setText(mis.userMissionEndDay(user_pk, weeklyMissionTs[i].getText()));
             	if(weeklyMissionDdays[i].getText().contains("2") 
@@ -250,10 +256,10 @@ public class UserOwnMissionListFrame {
                 initialize();
             }
          }
-         
-         weeklyMissionClears[i] = new JButton("완료"); // 주간미션달성버튼
-         weeklyMissionClears[i].setFont(new Font("경기천년제목 Bold", Font.PLAIN, 15));
-         weeklyMissionClears[i].setBackground(new Color(240, 250, 255));
+                  
+         if(weeklyMissionDdays[i].getText().contains("0")) {
+        	 weeklyMissionClears[i].setEnabled(true);
+         }
          
          weeklyMissionClears[i].setActionCommand(String.valueOf(i));
          weeklyMissionClears[i].addActionListener(new ActionListener() {
@@ -352,15 +358,21 @@ public class UserOwnMissionListFrame {
          }
          weeklyMissionDdays[i].setText("");
          weeklyMissionDdays[i].setForeground(Color.black);
+         weeklyMissionClears[i].setEnabled(true);
          
          if(!weeklyMissionTs[i].getText().isEmpty()) {
             weeklyMissionDdays[i].setText(mis.userMissionEndDay(user_pk, weeklyMissionTs[i].getText()));
-	         } if (weeklyMissionDdays[i].getText().contains("2") 
+            weeklyMissionClears[i].setEnabled(false);
+	          if (weeklyMissionDdays[i].getText().contains("2") 
 	        		 || weeklyMissionDdays[i].getText().contains("1")
 	        		 || weeklyMissionDdays[i].getText().contains("0")) {
 	        	 weeklyMissionTs[i].setForeground(Color.red);
 	        	 weeklyMissionDdays[i].setForeground(Color.red);
 	         }
+	          if(weeklyMissionDdays[i].getText().contains("0")) {
+	        	  weeklyMissionClears[i].setEnabled(true);
+	          }
+         }
             
       }
    }
