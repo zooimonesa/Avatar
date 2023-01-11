@@ -26,9 +26,10 @@ public class PurchaseFrame {
    avatarImageImpl avatar = new avatarImageImpl();
    String avatarName;
    String type;
+   String avatarName2;
    JFrame frame;
-   boolean go;
-   boolean gogo;
+   boolean gou;
+   boolean gougou;
 
    /**
     * Launch the application.
@@ -48,7 +49,7 @@ public class PurchaseFrame {
    }
 
    public PurchaseFrame() {
-      initialize(go, gogo);
+      initialize(gou, gougou);
       customcursor();
    }
 
@@ -74,6 +75,8 @@ public class PurchaseFrame {
       frame.getContentPane().setLayout(null);
 
       ImageIcon 상점캐릭터 = new ImageIcon("농담곰_상점_기본.png");
+      
+      
 
       if (type == "얼굴") {
 
@@ -197,7 +200,12 @@ public class PurchaseFrame {
       JButton previousButton = new JButton("이전으로");
       previousButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
+          StoreFrame sf = new StoreFrame();
 
+           sf.frame.setVisible(true);
+           sf.frame.setLocationRelativeTo(null);
+          sf.frame.setResizable(false); 
+            
             frame.dispose();
          }
       });
@@ -211,9 +219,13 @@ public class PurchaseFrame {
          public void actionPerformed(ActionEvent e) {
 
             avatar.insertCopy(main.mainnickname, avatarName);
-            System.out.println(main.mainnickname);
-            System.out.println(avatarName);
-
+            gougou = true;
+            gou = false;
+            StoreFrame sf = new StoreFrame();
+            
+            sf.frame.setVisible(true);
+            sf.frame.setLocationRelativeTo(null);
+         sf.frame.setResizable(false);
             frame.dispose();
          }
       });
@@ -230,6 +242,13 @@ public class PurchaseFrame {
          public void actionPerformed(ActionEvent e) {
 
             avatar.avatarTakeOnOff(0, main.user_pk, avatarName);
+            
+            StoreFrame sf = new StoreFrame();
+            
+            sf.frame.setVisible(true);
+            sf.frame.setLocationRelativeTo(null);
+         sf.frame.setResizable(false);
+            frame.dispose();
          }
       });
       unequipButton.setBounds(206, 417, 81, 23);
@@ -240,7 +259,13 @@ public class PurchaseFrame {
          public void actionPerformed(ActionEvent e) {
 
             avatar.onSearching(main.user_pk, avatarName, type);
+            StoreFrame sf = new StoreFrame();
+          
+            sf.frame.setVisible(true);
+            sf.frame.setLocationRelativeTo(null);
+         sf.frame.setResizable(false);
 
+            frame.dispose();
          }
       });
       equipButton.setBounds(114, 417, 81, 23);
@@ -250,12 +275,14 @@ public class PurchaseFrame {
       } else {
          equipButton.setEnabled(true);
       }
-      JLabel price = new JLabel("아바타이름");
+      JLabel price = new JLabel("아바타 이름:     "+avatarName2 );
       price.setHorizontalAlignment(SwingConstants.CENTER);
       price.setBounds(12, 51, 159, 31);
       frame.getContentPane().add(price);
-
-      JLabel avatarName = new JLabel("가격 ~~포인트");
+      
+      
+      int avatarPint =  avatar.selectAvatarPoint(avatarName);
+      JLabel avatarName = new JLabel("아바타 가격:    " +  String.valueOf(avatarPint));
       avatarName.setHorizontalAlignment(SwingConstants.CENTER);
       avatarName.setBounds(12, 10, 159, 31);
       frame.getContentPane().add(avatarName);

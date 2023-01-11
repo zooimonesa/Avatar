@@ -22,13 +22,15 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
+import character.avatarImageImpl;
 import character.onOff;
 
 public class StoreFrame {
-	MainFrame main = new MainFrame();
+	
 	JFrame frame;
 	private LineBorder bb = new LineBorder(Color.black, 1, true);
-
+   
+   MainFrame main = new MainFrame();
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -68,7 +70,7 @@ public class StoreFrame {
 		
 		String a = "목도리.png";	
 		String c = "요리사.png";
-		String d = "조리기구.png";
+		String d = "조리도구.png";
 		String e = "앞치마.png";
 		String f = "튜브.png";
 		String g = "사슴뿔.png";
@@ -85,8 +87,7 @@ public class StoreFrame {
 		onOff onoff= new onOff();
 		onoff.mainOnOff(onoff.avatarGet(main.user_pk), onoff.storeAvatarGet());
 		onoff.avatarGet(main.user_pk);
-		
-		
+	
 		
 		ImageIcon 배경 = new ImageIcon("미리보기"+ main.avatar.avatarOnFinding(main.user_pk, "배경"));
 		ImageIcon 얼굴 = new ImageIcon("미리보기" + main.avatar.avatarOnFinding(main.user_pk, "얼굴"));  // 캐릭터 옷 아이콘 =================
@@ -120,6 +121,7 @@ public class StoreFrame {
 					
 					PurchaseFrame purchaseFrame = new PurchaseFrame();
 				purchaseFrame.avatarName = "목도리.png";
+				purchaseFrame.avatarName2 = "목도리";
 				purchaseFrame.type = "옷";
 				 
 				 
@@ -131,6 +133,8 @@ public class StoreFrame {
 				purchaseFrame.frame.setVisible(true); // 다음 프레임 띄우기
 				purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				purchaseFrame.frame.setResizable(false);
+				
+				frame.dispose();
 				}
 				
 				
@@ -152,6 +156,7 @@ public class StoreFrame {
 				
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				purchaseFrame.avatarName = "튜브.png";
+				purchaseFrame.avatarName2 = "튜브";
 				purchaseFrame.type = "옷";
 				
 				
@@ -160,6 +165,8 @@ public class StoreFrame {
 				purchaseFrame.frame.setVisible(true); // 다음 프레임 띄우기
 				purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				purchaseFrame.frame.setResizable(false);
+				
+				frame.dispose();
 				
 			}
 		});
@@ -173,6 +180,7 @@ public class StoreFrame {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				
 				purchaseFrame.avatarName = "앞치마.png";
+				purchaseFrame.avatarName2 = "앞치마";
 				purchaseFrame.type = "옷";
 				
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
@@ -180,6 +188,8 @@ public class StoreFrame {
 				purchaseFrame.frame.setVisible(true); // 다음 프레임 띄우기
 				purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				purchaseFrame.frame.setResizable(false);
+				
+				frame.dispose();
 				
 			}
 		});
@@ -194,12 +204,15 @@ public class StoreFrame {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				
 				purchaseFrame.avatarName = "용사갑옷.png";
+				purchaseFrame.avatarName2 = "용사갑옷";
 				purchaseFrame.type = "옷";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
 
 				purchaseFrame.frame.setVisible(true); // 다음 프레임 띄우기
 				purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				purchaseFrame.frame.setResizable(false);
+				
+				frame.dispose();
 				
 			}
 		});
@@ -212,6 +225,7 @@ public class StoreFrame {
 			public void actionPerformed(ActionEvent e) {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				purchaseFrame.avatarName = "사슴뿔.png";
+				purchaseFrame.avatarName2 = "사슴뿔";
 				purchaseFrame.type = "얼굴";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
 
@@ -219,6 +233,8 @@ public class StoreFrame {
 				purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				purchaseFrame.frame.setResizable(false);
 				
+				
+				frame.dispose();
 			}
 		});
 		btnNewButton_1_4.setBounds(426, 21, 90, 100);
@@ -232,12 +248,15 @@ public class StoreFrame {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				
 				purchaseFrame.avatarName = "썬글라스.png";
+				purchaseFrame.avatarName2 = "썬글라스";
 				purchaseFrame.type = "얼굴";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
 
 				purchaseFrame.frame.setVisible(true); // 다음 프레임 띄우기
 				purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				purchaseFrame.frame.setResizable(false);
+				
+				frame.dispose();
 				
 			}
 		});
@@ -251,12 +270,15 @@ public class StoreFrame {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 		
 				purchaseFrame.avatarName = "요리사.png";
+				purchaseFrame.avatarName2 = "요리사";
 				purchaseFrame.type = "얼굴";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
 
 				purchaseFrame.frame.setVisible(true); // 다음 프레임 띄우기
 				purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				purchaseFrame.frame.setResizable(false);
+				
+				frame.dispose();
 				
 			}
 		});
@@ -270,12 +292,15 @@ public class StoreFrame {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				
 				purchaseFrame.avatarName = "용사투구.png";
+				purchaseFrame.avatarName2 = "용사투구";
 				purchaseFrame.type = "얼굴";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
 
 				purchaseFrame.frame.setVisible(true); // 다음 프레임 띄우기
 				purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				purchaseFrame.frame.setResizable(false);
+				
+				frame.dispose();
 				
 			}
 		});
@@ -291,12 +316,15 @@ public class StoreFrame {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				
 				purchaseFrame.avatarName = "고구마.png";
+				purchaseFrame.avatarName2 = "고구마";
 				purchaseFrame.type = "악세사리";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
 
 				purchaseFrame.frame.setVisible(true); // 다음 프레임 띄우기
 				purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				purchaseFrame.frame.setResizable(false);
+				
+				frame.dispose();
 				
 			}
 		});
@@ -310,12 +338,15 @@ public class StoreFrame {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				
 				purchaseFrame.avatarName = "물총.png";
+				purchaseFrame.avatarName2 = "물총";
 				purchaseFrame.type = "악세사리";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
 
 				purchaseFrame.frame.setVisible(true); // 다음 프레임 띄우기
 				purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				purchaseFrame.frame.setResizable(false);
+				
+				frame.dispose();
 				
 			}
 		});
@@ -329,12 +360,15 @@ public class StoreFrame {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				
 				purchaseFrame.avatarName = "조리도구.png";
+				purchaseFrame.avatarName2 = "조리도구";
 				purchaseFrame.type = "악세사리";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
 
 				purchaseFrame.frame.setVisible(true); // 다음 프레임 띄우기
 				purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				purchaseFrame.frame.setResizable(false);
+				
+				frame.dispose();
 				
 			}
 		});
@@ -350,6 +384,7 @@ public class StoreFrame {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				
 				purchaseFrame.avatarName = "용사검.png";
+				purchaseFrame.avatarName2 = "용사검";
 				purchaseFrame.type = "악세사리";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
 
@@ -357,6 +392,8 @@ public class StoreFrame {
 				purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				purchaseFrame.frame.setResizable(false);
 				
+				
+				frame.dispose();
 			}
 		});
 		btnNewButton_1_3_2.setBounds(528, 351, 90, 100);
@@ -368,12 +405,15 @@ public class StoreFrame {
 			public void actionPerformed(ActionEvent e) {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				purchaseFrame.avatarName = "겨울배경.png";
+				purchaseFrame.avatarName2 = "겨울";
 				purchaseFrame.type = "배경";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
 
 				purchaseFrame.frame.setVisible(true); // 다음 프레임 띄우기
 				purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				purchaseFrame.frame.setResizable(false);
+				
+				frame.dispose();
 				
 			}
 		});
@@ -388,12 +428,15 @@ public class StoreFrame {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				
 				purchaseFrame.avatarName = "주방.png";
+				purchaseFrame.avatarName2 = "주방";
 				purchaseFrame.type = "배경";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
 
 				purchaseFrame.frame.setVisible(true); // 다음 프레임 띄우기
 				purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				purchaseFrame.frame.setResizable(false);
+				
+				frame.dispose();
 				
 			}
 		});
@@ -407,12 +450,15 @@ public class StoreFrame {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				
 				purchaseFrame.avatarName = "여름.png";
+				purchaseFrame.avatarName2 = "여름";
 				purchaseFrame.type = "배경";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
 
 				purchaseFrame.frame.setVisible(true); // 다음 프레임 띄우기
 				purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				purchaseFrame.frame.setResizable(false);
+				
+				frame.dispose();
 				
 			}
 		});
@@ -425,12 +471,15 @@ public class StoreFrame {
 			public void actionPerformed(ActionEvent e) {
 				PurchaseFrame purchaseFrame = new PurchaseFrame();
 				purchaseFrame.avatarName = "용사의방.png";
+				purchaseFrame.avatarName2 = "용사의방";
 				purchaseFrame.type = "배경";
 				purchaseFrame.initialize( onoff.doYouAva(purchaseFrame.avatarName), onoff.doYouDonAva(purchaseFrame.avatarName));
 
 				purchaseFrame.frame.setVisible(true); // 다음 프레임 띄우기
 				purchaseFrame.frame.setLocationRelativeTo(null); // 창 중간에 나오게함
 				purchaseFrame.frame.setResizable(false);
+				
+				frame.dispose();
 				
 			}
 		});
@@ -507,8 +556,8 @@ public class StoreFrame {
 		frame.getContentPane().add(charTop);
 		
 		JLabel mainChar = new JLabel(상점캐릭터);
-		mainChar.setBorder(bb);
-		mainChar.setBounds(12, 21, 300, 430);
+		 
+		mainChar.setBounds(17, 21, 300, 430);
 		frame.getContentPane().add(mainChar); 
 		
 		JLabel main = new JLabel(배경);
@@ -516,12 +565,16 @@ public class StoreFrame {
 		main.setBounds(12, 21, 300, 430);
 		frame.getContentPane().add(main); // ==================================================================
 		
+		
+		
 		JLabel lblNewLabel_1 = new JLabel("보유포인트:");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setBounds(528, 462, 90, 15);
 		frame.getContentPane().add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_2 = new JLabel("0포인트");
+		MainFrame main2 = new MainFrame();
+		
+		JLabel lblNewLabel_2 = new JLabel( String.valueOf(main2.mainpoint));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblNewLabel_2.setBounds(630, 461, 157, 16);
 		frame.getContentPane().add(lblNewLabel_2);
